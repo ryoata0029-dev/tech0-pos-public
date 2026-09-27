@@ -1,0 +1,26 @@
+{
+  "current_files": [
+    "AGENTS.md",
+    "README.md",
+    "docs/design/保存処理.md",
+    "docs/design/構成と用語.md",
+    "docs/design/画面と業務処理.md",
+    "docs/design/要件対応.md",
+    "docs/design/認証と運用.md",
+    "docs/design/通信とデータ.md",
+    "docs/requirements/受入条件_現行.md",
+    "docs/requirements/対応と残課題.md",
+    "docs/requirements/機能・非機能要件.md",
+    "docs/対応表.md",
+    "docs/文書マップ.md",
+    "要件定義レビュー.md",
+    "要件定義書.md",
+    "要件承認履歴.md",
+    "要求仕様.md",
+    "設計仕様書.md",
+    "設計全体レビュー.md",
+    "設計承認履歴.md",
+    "設計残課題.md",
+    "設計設定・DB運用.md"
+  ]
+}

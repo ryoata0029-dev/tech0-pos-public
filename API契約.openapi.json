@@ -1,0 +1,5453 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "簡易POS API契約案",
+    "version": "0.35",
+    "description": "新要件に基づく設計付属物。未実装・未実行。URL／型／必須項目の正本。業務状態・トランザクションは設計仕様書。金額・版は十進文字列。未定義入力を拒否。成功・失敗ともno-store。 認証・権限はAPI別securityと設計8.2に従う。Origin・X-POS-Requestの必須検査は全更新API。GETでは両ヘッダーの欠落を拒否理由にしない。"
+  },
+  "servers": [
+    {
+      "url": "/",
+      "description": "Next.jsと同一オリジン。FastAPI直通は公開クライアント契約外。"
+    }
+  ],
+  "paths": {
+    "/api/login": {
+      "post": {
+        "operationId": "login",
+        "summary": "担当者ログイン",
+        "security": [],
+        "parameters": [
+          {
+            "name": "X-POS-Request",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "1"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "許可されたPOSオリジンと完全一致。サーバー中継は元Originを検証して転送。"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              },
+              "Set-Cookie": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "保護Cookie。認証は__Host-pos_session、復帰は__Host-pos_resume。複数行を統合せず転送。値は本文へ含めない。"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Auth"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "誤認証またはログイン試行制限。共通形式・文言でIDの存在を明かさない。制限中は正しい資格情報も拒否し、Cookieを削除しない。",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "権限・送信元・Cookie対応不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "対象不存在",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "状態／版／期限／保守停止等の競合",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "入力不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "DB等の照合不能",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "予期しないサーバー障害",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Credentials"
+              }
+            }
+          }
+        },
+        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。 同じ担当者IDで直近10分間に5回照合失敗すると5回目から10分制限。両APIで合算。期限到達時に自動解除、制限中の追加試行では延長しない。既存セッション・カートは保持。"
+      }
+    },
+    "/api/reauth": {
+      "post": {
+        "operationId": "reauth",
+        "summary": "元担当者の再認証",
+        "security": [],
+        "parameters": [
+          {
+            "name": "X-POS-Request",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "1"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "許可されたPOSオリジンと完全一致。サーバー中継は元Originを検証して転送。"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              },
+              "Set-Cookie": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "保護Cookie。認証は__Host-pos_session、復帰は__Host-pos_resume。複数行を統合せず転送。値は本文へ含めない。"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Auth"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "誤認証またはログイン試行制限。共通形式・文言でIDの存在を明かさない。制限中は正しい資格情報も拒否し、Cookieを削除しない。",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "権限・送信元・Cookie対応不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "対象不存在",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "状態／版／期限／保守停止等の競合",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "入力不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "DB等の照合不能",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "予期しないサーバー障害",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Credentials"
+              }
+            }
+          }
+        },
+        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。 資格情報で再認証するため期限切れ認証Cookieは許容。開始済みなら復帰Cookieで元担当者・対象を照合。初回開始前のみ復帰Cookieなし。 同じ担当者IDで直近10分間に5回照合失敗すると5回目から10分制限。両APIで合算。期限到達時に自動解除、制限中の追加試行では延長しない。既存セッション・カートは保持。"
+      }
+    },
+    "/api/auth/status": {
+      "get": {
+        "operationId": "authStatus",
+        "summary": "認証照会",
+        "security": [
+          {
+            "AuthCookie": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Auth"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "未認証／誤認証",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "権限・送信元・Cookie対応不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "対象不存在",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "状態／版／期限／保守停止等の競合",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "入力不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "DB等の照合不能",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "予期しないサーバー障害",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。"
+      }
+    },
+    "/api/products/{code}": {
+      "get": {
+        "operationId": "product",
+        "summary": "商品検索",
+        "security": [
+          {
+            "AuthCookie": [],
+            "ResumeCookie": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "code",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Code"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "未認証／誤認証",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "権限・送信元・Cookie対応不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "対象不存在",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "状態／版／期限／保守停止等の競合",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "入力不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "DB等の照合不能",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "予期しないサーバー障害",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。"
+      }
+    },
+    "/api/members/{id}": {
+      "get": {
+        "operationId": "member",
+        "summary": "会員検索のみ",
+        "security": [
+          {
+            "AuthCookie": [],
+            "ResumeCookie": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Code"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Member"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "未認証／誤認証",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "権限・送信元・Cookie対応不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "対象不存在",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "状態／版／期限／保守停止等の競合",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "入力不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "DB等の照合不能",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "予期しないサーバー障害",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。"
+      }
+    },
+    "/api/register/start": {
+      "post": {
+        "operationId": "registerStart",
+        "summary": "初回Cookie発行",
+        "security": [
+          {
+            "AuthCookie": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-POS-Request",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "1"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "許可されたPOSオリジンと完全一致。サーバー中継は元Originを検証して転送。"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              },
+              "Set-Cookie": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "保護Cookie。認証は__Host-pos_session、復帰は__Host-pos_resume。複数行を統合せず転送。値は本文へ含めない。"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Register"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "未認証／誤認証",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "権限・送信元・Cookie対応不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "対象不存在",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "状態／版／期限／保守停止等の競合",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "入力不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "DB等の照合不能",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "予期しないサーバー障害",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。 UNSTARTEDだけ発行。開始済みの再送は409でstatus照会へ。識別子を再発行しない。"
+      }
+    },
+    "/api/register/status": {
+      "get": {
+        "operationId": "registerStatus",
+        "summary": "初回状態照会",
+        "security": [
+          {
+            "AuthCookie": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Register"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "未認証／誤認証",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "権限・送信元・Cookie対応不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "対象不存在",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "状態／版／期限／保守停止等の競合",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "入力不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "DB等の照合不能",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "予期しないサーバー障害",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。 UNSTARTEDは復帰Cookieなしで照会可能。開始済みで不一致なら403、継続対象の情報は返さない。"
+      }
+    },
+    "/api/register/confirm": {
+      "post": {
+        "operationId": "registerConfirm",
+        "summary": "Cookie受取確認",
+        "security": [
+          {
+            "AuthCookie": [],
+            "ResumeCookie": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-POS-Request",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "1"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "許可されたPOSオリジンと完全一致。サーバー中継は元Originを検証して転送。"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Register"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "未認証／誤認証",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "権限・送信元・Cookie対応不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "対象不存在",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "状態／版／期限／保守停止等の競合",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "入力不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "DB等の照合不能",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "予期しないサーバー障害",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。"
+      }
+    },
+    "/api/carts": {
+      "post": {
+        "operationId": "createCart",
+        "summary": "初回カート生成",
+        "security": [
+          {
+            "AuthCookie": [],
+            "ResumeCookie": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-POS-Request",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "1"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "許可されたPOSオリジンと完全一致。サーバー中継は元Originを検証して転送。"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CartResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "未認証／誤認証",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "権限・送信元・Cookie対応不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "対象不存在",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "状態／版／期限／保守停止等の競合",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "入力不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "DB等の照合不能",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "予期しないサーバー障害",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。"
+      }
+    },
+    "/api/resume": {
+      "get": {
+        "operationId": "resume",
+        "summary": "継続カート復帰",
+        "security": [
+          {
+            "AuthCookie": [],
+            "ResumeCookie": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CartResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "未認証／誤認証",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "権限・送信元・Cookie対応不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "対象不存在",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "状態／版／期限／保守停止等の競合",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "入力不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "DB等の照合不能",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "予期しないサーバー障害",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。 成功応答に操作フィールドは含めない。継続カート未作成は404/CART_NOT_CREATED、初回手順で生成。"
+      }
+    },
+    "/api/carts/{id}": {
+      "get": {
+        "operationId": "getCart",
+        "summary": "カート照会",
+        "security": [
+          {
+            "AuthCookie": [],
+            "ResumeCookie": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CartResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "未認証／誤認証",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "権限・送信元・Cookie対応不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "対象不存在",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "状態／版／期限／保守停止等の競合",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "入力不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "DB等の照合不能",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "予期しないサーバー障害",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。 成功応答に操作フィールドは含めない。継続カート未作成は404/CART_NOT_CREATED、初回手順で生成。"
+      }
+    },
+    "/api/carts/{id}/sync": {
+      "post": {
+        "operationId": "syncCart",
+        "summary": "復帰同期",
+        "security": [
+          {
+            "AuthCookie": [],
+            "ResumeCookie": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
+          },
+          {
+            "name": "X-POS-Request",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "1"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "許可されたPOSオリジンと完全一致。サーバー中継は元Originを検証して転送。"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "未認証／誤認証",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "権限・送信元・Cookie対応不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "対象不存在",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "状態／版／期限／保守停止等の競合",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "入力不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "DB等の照合不能",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "予期しないサーバー障害",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OperationInput"
+              }
+            }
+          }
+        },
+        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。"
+      }
+    },
+    "/api/carts/{id}/lines": {
+      "post": {
+        "operationId": "addLine",
+        "summary": "商品1個追加",
+        "security": [
+          {
+            "AuthCookie": [],
+            "ResumeCookie": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
+          },
+          {
+            "name": "X-POS-Request",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "1"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "許可されたPOSオリジンと完全一致。サーバー中継は元Originを検証して転送。"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "未認証／誤認証",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "権限・送信元・Cookie対応不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "対象不存在",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "状態／版／期限／保守停止等の競合",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "入力不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "DB等の照合不能",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "予期しないサーバー障害",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddLine"
+              }
+            }
+          }
+        },
+        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。"
+      }
+    },
+    "/api/carts/{id}/lines/{line_id}": {
+      "patch": {
+        "operationId": "setQuantity",
+        "summary": "数量変更",
+        "security": [
+          {
+            "AuthCookie": [],
+            "ResumeCookie": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
+          },
+          {
+            "name": "line_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
+          },
+          {
+            "name": "X-POS-Request",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "1"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "許可されたPOSオリジンと完全一致。サーバー中継は元Originを検証して転送。"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "未認証／誤認証",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "権限・送信元・Cookie対応不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "対象不存在",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "状態／版／期限／保守停止等の競合",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "入力不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "DB等の照合不能",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "予期しないサーバー障害",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetQuantity"
+              }
+            }
+          }
+        },
+        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。"
+      },
+      "delete": {
+        "operationId": "deleteLine",
+        "summary": "行削除",
+        "security": [
+          {
+            "AuthCookie": [],
+            "ResumeCookie": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
+          },
+          {
+            "name": "line_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
+          },
+          {
+            "name": "X-POS-Request",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "1"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "許可されたPOSオリジンと完全一致。サーバー中継は元Originを検証して転送。"
+          },
+          {
+            "name": "operation_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Version"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "未認証／誤認証",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "権限・送信元・Cookie対応不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "対象不存在",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "状態／版／期限／保守停止等の競合",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "入力不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "DB等の照合不能",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "予期しないサーバー障害",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。"
+      }
+    },
+    "/api/carts/{id}/member": {
+      "put": {
+        "operationId": "setMember",
+        "summary": "会員指定／非会員選択",
+        "security": [
+          {
+            "AuthCookie": [],
+            "ResumeCookie": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
+          },
+          {
+            "name": "X-POS-Request",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "1"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "許可されたPOSオリジンと完全一致。サーバー中継は元Originを検証して転送。"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "未認証／誤認証",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "権限・送信元・Cookie対応不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "対象不存在",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "状態／版／期限／保守停止等の競合",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "入力不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "DB等の照合不能",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "予期しないサーバー障害",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "受付済み・未完了。購入ならUNKNOWN。自動購入再送しない。",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationResult"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetMember"
+              }
+            }
+          }
+        },
+        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。"
+      }
+    },
+    "/api/purchases": {
+      "post": {
+        "operationId": "purchase",
+        "summary": "購入確定",
+        "security": [
+          {
+            "AuthCookie": [],
+            "ResumeCookie": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-POS-Request",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "1"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "許可されたPOSオリジンと完全一致。サーバー中継は元Originを検証して転送。"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "未認証／誤認証",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "権限・送信元・Cookie対応不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "対象不存在",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "状態／版／期限／保守停止等の競合",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "入力不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "DB等の照合不能",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "予期しないサーバー障害",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "受付済み・未完了。購入ならUNKNOWN。自動購入再送しない。",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationResult"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PurchaseInput"
+              }
+            }
+          }
+        },
+        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。"
+      }
+    },
+    "/api/carts/{id}/purchase": {
+      "get": {
+        "operationId": "getPurchase",
+        "summary": "購入結果照会",
+        "security": [
+          {
+            "AuthCookie": [],
+            "ResumeCookie": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CartResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "未認証／誤認証",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "権限・送信元・Cookie対応不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "対象不存在",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "状態／版／期限／保守停止等の競合",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "入力不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "DB等の照合不能",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "予期しないサーバー障害",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。 成功応答に操作フィールドは含めない。継続カート未作成は404/CART_NOT_CREATED、初回手順で生成。"
+      }
+    },
+    "/api/carts/{id}/resolve-purchase": {
+      "post": {
+        "operationId": "resolvePurchase",
+        "summary": "購入結果確定",
+        "security": [
+          {
+            "AuthCookie": [],
+            "ResumeCookie": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
+          },
+          {
+            "name": "X-POS-Request",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "1"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "許可されたPOSオリジンと完全一致。サーバー中継は元Originを検証して転送。"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "未認証／誤認証",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "権限・送信元・Cookie対応不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "対象不存在",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "状態／版／期限／保守停止等の競合",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "入力不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "DB等の照合不能",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "予期しないサーバー障害",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OperationInput"
+              }
+            }
+          }
+        },
+        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。"
+      }
+    },
+    "/api/carts/{id}/reopen": {
+      "post": {
+        "operationId": "reopen",
+        "summary": "明示的編集再開",
+        "security": [
+          {
+            "AuthCookie": [],
+            "ResumeCookie": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
+          },
+          {
+            "name": "X-POS-Request",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "1"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "許可されたPOSオリジンと完全一致。サーバー中継は元Originを検証して転送。"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "未認証／誤認証",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "権限・送信元・Cookie対応不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "対象不存在",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "状態／版／期限／保守停止等の競合",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "入力不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "DB等の照合不能",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "予期しないサーバー障害",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OperationInput"
+              }
+            }
+          }
+        },
+        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。"
+      }
+    },
+    "/api/carts/{id}/next": {
+      "post": {
+        "operationId": "next",
+        "summary": "結果終了と次カート",
+        "security": [
+          {
+            "AuthCookie": [],
+            "ResumeCookie": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
+          },
+          {
+            "name": "X-POS-Request",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "1"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "許可されたPOSオリジンと完全一致。サーバー中継は元Originを検証して転送。"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NextResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "未認証／誤認証",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "権限・送信元・Cookie対応不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "対象不存在",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "状態／版／期限／保守停止等の競合",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "入力不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "DB等の照合不能",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "予期しないサーバー障害",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OperationInput"
+              }
+            }
+          }
+        },
+        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。"
+      }
+    },
+    "/api/carts/{id}/operations/{operation_id}": {
+      "get": {
+        "operationId": "getOperation",
+        "summary": "操作結果照会",
+        "security": [
+          {
+            "AuthCookie": [],
+            "ResumeCookie": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
+          },
+          {
+            "name": "operation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/OperationResult"
+                    },
+                    {
+                      "type": "object",
+                      "required": [
+                        "new_cart_id"
+                      ]
+                    }
+                  ]
+                },
+                "examples": {
+                  "nextApplied": {
+                    "summary": "旧カートのNEXT照会。現在の継続対象はresumeで確認",
+                    "value": {
+                      "cart": {
+                        "cart_id": "11111111-1111-4111-8111-111111111111",
+                        "version": "5",
+                        "state": "CLOSED",
+                        "staff_id": "staff01",
+                        "member_state": "UNSPECIFIED",
+                        "member_id": null,
+                        "pending_member_id": null,
+                        "lines": [
+                          {
+                            "line_id": "33333333-3333-4333-8333-333333333333",
+                            "line_no": 1,
+                            "code": "000123",
+                            "name": "演習商品",
+                            "quantity": 1,
+                            "unit_price": "100",
+                            "tax_rate": "0.10",
+                            "discount": null,
+                            "discount_per_unit": "0",
+                            "net_unit_price": "100",
+                            "line_subtotal": "100"
+                          }
+                        ],
+                        "subtotal": "100",
+                        "total": "110",
+                        "taxes": [
+                          {
+                            "tax_rate": "0.10",
+                            "taxable_subtotal": "100",
+                            "tax_amount": "10"
+                          }
+                        ],
+                        "amounts_are_reference": false
+                      },
+                      "purchase_status": "SAVED",
+                      "purchase": {
+                        "cart_id": "11111111-1111-4111-8111-111111111111",
+                        "staff_id": "staff01",
+                        "member_id": null,
+                        "purchased_at": "2026-09-27T01:00:00.000000Z",
+                        "lines": [
+                          {
+                            "line_no": 1,
+                            "code": "000123",
+                            "name": "演習商品",
+                            "quantity": 1,
+                            "unit_price": "100",
+                            "tax_rate": "0.10",
+                            "discount": null,
+                            "discount_per_unit": "0",
+                            "net_unit_price": "100",
+                            "line_subtotal": "100"
+                          }
+                        ],
+                        "subtotal": "100",
+                        "total": "110",
+                        "taxes": [
+                          {
+                            "tax_rate": "0.10",
+                            "taxable_subtotal": "100",
+                            "tax_amount": "10"
+                          }
+                        ]
+                      },
+                      "operation_id": "22222222-2222-4222-8222-222222222222",
+                      "operation_status": "APPLIED",
+                      "applied_version": "5",
+                      "code": null,
+                      "new_cart_id": "44444444-4444-4444-8444-444444444444"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "未認証／誤認証",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "権限・送信元・Cookie対応不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "対象不存在",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "状態／版／期限／保守停止等の競合",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "入力不正",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "DB等の照合不能",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "予期しないサーバー障害",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "成功・失敗ともキャッシュしない"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。 記録なしは200/NOT_FOUND/applied_version=null。未保存を意味しない。 cart/purchase_status/purchaseはパスのidで指定したカートの現在値、applied_versionはその操作の適用版。NEXTも旧カートを返す。new_cart_idは必須で、NEXT反映済みだけ記録済みの次カートID、他操作・未反映・記録なしはnull。現在の継続対象はresumeで取得し、過去のnew_cart_idへ画面を戻さない。POST nextのNextResultとはcartの対象が異なる。"
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "AuthCookie": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "__Host-pos_session"
+      },
+      "ResumeCookie": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "__Host-pos_resume"
+      }
+    },
+    "schemas": {
+      "Code": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 32,
+        "pattern": "^[A-Za-z0-9_-]+(?![\\s\\S])"
+      },
+      "UUID": {
+        "type": "string",
+        "format": "uuid",
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}(?![\\s\\S])"
+      },
+      "Version": {
+        "type": "string",
+        "pattern": "^(?:[1-9][0-9]{0,18}|1[0-7][0-9]{18}|18[0-3][0-9]{17}|184[0-3][0-9]{16}|1844[0-5][0-9]{15}|18446[0-6][0-9]{14}|184467[0-3][0-9]{13}|1844674[0-3][0-9]{12}|184467440[0-6][0-9]{10}|1844674407[0-2][0-9]{9}|18446744073[0-6][0-9]{8}|1844674407370[0-8][0-9]{6}|18446744073709[0-4][0-9]{5}|184467440737095[0-4][0-9]{4}|18446744073709550[0-9]{3}|18446744073709551[0-5][0-9]{2}|1844674407370955160[0-9]{1}|1844674407370955161[0-4]|18446744073709551615)(?![\\s\\S])",
+        "description": "整数として1〜18446744073709551615を追加検証する。浮動小数点へ変換しない。"
+      },
+      "Money": {
+        "type": "string",
+        "pattern": "^(0|[1-9][0-9]{0,11})(?![\\s\\S])",
+        "description": "0〜999999999999円。"
+      },
+      "Rate": {
+        "type": "string",
+        "pattern": "^(0(\\.[0-9]{1,4})?|1(\\.0{1,4})?)(?![\\s\\S])"
+      },
+      "Time": {
+        "type": "string",
+        "format": "date-time",
+        "pattern": "Z(?![\\s\\S])",
+        "description": "UTC。DBはマイクロ秒精度。"
+      },
+      "Quantity": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 99
+      },
+      "ConditionId": {
+        "type": "string",
+        "pattern": "^(?:[1-9][0-9]{0,18}|1[0-7][0-9]{18}|18[0-3][0-9]{17}|184[0-3][0-9]{16}|1844[0-5][0-9]{15}|18446[0-6][0-9]{14}|184467[0-3][0-9]{13}|1844674[0-3][0-9]{12}|184467440[0-6][0-9]{10}|1844674407[0-2][0-9]{9}|18446744073[0-6][0-9]{8}|1844674407370[0-8][0-9]{6}|18446744073709[0-4][0-9]{5}|184467440737095[0-4][0-9]{4}|18446744073709550[0-9]{3}|18446744073709551[0-5][0-9]{2}|1844674407370955160[0-9]{1}|1844674407370955161[0-4]|18446744073709551615)(?![\\s\\S])",
+        "description": "BIGINT UNSIGNED範囲。数値順で比較。"
+      },
+      "Credentials": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "staff_id": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "password": {
+            "type": "string",
+            "writeOnly": true,
+            "description": "入力をtrim・正規化せず照合。秘密値をログや応答に含めない。"
+          }
+        },
+        "required": [
+          "staff_id",
+          "password"
+        ]
+      },
+      "Auth": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "authenticated": {
+            "const": true
+          },
+          "staff_id": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "expires_at": {
+            "$ref": "#/components/schemas/Time"
+          }
+        },
+        "required": [
+          "authenticated",
+          "staff_id",
+          "expires_at"
+        ]
+      },
+      "Product": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "name": {
+            "type": "string"
+          },
+          "unit_price": {
+            "$ref": "#/components/schemas/Money"
+          }
+        },
+        "required": [
+          "code",
+          "name",
+          "unit_price"
+        ]
+      },
+      "Member": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "member_id": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "confirmed": {
+            "const": true
+          }
+        },
+        "required": [
+          "member_id",
+          "confirmed"
+        ]
+      },
+      "Tax": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "tax_rate": {
+            "$ref": "#/components/schemas/Rate"
+          },
+          "taxable_subtotal": {
+            "$ref": "#/components/schemas/Money"
+          },
+          "tax_amount": {
+            "$ref": "#/components/schemas/Money"
+          }
+        },
+        "required": [
+          "tax_rate",
+          "taxable_subtotal",
+          "tax_amount"
+        ]
+      },
+      "Discount": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "condition_id": {
+            "$ref": "#/components/schemas/ConditionId"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "RATE",
+              "AMOUNT"
+            ]
+          },
+          "rate": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Rate"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "amount": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Money"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "valid_from": {
+            "$ref": "#/components/schemas/Time"
+          },
+          "valid_to": {
+            "$ref": "#/components/schemas/Time"
+          },
+          "candidate_amount": {
+            "$ref": "#/components/schemas/Money"
+          },
+          "actual_discount": {
+            "$ref": "#/components/schemas/Money"
+          }
+        },
+        "required": [
+          "condition_id",
+          "kind",
+          "rate",
+          "amount",
+          "valid_from",
+          "valid_to",
+          "candidate_amount",
+          "actual_discount"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "RATE"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "rate": {
+                  "$ref": "#/components/schemas/Rate"
+                },
+                "amount": {
+                  "type": "null"
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "rate": {
+                  "type": "null"
+                },
+                "amount": {
+                  "$ref": "#/components/schemas/Money"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "Register": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "start_state": {
+            "type": "string",
+            "enum": [
+              "UNSTARTED",
+              "COOKIE_PENDING",
+              "READY"
+            ]
+          },
+          "cookie_status": {
+            "type": "string",
+            "enum": [
+              "ABSENT",
+              "MATCH",
+              "INVALID"
+            ]
+          },
+          "available": {
+            "type": "boolean"
+          },
+          "maintenance_hold": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "start_state",
+          "cookie_status",
+          "available",
+          "maintenance_hold"
+        ]
+      },
+      "OperationInput": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "operation_id": {
+            "$ref": "#/components/schemas/UUID"
+          },
+          "version": {
+            "$ref": "#/components/schemas/Version"
+          }
+        },
+        "required": [
+          "operation_id",
+          "version"
+        ]
+      },
+      "CartLine": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "line_id": {
+            "$ref": "#/components/schemas/UUID"
+          },
+          "line_no": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4294967295
+          },
+          "code": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "name": {
+            "type": "string"
+          },
+          "quantity": {
+            "$ref": "#/components/schemas/Quantity"
+          },
+          "unit_price": {
+            "$ref": "#/components/schemas/Money"
+          },
+          "tax_rate": {
+            "$ref": "#/components/schemas/Rate"
+          },
+          "discount": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Discount"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "discount_per_unit": {
+            "$ref": "#/components/schemas/Money"
+          },
+          "net_unit_price": {
+            "$ref": "#/components/schemas/Money"
+          },
+          "line_subtotal": {
+            "$ref": "#/components/schemas/Money"
+          }
+        },
+        "required": [
+          "line_id",
+          "line_no",
+          "code",
+          "name",
+          "quantity",
+          "unit_price",
+          "tax_rate",
+          "discount",
+          "discount_per_unit",
+          "net_unit_price",
+          "line_subtotal"
+        ]
+      },
+      "PurchaseLine": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "line_no": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4294967295
+          },
+          "code": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "name": {
+            "type": "string"
+          },
+          "quantity": {
+            "$ref": "#/components/schemas/Quantity"
+          },
+          "unit_price": {
+            "$ref": "#/components/schemas/Money"
+          },
+          "tax_rate": {
+            "$ref": "#/components/schemas/Rate"
+          },
+          "discount": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Discount"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "discount_per_unit": {
+            "$ref": "#/components/schemas/Money"
+          },
+          "net_unit_price": {
+            "$ref": "#/components/schemas/Money"
+          },
+          "line_subtotal": {
+            "$ref": "#/components/schemas/Money"
+          }
+        },
+        "required": [
+          "line_no",
+          "code",
+          "name",
+          "quantity",
+          "unit_price",
+          "tax_rate",
+          "discount",
+          "discount_per_unit",
+          "net_unit_price",
+          "line_subtotal"
+        ]
+      },
+      "Cart": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "cart_id": {
+            "$ref": "#/components/schemas/UUID"
+          },
+          "version": {
+            "$ref": "#/components/schemas/Version"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "EDITING",
+              "SAVING",
+              "UNSAVED",
+              "SAVED",
+              "CLOSED"
+            ]
+          },
+          "staff_id": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "member_state": {
+            "type": "string",
+            "enum": [
+              "UNSPECIFIED",
+              "PENDING",
+              "CONFIRMED",
+              "NON_MEMBER"
+            ]
+          },
+          "member_id": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Code"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "pending_member_id": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Code"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "lines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CartLine"
+            }
+          },
+          "subtotal": {
+            "$ref": "#/components/schemas/Money"
+          },
+          "total": {
+            "$ref": "#/components/schemas/Money"
+          },
+          "taxes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Tax"
+            }
+          },
+          "amounts_are_reference": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "cart_id",
+          "version",
+          "state",
+          "staff_id",
+          "member_state",
+          "member_id",
+          "pending_member_id",
+          "lines",
+          "subtotal",
+          "total",
+          "taxes",
+          "amounts_are_reference"
+        ],
+        "description": "PENDINGのmember_idはnull（DBの旧会員IDを適用中として公開しない）。旧値引き・合計はamounts_are_reference=true。PENDING以外はfalse。linesはline_no昇順。NULLは明示する。"
+      },
+      "Purchase": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "cart_id": {
+            "$ref": "#/components/schemas/UUID"
+          },
+          "staff_id": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "member_id": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Code"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "purchased_at": {
+            "$ref": "#/components/schemas/Time"
+          },
+          "lines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PurchaseLine"
+            },
+            "minItems": 1
+          },
+          "subtotal": {
+            "$ref": "#/components/schemas/Money"
+          },
+          "total": {
+            "$ref": "#/components/schemas/Money"
+          },
+          "taxes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Tax"
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "cart_id",
+          "staff_id",
+          "member_id",
+          "purchased_at",
+          "lines",
+          "subtotal",
+          "total",
+          "taxes"
+        ]
+      },
+      "CartResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "cart": {
+            "$ref": "#/components/schemas/Cart"
+          },
+          "purchase_status": {
+            "type": "string",
+            "enum": [
+              "SAVED",
+              "UNSAVED",
+              "UNKNOWN",
+              "NOT_REQUESTED"
+            ]
+          },
+          "purchase": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Purchase"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "cart",
+          "purchase_status",
+          "purchase"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "purchase_status": {
+                  "const": "SAVED"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "purchase": {
+                  "$ref": "#/components/schemas/Purchase"
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "purchase": {
+                  "type": "null"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "OperationResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "cart": {
+            "$ref": "#/components/schemas/Cart"
+          },
+          "purchase_status": {
+            "type": "string",
+            "enum": [
+              "SAVED",
+              "UNSAVED",
+              "UNKNOWN",
+              "NOT_REQUESTED"
+            ]
+          },
+          "purchase": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Purchase"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "operation_id": {
+            "$ref": "#/components/schemas/UUID"
+          },
+          "operation_status": {
+            "type": "string",
+            "enum": [
+              "PREPARED",
+              "APPLIED",
+              "REJECTED",
+              "NOT_FOUND"
+            ]
+          },
+          "applied_version": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Version"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "code": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "new_cart_id": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/UUID"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "操作GETでは必須。NEXT反映済みの場合だけCART_OPERATION.next_cart_idの記録済みID、それ以外はnull。他のOperationResult応答では省略可。現在の継続対象はresumeで確認する。"
+          }
+        },
+        "required": [
+          "cart",
+          "purchase_status",
+          "purchase",
+          "operation_id",
+          "operation_status",
+          "applied_version",
+          "code"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "purchase_status": {
+                  "const": "SAVED"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "purchase": {
+                  "$ref": "#/components/schemas/Purchase"
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "purchase": {
+                  "type": "null"
+                }
+              }
+            }
+          }
+        ],
+        "examples": [
+          {
+            "cart": {
+              "cart_id": "11111111-1111-4111-8111-111111111111",
+              "version": "2",
+              "state": "EDITING",
+              "staff_id": "staff01",
+              "member_state": "UNSPECIFIED",
+              "member_id": null,
+              "pending_member_id": null,
+              "lines": [
+                {
+                  "line_id": "33333333-3333-4333-8333-333333333333",
+                  "line_no": 1,
+                  "code": "000123",
+                  "name": "演習商品",
+                  "quantity": 1,
+                  "unit_price": "100",
+                  "tax_rate": "0.10",
+                  "discount": null,
+                  "discount_per_unit": "0",
+                  "net_unit_price": "100",
+                  "line_subtotal": "100"
+                }
+              ],
+              "subtotal": "100",
+              "total": "110",
+              "taxes": [
+                {
+                  "tax_rate": "0.10",
+                  "taxable_subtotal": "100",
+                  "tax_amount": "10"
+                }
+              ],
+              "amounts_are_reference": false
+            },
+            "purchase_status": "NOT_REQUESTED",
+            "purchase": null,
+            "operation_id": "22222222-2222-4222-8222-222222222222",
+            "operation_status": "APPLIED",
+            "applied_version": "2",
+            "code": null
+          },
+          {
+            "cart": {
+              "cart_id": "11111111-1111-4111-8111-111111111111",
+              "version": "4",
+              "state": "SAVED",
+              "staff_id": "staff01",
+              "member_state": "UNSPECIFIED",
+              "member_id": null,
+              "pending_member_id": null,
+              "lines": [
+                {
+                  "line_id": "33333333-3333-4333-8333-333333333333",
+                  "line_no": 1,
+                  "code": "000123",
+                  "name": "演習商品",
+                  "quantity": 1,
+                  "unit_price": "100",
+                  "tax_rate": "0.10",
+                  "discount": null,
+                  "discount_per_unit": "0",
+                  "net_unit_price": "100",
+                  "line_subtotal": "100"
+                }
+              ],
+              "subtotal": "100",
+              "total": "110",
+              "taxes": [
+                {
+                  "tax_rate": "0.10",
+                  "taxable_subtotal": "100",
+                  "tax_amount": "10"
+                }
+              ],
+              "amounts_are_reference": false
+            },
+            "purchase_status": "SAVED",
+            "purchase": {
+              "cart_id": "11111111-1111-4111-8111-111111111111",
+              "staff_id": "staff01",
+              "member_id": null,
+              "purchased_at": "2026-09-27T01:00:00.000000Z",
+              "lines": [
+                {
+                  "line_no": 1,
+                  "code": "000123",
+                  "name": "演習商品",
+                  "quantity": 1,
+                  "unit_price": "100",
+                  "tax_rate": "0.10",
+                  "discount": null,
+                  "discount_per_unit": "0",
+                  "net_unit_price": "100",
+                  "line_subtotal": "100"
+                }
+              ],
+              "subtotal": "100",
+              "total": "110",
+              "taxes": [
+                {
+                  "tax_rate": "0.10",
+                  "taxable_subtotal": "100",
+                  "tax_amount": "10"
+                }
+              ]
+            },
+            "operation_id": "22222222-2222-4222-8222-222222222222",
+            "operation_status": "APPLIED",
+            "applied_version": "4",
+            "code": null
+          },
+          {
+            "cart": {
+              "cart_id": "11111111-1111-4111-8111-111111111111",
+              "version": "4",
+              "state": "UNSAVED",
+              "staff_id": "staff01",
+              "member_state": "UNSPECIFIED",
+              "member_id": null,
+              "pending_member_id": null,
+              "lines": [
+                {
+                  "line_id": "33333333-3333-4333-8333-333333333333",
+                  "line_no": 1,
+                  "code": "000123",
+                  "name": "演習商品",
+                  "quantity": 1,
+                  "unit_price": "100",
+                  "tax_rate": "0.10",
+                  "discount": null,
+                  "discount_per_unit": "0",
+                  "net_unit_price": "100",
+                  "line_subtotal": "100"
+                }
+              ],
+              "subtotal": "100",
+              "total": "110",
+              "taxes": [
+                {
+                  "tax_rate": "0.10",
+                  "taxable_subtotal": "100",
+                  "tax_amount": "10"
+                }
+              ],
+              "amounts_are_reference": false
+            },
+            "purchase_status": "UNSAVED",
+            "purchase": null,
+            "operation_id": "22222222-2222-4222-8222-222222222222",
+            "operation_status": "APPLIED",
+            "applied_version": "4",
+            "code": null
+          }
+        ]
+      },
+      "NextResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "cart": {
+            "$ref": "#/components/schemas/Cart"
+          },
+          "purchase_status": {
+            "type": "string",
+            "enum": [
+              "SAVED",
+              "UNSAVED",
+              "UNKNOWN",
+              "NOT_REQUESTED"
+            ]
+          },
+          "purchase": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Purchase"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "operation_id": {
+            "$ref": "#/components/schemas/UUID"
+          },
+          "operation_status": {
+            "type": "string",
+            "enum": [
+              "PREPARED",
+              "APPLIED",
+              "REJECTED",
+              "NOT_FOUND"
+            ]
+          },
+          "applied_version": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Version"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "code": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "new_cart_id": {
+            "$ref": "#/components/schemas/UUID"
+          }
+        },
+        "required": [
+          "cart",
+          "purchase_status",
+          "purchase",
+          "operation_id",
+          "operation_status",
+          "applied_version",
+          "code",
+          "new_cart_id"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "purchase_status": {
+                  "const": "SAVED"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "purchase": {
+                  "$ref": "#/components/schemas/Purchase"
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "purchase": {
+                  "type": "null"
+                }
+              }
+            }
+          }
+        ],
+        "description": "operation_idは旧カートのNEXT。cart/new_cart_idは同じ次カート。purchase_status/purchaseもその次カートの現在値。旧操作のapplied_versionを次カートのversionと比較しない。"
+      },
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "field": {
+                  "type": "string"
+                },
+                "message": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "field",
+                "message"
+              ]
+            }
+          },
+          "current": {
+            "$ref": "#/components/schemas/OperationResult"
+          }
+        },
+        "required": [
+          "code",
+          "message"
+        ],
+        "description": "currentは認証・所有関係を確認でき、DB照合結果がある場合だけ返す。401/403では含めない。金額やSQL例外を反射しない。HTTP失敗だけで未保存とは断定しない。",
+        "examples": [
+          {
+            "code": "VERSION_CONFLICT",
+            "message": "別の操作が反映されました。最新状態を確認してください。"
+          }
+        ]
+      },
+      "AddLine": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "operation_id": {
+            "$ref": "#/components/schemas/UUID"
+          },
+          "version": {
+            "$ref": "#/components/schemas/Version"
+          },
+          "code": {
+            "$ref": "#/components/schemas/Code"
+          }
+        },
+        "required": [
+          "operation_id",
+          "version",
+          "code"
+        ],
+        "examples": [
+          {
+            "operation_id": "22222222-2222-4222-8222-222222222222",
+            "version": "1",
+            "code": "000123"
+          }
+        ]
+      },
+      "SetQuantity": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "operation_id": {
+            "$ref": "#/components/schemas/UUID"
+          },
+          "version": {
+            "$ref": "#/components/schemas/Version"
+          },
+          "quantity": {
+            "$ref": "#/components/schemas/Quantity"
+          }
+        },
+        "required": [
+          "operation_id",
+          "version",
+          "quantity"
+        ]
+      },
+      "SetMember": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "operation_id": {
+            "$ref": "#/components/schemas/UUID"
+          },
+          "version": {
+            "$ref": "#/components/schemas/Version"
+          },
+          "member_id": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Code"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "operation_id",
+          "version",
+          "member_id"
+        ]
+      },
+      "PurchaseInput": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "operation_id": {
+            "$ref": "#/components/schemas/UUID"
+          },
+          "version": {
+            "$ref": "#/components/schemas/Version"
+          },
+          "cart_id": {
+            "$ref": "#/components/schemas/UUID"
+          }
+        },
+        "required": [
+          "operation_id",
+          "version",
+          "cart_id"
+        ]
+      }
+    }
+  }
+}
