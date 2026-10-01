@@ -1,0 +1,15 @@
+{
+  "date": "2026-09-29",
+  "scope": "local HTTP client smoke only; no real browser or public tunnel",
+  "checks": [
+    "local HTTPS certificate verification and page load",
+    "exact Origin guard and protected cookie response",
+    "fixture match without returning cookie values",
+    "no POS API exposed",
+    "probe stopped and local port closed"
+  ],
+  "passed": true,
+  "macOS": "27.0",
+  "Chrome": "153.0.8010.53",
+  "Safari": "27.0"
+}

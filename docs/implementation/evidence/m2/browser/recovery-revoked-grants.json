@@ -1,0 +1,10 @@
+{
+  "recovery_account": "pos_recovery",
+  "remaining_grants": [
+    "GRANT USAGE ON *.* TO `pos_recovery`@`%`"
+  ],
+  "all_recovery_table_and_column_privileges_revoked": true,
+  "account_retained": true,
+  "app_credentials_unchanged": true,
+  "maintenance_hold": false
+}

@@ -1,0 +1,64 @@
+Window: "ウェブインスペクタ — Ryota — Chrome — passengers-external-cst-immediately.trycloudflare.com", App: Safari.
+0 標準ウインドウ ウェブインスペクタ — Ryota — Chrome — passengers-external-cst-immediately.trycloudflare.com, Secondary Actions: Raise
+	1 スクロール領域
+		2 HTMLコンテンツ inspector-resource:///Main.html
+			3 ボタン 要素選択を開始（⇧⌘C）
+			4 ボタン デバイスの設定
+			5 ボタン ページを再読み込み（⌘R）
+キャッシュを無視してページを再読み込み（⌥⌘R）
+			6 ボタン ウェブアーカイブをダウンロード
+			7 タブグループ (selectable)
+				8 タブ (selectable) 要素
+				9 タブ (selected) コンソール
+				10 タブ (selectable) ソース
+				11 タブ (selectable) ネットワーク
+				12 タブ (selectable) タイムライン
+				13 タブ (selectable) ストレージ
+				14 タブ (selectable) グラフィックス
+				15 タブ (selectable) レイヤー
+				16 タブ (selectable) 監査
+				17 タブ (selectable) 検索（⇧⌘F）
+				18 タブ (selectable) 設定（⌘,）
+			19 container コンソール
+				20 検索テキストフィールド (settable)  
+				21 ボタン (disabled) 前を検索（⇧⌘G）
+				22 ボタン (disabled) 次を検索（⌘G）
+				23 テキスト すべて
+				24 テキスト 評価
+				25 テキスト エラー
+				26 テキスト 警告
+				27 テキスト ログ
+				28 ボタン その他のフィルタオプション…
+				29 チェックボックス (settable, integer) ユーザのジェスチャをエミュレート, Help: ユーザジェスチャ内と同様にコンソールコマンドを実行, Value: 0
+				30 ボタン コンソールスニペットを実行…
+				31 ボタン ガベージを収集
+				32 ボタン ログを消去（⌘Kまたは⌃L）
+				33 container
+					34 テキスト 14:50:10にコンソールが開かれました
+					35 イメージ
+					36 テキスト (async()=>{const read=async p=>{const r=await fetch("/api/"+p,{cache:"no-store",credentials:"same-origin"});return {status:r.status,body:await r.json()}};const a=await read("auth/status"),g=await read("register/status"),c=await read("resume");window.__m2PostRelease={utc:new Date().toISOString(),authMatch:a.status===200&&a.body.staff_id==="STAFF_A",registerMatch:g.status===200&&g.body.start_state==="READY"&&g.body.cookie_status==="MATCH"&&g.body.maintenance_hold===false&&g.body.available===true,cartMatch:c.s
+					37 イメージ
+					38 テキスト Promise {status: "pending"} = $1
+					39 イメージ
+					40 link user-script:26:1:2963, Value: user-script:26
+					41 テキスト M2_CASE2_AFTER_RESTART {"utc":"2026-10-01T05:50:22.756Z","authMatch":true,"registerMatch":true,"cartMatch":true,"resumeVisibleToJavaScript":false,"holdVisible":false,"listVisible":true}
+			42 テキスト入力領域 (settable) コンソールプロンプト, Secondary Actions: 作文ツールを表示
+			43 container
+			44 container $0の実行コンテキスト
+				45 テキスト 自動 — ページ
+	46 閉じるボタン
+	47 フルスクリーンボタン Help: このボタンにはウインドウを拡大する操作もあります, Secondary Actions: ウインドウを拡大
+	48 しまうボタン
+	49 テキスト ウェブインスペクタ — Ryota — Chrome — passengers-external-cst-immediately.trycloudflare.com
+50 menu bar
+	51 Safari
+	52 ファイル
+	53 編集
+	54 表示, ID: SafariViewMenu
+	55 履歴
+	56 ブックマーク, ID: SafariBookmarksMenu
+	57 開発
+	58 ウインドウ, ID: SafariWindowMenu
+	59 ヘルプ, ID: SafariHelpMenu
+
+The focused UI element is 42 テキスト入力領域 (settable) コンソールプロンプト, Secondary Actions: 作文ツールを表示

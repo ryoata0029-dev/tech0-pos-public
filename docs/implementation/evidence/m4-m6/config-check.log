@@ -1,0 +1,4 @@
+2026-10-01 local checks only
+ARM: 4 JSON files readable; disabled apps, relay default deny, HTTPS/TLS, B1 single instance and Always On checked.
+SQL worksheet: default ROLLBACK, no sale UPDATE/DELETE. Shell start scripts: sh -n passed.
+Azure template validation/what-if and MySQL execution not performed.

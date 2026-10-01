@@ -2,7 +2,7 @@
   "openapi": "3.1.1",
   "info": {
     "title": "簡易POS API契約案",
-    "version": "0.35",
+    "version": "0.37",
     "description": "新要件に基づく設計付属物。未実装・未実行。URL／型／必須項目の正本。業務状態・トランザクションは設計仕様書。金額・版は十進文字列。未定義入力を拒否。成功・失敗ともno-store。 認証・権限はAPI別securityと設計8.2に従う。Origin・X-POS-Requestの必須検査は全更新API。GETでは両ヘッダーの欠落を拒否理由にしない。"
   },
   "servers": [
@@ -3176,7 +3176,7 @@
             }
           },
           "409": {
-            "description": "状態／版／期限／保守停止等の競合",
+            "description": "状態／版／期限／保守停止等の競合 空カート購入はSTATE_CONFLICTで拒否し、売上なし。",
             "headers": {
               "Cache-Control": {
                 "schema": {
@@ -3190,6 +3190,15 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "emptyCart": {
+                    "summary": "商品0件の購入拒否",
+                    "value": {
+                      "code": "STATE_CONFLICT",
+                      "message": "商品が登録されていないため購入できません。"
+                    }
+                  }
                 }
               }
             }
@@ -3281,7 +3290,7 @@
             }
           }
         },
-        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。"
+        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。 新規購入の受付条件を検査する時点で商品0件なら409/STATE_CONFLICT。本文はError。カートをSAVINGへ進めず売上を作成しない。同一操作の照合・保存済み結果返却の優先順は設計7.2に従う。商品あり・合計0円は許可。"
       }
     },
     "/api/carts/{id}/purchase": {
@@ -3515,6 +3524,53 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/OperationResult"
+                },
+                "examples": {
+                  "memberPendingFenced": {
+                    "summary": "旧購入の無効化を確定し会員待ちを保持。会員確認前の商品編集・購入は禁止",
+                    "value": {
+                      "cart": {
+                        "cart_id": "11111111-1111-4111-8111-111111111111",
+                        "version": "4",
+                        "state": "EDITING",
+                        "staff_id": "staff01",
+                        "member_state": "PENDING",
+                        "member_id": null,
+                        "pending_member_id": "MEM_A",
+                        "lines": [
+                          {
+                            "line_id": "33333333-3333-4333-8333-333333333333",
+                            "line_no": 1,
+                            "code": "000123",
+                            "name": "演習商品",
+                            "quantity": 1,
+                            "unit_price": "100",
+                            "tax_rate": "0.10",
+                            "discount": null,
+                            "discount_per_unit": "0",
+                            "net_unit_price": "100",
+                            "line_subtotal": "100"
+                          }
+                        ],
+                        "subtotal": "100",
+                        "total": "110",
+                        "taxes": [
+                          {
+                            "tax_rate": "0.10",
+                            "taxable_subtotal": "100",
+                            "tax_amount": "10"
+                          }
+                        ],
+                        "amounts_are_reference": true
+                      },
+                      "purchase_status": "NOT_REQUESTED",
+                      "purchase": null,
+                      "operation_id": "22222222-2222-4222-8222-222222222222",
+                      "operation_status": "APPLIED",
+                      "applied_version": "4",
+                      "code": "PURCHASE_FENCED_MEMBER_PENDING"
+                    }
+                  }
                 }
               }
             }
@@ -3663,7 +3719,7 @@
             }
           }
         },
-        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。"
+        "description": "設計仕様書5章・8章の権限／状態／再送条件を適用。 新しい確認操作は現在UNSAVEDでも版を1増やし旧購入要求を無効化する。同一確認の再送は追加増版なし。EDITING+PENDING、売上なし、有効購入PREPAREDなしでは共通ロック下で期待版一致を検査し、版+1・会員待ち保持で旧購入を無効化する。旧会員PREPAREDのみREJECTED/MEMBER_LOOKUP_SUPERSEDEDへ終了、既REJECTEDは元結果を維持。初回は200/APPLIED/code=PURCHASE_FENCED_MEMBER_PENDING、cartはEDITING/PENDING、purchase_status=NOT_REQUESTED、purchase=null、applied_versionは無効化確定版。last_business_at・Cookie期限は延長しない。同じ確認の再送・操作GETでも記録済みcode・適用版を返し、cartは現在値。UIは当該確認操作・同cart・APPLIED・専用code・非null適用版を検証し、要求版が適用版未満の補助記録だけ除去する。一般NOT_REQUESTEDや現在versionで代用せず、現在状態を優先する。SAVING/SAVED・認証・版上限等は設計7.2の通常制限に従う。"
       }
     },
     "/api/carts/{id}/reopen": {
@@ -5009,7 +5065,8 @@
             "type": [
               "string",
               "null"
-            ]
+            ],
+            "description": "拒否・失敗理由、またはresolve-purchaseの会員PENDING分岐成功を示すPURCHASE_FENCED_MEMBER_PENDING。再送・操作GETでも当該操作の記録値を返す。"
           },
           "new_cart_id": {
             "anyOf": [

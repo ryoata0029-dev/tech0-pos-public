@@ -1,0 +1,16 @@
+{
+  "ports_closed": {
+    "3307": true,
+    "8443": true,
+    "8444": true
+  },
+  "containers": {
+    "tech0-pos-m2-mysql": "exited",
+    "pos-validation-mysql": "exited"
+  },
+  "local_ca_not_in_login_keychain": true,
+  "local_secrets_git_ignored": true,
+  "generated_secrets_absent_from_git_candidates_and_app_logs": true,
+  "new_volume_retained": "tech0-pos-m2-mysql-data",
+  "docker_desktop_left_running": true
+}

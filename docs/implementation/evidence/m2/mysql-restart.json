@@ -1,0 +1,7 @@
+{
+  "outage_status": 503,
+  "no_cookie_issued": true,
+  "restart_preserved_state": true,
+  "post_restart_unauthenticated_status": 401,
+  "container": "tech0-pos-m2-mysql"
+}

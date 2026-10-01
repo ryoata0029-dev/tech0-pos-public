@@ -1,0 +1,119 @@
+Window: "ウェブインスペクタ — Ryota — Chrome — passengers-external-cst-immediately.trycloudflare.com", App: Safari.
+0 標準ウインドウ ウェブインスペクタ — Ryota — Chrome — passengers-external-cst-immediately.trycloudflare.com, Secondary Actions: Raise
+	1 スクロール領域
+		2 HTMLコンテンツ inspector-resource:///Main.html
+			3 ボタン 要素選択を開始（⇧⌘C）
+			4 ボタン デバイスの設定
+			5 ボタン ページを再読み込み（⌘R）
+キャッシュを無視してページを再読み込み（⌥⌘R）
+			6 ボタン ウェブアーカイブをダウンロード
+			7 ボタン クリックして1件のエラーをコンソールで表示
+			8 タブグループ (selectable)
+				9 タブ (selectable) 要素
+				10 タブ (selectable) コンソール
+				11 タブ (selectable) ソース
+				12 タブ (selectable) ネットワーク
+				13 タブ (selectable) タイムライン
+				14 タブ (selected) ストレージ
+				15 タブ (selectable) グラフィックス
+				16 タブ (selectable) レイヤー
+				17 タブ (selectable) 監査
+				18 タブ (selectable) 検索（⇧⌘F）
+				19 タブ (selectable) 設定（⌘,）
+			20 container ストレージ
+				21 container ナビゲーション
+					22 container ストレージ
+						23 アウトライン (selectable)
+							24 row (selected) Cookie — passengers-external-cst-immediately.trycloudflare.com
+								25 イメージ
+								26 container
+									27 text Cookie  —  passengers-external-cst-immediately.trycloudflare.com
+							28 row (selectable) Description: セッションストレージ — passengers-external-cst-immediately.trycloudflare.com, Value: セッションストレージ — passengers-external-cst-immediately.trycloudflare.com
+セッションストレージ
+—
+passengers-external-cst-immediately.trycloudflare.com
+							29 row (selectable) Description: ローカルストレージ — passengers-external-cst-immediately.trycloudflare.com, Value: ローカルストレージ — passengers-external-cst-immediately.trycloudflare.com
+ローカルストレージ
+—
+passengers-external-cst-immediately.trycloudflare.com
+						30 検索テキストフィールド (settable) フィルタ
+							31 テキスト フィルタ
+						32 テキスト すべてのストレージ
+						33 container
+							34 テキスト Cookie
+							35 ポップアップボタン (collapsed) Secondary Actions: Expand
+							36 イメージ
+				37 切り替えボタン ナビゲーションサイドバーを非表示（⇧⌘0）, Value: on
+				38 ボタン (disabled) 戻る（⌃⌘←）
+				39 ボタン (disabled) 進む（⌃⌘→）
+				40 イメージ
+					41 イメージ
+					42 イメージ
+					43 イメージ
+					44 イメージ
+					45 イメージ
+					46 イメージ
+					47 イメージ
+					48 イメージ
+					49 イメージ
+					50 イメージ
+					51 イメージ
+					52 イメージ
+					53 イメージ
+					54 イメージ
+					55 イメージ
+					56 イメージ
+					57 イメージ
+					58 イメージ
+					59 イメージ
+					60 イメージ
+					61 イメージ
+					62 イメージ
+					63 イメージ
+					64 イメージ
+					65 イメージ
+					66 イメージ
+					67 イメージ
+					68 イメージ
+					69 イメージ
+					70 イメージ
+				71 テキスト Cookie
+				72 ポップアップボタン (collapsed) Secondary Actions: Expand
+				73 検索テキストフィールド (settable) フィルタ
+					74 テキスト フィルタ
+				75 ボタン Cookieを追加
+				76 ボタン 更新
+				77 ボタン Cookieを消去
+				78 切り替えボタン (disabled) 詳細サイドバーを非表示（⌥⌘0）, Value: on
+				79 container
+					80 テキスト 名前
+					81 テキスト 値
+					82 テキスト Domain
+					83 テキスト Path
+					84 テキスト Expires
+					85 テキスト サイズ
+					86 テキスト Secure
+					87 テキスト HttpOnly
+					88 テキスト SameSite
+					89 container __Host-pos_session [REDACTED] passengers-external-cst-immediately.trycloudflare.com / 2026/10/1 22:42:20 61 B ✓ ✓ Lax
+					90 container __Host-pos_resume [REDACTED] passengers-external-cst-immediately.trycloudflare.com / 2026/10/31 14:40:00 60 B ✓ ✓ Lax
+			91 テキスト入力領域 (settable) コンソールプロンプト
+			92 container
+			93 container $0の実行コンテキスト
+				94 テキスト 自動 — ページ
+	95 閉じるボタン
+	96 フルスクリーンボタン Help: このボタンにはウインドウを拡大する操作もあります, Secondary Actions: ウインドウを拡大
+	97 しまうボタン
+	98 テキスト ウェブインスペクタ — Ryota — Chrome — passengers-external-cst-immediately.trycloudflare.com
+99 menu bar
+	100 Safari
+	101 ファイル
+	102 編集
+	103 表示, ID: SafariViewMenu
+	104 履歴
+	105 ブックマーク, ID: SafariBookmarksMenu
+	106 開発
+	107 ウインドウ, ID: SafariWindowMenu
+	108 ヘルプ, ID: SafariHelpMenu
+
+The focused UI element is 24 row (selected) Cookie — passengers-external-cst-immediately.trycloudflare.com

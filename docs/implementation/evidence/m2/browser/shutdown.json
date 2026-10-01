@@ -1,0 +1,26 @@
+{
+  "ports": {
+    "3307": {
+      "accepts_connection": false
+    },
+    "8443": {
+      "accepts_connection": false
+    },
+    "8444": {
+      "accepts_connection": false
+    },
+    "8453": {
+      "accepts_connection": false
+    }
+  },
+  "public_urls": {
+    "https://legislature-licence-obligations-shame.trycloudflare.com": {
+      "status": 530,
+      "page_available": false
+    },
+    "https://wrist-men-fusion-cursor.trycloudflare.com": {
+      "status": 530,
+      "page_available": false
+    }
+  }
+}

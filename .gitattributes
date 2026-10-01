@@ -1,0 +1,2 @@
+# Preserve captured verification output; check source whitespace normally.
+docs/implementation/evidence/** -whitespace

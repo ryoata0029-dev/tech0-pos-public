@@ -1,0 +1,64 @@
+Window: "ウェブインスペクタ — Ryota — Chrome — httpbin.org — response-headers", App: Safari.
+0 標準ウインドウ ウェブインスペクタ — Ryota — Chrome — httpbin.org — response-headers, Secondary Actions: Raise
+	1 スクロール領域
+		2 HTMLコンテンツ inspector-resource:///Main.html
+			3 ボタン 要素選択を開始（⇧⌘C）
+			4 ボタン デバイスの設定
+			5 ボタン ページを再読み込み（⌘R）
+キャッシュを無視してページを再読み込み（⌥⌘R）
+			6 ボタン (disabled) ウェブアーカイブをダウンロード
+			7 タブグループ (selectable)
+				8 タブ (selectable) 要素
+				9 タブ (selected) コンソール
+				10 タブ (selectable) ソース
+				11 タブ (selectable) ネットワーク
+				12 タブ (selectable) タイムライン
+				13 タブ (selectable) ストレージ
+				14 タブ (selectable) グラフィックス
+				15 タブ (selectable) レイヤー
+				16 タブ (selectable) 監査
+				17 タブ (selectable) 検索（⇧⌘F）
+				18 タブ (selectable) 設定（⌘,）
+			19 container コンソール
+				20 検索テキストフィールド (settable)  
+				21 ボタン (disabled) 前を検索（⇧⌘G）
+				22 ボタン (disabled) 次を検索（⌘G）
+				23 テキスト すべて
+				24 テキスト 評価
+				25 テキスト エラー
+				26 テキスト 警告
+				27 テキスト ログ
+				28 ボタン その他のフィルタオプション…
+				29 チェックボックス (settable, integer) ユーザのジェスチャをエミュレート, Help: ユーザジェスチャ内と同様にコンソールコマンドを実行, Value: 0
+				30 ボタン コンソールスニペットを実行…
+				31 ボタン ガベージを収集
+				32 ボタン ログを消去（⌘Kまたは⌃L）
+				33 container
+					34 テキスト 13:37:01にコンソールが消去されました
+					35 イメージ
+					36 テキスト fetch('/cookies?m2=parent-check-'+Date.now(),{credentials:'same-origin',cache:'no-store'}).then(r=>r.json()).then(r=>console.log(JSON.stringify({host:location.hostname,resumeMatches:r.cookies['__Host-pos_resume']==='TU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU0',controlMatches:r.cookies.m2_httpbin_domain_control==='TU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU0',resumeVisibleToJavaScript:document.cookie.includes('__Host-pos_resume=')})))
+					37 イメージ
+					38 テキスト Promise {status: "pending"} = $1
+					39 イメージ
+					40 link user-script:26:1:2963, Value: user-script:26
+					41 テキスト {"host":"httpbin.org","resumeMatches":true,"controlMatches":true,"resumeVisibleToJavaScript":false}
+			42 テキスト入力領域 (settable) コンソールプロンプト, Secondary Actions: 作文ツールを表示
+			43 container
+			44 container $0の実行コンテキスト
+				45 テキスト 自動 — ページ
+	46 閉じるボタン
+	47 フルスクリーンボタン Help: このボタンにはウインドウを拡大する操作もあります, Secondary Actions: ウインドウを拡大
+	48 しまうボタン
+	49 テキスト ウェブインスペクタ — Ryota — Chrome — httpbin.org — response-headers
+50 menu bar
+	51 Safari
+	52 ファイル
+	53 編集
+	54 表示, ID: SafariViewMenu
+	55 履歴
+	56 ブックマーク, ID: SafariBookmarksMenu
+	57 開発
+	58 ウインドウ, ID: SafariWindowMenu
+	59 ヘルプ, ID: SafariHelpMenu
+
+The focused UI element is 42 テキスト入力領域 (settable) コンソールプロンプト, Secondary Actions: 作文ツールを表示

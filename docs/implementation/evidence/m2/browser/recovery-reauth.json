@@ -1,0 +1,14 @@
+{
+  "observed_at_utc": "2026-10-01 05:20:43.416744",
+  "same_original_context_and_cart": true,
+  "staff_id": "STAFF_A",
+  "version": 2,
+  "state": "EDITING",
+  "subtotal": 0,
+  "total": 0,
+  "maintenance_hold": true,
+  "reauthenticated": true,
+  "active_auth_within_expiry": true,
+  "user_report": "保守停止中が表示された",
+  "browser_api_reads_verified": false
+}

@@ -1,0 +1,191 @@
+cd backend && .venv/bin/python -m build --no-isolation
+* Getting build dependencies for sdist...
+running egg_info
+writing tech0_pos_backend.egg-info/PKG-INFO
+writing dependency_links to tech0_pos_backend.egg-info/dependency_links.txt
+writing requirements to tech0_pos_backend.egg-info/requires.txt
+writing top-level names to tech0_pos_backend.egg-info/top_level.txt
+reading manifest file 'tech0_pos_backend.egg-info/SOURCES.txt'
+writing manifest file 'tech0_pos_backend.egg-info/SOURCES.txt'
+* Building sdist...
+running sdist
+running egg_info
+writing tech0_pos_backend.egg-info/PKG-INFO
+writing dependency_links to tech0_pos_backend.egg-info/dependency_links.txt
+writing requirements to tech0_pos_backend.egg-info/requires.txt
+writing top-level names to tech0_pos_backend.egg-info/top_level.txt
+reading manifest file 'tech0_pos_backend.egg-info/SOURCES.txt'
+writing manifest file 'tech0_pos_backend.egg-info/SOURCES.txt'
+running check
+creating tech0_pos_backend-0.0.0
+creating tech0_pos_backend-0.0.0/app
+creating tech0_pos_backend-0.0.0/app/api
+creating tech0_pos_backend-0.0.0/app/infrastructure
+creating tech0_pos_backend-0.0.0/app/repositories
+creating tech0_pos_backend-0.0.0/app/security
+creating tech0_pos_backend-0.0.0/app/services
+creating tech0_pos_backend-0.0.0/tech0_pos_backend.egg-info
+creating tech0_pos_backend-0.0.0/tests
+copying files to tech0_pos_backend-0.0.0...
+copying README.md -> tech0_pos_backend-0.0.0
+copying pyproject.toml -> tech0_pos_backend-0.0.0
+copying requirements.in -> tech0_pos_backend-0.0.0
+copying app/__init__.py -> tech0_pos_backend-0.0.0/app
+copying app/main.py -> tech0_pos_backend-0.0.0/app
+copying app/api/__init__.py -> tech0_pos_backend-0.0.0/app/api
+copying app/api/startup.py -> tech0_pos_backend-0.0.0/app/api
+copying app/infrastructure/__init__.py -> tech0_pos_backend-0.0.0/app/infrastructure
+copying app/infrastructure/database.py -> tech0_pos_backend-0.0.0/app/infrastructure
+copying app/infrastructure/settings.py -> tech0_pos_backend-0.0.0/app/infrastructure
+copying app/repositories/__init__.py -> tech0_pos_backend-0.0.0/app/repositories
+copying app/repositories/startup.py -> tech0_pos_backend-0.0.0/app/repositories
+copying app/security/__init__.py -> tech0_pos_backend-0.0.0/app/security
+copying app/security/credentials.py -> tech0_pos_backend-0.0.0/app/security
+copying app/services/__init__.py -> tech0_pos_backend-0.0.0/app/services
+copying app/services/errors.py -> tech0_pos_backend-0.0.0/app/services
+copying app/services/login_limit.py -> tech0_pos_backend-0.0.0/app/services
+copying app/services/pricing.py -> tech0_pos_backend-0.0.0/app/services
+copying app/services/seed_validation.py -> tech0_pos_backend-0.0.0/app/services
+copying app/services/startup.py -> tech0_pos_backend-0.0.0/app/services
+copying app/services/validation.py -> tech0_pos_backend-0.0.0/app/services
+copying tech0_pos_backend.egg-info/PKG-INFO -> tech0_pos_backend-0.0.0/tech0_pos_backend.egg-info
+copying tech0_pos_backend.egg-info/SOURCES.txt -> tech0_pos_backend-0.0.0/tech0_pos_backend.egg-info
+copying tech0_pos_backend.egg-info/dependency_links.txt -> tech0_pos_backend-0.0.0/tech0_pos_backend.egg-info
+copying tech0_pos_backend.egg-info/requires.txt -> tech0_pos_backend-0.0.0/tech0_pos_backend.egg-info
+copying tech0_pos_backend.egg-info/top_level.txt -> tech0_pos_backend-0.0.0/tech0_pos_backend.egg-info
+copying tests/test_database.py -> tech0_pos_backend-0.0.0/tests
+copying tests/test_pricing.py -> tech0_pos_backend-0.0.0/tests
+copying tests/test_seed_validation.py -> tech0_pos_backend-0.0.0/tests
+copying tests/test_startup.py -> tech0_pos_backend-0.0.0/tests
+copying tests/test_startup_api.py -> tech0_pos_backend-0.0.0/tests
+copying tests/test_validation.py -> tech0_pos_backend-0.0.0/tests
+Writing tech0_pos_backend-0.0.0/setup.cfg
+Creating tar archive
+removing 'tech0_pos_backend-0.0.0' (and everything under it)
+* Building wheel from sdist
+* Getting build dependencies for wheel...
+running egg_info
+writing tech0_pos_backend.egg-info/PKG-INFO
+writing dependency_links to tech0_pos_backend.egg-info/dependency_links.txt
+writing requirements to tech0_pos_backend.egg-info/requires.txt
+writing top-level names to tech0_pos_backend.egg-info/top_level.txt
+reading manifest file 'tech0_pos_backend.egg-info/SOURCES.txt'
+writing manifest file 'tech0_pos_backend.egg-info/SOURCES.txt'
+* Building wheel...
+running bdist_wheel
+running build
+running build_py
+creating build/lib/app
+copying app/__init__.py -> build/lib/app
+copying app/main.py -> build/lib/app
+creating build/lib/app/security
+copying app/security/credentials.py -> build/lib/app/security
+copying app/security/__init__.py -> build/lib/app/security
+creating build/lib/app/repositories
+copying app/repositories/startup.py -> build/lib/app/repositories
+copying app/repositories/__init__.py -> build/lib/app/repositories
+creating build/lib/app/api
+copying app/api/startup.py -> build/lib/app/api
+copying app/api/__init__.py -> build/lib/app/api
+creating build/lib/app/infrastructure
+copying app/infrastructure/database.py -> build/lib/app/infrastructure
+copying app/infrastructure/__init__.py -> build/lib/app/infrastructure
+copying app/infrastructure/settings.py -> build/lib/app/infrastructure
+creating build/lib/app/services
+copying app/services/startup.py -> build/lib/app/services
+copying app/services/__init__.py -> build/lib/app/services
+copying app/services/pricing.py -> build/lib/app/services
+copying app/services/seed_validation.py -> build/lib/app/services
+copying app/services/errors.py -> build/lib/app/services
+copying app/services/login_limit.py -> build/lib/app/services
+copying app/services/validation.py -> build/lib/app/services
+running egg_info
+writing tech0_pos_backend.egg-info/PKG-INFO
+writing dependency_links to tech0_pos_backend.egg-info/dependency_links.txt
+writing requirements to tech0_pos_backend.egg-info/requires.txt
+writing top-level names to tech0_pos_backend.egg-info/top_level.txt
+reading manifest file 'tech0_pos_backend.egg-info/SOURCES.txt'
+writing manifest file 'tech0_pos_backend.egg-info/SOURCES.txt'
+installing to build/bdist.macosx-26.0-arm64/wheel
+running install
+running install_lib
+creating build/bdist.macosx-26.0-arm64/wheel
+creating build/bdist.macosx-26.0-arm64/wheel/app
+creating build/bdist.macosx-26.0-arm64/wheel/app/security
+copying build/lib/app/security/credentials.py -> build/bdist.macosx-26.0-arm64/wheel/./app/security
+copying build/lib/app/security/__init__.py -> build/bdist.macosx-26.0-arm64/wheel/./app/security
+copying build/lib/app/__init__.py -> build/bdist.macosx-26.0-arm64/wheel/./app
+creating build/bdist.macosx-26.0-arm64/wheel/app/repositories
+copying build/lib/app/repositories/startup.py -> build/bdist.macosx-26.0-arm64/wheel/./app/repositories
+copying build/lib/app/repositories/__init__.py -> build/bdist.macosx-26.0-arm64/wheel/./app/repositories
+creating build/bdist.macosx-26.0-arm64/wheel/app/api
+copying build/lib/app/api/startup.py -> build/bdist.macosx-26.0-arm64/wheel/./app/api
+copying build/lib/app/api/__init__.py -> build/bdist.macosx-26.0-arm64/wheel/./app/api
+copying build/lib/app/main.py -> build/bdist.macosx-26.0-arm64/wheel/./app
+creating build/bdist.macosx-26.0-arm64/wheel/app/infrastructure
+copying build/lib/app/infrastructure/database.py -> build/bdist.macosx-26.0-arm64/wheel/./app/infrastructure
+copying build/lib/app/infrastructure/__init__.py -> build/bdist.macosx-26.0-arm64/wheel/./app/infrastructure
+copying build/lib/app/infrastructure/settings.py -> build/bdist.macosx-26.0-arm64/wheel/./app/infrastructure
+creating build/bdist.macosx-26.0-arm64/wheel/app/services
+copying build/lib/app/services/startup.py -> build/bdist.macosx-26.0-arm64/wheel/./app/services
+copying build/lib/app/services/__init__.py -> build/bdist.macosx-26.0-arm64/wheel/./app/services
+copying build/lib/app/services/pricing.py -> build/bdist.macosx-26.0-arm64/wheel/./app/services
+copying build/lib/app/services/seed_validation.py -> build/bdist.macosx-26.0-arm64/wheel/./app/services
+copying build/lib/app/services/errors.py -> build/bdist.macosx-26.0-arm64/wheel/./app/services
+copying build/lib/app/services/login_limit.py -> build/bdist.macosx-26.0-arm64/wheel/./app/services
+copying build/lib/app/services/validation.py -> build/bdist.macosx-26.0-arm64/wheel/./app/services
+running install_egg_info
+Copying tech0_pos_backend.egg-info to build/bdist.macosx-26.0-arm64/wheel/./tech0_pos_backend-0.0.0-py3.13.egg-info
+running install_scripts
+creating build/bdist.macosx-26.0-arm64/wheel/tech0_pos_backend-0.0.0.dist-info/WHEEL
+creating '/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/dist/.tmp-160v957c/tech0_pos_backend-0.0.0-py3-none-any.whl' and adding 'build/bdist.macosx-26.0-arm64/wheel' to it
+adding 'app/__init__.py'
+adding 'app/main.py'
+adding 'app/api/__init__.py'
+adding 'app/api/startup.py'
+adding 'app/infrastructure/__init__.py'
+adding 'app/infrastructure/database.py'
+adding 'app/infrastructure/settings.py'
+adding 'app/repositories/__init__.py'
+adding 'app/repositories/startup.py'
+adding 'app/security/__init__.py'
+adding 'app/security/credentials.py'
+adding 'app/services/__init__.py'
+adding 'app/services/errors.py'
+adding 'app/services/login_limit.py'
+adding 'app/services/pricing.py'
+adding 'app/services/seed_validation.py'
+adding 'app/services/startup.py'
+adding 'app/services/validation.py'
+adding 'tech0_pos_backend-0.0.0.dist-info/METADATA'
+adding 'tech0_pos_backend-0.0.0.dist-info/WHEEL'
+adding 'tech0_pos_backend-0.0.0.dist-info/top_level.txt'
+adding 'tech0_pos_backend-0.0.0.dist-info/RECORD'
+removing build/bdist.macosx-26.0-arm64/wheel
+Successfully built tech0_pos_backend-0.0.0.tar.gz and tech0_pos_backend-0.0.0-py3-none-any.whl
+sh tools/frontend.sh run build
+
+> tech0-pos-frontend@0.0.0 build
+> next build
+
+▲ Next.js 16.3.6 (Turbopack)
+✓ Running next.config.ts took 16ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 297ms
+  Running TypeScript ...
+  Finished TypeScript in 649ms ...
+  Collecting page data using 5 workers ...
+  Generating static pages using 5 workers (0/3) ...
+✓ Generating static pages using 5 workers (3/3) in 231ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+└ ƒ /api/[...path]
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

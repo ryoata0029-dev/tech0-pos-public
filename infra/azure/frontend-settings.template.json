@@ -1,0 +1,45 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "appName": {
+      "type": "string"
+    },
+    "POS_BACKEND_URL": {
+      "type": "string"
+    },
+    "POS_FRONTEND_ORIGIN": {
+      "type": "string"
+    },
+    "POS_RELAY_SECRET": {
+      "type": "securestring"
+    },
+    "POS_DEPLOYMENT_VERSION": {
+      "type": "string"
+    },
+    "NEXT_PUBLIC_POS_MEASUREMENTS": {
+      "type": "string",
+      "defaultValue": "0",
+      "allowedValues": [
+        "0",
+        "1"
+      ]
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Web/sites/config",
+      "apiVersion": "2024-11-01",
+      "name": "[concat(parameters('appName'),'/appsettings')]",
+      "properties": {
+        "POS_BACKEND_URL": "[parameters('POS_BACKEND_URL')]",
+        "POS_FRONTEND_ORIGIN": "[parameters('POS_FRONTEND_ORIGIN')]",
+        "POS_RELAY_SECRET": "[parameters('POS_RELAY_SECRET')]",
+        "POS_DEPLOYMENT_VERSION": "[parameters('POS_DEPLOYMENT_VERSION')]",
+        "SCM_DO_BUILD_DURING_DEPLOYMENT": "false",
+        "NEXT_PUBLIC_POS_MEASUREMENTS": "[parameters('NEXT_PUBLIC_POS_MEASUREMENTS')]"
+      }
+    }
+  ],
+  "outputs": {}
+}

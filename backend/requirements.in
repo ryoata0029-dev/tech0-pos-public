@@ -1,0 +1,8 @@
+# Approved production dependency series; versions from the reviewed candidates.
+fastapi==0.141.1
+pydantic==2.13.5
+uvicorn==0.54.0
+SQLAlchemy==2.0.54
+PyMySQL==1.1.3
+pwdlib[argon2]==0.3.1
+argon2-cffi==25.1.0

@@ -1,0 +1,98 @@
+[
+  {
+    "check": "approved read-only verification SQL",
+    "passed": true,
+    "table_count": 16,
+    "integrity_queries_empty": 5
+  },
+  {
+    "check": "unique code",
+    "passed": true,
+    "mysql_error": 1062
+  },
+  {
+    "check": "foreign key",
+    "passed": true,
+    "mysql_error": 1452
+  },
+  {
+    "check": "member mandatory field",
+    "passed": true,
+    "mysql_error": 1048
+  },
+  {
+    "check": "member empty string",
+    "passed": true,
+    "mysql_error": 3819
+  },
+  {
+    "check": "member age unsigned",
+    "passed": true,
+    "mysql_error": 1264
+  },
+  {
+    "check": "tax check",
+    "passed": true,
+    "mysql_error": 3819
+  },
+  {
+    "check": "register state check",
+    "passed": true,
+    "mysql_error": 3819
+  },
+  {
+    "check": "staff code check",
+    "passed": true,
+    "mysql_error": 3819
+  },
+  {
+    "check": "master UPDATE denied",
+    "passed": true,
+    "mysql_error": 1142
+  },
+  {
+    "check": "purchase UPDATE denied",
+    "passed": true,
+    "mysql_error": 1142
+  },
+  {
+    "check": "purchase DELETE denied",
+    "passed": true,
+    "mysql_error": 1142
+  },
+  {
+    "check": "register INSERT denied",
+    "passed": true,
+    "mysql_error": 1142
+  },
+  {
+    "check": "cart DELETE denied",
+    "passed": true,
+    "mysql_error": 1142
+  },
+  {
+    "check": "DDL denied",
+    "passed": true,
+    "mysql_error": 1142
+  },
+  {
+    "check": "non-TLS rejected",
+    "passed": true,
+    "mysql_error": 1045
+  },
+  {
+    "check": "untrusted CA rejected",
+    "passed": true,
+    "mysql_error": 2003
+  },
+  {
+    "check": "read-only transaction rejects writes",
+    "passed": true,
+    "mysql_error": 1792
+  },
+  {
+    "check": "pool returns default isolation after read snapshot",
+    "passed": true,
+    "isolation": "READ-COMMITTED"
+  }
+]

@@ -1,0 +1,61 @@
+{
+  "version": "8.4.11",
+  "tls_required": true,
+  "general_log": false,
+  "slow_log": false,
+  "cipher": "TLS_AES_256_GCM_SHA384",
+  "table_counts": {
+    "AUTH_LOGIN_LIMIT": 2,
+    "AUTH_SESSION": 4,
+    "BROWSER_CONTEXT": 1,
+    "CART": 1,
+    "CART_LINE": 0,
+    "CART_OPERATION": 0,
+    "DISCOUNT_CONDITION": 1,
+    "MEMBER": 2,
+    "PRICE_HISTORY": 2,
+    "PRODUCT": 2,
+    "PURCHASE": 0,
+    "PURCHASE_LINE": 0,
+    "PURCHASE_TAX": 0,
+    "REGISTER": 1,
+    "STAFF": 2,
+    "TAX_RATE": 2
+  },
+  "grants": {
+    "pos_app": [
+      "GRANT USAGE ON *.* TO `pos_app`@`%`",
+      "GRANT SELECT, INSERT, UPDATE ON `pos_validation`.`AUTH_LOGIN_LIMIT` TO `pos_app`@`%`",
+      "GRANT SELECT, INSERT, UPDATE ON `pos_validation`.`AUTH_SESSION` TO `pos_app`@`%`",
+      "GRANT SELECT, INSERT, UPDATE ON `pos_validation`.`BROWSER_CONTEXT` TO `pos_app`@`%`",
+      "GRANT SELECT, INSERT, UPDATE, DELETE ON `pos_validation`.`CART_LINE` TO `pos_app`@`%`",
+      "GRANT SELECT, INSERT, UPDATE ON `pos_validation`.`CART_OPERATION` TO `pos_app`@`%`",
+      "GRANT SELECT, INSERT, UPDATE ON `pos_validation`.`CART` TO `pos_app`@`%`",
+      "GRANT SELECT ON `pos_validation`.`DISCOUNT_CONDITION` TO `pos_app`@`%`",
+      "GRANT SELECT ON `pos_validation`.`MEMBER` TO `pos_app`@`%`",
+      "GRANT SELECT ON `pos_validation`.`PRICE_HISTORY` TO `pos_app`@`%`",
+      "GRANT SELECT ON `pos_validation`.`PRODUCT` TO `pos_app`@`%`",
+      "GRANT SELECT, INSERT ON `pos_validation`.`PURCHASE_LINE` TO `pos_app`@`%`",
+      "GRANT SELECT, INSERT ON `pos_validation`.`PURCHASE_TAX` TO `pos_app`@`%`",
+      "GRANT SELECT, INSERT ON `pos_validation`.`PURCHASE` TO `pos_app`@`%`",
+      "GRANT SELECT, UPDATE ON `pos_validation`.`REGISTER` TO `pos_app`@`%`",
+      "GRANT SELECT ON `pos_validation`.`STAFF` TO `pos_app`@`%`",
+      "GRANT SELECT ON `pos_validation`.`TAX_RATE` TO `pos_app`@`%`"
+    ],
+    "pos_master": [
+      "GRANT USAGE ON *.* TO `pos_master`@`%`",
+      "GRANT SELECT, INSERT, UPDATE ON `pos_validation`.`DISCOUNT_CONDITION` TO `pos_master`@`%`",
+      "GRANT SELECT, INSERT, UPDATE ON `pos_validation`.`MEMBER` TO `pos_master`@`%`",
+      "GRANT SELECT, INSERT ON `pos_validation`.`PRICE_HISTORY` TO `pos_master`@`%`",
+      "GRANT SELECT, INSERT, UPDATE ON `pos_validation`.`PRODUCT` TO `pos_master`@`%`",
+      "GRANT SELECT ON `pos_validation`.`PURCHASE_LINE` TO `pos_master`@`%`",
+      "GRANT SELECT ON `pos_validation`.`PURCHASE_TAX` TO `pos_master`@`%`",
+      "GRANT SELECT ON `pos_validation`.`PURCHASE` TO `pos_master`@`%`",
+      "GRANT SELECT, INSERT, UPDATE ON `pos_validation`.`TAX_RATE` TO `pos_master`@`%`"
+    ],
+    "pos_schema": [
+      "GRANT USAGE ON *.* TO `pos_schema`@`%`",
+      "GRANT SELECT, CREATE, REFERENCES, INDEX, ALTER ON `pos_validation`.* TO `pos_schema`@`%`"
+    ]
+  }
+}

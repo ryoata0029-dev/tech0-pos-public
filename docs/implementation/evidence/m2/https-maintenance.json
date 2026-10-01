@@ -1,0 +1,27 @@
+[
+  {
+    "check": "unauthenticated M2 reads rejected",
+    "passed": true
+  },
+  {
+    "check": "origin and custom header guards reject all M2 writes",
+    "passed": true
+  },
+  {
+    "check": "direct backend request without relay secret rejected",
+    "passed": true
+  },
+  {
+    "check": "HTTP input validation excludes unknown fields and null password",
+    "passed": true
+  },
+  {
+    "check": "real HTTPS login and readonly auth status",
+    "passed": true,
+    "staff_id": "STAFF_A"
+  },
+  {
+    "check": "maintenance allows authentication and status but rejects startup",
+    "passed": true
+  }
+]

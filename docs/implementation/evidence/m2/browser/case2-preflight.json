@@ -1,0 +1,23 @@
+{
+  "environment": "e8a3f2017ee7",
+  "all_apps_stopped": true,
+  "other_user_connections": 0,
+  "other_innodb_transactions": 0,
+  "general_log": false,
+  "slow_log": false,
+  "recovery_tls_required": true,
+  "recovery_grants": [
+    "GRANT USAGE ON *.* TO `pos_recovery`@`%`",
+    "GRANT SELECT, UPDATE (`revoked_at`) ON `pos_validation`.`AUTH_SESSION` TO `pos_recovery`@`%`",
+    "GRANT SELECT, UPDATE (`manual_released_at`, `token_hash`) ON `pos_validation`.`BROWSER_CONTEXT` TO `pos_recovery`@`%`",
+    "GRANT SELECT ON `pos_validation`.`CART_LINE` TO `pos_recovery`@`%`",
+    "GRANT SELECT ON `pos_validation`.`CART_OPERATION` TO `pos_recovery`@`%`",
+    "GRANT SELECT, UPDATE (`version`) ON `pos_validation`.`CART` TO `pos_recovery`@`%`",
+    "GRANT SELECT ON `pos_validation`.`PURCHASE_LINE` TO `pos_recovery`@`%`",
+    "GRANT SELECT ON `pos_validation`.`PURCHASE_TAX` TO `pos_recovery`@`%`",
+    "GRANT SELECT ON `pos_validation`.`PURCHASE` TO `pos_recovery`@`%`",
+    "GRANT SELECT, UPDATE (`active_session_hash`, `maintenance_hold`) ON `pos_validation`.`REGISTER` TO `pos_recovery`@`%`"
+  ],
+  "app_credentials_unchanged": true,
+  "maintenance_hold": true
+}

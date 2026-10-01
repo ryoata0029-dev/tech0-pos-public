@@ -1,0 +1,23 @@
+{
+  "started_at_utc": "2026-10-01 05:33:06.632743",
+  "environment": "e8a3f2017ee7",
+  "context_id": "e5f8b91d-f145-421b-bf38-89fcaea9552c",
+  "cart_id": "213f366b-49e3-4b6c-9acb-08d051ceac3f",
+  "staff_id": "STAFF_A",
+  "version": 2,
+  "old_cookie_pair_matches_current_db": true,
+  "all_business_fields_preserved": true,
+  "register_update_rows": 1,
+  "only_maintenance_hold_changed": true,
+  "maintenance_hold": true,
+  "counts": {
+    "BROWSER_CONTEXT": 1,
+    "CART": 1,
+    "CART_LINE": 0,
+    "CART_OPERATION": 0,
+    "PURCHASE": 0,
+    "PURCHASE_LINE": 0,
+    "PURCHASE_TAX": 0
+  },
+  "commit_acknowledged": true
+}
