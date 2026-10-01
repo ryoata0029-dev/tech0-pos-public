@@ -1,0 +1,149 @@
+Window: "ウェブインスペクタ — Ryota — Chrome — passengers-external-cst-immediately.trycloudflare.com", App: Safari.
+0 標準ウインドウ ウェブインスペクタ — Ryota — Chrome — passengers-external-cst-immediately.trycloudflare.com, Secondary Actions: Raise
+	1 スクロール領域
+		2 HTMLコンテンツ inspector-resource:///Main.html
+			3 ボタン 要素選択を開始（⇧⌘C）
+			4 ボタン デバイスの設定
+			5 ボタン ページを再読み込み（⌘R）
+キャッシュを無視してページを再読み込み（⌥⌘R）
+			6 ボタン ウェブアーカイブをダウンロード
+			7 ボタン クリックして3件のエラーをコンソールで表示
+			8 タブグループ (selectable)
+				9 タブ (selectable) 要素
+				10 タブ (selectable) コンソール
+				11 タブ (selectable) ソース
+				12 タブ (selectable) ネットワーク
+				13 タブ (selectable) タイムライン
+				14 タブ (selected) ストレージ
+				15 タブ (selectable) グラフィックス
+				16 タブ (selectable) レイヤー
+				17 タブ (selectable) 監査
+				18 タブ (selectable) 検索（⇧⌘F）
+				19 タブ (selectable) 設定（⌘,）
+			20 container ストレージ
+				21 container ナビゲーション
+					22 container ストレージ
+						23 アウトライン (selectable)
+							24 row (selected) Description: Cookie — passengers-external-cst-immediately.trycloudflare.com, Value: Cookie — passengers-external-cst-immediately.trycloudflare.com
+Cookie
+—
+passengers-external-cst-immediately.trycloudflare.com
+							25 row (selectable) Description: セッションストレージ — passengers-external-cst-immediately.trycloudflare.com, Value: セッションストレージ — passengers-external-cst-immediately.trycloudflare.com
+セッションストレージ
+—
+passengers-external-cst-immediately.trycloudflare.com
+							26 row (selectable) Description: ローカルストレージ — passengers-external-cst-immediately.trycloudflare.com, Value: ローカルストレージ — passengers-external-cst-immediately.trycloudflare.com
+ローカルストレージ
+—
+passengers-external-cst-immediately.trycloudflare.com
+						27 検索テキストフィールド (settable) フィルタ
+							28 テキスト フィルタ
+						29 テキスト すべてのストレージ
+						30 container
+							31 テキスト Cookie
+							32 ポップアップボタン (collapsed) Secondary Actions: Expand
+							33 イメージ
+				34 切り替えボタン ナビゲーションサイドバーを非表示（⇧⌘0）, Value: on
+				35 ボタン (disabled) 戻る（⌃⌘←）
+				36 ボタン (disabled) 進む（⌃⌘→）
+				37 イメージ
+				38 テキスト Cookie
+				39 ポップアップボタン (collapsed) Secondary Actions: Expand
+				40 検索テキストフィールド (settable) フィルタ
+					41 テキスト フィルタ
+				42 ボタン Cookieを追加
+				43 ボタン 更新
+				44 ボタン Cookieを消去
+				45 切り替えボタン (disabled) 詳細サイドバーを非表示（⌥⌘0）, Value: on
+				46 container
+					47 テキスト 名前
+					48 テキスト 値
+					49 テキスト Domain
+					50 テキスト Path
+					51 テキスト Expires
+					52 テキスト サイズ
+					53 テキスト Secure
+					54 テキスト HttpOnly
+					55 テキスト SameSite
+					56 container __Host-pos_session [REDACTED] passengers-external-cst-immediately.trycloudflare.com / 2026/10/1 22:19:14 61 B ✓ ✓ Lax
+			57 テキスト入力領域 (settable) コンソールプロンプト
+			58 container
+			59 container $0の実行コンテキスト
+				60 テキスト 自動 — ページ
+			61 ひょう
+				62 row (selectable)
+					63 セル
+						64 テキスト 名前
+					65 セル (selectable)
+						66 テキストフィールド (settable) 名前, Value: __Host-pos_resume
+				67 row (selectable)
+					68 セル (selectable) 値
+値
+					69 セル (selectable)
+						70 テキストフィールド (settable) 値
+				71 row (selectable)
+					72 セル (selectable) Domain
+Domain
+					73 セル (selectable)
+						74 テキストフィールド (settable) Domain, Placeholder: passengers-external-cst-immediately.trycloudflare.com
+				75 row (selectable)
+					76 セル (selectable) Path
+Path
+					77 セル (selectable)
+						78 テキストフィールド (settable) Path, Value: /
+				79 row (selectable)
+					80 セル (selectable) Session
+Session
+					81 セル (selectable) Session
+						82 チェックボックス Session, Value: 0
+				83 row (selectable)
+					84 セル (selectable) Expires
+Expires
+					85 セル (selectable)
+						86 日付と時刻の領域 Expires, Value: 2026/10/31, 14:40, Placeholder: 2026-10-02T14:36:10
+							87 container
+								88 ステッパー (settable, float) 年, Value: 2026
+								89 テキスト /
+								90 ステッパー (settable, float) 月, Value: 10
+								91 テキスト /
+								92 ステッパー (settable, float) 日, Value: 31
+								93 ステッパー (settable, float) 時間, Value: 14
+								94 テキスト :
+								95 ステッパー (settable, float) 分, Value: 40
+								96 テキスト :
+								97 ステッパー (settable, float) 秒, Value: 0
+				98 row (selectable)
+					99 セル (selectable) HttpOnly
+HttpOnly
+					100 セル (selectable) HttpOnly
+						101 チェックボックス HttpOnly, Value: 1
+				102 row (selectable)
+					103 セル (selectable) Secure
+Secure
+					104 セル (selectable) Secure
+						105 チェックボックス Secure, Value: 1
+				106 row (selectable)
+					107 セル (selectable) Partitioned
+Partitioned
+					108 セル (selectable) Partitioned
+						109 チェックボックス Partitioned, Value: 0
+				110 row (selectable)
+					111 セル (selectable) SameSite
+SameSite
+					112 セル (selectable) SameSite, Value: Lax
+	113 閉じるボタン
+	114 フルスクリーンボタン Help: このボタンにはウインドウを拡大する操作もあります, Secondary Actions: ウインドウを拡大
+	115 しまうボタン
+	116 テキスト ウェブインスペクタ — Ryota — Chrome — passengers-external-cst-immediately.trycloudflare.com
+117 menu bar
+	118 Safari
+	119 ファイル
+	120 編集
+	121 表示, ID: SafariViewMenu
+	122 履歴
+	123 ブックマーク, ID: SafariBookmarksMenu
+	124 開発
+	125 ウインドウ, ID: SafariWindowMenu
+	126 ヘルプ, ID: SafariHelpMenu
+
+The focused UI element is 127 ポップアップボタン (collapsed) SameSite, Value: Lax, Secondary Actions: Expand

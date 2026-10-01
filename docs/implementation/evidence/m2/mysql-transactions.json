@@ -1,0 +1,30 @@
+[
+  {
+    "check": "DB-backed auth is valid immediately before 8h and invalid at boundary",
+    "passed": true
+  },
+  {
+    "check": "DB-backed resume 24h boundary and manual-release origin remain distinct",
+    "passed": true
+  },
+  {
+    "check": "DB-backed login window excludes exact lower endpoint and lock releases at deadline",
+    "passed": true
+  },
+  {
+    "check": "inconsistent pointer and cart owner rejected without replacement",
+    "passed": true
+  },
+  {
+    "check": "real REGISTER lock timeout returns 503 without failed-login record or replay",
+    "passed": true
+  },
+  {
+    "check": "two SELECTs share repeatable-read snapshot while another connection commits",
+    "passed": true
+  },
+  {
+    "check": "rolled-back test fixtures leave original context and cart intact",
+    "passed": true
+  }
+]

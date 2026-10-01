@@ -1,0 +1,91 @@
+Window: "ウェブインスペクタ — Ryota — Chrome — passengers-external-cst-immediately.trycloudflare.com", App: Safari.
+0 標準ウインドウ ウェブインスペクタ — Ryota — Chrome — passengers-external-cst-immediately.trycloudflare.com, Secondary Actions: Raise
+	1 スクロール領域
+		2 HTMLコンテンツ inspector-resource:///Main.html
+			3 ボタン 要素選択を開始（⇧⌘C）
+			4 ボタン デバイスの設定
+			5 ボタン ページを再読み込み（⌘R）
+キャッシュを無視してページを再読み込み（⌥⌘R）
+			6 ボタン ウェブアーカイブをダウンロード
+			7 ボタン クリックして3件のエラーをコンソールで表示
+			8 タブグループ (selectable)
+				9 タブ (selectable) 要素
+				10 タブ (selected) コンソール
+				11 タブ (selectable) ソース
+				12 タブ (selectable) ネットワーク
+				13 タブ (selectable) タイムライン
+				14 タブ (selectable) ストレージ
+				15 タブ (selectable) グラフィックス
+				16 タブ (selectable) レイヤー
+				17 タブ (selectable) 監査
+				18 タブ (selectable) 検索（⇧⌘F）
+				19 タブ (selectable) 設定（⌘,）
+			20 container コンソール
+				21 検索テキストフィールド (settable)  
+				22 ボタン (disabled) 前を検索（⇧⌘G）
+				23 ボタン (disabled) 次を検索（⌘G）
+				24 テキスト すべて
+				25 テキスト 評価
+				26 テキスト エラー
+				27 テキスト 警告
+				28 テキスト ログ
+				29 container
+					30 テキスト すべてのソース
+					31 ポップアップボタン (collapsed) Value: すべてのソース, Secondary Actions: Expand
+					32 イメージ
+				33 ボタン その他のフィルタオプション…
+				34 チェックボックス (settable, integer) ユーザのジェスチャをエミュレート, Help: ユーザジェスチャ内と同様にコンソールコマンドを実行, Value: 0
+				35 ボタン コンソールスニペットを実行…
+				36 ボタン ガベージを収集
+				37 ボタン ログを消去（⌘Kまたは⌃L）
+				38 container
+					39 テキスト 14:28:33にコンソールが開かれました
+					40 イメージ
+					41 テキスト (async()=>{const read=async p=>{const r=await fetch("/api/"+p,{cache:"no-store",credentials:"same-origin"});return {status:r.status,body:await r.json()}};const a=await read("auth/status"),g=await read("register/status"),c=await read("resume");window.__m2PostRelease={utc:new Date().toISOString(),authMatch:a.status===200&&a.body.staff_id==="STAFF_A",registerMatch:g.status===200&&g.body.start_state==="READY"&&g.body.cookie_status==="MATCH"&&g.body.maintenance_hold===false&&g.body.available===true,cartMatch:c.s
+					42 イメージ
+					43 テキスト Promise {status: "pending"} = $1
+					44 イメージ
+					45 link user-script:26:1:2963, Value: user-script:26
+					46 テキスト M2_AFTER_RESTART {"utc":"2026-10-01T05:28:46.267Z","authMatch":true,"registerMatch":true,"cartMatch":true,"resumeVisibleToJavaScript":false,"holdVisible":false,"listVisible":true}
+					47 イメージ
+					48 テキスト (async()=>{for(const p of ["auth/status","register/status","resume"]){const r=await fetch("/api/"+p,{cache:"no-store",credentials:"same-origin"});const b=await r.json();console.log("M2_CASE2_LOSS "+JSON.stringify({path:p,status:r.status,code:b.code||null,staffMatch:b.staff_id==="STAFF_A"}))}const b=[...document.querySelectorAll("button")].find(x=>x.innerText==="状態を再確認");if(b)b.click()})()
+					49 イメージ
+					50 テキスト Promise {status: "pending"} = $2
+					51 イメージ
+					52 link user-script:26:1:2963, Value: user-script:26
+					53 テキスト M2_CASE2_LOSS {"path":"auth/status","status":200,"code":null,"staffMatch":true}
+					54 イメージ
+					55 link https://passengers-external-cst-immediately.trycloudflare.com/api/register/status, Value: passengers-external-cst-immediately.trycloudflare.com/api/register/status
+					56 テキスト Failed to load resource: the server responded with a status of 403 ()
+					57 イメージ
+					58 link user-script:26:1:2963, Value: user-script:26
+					59 テキスト M2_CASE2_LOSS {"path":"register/status","status":403,"code":"FORBIDDEN","staffMatch":false}
+					60 イメージ
+					61 link https://passengers-external-cst-immediately.trycloudflare.com/api/resume, Value: passengers-external-cst-immediately.trycloudflare.com/api/resume
+					62 テキスト Failed to load resource: the server responded with a status of 403 ()
+					63 イメージ
+					64 link user-script:26:1:2963, Value: user-script:26
+					65 テキスト M2_CASE2_LOSS {"path":"resume","status":403,"code":"FORBIDDEN","staffMatch":false}
+					66 イメージ
+					67 link https://passengers-external-cst-immediately.trycloudflare.com/api/register/status, Value: passengers-external-cst-immediately.trycloudflare.com/api/register/status
+					68 テキスト Failed to load resource: the server responded with a status of 403 ()
+			69 テキスト入力領域 (settable) コンソールプロンプト, Secondary Actions: 作文ツールを表示
+			70 container
+			71 container $0の実行コンテキスト
+				72 テキスト 自動 — ページ
+	73 閉じるボタン
+	74 フルスクリーンボタン Help: このボタンにはウインドウを拡大する操作もあります, Secondary Actions: ウインドウを拡大
+	75 しまうボタン
+	76 テキスト ウェブインスペクタ — Ryota — Chrome — passengers-external-cst-immediately.trycloudflare.com
+77 menu bar
+	78 Safari
+	79 ファイル
+	80 編集
+	81 表示, ID: SafariViewMenu
+	82 履歴
+	83 ブックマーク, ID: SafariBookmarksMenu
+	84 開発
+	85 ウインドウ, ID: SafariWindowMenu
+	86 ヘルプ, ID: SafariHelpMenu
+
+The focused UI element is 69 テキスト入力領域 (settable) コンソールプロンプト, Secondary Actions: 作文ツールを表示

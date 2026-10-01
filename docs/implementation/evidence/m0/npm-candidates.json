@@ -1,0 +1,437 @@
+{
+  "checked_at": "2026-09-28T03:27:30.527086+00:00",
+  "node": {
+    "version": "v24.21.0",
+    "date": "2026-09-07",
+    "files": [
+      "aix-ppc64",
+      "headers",
+      "linux-arm64",
+      "linux-ppc64le",
+      "linux-s390x",
+      "linux-x64",
+      "linux-x64-musl",
+      "osx-arm64-tar",
+      "osx-x64-pkg",
+      "osx-x64-tar",
+      "src",
+      "win-arm64-7z",
+      "win-arm64-zip",
+      "win-x64-7z",
+      "win-x64-exe",
+      "win-x64-msi",
+      "win-x64-zip"
+    ],
+    "npm": "11.19.0",
+    "v8": "13.6.233.17",
+    "uv": "1.52.1",
+    "zlib": "1.3.2.1-motley",
+    "openssl": "3.5.8",
+    "modules": "137",
+    "lts": "Krypton",
+    "security": false
+  },
+  "packages": [
+    {
+      "name": "next",
+      "version": "16.3.6",
+      "license": "MIT",
+      "engines": {
+        "node": ">=20.9.0"
+      },
+      "dependencies": {
+        "postcss": "8.5.23",
+        "@next/env": "16.3.6",
+        "styled-jsx": "5.1.6",
+        "@swc/helpers": "0.5.23",
+        "caniuse-lite": "^1.0.30001579",
+        "baseline-browser-mapping": "^2.9.19"
+      },
+      "peerDependencies": {
+        "sass": "^1.3.0",
+        "react": "^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0",
+        "react-dom": "^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0",
+        "@playwright/test": "^1.51.1",
+        "@opentelemetry/api": "^1.1.0",
+        "babel-plugin-react-compiler": "*"
+      },
+      "dist": {
+        "shasum": "29a6cecb103bd2642a0ce322e68ecdb38a0f0af5",
+        "tarball": "https://registry.npmjs.org/next/-/next-16.3.6.tgz",
+        "fileCount": 8531,
+        "integrity": "sha512-L+otWM/aQbYTx98aZhgEoMb4bZAXx1YVW4UMA/vuCyCoWG5HJyZUili8QAkqzrcC+5///tsz3s0M+SlyB5bLMw==",
+        "signatures": [
+          {
+            "sig": "MEQCIFeQtYjYNFeTVVMCb9R9eqER3cznRCM9d5UF184QCkFWAiBV31uF941r5Rhbvqa1KtofsWU9v5GFNVQXHbiDS/S9dg==",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          },
+          {
+            "sig": "MEUCIDfLaDpn05UKdfurUrTE9RHmjaVzgX31o7ejn/mF5I7MAiEA3BmiIHLfjzuWD+bXx2TZBtNphTg/0iaZ0NvHXAPc/yw=",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          }
+        ],
+        "attestations": {
+          "url": "https://registry.npmjs.org/-/npm/v1/attestations/next@16.3.6",
+          "provenance": {
+            "predicateType": "https://slsa.dev/provenance/v1"
+          }
+        },
+        "unpackedSize": 184778106
+      },
+      "released_at": "2026-09-22T16:19:00.458Z",
+      "source": "https://registry.npmjs.org/next/16.3.6"
+    },
+    {
+      "name": "react",
+      "version": "19.3.0",
+      "license": "MIT",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "dependencies": null,
+      "peerDependencies": null,
+      "dist": {
+        "shasum": "e20aa3a14687075ce863351b5878b0608c3fbfb2",
+        "tarball": "https://registry.npmjs.org/react/-/react-19.3.0.tgz",
+        "fileCount": 27,
+        "integrity": "sha512-E8LUcbtBWt20bbl2YoHfx4ZDBdxVTfOKtCZn9cDSJ4l6/nuoApcpIBcj47t2wZoVX8g2ZHuMHbiShgCR1T5Sog==",
+        "signatures": [
+          {
+            "sig": "MEUCIALru2uJjzTwQTeh/ax6FRZSyVBDySuUEr4k+TiaANpDAiEAgJVCX1upjcvo4FzKCrJW9vcVnWVJwMbuM4Wsc4UM61o=",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          },
+          {
+            "sig": "MEYCIQCLRI5uegHedldoJjX7BioMz8AnR5jZmFZB2+1PMyrFagIhAMlHH0dBWncX0Nq4vSqkVKZtP7Jolgae2aodnOtIRrQK",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          }
+        ],
+        "attestations": {
+          "url": "https://registry.npmjs.org/-/npm/v1/attestations/react@19.3.0",
+          "provenance": {
+            "predicateType": "https://slsa.dev/provenance/v1"
+          }
+        },
+        "unpackedSize": 178663
+      },
+      "released_at": "2026-09-09T17:21:30.071Z",
+      "source": "https://registry.npmjs.org/react/19.3.0"
+    },
+    {
+      "name": "react-dom",
+      "version": "19.3.0",
+      "license": "MIT",
+      "engines": null,
+      "dependencies": {
+        "scheduler": "^0.28.0"
+      },
+      "peerDependencies": {
+        "react": "^19.3.0"
+      },
+      "dist": {
+        "shasum": "a0ff19161d7f4e9be5469a07278b0c06e00f9001",
+        "tarball": "https://registry.npmjs.org/react-dom/-/react-dom-19.3.0.tgz",
+        "fileCount": 43,
+        "integrity": "sha512-JDk8dgif51OjFoDE70+OT9ICyYr+69HlmihNwp1+Nsfbna3t5sIiCa9ZJktDmQ4/1b/rn26hIAR2uYXDMr5r0Q==",
+        "signatures": [
+          {
+            "sig": "MEUCIQDl7gfoVlOoqKLgPU325X6EcrNHIYuFJJX0R9PHDs9KygIgAQaRzlBCG57IDn6XBjaOL/adBCuf/oiguaTixpmBBjw=",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          },
+          {
+            "sig": "MEUCIBJlBwP9e+XpqYfXpAJxCFTZ2i9tt8XCm9JYmuFMXsm1AiEAi9g3MN8fg6vModu7alAeUKmJ6iWO6untLGlvHfX1mb4=",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          }
+        ],
+        "attestations": {
+          "url": "https://registry.npmjs.org/-/npm/v1/attestations/react-dom@19.3.0",
+          "provenance": {
+            "predicateType": "https://slsa.dev/provenance/v1"
+          }
+        },
+        "unpackedSize": 8063782
+      },
+      "released_at": "2026-09-09T17:17:39.744Z",
+      "source": "https://registry.npmjs.org/react-dom/19.3.0"
+    },
+    {
+      "name": "typescript",
+      "version": "5.9.3",
+      "license": "Apache-2.0",
+      "engines": {
+        "node": ">=14.17"
+      },
+      "dependencies": null,
+      "peerDependencies": null,
+      "dist": {
+        "shasum": "5b4f59e15310ab17a216f5d6cf53ee476ede670f",
+        "tarball": "https://registry.npmjs.org/typescript/-/typescript-5.9.3.tgz",
+        "fileCount": 132,
+        "integrity": "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==",
+        "signatures": [
+          {
+            "sig": "MEYCIQC5ifNi1il+zAZC19ov+Q5oSrhOwlpOpghAaAAXYA0RpAIhAKdcZ6pMNZGuprpke8Zi3OPB1zol9c88KVW+apJNVjTy",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          }
+        ],
+        "unpackedSize": 23625066
+      },
+      "released_at": "2025-09-30T21:19:38.784Z",
+      "source": "https://registry.npmjs.org/typescript/5.9.3"
+    },
+    {
+      "name": "@types/react",
+      "version": "19.3.0",
+      "license": "MIT",
+      "engines": null,
+      "dependencies": {
+        "csstype": "^3.2.2"
+      },
+      "peerDependencies": {},
+      "dist": {
+        "shasum": "3b3ce8d8c1627fb5ccd4dadd57ef445c5a153b77",
+        "tarball": "https://registry.npmjs.org/@types/react/-/react-19.3.0.tgz",
+        "fileCount": 18,
+        "integrity": "sha512-N0rFCuH9YoxG9/m61l9MfpJKfmLOVU0em7ipIz6TRgSSkvReLB9vL85GB+yr8Bs5leqpvg96JSwF4ZS1s4viQg==",
+        "signatures": [
+          {
+            "sig": "MEQCICO9E9W9sN+6oHDGno2fJYJ8YEsNOa01MoJJmauunAjGAiAVusL8FBYYoRgnVrnz0RY2KMSjP1OlJ7GunY0YhIr0GA==",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          },
+          {
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+            "sig": "MEYCIQCG/2kbQCjMBz9wJNsFnPRUQFtQzxGIbkrwTxQ3ZYlQrwIhAKZAxRpE46wtsHz27OGDgRmXLV83Q5GivNToLaMzF7Q2"
+          }
+        ],
+        "unpackedSize": 408108
+      },
+      "released_at": "2026-09-09T18:08:49.750Z",
+      "source": "https://registry.npmjs.org/@types%2freact/19.3.0"
+    },
+    {
+      "name": "@types/react-dom",
+      "version": "19.3.0",
+      "license": "MIT",
+      "engines": null,
+      "dependencies": {},
+      "peerDependencies": {
+        "@types/react": "^19.3.0"
+      },
+      "dist": {
+        "shasum": "90294a9266efd928a5266f2110d60d5dba5015d2",
+        "tarball": "https://registry.npmjs.org/@types/react-dom/-/react-dom-19.3.0.tgz",
+        "fileCount": 19,
+        "integrity": "sha512-ZI7bU42mZXXKHn/qNLEw2IrbiINU7X5+vfgdixBHkCNpYWXjKgfQ/P+uyGb5CjOLB9UcnTeg3rylQtV2hym44Q==",
+        "signatures": [
+          {
+            "sig": "MEYCIQDeggFlao9be7yHQ/b9bEJ/aNUgA9ewpLiMScDNunzitAIhAKh8Ct2ZYAjnfZI/KeuIMkZ0Qz2vlOS1C1PkdT2UacvQ",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          },
+          {
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+            "sig": "MEYCIQDfRDroOzjwBEz1yqXRbBWKCYOt7p/DKB+WIMPoMWCfUAIhAMPChj/cPQOALZVIGvV0h+QYQERrlQ5RJZb3dptWvQFV"
+          }
+        ],
+        "unpackedSize": 32862
+      },
+      "released_at": "2026-09-09T18:07:51.886Z",
+      "source": "https://registry.npmjs.org/@types%2freact-dom/19.3.0"
+    },
+    {
+      "name": "@types/node",
+      "version": "24.19.0",
+      "license": "MIT",
+      "engines": null,
+      "dependencies": {
+        "undici-types": ">=7.24.0 <7.24.7"
+      },
+      "peerDependencies": {},
+      "dist": {
+        "shasum": "becd0549e091f749520b8db8a446ec1559c88a0b",
+        "tarball": "https://registry.npmjs.org/@types/node/-/node-24.19.0.tgz",
+        "fileCount": 88,
+        "integrity": "sha512-zY+5tKxXdhGh1PYI0ac+7juvEu4OI6vWtVVoj5i2m42jxAY1U+zHGt6QCyOFwykdP62sM3MJ9stoYYUw5aCWew==",
+        "signatures": [
+          {
+            "sig": "MEQCICxF9gH+qFj5WPpL+YveA7rAP6vH8brmmpjpsEw0qpR3AiBJPJhKpqtTEebElWA0MFkghf3E/Lh+HKfx52bFWw0wIQ==",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          },
+          {
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+            "sig": "MEQCIA8cvrzRXB28vgyfpvqcAJvEoyV2BIkrfDRns5xu9CDZAiAgsg5QuXYdKeD884fxbP4yAQk9eCPjncKlf6jZTkqLnw=="
+          }
+        ],
+        "unpackedSize": 2613291
+      },
+      "released_at": "2026-09-25T22:09:25.850Z",
+      "source": "https://registry.npmjs.org/@types%2fnode/24.19.0"
+    },
+    {
+      "name": "eslint",
+      "version": "10.11.0",
+      "license": "MIT",
+      "engines": {
+        "node": "^20.19.0 || ^22.13.0 || >=24"
+      },
+      "dependencies": {
+        "ajv": "^6.14.0",
+        "debug": "^4.3.2",
+        "espree": "^11.2.0",
+        "ignore": "^5.2.0",
+        "esquery": "^1.7.0",
+        "esutils": "^2.0.2",
+        "find-up": "^5.0.0",
+        "is-glob": "^4.0.0",
+        "minimatch": "^10.2.5",
+        "optionator": "^0.9.3",
+        "cross-spawn": "^7.0.6",
+        "glob-parent": "^6.0.2",
+        "imurmurhash": "^0.1.4",
+        "@eslint/core": "^1.2.1",
+        "eslint-scope": "^9.1.2",
+        "@humanfs/node": "^0.16.6",
+        "@types/estree": "^1.0.6",
+        "fast-deep-equal": "^3.1.3",
+        "natural-compare": "^1.4.0",
+        "file-entry-cache": "11.1.5 || >11.1.6 <12",
+        "@eslint/plugin-kit": "^0.7.3",
+        "eslint-visitor-keys": "^5.0.1",
+        "@eslint/config-array": "^0.23.5",
+        "@humanwhocodes/retry": "^0.4.2",
+        "escape-string-regexp": "^4.0.0",
+        "@eslint/config-helpers": "^0.7.0",
+        "@eslint-community/regexpp": "^4.12.2",
+        "@eslint-community/eslint-utils": "^4.8.0",
+        "@humanwhocodes/module-importer": "^1.0.1",
+        "json-stable-stringify-without-jsonify": "^1.0.1"
+      },
+      "peerDependencies": {
+        "jiti": "*"
+      },
+      "dist": {
+        "shasum": "304d1591b7c6a327e3f64b4f550f99fda160ae20",
+        "tarball": "https://registry.npmjs.org/eslint/-/eslint-10.11.0.tgz",
+        "fileCount": 421,
+        "integrity": "sha512-P7a6UEEqb9G95MYAtqkmsTbVXIYyzIfl6NGOIJk162PaahFxFyeGcrlXYFSiagECg4sEm8IseJdZBKR3rx6MsQ==",
+        "signatures": [
+          {
+            "sig": "MEQCIGfxmRpBfffnYEFf/g2LcfAcO/d6unQk2/IbOi+QDXQoAiBht8d80hH8MXB4msqa2QylpmwENcEu125abGtxfraPiw==",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          },
+          {
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+            "sig": "MEYCIQDXXqM+uiyxL494S94b6pQy699hEen8M1EN5oOSSycicQIhALqN5hXtIv2RfrKpBZE7t5ICRc4o5LkIv4GWCIaxuqAd"
+          }
+        ],
+        "unpackedSize": 2946272
+      },
+      "released_at": "2026-09-18T20:15:36.485Z",
+      "source": "https://registry.npmjs.org/eslint/10.11.0"
+    },
+    {
+      "name": "@eslint/js",
+      "version": "10.0.1",
+      "license": "MIT",
+      "engines": {
+        "node": "^20.19.0 || ^22.13.0 || >=24"
+      },
+      "dependencies": null,
+      "peerDependencies": {
+        "eslint": "^10.0.0"
+      },
+      "dist": {
+        "shasum": "1e8a876f50117af8ab67e47d5ad94d38d6622583",
+        "tarball": "https://registry.npmjs.org/@eslint/js/-/js-10.0.1.tgz",
+        "fileCount": 7,
+        "integrity": "sha512-zeR9k5pd4gxjZ0abRoIaxdc7I3nDktoXZk2qOv9gCNWx3mVwEn32VRhyLaRsDiJjTs0xq/T8mfPtyuXu7GWBcA==",
+        "signatures": [
+          {
+            "sig": "MEUCIQC01PnD397TPFwX0F9HFSExrqR/ahZ/msR5jN0S2R716wIgJi3MsB6EmezIqYLGeLnGsuRmVAmSBUdcpNLONJnD71s=",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          }
+        ],
+        "unpackedSize": 15687
+      },
+      "released_at": "2026-02-06T22:34:56.290Z",
+      "source": "https://registry.npmjs.org/@eslint%2fjs/10.0.1"
+    },
+    {
+      "name": "@next/eslint-plugin-next",
+      "version": "16.3.6",
+      "license": "MIT",
+      "engines": null,
+      "dependencies": {
+        "fast-glob": "3.3.1",
+        "@eslint-community/eslint-utils": "4.9.1"
+      },
+      "peerDependencies": null,
+      "dist": {
+        "shasum": "285f6d86748a6480261a54810da679aeb32531cc",
+        "tarball": "https://registry.npmjs.org/@next/eslint-plugin-next/-/eslint-plugin-next-16.3.6.tgz",
+        "fileCount": 56,
+        "integrity": "sha512-jowwDX+7DOlDIjJLgTMxudw+k37QnWu1JkZLkSi9MaJBfDYcfhAPMKBhXL0idYzFN/AGg//axnOR4cLkHX/Rng==",
+        "signatures": [
+          {
+            "sig": "MEUCIAKZva3OqtZxEbugAQrp+kilkDEjP07RSuoS8IHqwpByAiEAkLuPri3Krc4s2p3s+K/VdW+4deithp8Qdq+9Qc1D8/s=",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          },
+          {
+            "sig": "MEUCIHIcBO+CN4cNkd3x1of0TyIN/m39ZVnA4Q9gJGO+b6nHAiEAtpcpXvnQqi0v6JiQOccS2/RpJgmKPUKFXNvBoyNeeCU=",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          }
+        ],
+        "attestations": {
+          "url": "https://registry.npmjs.org/-/npm/v1/attestations/@next%2feslint-plugin-next@16.3.6",
+          "provenance": {
+            "predicateType": "https://slsa.dev/provenance/v1"
+          }
+        },
+        "unpackedSize": 106327
+      },
+      "released_at": "2026-09-22T16:08:27.257Z",
+      "source": "https://registry.npmjs.org/@next%2feslint-plugin-next/16.3.6"
+    },
+    {
+      "name": "typescript-eslint",
+      "version": "8.70.1",
+      "license": "MIT",
+      "engines": {
+        "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+      },
+      "dependencies": {
+        "@typescript-eslint/utils": "8.70.1",
+        "@typescript-eslint/parser": "8.70.1",
+        "@typescript-eslint/eslint-plugin": "8.70.1",
+        "@typescript-eslint/typescript-estree": "8.70.1"
+      },
+      "peerDependencies": {
+        "eslint": "^8.57.0 || ^9.0.0 || ^10.0.0",
+        "typescript": ">=4.8.4 <6.1.0"
+      },
+      "dist": {
+        "shasum": "de51a17e3fe01b4d4b02ed3eb70646024167b527",
+        "tarball": "https://registry.npmjs.org/typescript-eslint/-/typescript-eslint-8.70.1.tgz",
+        "fileCount": 13,
+        "integrity": "sha512-AcWG7KDjZ2THNXsgwttMaGmzVi0VFRlFYfqFHYQRbDpF3owuYbuiL8c7UUrd2k8s3PoSfIQrWfrGXfcElrWLYA==",
+        "signatures": [
+          {
+            "sig": "MEYCIQDa5J26gAK25hdFZvFAtmu6HCQLKUCZQL+Q0hCr3Cup5AIhAO4S54dk8a4+67jlAlPIW0IGvIyR0ArmUZhzmaa1ms0C",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          },
+          {
+            "sig": "MEUCIBWIQWkPVn4wW4Uqmkgc762QSvMEleBKuQRa4R7kP4kcAiEAuDF83YMG7t7NF4Umfy7wlzpQyaF+1Iyav3BJdBNuf1g=",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          }
+        ],
+        "attestations": {
+          "url": "https://registry.npmjs.org/-/npm/v1/attestations/typescript-eslint@8.70.1",
+          "provenance": {
+            "predicateType": "https://slsa.dev/provenance/v1"
+          }
+        },
+        "unpackedSize": 42688
+      },
+      "released_at": "2026-09-21T17:07:55.524Z",
+      "source": "https://registry.npmjs.org/typescript-eslint/8.70.1"
+    }
+  ]
+}

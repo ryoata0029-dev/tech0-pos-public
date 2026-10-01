@@ -1,0 +1,2433 @@
+[
+  {
+    "ecosystem": "PyPI",
+    "name": "uvicorn",
+    "version": "0.54.0",
+    "license_files": [
+      {
+        "path": "uvicorn-0.54.0.dist-info/licenses/LICENSE.md",
+        "sha256": "efe1acf3e62fb99c288b0ec73e5a773b7268ef4320fe757ea994214e4b63c371"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "rfc3339-validator",
+    "version": "0.1.4",
+    "license_files": [
+      {
+        "path": "rfc3339_validator-0.1.4.dist-info/LICENSE",
+        "sha256": "5ba1a4f03626ccca6dcbf53a554545e4f776a335bfdaa233ec3bfe9bb7fac15d"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "rpds-py",
+    "version": "2026.6.3",
+    "license_files": [
+      {
+        "path": "rpds_py-2026.6.3.dist-info/licenses/LICENSE",
+        "sha256": "314e4e91be3baa93c0fb4bccc9e4e97cd643eb839b065af921782c2175fe9909"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "mypy",
+    "version": "2.3.1",
+    "license_files": [
+      {
+        "path": "mypy-2.3.1.dist-info/licenses/LICENSE",
+        "sha256": "fdf1cd17f50e1305ed8cfd37467312d27a984648dba622cef70573b5512e4e1b"
+      },
+      {
+        "path": "mypy-2.3.1.dist-info/licenses/mypy/typeshed/LICENSE",
+        "sha256": "295f8538c94ae5c3043301cf7cff1c852dab6a786a8ddee471e061b40d5ecabe"
+      },
+      {
+        "path": "mypy/typeshed/LICENSE",
+        "sha256": "295f8538c94ae5c3043301cf7cff1c852dab6a786a8ddee471e061b40d5ecabe"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "click",
+    "version": "8.5.0",
+    "license_files": [
+      {
+        "path": "click-8.5.0.dist-info/licenses/LICENSE.txt",
+        "sha256": "9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "fastapi",
+    "version": "0.141.1",
+    "license_files": [
+      {
+        "path": "fastapi-0.141.1.dist-info/licenses/LICENSE",
+        "sha256": "4ec89ffc81485b97fec584b2d4a961032eeffe834453894fd9c1274906cc744e"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "packaging",
+    "version": "26.3",
+    "license_files": [
+      {
+        "path": "packaging-26.3.dist-info/licenses/LICENSE",
+        "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+      },
+      {
+        "path": "packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+        "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+      },
+      {
+        "path": "packaging-26.3.dist-info/licenses/LICENSE.BSD",
+        "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "jsonschema-specifications",
+    "version": "2025.9.1",
+    "license_files": [
+      {
+        "path": "jsonschema_specifications-2025.9.1.dist-info/licenses/COPYING",
+        "sha256": "42dcd63495f87b4eb7c7757afa379bb55a53f94afd7a5f657d9adf57236e515c"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "PyMySQL",
+    "version": "1.1.3",
+    "license_files": [
+      {
+        "path": "pymysql-1.1.3.dist-info/licenses/LICENSE",
+        "sha256": "314120dc65f0800f738a4b31400c76ee14decd1fbe77ce9c3540a421b86ea7b6"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "jsonschema",
+    "version": "4.26.0",
+    "license_files": [
+      {
+        "path": "jsonschema-4.26.0.dist-info/licenses/COPYING",
+        "sha256": "4f92a015a13c4d1a040bef018aa13430b4f1bc73b41b16bb846c346766de7439"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "pydantic_core",
+    "version": "2.46.5",
+    "license_files": [
+      {
+        "path": "pydantic_core-2.46.5.dist-info/licenses/LICENSE",
+        "sha256": "2afdd30d54b4d62b6f488a6bcc1546e84ec5061f13f4209c03d012348783795a"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "build",
+    "version": "1.6.1",
+    "license_files": [
+      {
+        "path": "build-1.6.1.dist-info/licenses/LICENSE",
+        "sha256": "aaf9a29ca5907971ccf07de025375db34539a8d5eeebce20b46099805722106f"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "wheel",
+    "version": "0.48.0",
+    "license_files": [
+      {
+        "path": "wheel-0.48.0.dist-info/licenses/LICENSE.txt",
+        "sha256": "30c23618679108f3e8ea1d2a658c7ca417bdfc891c98ef1a89fa4ff0c9828654"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "pip",
+    "version": "26.2.1",
+    "license_files": [
+      {
+        "path": "pip-26.2.1.dist-info/licenses/LICENSE.txt",
+        "sha256": "634300a669d49aeae65b12c6c48c924c51a4cdf3d1ff086dc3456dc8bcaa2104"
+      },
+      {
+        "path": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/cachecontrol/LICENSE.txt",
+        "sha256": "86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b"
+      },
+      {
+        "path": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/certifi/LICENSE",
+        "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7"
+      },
+      {
+        "path": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/distlib/LICENSE.txt",
+        "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d"
+      },
+      {
+        "path": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/distro/LICENSE",
+        "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14"
+      },
+      {
+        "path": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/idna/LICENSE.md",
+        "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04"
+      },
+      {
+        "path": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/msgpack/COPYING",
+        "sha256": "492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427"
+      },
+      {
+        "path": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/packaging/LICENSE",
+        "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+      },
+      {
+        "path": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/packaging/LICENSE.APACHE",
+        "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+      },
+      {
+        "path": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/packaging/LICENSE.BSD",
+        "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+      },
+      {
+        "path": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/pkg_resources/LICENSE",
+        "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+      },
+      {
+        "path": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/platformdirs/LICENSE",
+        "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6"
+      },
+      {
+        "path": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/pygments/LICENSE",
+        "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17"
+      },
+      {
+        "path": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/pyproject_hooks/LICENSE",
+        "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154"
+      },
+      {
+        "path": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/requests/LICENSE",
+        "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+      },
+      {
+        "path": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/resolvelib/LICENSE",
+        "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d"
+      },
+      {
+        "path": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/rich/LICENSE",
+        "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15"
+      },
+      {
+        "path": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/tomli/LICENSE",
+        "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+      },
+      {
+        "path": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/tomli_w/LICENSE",
+        "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+      },
+      {
+        "path": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/truststore/LICENSE",
+        "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca"
+      },
+      {
+        "path": "pip-26.2.1.dist-info/licenses/src/pip/_vendor/urllib3/LICENSE.txt",
+        "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686"
+      },
+      {
+        "path": "pip/_vendor/cachecontrol/LICENSE.txt",
+        "sha256": "86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b"
+      },
+      {
+        "path": "pip/_vendor/certifi/LICENSE",
+        "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7"
+      },
+      {
+        "path": "pip/_vendor/distlib/LICENSE.txt",
+        "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d"
+      },
+      {
+        "path": "pip/_vendor/distro/LICENSE",
+        "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14"
+      },
+      {
+        "path": "pip/_vendor/idna/LICENSE.md",
+        "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04"
+      },
+      {
+        "path": "pip/_vendor/msgpack/COPYING",
+        "sha256": "492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427"
+      },
+      {
+        "path": "pip/_vendor/packaging/LICENSE",
+        "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+      },
+      {
+        "path": "pip/_vendor/packaging/LICENSE.APACHE",
+        "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+      },
+      {
+        "path": "pip/_vendor/packaging/LICENSE.BSD",
+        "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+      },
+      {
+        "path": "pip/_vendor/pkg_resources/LICENSE",
+        "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+      },
+      {
+        "path": "pip/_vendor/platformdirs/LICENSE",
+        "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6"
+      },
+      {
+        "path": "pip/_vendor/pygments/LICENSE",
+        "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17"
+      },
+      {
+        "path": "pip/_vendor/pyproject_hooks/LICENSE",
+        "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154"
+      },
+      {
+        "path": "pip/_vendor/requests/LICENSE",
+        "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+      },
+      {
+        "path": "pip/_vendor/resolvelib/LICENSE",
+        "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d"
+      },
+      {
+        "path": "pip/_vendor/rich/LICENSE",
+        "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15"
+      },
+      {
+        "path": "pip/_vendor/tomli/LICENSE",
+        "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+      },
+      {
+        "path": "pip/_vendor/tomli_w/LICENSE",
+        "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+      },
+      {
+        "path": "pip/_vendor/truststore/LICENSE",
+        "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca"
+      },
+      {
+        "path": "pip/_vendor/urllib3/LICENSE.txt",
+        "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "ruff",
+    "version": "0.16.9",
+    "license_files": [
+      {
+        "path": "ruff-0.16.9.dist-info/licenses/LICENSE",
+        "sha256": "2597d854122b77ddc71971564ca2350a37608575ce324adc5650a2b2051c8f18"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "setuptools",
+    "version": "84.0.0",
+    "license_files": [
+      {
+        "path": "setuptools-84.0.0.dist-info/licenses/LICENSE",
+        "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+      },
+      {
+        "path": "setuptools/_vendor/autocommand-2.2.2.dist-info/LICENSE",
+        "sha256": "ade78d04982d69972d444a8e14a94f87a2334dd3855cc80348ea8e240aa0df2d"
+      },
+      {
+        "path": "setuptools/_vendor/backports.tarfile-1.2.0.dist-info/LICENSE",
+        "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+      },
+      {
+        "path": "setuptools/_vendor/importlib_metadata-8.7.1.dist-info/licenses/LICENSE",
+        "sha256": "458502e12d97bbf64438606a20044aa85eb05fb0a8a807bb35dbec253fd1fc04"
+      },
+      {
+        "path": "setuptools/_vendor/jaraco.text-4.0.0.dist-info/LICENSE",
+        "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+      },
+      {
+        "path": "setuptools/_vendor/jaraco_context-6.1.0.dist-info/licenses/LICENSE",
+        "sha256": "9755a18519666e5f0f4cae3daad3d7012bcae48a600b31237d75e9fe134e6683"
+      },
+      {
+        "path": "setuptools/_vendor/jaraco_functools-4.4.0.dist-info/licenses/LICENSE",
+        "sha256": "5a57cb4db85e2a2dd88c290628908add57e3451449e0a9a71fdfb38776fd759d"
+      },
+      {
+        "path": "setuptools/_vendor/more_itertools-10.8.0.dist-info/licenses/LICENSE",
+        "sha256": "09f1c8c9e941af3e584d59641ea9b87d83c0cb0fd007eb5ef391a7e2643c1a46"
+      },
+      {
+        "path": "setuptools/_vendor/packaging-26.0.dist-info/licenses/LICENSE",
+        "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+      },
+      {
+        "path": "setuptools/_vendor/packaging-26.0.dist-info/licenses/LICENSE.APACHE",
+        "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+      },
+      {
+        "path": "setuptools/_vendor/packaging-26.0.dist-info/licenses/LICENSE.BSD",
+        "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+      },
+      {
+        "path": "setuptools/_vendor/platformdirs-4.4.0.dist-info/licenses/LICENSE",
+        "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6"
+      },
+      {
+        "path": "setuptools/_vendor/tomli-2.4.0.dist-info/licenses/LICENSE",
+        "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+      },
+      {
+        "path": "setuptools/_vendor/wheel-0.46.3.dist-info/licenses/LICENSE.txt",
+        "sha256": "30c23618679108f3e8ea1d2a658c7ca417bdfc891c98ef1a89fa4ff0c9828654"
+      },
+      {
+        "path": "setuptools/_vendor/zipp-3.23.0.dist-info/licenses/LICENSE",
+        "sha256": "5a57cb4db85e2a2dd88c290628908add57e3451449e0a9a71fdfb38776fd759d"
+      },
+      {
+        "path": "setuptools/config/NOTICE",
+        "sha256": "2dddf08818297a3b89d43d95ff659d8da85741108c9136dfa3a4d856c0623bd8"
+      },
+      {
+        "path": "setuptools/config/_validate_pyproject/NOTICE",
+        "sha256": "09c9bcea95ca086f8bc5bed174e40bc835b297d40fb5f86bbbb570fe0a5581a7"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "argon2-cffi-bindings",
+    "version": "26.1.0",
+    "license_files": [
+      {
+        "path": "argon2_cffi_bindings-26.1.0.dist-info/licenses/LICENSE",
+        "sha256": "88707653d5414f2242d597302a769565107ac139817b8ca321b3928cc1346c50"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "h11",
+    "version": "0.16.0",
+    "license_files": [
+      {
+        "path": "h11-0.16.0.dist-info/licenses/LICENSE.txt",
+        "sha256": "37db5bb85926db28a427a25867f10b1232003aea1be69ccb851138adb8e6f361"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "pydantic",
+    "version": "2.13.5",
+    "license_files": [
+      {
+        "path": "pydantic-2.13.5.dist-info/licenses/LICENSE",
+        "sha256": "a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "pydantic-settings",
+    "version": "2.15.0",
+    "license_files": [
+      {
+        "path": "pydantic_settings-2.15.0.dist-info/licenses/LICENSE",
+        "sha256": "eb355a753e020346d33d83bf9769135b89fc610568ac531a01c295bcee7fd998"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "pycparser",
+    "version": "3.0",
+    "license_files": [
+      {
+        "path": "pycparser-3.0.dist-info/licenses/LICENSE",
+        "sha256": "0c846399369ea76ddd7b5c44fe6d16497415fcf015f5cbb508c24bf98b81c5b1"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "pyproject_hooks",
+    "version": "1.3.3",
+    "license_files": [
+      {
+        "path": "pyproject_hooks-1.3.3.dist-info/licenses/LICENSE",
+        "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "PyYAML",
+    "version": "6.0.3",
+    "license_files": [
+      {
+        "path": "pyyaml-6.0.3.dist-info/licenses/LICENSE",
+        "sha256": "8d3928f9dc4490fd635707cb88eb26bd764102a7282954307d3e5167a577e8a4"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "jsonschema-path",
+    "version": "0.5.0",
+    "license_files": [
+      {
+        "path": "jsonschema_path-0.5.0.dist-info/licenses/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "cffi",
+    "version": "2.1.1",
+    "license_files": [
+      {
+        "path": "cffi-2.1.1.dist-info/licenses/LICENSE",
+        "sha256": "5ba24ddc57067f9249add644c3afc41a5d6dc37e23433ef759d95df370b0af63"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "lazy-object-proxy",
+    "version": "1.12.0",
+    "license_files": [
+      {
+        "path": "lazy_object_proxy-1.12.0.dist-info/licenses/LICENSE",
+        "sha256": "9fb15c116f76f44830c2c07a84e928baf04fcac12d4c9f57651372dff43fd79e"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "argon2-cffi",
+    "version": "25.1.0",
+    "license_files": [
+      {
+        "path": "argon2_cffi-25.1.0.dist-info/licenses/LICENSE",
+        "sha256": "b6944d386e87ccf49d9632da083685a4b7624733e686a7fe283dd2d428341d77"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "librt",
+    "version": "0.15.0",
+    "license_files": [
+      {
+        "path": "librt-0.15.0.dist-info/licenses/LICENSE",
+        "sha256": "88f9e379c684580053c58e75e296ca2eb243b6edcc6e5357f247310e96eeef8a"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "annotated-types",
+    "version": "0.8.0",
+    "license_files": [
+      {
+        "path": "annotated_types-0.8.0.dist-info/licenses/LICENSE",
+        "sha256": "fe1049884b1a0d9342901e88e07f32925d24b3121d9972b6a6805fb9824b095d"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "referencing",
+    "version": "0.37.0",
+    "license_files": [
+      {
+        "path": "referencing-0.37.0.dist-info/licenses/COPYING",
+        "sha256": "42dcd63495f87b4eb7c7757afa379bb55a53f94afd7a5f657d9adf57236e515c"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "annotated-doc",
+    "version": "0.0.5",
+    "license_files": [
+      {
+        "path": "annotated_doc-0.0.5.dist-info/licenses/LICENSE",
+        "sha256": "fff170779a6acbf65abdb405c087f1cee1786691e4a96a4034517e4a504a0cdf"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "typing-inspection",
+    "version": "0.4.4",
+    "license_files": [
+      {
+        "path": "typing_inspection-0.4.4.dist-info/licenses/LICENSE",
+        "sha256": "804b59b25f2c31bd278f9202a19ae49a3945aa2664387e2d0a128c7cacc61ec3"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "starlette",
+    "version": "1.7.0",
+    "license_files": [
+      {
+        "path": "starlette-1.7.0.dist-info/licenses/LICENSE.md",
+        "sha256": "dcb95677a02240243187e964f941847d19b17821cf99e5afae684fab328c19bf"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "attrs",
+    "version": "26.1.0",
+    "license_files": [
+      {
+        "path": "attrs-26.1.0.dist-info/licenses/LICENSE",
+        "sha256": "882115c95dfc2af1eeb6714f8ec6d5cbcabf667caff8729f42420da63f714e9f"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "pathspec",
+    "version": "1.1.1",
+    "license_files": [
+      {
+        "path": "pathspec-1.1.1.dist-info/licenses/LICENSE",
+        "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "python-dotenv",
+    "version": "1.2.3",
+    "license_files": [
+      {
+        "path": "python_dotenv-1.2.3.dist-info/licenses/LICENSE",
+        "sha256": "80619b7049f08c81683ad0e01f08f257a840652dd71ee83146d36658c7d2c2b9"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "pip-tools",
+    "version": "7.6.1",
+    "license_files": [
+      {
+        "path": "pip_tools-7.6.1.dist-info/licenses/LICENSE",
+        "sha256": "075f22737ed9245d386a23968c7ec906f66dfb7af35c3ff920aabd165a8ae920"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "openapi-spec-validator",
+    "version": "0.9.0",
+    "license_files": [
+      {
+        "path": "openapi_spec_validator-0.9.0.dist-info/licenses/LICENSE",
+        "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
+      },
+      {
+        "path": "openapi_spec_validator-0.9.0.dist-info/licenses/NOTICE",
+        "sha256": "e66e45d437e7b6198772bae62b3a5f5c18ca14878d20a6ab4cae21be433b6df0"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "ast_serialize",
+    "version": "0.11.2",
+    "license_files": [
+      {
+        "path": "ast_serialize-0.11.2.dist-info/licenses/LICENSE",
+        "sha256": "db90b8fd0ae1748117ab467680a5193bfd057a3119846cb53ee3b64f16577b3b"
+      },
+      {
+        "path": "ast_serialize-0.11.2.dist-info/licenses/crates/LICENSE",
+        "sha256": "2597d854122b77ddc71971564ca2350a37608575ce324adc5650a2b2051c8f18"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "pwdlib",
+    "version": "0.3.1",
+    "license_files": [
+      {
+        "path": "pwdlib-0.3.1.dist-info/licenses/LICENSE",
+        "sha256": "4bdaaafc879717d95eddd23b1ba1c3eccdf1092071805cc515171488f7ff43eb"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "SQLAlchemy",
+    "version": "2.0.54",
+    "license_files": [
+      {
+        "path": "sqlalchemy-2.0.54.dist-info/licenses/LICENSE",
+        "sha256": "e862bb5b904fb5513c3e14288d7a25a12eb0ecc7847a0a965d310e9a955e7cb9"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "typing_extensions",
+    "version": "4.16.0",
+    "license_files": [
+      {
+        "path": "typing_extensions-4.16.0.dist-info/licenses/LICENSE",
+        "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "pathable",
+    "version": "0.6.0",
+    "license_files": [
+      {
+        "path": "pathable-0.6.0.dist-info/licenses/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "openapi-schema-validator",
+    "version": "0.9.0",
+    "license_files": [
+      {
+        "path": "openapi_schema_validator-0.9.0.dist-info/licenses/LICENSE",
+        "sha256": "d41b4164b6368056255ae4d17e982176fe243808322d1469a3443dee58d1530a"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "anyio",
+    "version": "4.15.1",
+    "license_files": [
+      {
+        "path": "anyio-4.15.1.dist-info/licenses/LICENSE",
+        "sha256": "5361ac9dc58f2ef5fd2e9b09c68297c17f04950909bbc8023bdb82eacf22c2b0"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "mypy_extensions",
+    "version": "1.1.0",
+    "license_files": [
+      {
+        "path": "mypy_extensions-1.1.0.dist-info/licenses/LICENSE",
+        "sha256": "a50450da1d53cd777b80ced77c58ff96abe0ccd879706bd142c3ec20e245f0b4"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "six",
+    "version": "1.17.0",
+    "license_files": [
+      {
+        "path": "six-1.17.0.dist-info/LICENSE",
+        "sha256": "4375ba20e2b9c6c4e7cad2940a628fd90e95cc3d50ee92aae755715d8ba1fbd0"
+      }
+    ]
+  },
+  {
+    "ecosystem": "PyPI",
+    "name": "idna",
+    "version": "3.20",
+    "license_files": [
+      {
+        "path": "idna-3.20.dist-info/licenses/LICENSE.md",
+        "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@cacheable/memory",
+    "version": "2.2.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "465e8da349d50d8512e4a0e9b26d2bee50392c394f17edaa3be6e0df7c2b27ad"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@cacheable/utils",
+    "version": "2.5.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "465e8da349d50d8512e4a0e9b26d2bee50392c394f17edaa3be6e0df7c2b27ad"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@eslint-community/eslint-utils",
+    "version": "4.9.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "fcf6eabf68ca96988a6b506b4fdc6cc32535d80eb2e11c79724af5ac6f50262b"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@eslint-community/regexpp",
+    "version": "4.12.2",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "fcf6eabf68ca96988a6b506b4fdc6cc32535d80eb2e11c79724af5ac6f50262b"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@eslint/config-array",
+    "version": "0.23.5",
+    "license": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@eslint/config-helpers",
+    "version": "0.7.0",
+    "license": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@eslint/core",
+    "version": "1.2.1",
+    "license": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@eslint/js",
+    "version": "10.0.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "3b6be04f862a077a4b97929dbf247299360824d9365f8603c263769303ace18c"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@eslint/object-schema",
+    "version": "3.0.5",
+    "license": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@eslint/plugin-kit",
+    "version": "0.7.3",
+    "license": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@humanfs/core",
+    "version": "0.19.2",
+    "license": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@humanfs/node",
+    "version": "0.16.8",
+    "license": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@humanfs/types",
+    "version": "0.15.0",
+    "license": "Apache-2.0",
+    "license_files": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@humanwhocodes/module-importer",
+    "version": "1.0.1",
+    "license": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@humanwhocodes/retry",
+    "version": "0.4.3",
+    "license": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@img/colour",
+    "version": "1.1.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "e2eaa4603c14cb26f301e88648c12a853fa3f0f5da6d4b0972958c666e7f2ab8"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@img/sharp-darwin-arm64",
+    "version": "0.35.5",
+    "license": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "73ba74dfaa520b49a401b5d21459a8523a146f3b7518a833eea5efa85130bf68"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@img/sharp-libvips-darwin-arm64",
+    "version": "1.3.4",
+    "license": "LGPL-3.0-or-later",
+    "license_files": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@keyv/bigmap",
+    "version": "1.3.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "f18cad8d98d4454ad42c33f1950d642cd3b939f2ccd3c36710fa8f50842cacc0"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@keyv/serialize",
+    "version": "1.1.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "1f7dca26d2d328c3dbb9b6fe3b15ec3cda08ffe2288e47b73d617454b256f959"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@next/env",
+    "version": "16.3.6",
+    "license": "MIT",
+    "license_files": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@next/eslint-plugin-next",
+    "version": "16.3.6",
+    "license": "MIT",
+    "license_files": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@next/swc-darwin-arm64",
+    "version": "16.3.6",
+    "license": "MIT",
+    "license_files": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@nodelib/fs.scandir",
+    "version": "2.1.5",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "9363d160bf41d46d83901a5d24fc3fe2094c2afc17b4a2378914b273977ee2de"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@nodelib/fs.stat",
+    "version": "2.0.5",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "9363d160bf41d46d83901a5d24fc3fe2094c2afc17b4a2378914b273977ee2de"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@nodelib/fs.walk",
+    "version": "1.2.8",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "9363d160bf41d46d83901a5d24fc3fe2094c2afc17b4a2378914b273977ee2de"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@swc/helpers",
+    "version": "0.5.23",
+    "license": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "d96eba1f1881334d50ffc144276dfa98e147a415e7c591ecdfcb81680361dc91"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@types/esrecurse",
+    "version": "4.3.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@types/estree",
+    "version": "1.0.9",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@types/json-schema",
+    "version": "7.0.15",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@types/node",
+    "version": "24.19.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@types/react",
+    "version": "19.3.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@types/react-dom",
+    "version": "19.3.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@typescript-eslint/eslint-plugin",
+    "version": "8.70.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "2eb5c7a0bba9deb77a98c81bf6b9d3fb1c67118eebf968b6b1a787b3f8928ee0"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ignore",
+    "version": "7.0.10",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE-MIT",
+        "sha256": "9c94db23dc4b1e9aaee5d195668b916afc71efed54af226b66cf0ccc4389c1c0"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@typescript-eslint/parser",
+    "version": "8.70.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "2eb5c7a0bba9deb77a98c81bf6b9d3fb1c67118eebf968b6b1a787b3f8928ee0"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@typescript-eslint/project-service",
+    "version": "8.70.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "053a75a14b7508a897466b65e12797201a06b0e9b5066d1223da72cac99601b5"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@typescript-eslint/scope-manager",
+    "version": "8.70.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "2eb5c7a0bba9deb77a98c81bf6b9d3fb1c67118eebf968b6b1a787b3f8928ee0"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@typescript-eslint/tsconfig-utils",
+    "version": "8.70.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "053a75a14b7508a897466b65e12797201a06b0e9b5066d1223da72cac99601b5"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@typescript-eslint/type-utils",
+    "version": "8.70.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "f3c51ace7f159b21566d72535e84ff354505ae7ffdca835dac81fcdafbf9e879"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@typescript-eslint/types",
+    "version": "8.70.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "2eb5c7a0bba9deb77a98c81bf6b9d3fb1c67118eebf968b6b1a787b3f8928ee0"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@typescript-eslint/typescript-estree",
+    "version": "8.70.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "2eb5c7a0bba9deb77a98c81bf6b9d3fb1c67118eebf968b6b1a787b3f8928ee0"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@typescript-eslint/utils",
+    "version": "8.70.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "2eb5c7a0bba9deb77a98c81bf6b9d3fb1c67118eebf968b6b1a787b3f8928ee0"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@typescript-eslint/visitor-keys",
+    "version": "8.70.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "2eb5c7a0bba9deb77a98c81bf6b9d3fb1c67118eebf968b6b1a787b3f8928ee0"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "eslint-visitor-keys",
+    "version": "5.0.1",
+    "license": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "d8bf34ff6d190640a01e7704ad78253fc181bc128949d71273fbbaa12f33c0b4"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "acorn",
+    "version": "8.18.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "76a876cf886ff9be2a8b5e2e86514fed06223c8c9f0c1e9ee9606e93841e00b7"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "acorn-jsx",
+    "version": "5.3.2",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "cfa72b62b9ae173078823a3796b25c027a9071046a263beddf966df67018ce06"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ajv",
+    "version": "6.15.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "e85e131fa4ed25538ff1f4962ced1fb6f68b079bd9164a790597a0f30b8fd030"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "balanced-match",
+    "version": "4.0.4",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "d408f38ffa3355c5faec517153295338892eb0f1ea43f57874bb23c6075979b5"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "baseline-browser-mapping",
+    "version": "2.11.26",
+    "license": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE.txt",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "brace-expansion",
+    "version": "5.0.12",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "9c63a23124d68cd30cd316a94a1a0bca34f032786df6df69fc4b5f136bac8d2e"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "braces",
+    "version": "3.0.3",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "35bdd8a44339719441900fb50fbefc5e2dca1ca662cbaed7a687de842c8b70f2"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "cacheable",
+    "version": "2.5.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "465e8da349d50d8512e4a0e9b26d2bee50392c394f17edaa3be6e0df7c2b27ad"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "caniuse-lite",
+    "version": "1.0.30001812",
+    "license": "CC-BY-4.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "fd3a263fe19ed8faa9068b43abaebafc02c77897b0c6fc09abc04bb592e5f16e"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "client-only",
+    "version": "0.0.1",
+    "license": "MIT",
+    "license_files": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "cross-spawn",
+    "version": "7.0.6",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "aaa78451b6fecd1b9c4594c796c133c0e90cad100372ff8bc6de615e9ef9adf1"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "csstype",
+    "version": "3.2.3",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "11d55bd4541c75ee7879547ac49089c489163dae49551389713c3d026cab383e"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "debug",
+    "version": "4.4.3",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "3a61c6c96caf5c1d9b623fb9b04c822b783dfcb78aa7e49c76a3f643e6ed7f95"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "deep-is",
+    "version": "0.1.4",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "f2042f3634c4136d06b5139c9c6aefb81a3a462b514548bc1845953233dfba98"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "detect-libc",
+    "version": "2.1.2",
+    "license": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "escape-string-regexp",
+    "version": "4.0.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "license",
+        "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "eslint",
+    "version": "10.11.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "3b6be04f862a077a4b97929dbf247299360824d9365f8603c263769303ace18c"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "eslint-scope",
+    "version": "9.1.2",
+    "license": "BSD-2-Clause",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "d3a724e2ed749f172ff70b62a1d0631b7d4b0ea273782365a3464d4e2d6b6dbd"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "eslint-visitor-keys",
+    "version": "3.4.3",
+    "license": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "d8bf34ff6d190640a01e7704ad78253fc181bc128949d71273fbbaa12f33c0b4"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "eslint-visitor-keys",
+    "version": "5.0.1",
+    "license": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "d8bf34ff6d190640a01e7704ad78253fc181bc128949d71273fbbaa12f33c0b4"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "espree",
+    "version": "11.2.0",
+    "license": "BSD-2-Clause",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "26c95937762a3dc17a3934a0a2773c70259ba4bf28dab713c225e4af8eb9d349"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "eslint-visitor-keys",
+    "version": "5.0.1",
+    "license": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "d8bf34ff6d190640a01e7704ad78253fc181bc128949d71273fbbaa12f33c0b4"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "esquery",
+    "version": "1.7.0",
+    "license": "BSD-3-Clause",
+    "license_files": [
+      {
+        "path": "license.txt",
+        "sha256": "ac68116ae73740de4190892f334992e449a124600924ec761e64319d3aac9e6e"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "esrecurse",
+    "version": "4.3.0",
+    "license": "BSD-2-Clause",
+    "license_files": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "estraverse",
+    "version": "5.3.0",
+    "license": "BSD-2-Clause",
+    "license_files": [
+      {
+        "path": "LICENSE.BSD",
+        "sha256": "0e74697a68cebdcd61502c30fe80ab7f9e341d995dcd452023654d57133534b1"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "esutils",
+    "version": "2.0.3",
+    "license": "BSD-2-Clause",
+    "license_files": [
+      {
+        "path": "LICENSE.BSD",
+        "sha256": "0e74697a68cebdcd61502c30fe80ab7f9e341d995dcd452023654d57133534b1"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "fast-deep-equal",
+    "version": "3.1.3",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "7bf9b2de73a6b356761c948d0e9eeb4be6c1270bd04c79cd489c1e400ffdfc1a"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "fast-glob",
+    "version": "3.3.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "9363d160bf41d46d83901a5d24fc3fe2094c2afc17b4a2378914b273977ee2de"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "glob-parent",
+    "version": "5.1.2",
+    "license": "ISC",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "2c46f1325bd3822a33c1e2c1e49c18d13127ac00f9c8b3b79196c7a126f73cd9"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "fast-json-stable-stringify",
+    "version": "2.1.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "a833d366242c298cf1b10263516572fb8dcbe68eb5072cdcac2b4546e2b4eb36"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "fast-levenshtein",
+    "version": "2.0.6",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "942a98cb8846a6354266193f173c1354615827fbb7d67f68399599dff12c4d6a"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "fastq",
+    "version": "1.20.3",
+    "license": "ISC",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c3367f6d01a79d368fc4fbb41b3615fcd92f243d6597ab96742f6f976f9325af"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "file-entry-cache",
+    "version": "11.1.5",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "465e8da349d50d8512e4a0e9b26d2bee50392c394f17edaa3be6e0df7c2b27ad"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "fill-range",
+    "version": "7.1.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "35bdd8a44339719441900fb50fbefc5e2dca1ca662cbaed7a687de842c8b70f2"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "find-up",
+    "version": "5.0.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "license",
+        "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "flat-cache",
+    "version": "6.1.23",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "465e8da349d50d8512e4a0e9b26d2bee50392c394f17edaa3be6e0df7c2b27ad"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "flatted",
+    "version": "3.4.4",
+    "license": "ISC",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "148718606d34f467fd08a2176bb4c1ab275f999576f779368503d8d3e3642861"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "glob-parent",
+    "version": "6.0.2",
+    "license": "ISC",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "fc68eb8f1c8e1d6b8be50f3c177927e24791cae7dc251e6253a012f37926a30c"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "hashery",
+    "version": "1.5.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "2eef776efe4bae7fcd2d8162ecadf2b0873aae20afac343a936ddb0de3d79253"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "hookified",
+    "version": "1.15.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "3902e57e73412bd91ba81a47fa2cef45e1729c152c835114c1692cc5e685ddbe"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ignore",
+    "version": "5.3.2",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE-MIT",
+        "sha256": "9c94db23dc4b1e9aaee5d195668b916afc71efed54af226b66cf0ccc4389c1c0"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "imurmurhash",
+    "version": "0.1.4",
+    "license": "MIT",
+    "license_files": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "is-extglob",
+    "version": "2.1.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "73b5283588baa142c5baaef5f56d3e8fdea7a30b214e8c5737e87640f882453a"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "is-glob",
+    "version": "4.0.3",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "4cd903859549d4b20b571041f96dfae1136ed079c476126268f9d7cc1b611150"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "is-number",
+    "version": "7.0.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "35bdd8a44339719441900fb50fbefc5e2dca1ca662cbaed7a687de842c8b70f2"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "isexe",
+    "version": "2.0.0",
+    "license": "ISC",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "json-schema-traverse",
+    "version": "0.4.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "7bf9b2de73a6b356761c948d0e9eeb4be6c1270bd04c79cd489c1e400ffdfc1a"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "json-stable-stringify-without-jsonify",
+    "version": "1.0.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "435a6722c786b0a56fbe7387028f1d9d3f3a2d0fb615bb8fee118727c3f59b7b"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "keyv",
+    "version": "5.6.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "1f7dca26d2d328c3dbb9b6fe3b15ec3cda08ffe2288e47b73d617454b256f959"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "levn",
+    "version": "0.4.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "b9eb082c39fe245e38793699074c394c43a722c51fce031c3c165cb92a31035c"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "locate-path",
+    "version": "6.0.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "license",
+        "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "merge2",
+    "version": "1.4.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "b2590e53ea6e050512c3993bfc746c394bbba9242fd6909245201bdc1dc6862a"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "micromatch",
+    "version": "4.0.8",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "35bdd8a44339719441900fb50fbefc5e2dca1ca662cbaed7a687de842c8b70f2"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "minimatch",
+    "version": "10.2.6",
+    "license": "BlueOak-1.0.0",
+    "license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "2c7c5d22ed5a8ee968c64757710979afcd77438c48b4a265b94e615babd8a901"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ms",
+    "version": "2.1.3",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "license.md",
+        "sha256": "1662fae9b5314d11cf51284e2dcd1f006a354f7343f08712a730fcff9a359801"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nanoid",
+    "version": "3.3.19",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "da4db1480d9beea3483a2eda5c53b22238d0827d57da162b48f122e04d2d9987"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "natural-compare",
+    "version": "1.4.0",
+    "license": "MIT",
+    "license_files": []
+  },
+  {
+    "ecosystem": "npm",
+    "name": "next",
+    "version": "16.3.6",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "license.md",
+        "sha256": "ee765244e2d59f5234d474f62e0766fa0c8b99af967fdd4c0cb8dcb0c76ea224"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "optionator",
+    "version": "0.9.4",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "b9eb082c39fe245e38793699074c394c43a722c51fce031c3c165cb92a31035c"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "p-limit",
+    "version": "3.1.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "license",
+        "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "p-locate",
+    "version": "5.0.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "license",
+        "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "path-exists",
+    "version": "4.0.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "license",
+        "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "path-key",
+    "version": "3.1.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "license",
+        "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "picocolors",
+    "version": "1.1.1",
+    "license": "ISC",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "6582629e2979466878f6014313dcc2f3756c9616148682227ce3063dde310750"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "picomatch",
+    "version": "2.3.2",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "d0cd141b0c322fded5dfad1d4645bb2fedfc05b7321fe1009469638190d59ef9"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "postcss",
+    "version": "8.5.23",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "5be1f3465bba68a626777f984878814aaf35e7ef8e9fd314d469bcf887050fb8"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "prelude-ls",
+    "version": "1.2.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "b9eb082c39fe245e38793699074c394c43a722c51fce031c3c165cb92a31035c"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "punycode",
+    "version": "2.3.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE-MIT.txt",
+        "sha256": "483acb265f182907d1caf6cff9c16c96f31325ed23792832cc5d8b12d5f88c8a"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "qified",
+    "version": "0.10.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "3902e57e73412bd91ba81a47fa2cef45e1729c152c835114c1692cc5e685ddbe"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "hookified",
+    "version": "2.2.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "3902e57e73412bd91ba81a47fa2cef45e1729c152c835114c1692cc5e685ddbe"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "queue-microtask",
+    "version": "1.2.3",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "d4c2065e2b936e62a4eb400efb4576edec9ca1388a9f78aa288e147275e7bc8b"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "react",
+    "version": "19.3.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "react-dom",
+    "version": "19.3.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "reusify",
+    "version": "1.1.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "93a1506953b08ad4874e1cc0971a1d2ac387ca510da91e4d05e460a6c4966fa3"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "run-parallel",
+    "version": "1.2.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "d4c2065e2b936e62a4eb400efb4576edec9ca1388a9f78aa288e147275e7bc8b"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "scheduler",
+    "version": "0.28.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "semver",
+    "version": "7.8.5",
+    "license": "ISC",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "sharp",
+    "version": "0.35.5",
+    "license": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "73ba74dfaa520b49a401b5d21459a8523a146f3b7518a833eea5efa85130bf68"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "shebang-command",
+    "version": "2.0.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "license",
+        "sha256": "69dee148a2cc470554dfa7142e830662062394d0fe67cddd379aba90dc60d6b3"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "shebang-regex",
+    "version": "3.0.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "license",
+        "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "source-map-js",
+    "version": "1.2.1",
+    "license": "BSD-3-Clause",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "6cb0631f71c7749763fd3dd1d5bee52dd1070ec17f2edc1710079ad070bd2fbd"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "styled-jsx",
+    "version": "5.1.6",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "license.md",
+        "sha256": "24d4a4580df855c345705b3016404f0c9da7e7674dc3b21a3ce7d0e5d0c37e2d"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "tinyglobby",
+    "version": "0.2.17",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "22c68811e174cbbfb3813d4135918df4f540959c14d872e601d9abe83d3cde8f"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "fdir",
+    "version": "6.5.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "9a39f2aadab11a3697edd668ff2d8ad885b649737b7ab4d3bf12b34e5ada0c86"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "picomatch",
+    "version": "4.0.7",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "d0cd141b0c322fded5dfad1d4645bb2fedfc05b7321fe1009469638190d59ef9"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "to-regex-range",
+    "version": "5.0.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "e7d1fee7347ffddccc5fd03327ffdb50f8c112be0d5016d62388a92c4ae6e7a9"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ts-api-utils",
+    "version": "2.5.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "76c9d5f5ea942054715c026f33f8717c9e24603196a3737b8899afa216bcbdab"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "tslib",
+    "version": "2.8.1",
+    "license": "0BSD",
+    "license_files": [
+      {
+        "path": "CopyrightNotice.txt",
+        "sha256": "da16ddb65f8ca390998fb99223d0112498b56b45784d00afd77ff8ce1ac4de8b"
+      },
+      {
+        "path": "LICENSE.txt",
+        "sha256": "210b19e543130388c68654b7497e967119ce17145f66ab7d85688fbd70f08751"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "type-check",
+    "version": "0.4.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "b9eb082c39fe245e38793699074c394c43a722c51fce031c3c165cb92a31035c"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "typescript",
+    "version": "5.9.3",
+    "license": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE.txt",
+        "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47"
+      },
+      {
+        "path": "ThirdPartyNoticeText.txt",
+        "sha256": "1af3c68039c57e539422da82a4faada506ce6d0ea6f90e0b699d02dbcdb7a90c"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "typescript-eslint",
+    "version": "8.70.1",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "2eb5c7a0bba9deb77a98c81bf6b9d3fb1c67118eebf968b6b1a787b3f8928ee0"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "undici-types",
+    "version": "7.24.6",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "a6db8096b2707bc0102d256917d4d33f298ba36d8c3f25de067a2b5bb379db27"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "uri-js",
+    "version": "4.4.1",
+    "license": "BSD-2-Clause",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "0af366eff4c01ec147c9c61ea9e8ffad64a4294754c9d79355f3fd1b97cb2fb9"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "which",
+    "version": "2.0.2",
+    "license": "ISC",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "word-wrap",
+    "version": "1.2.5",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "73b5283588baa142c5baaef5f56d3e8fdea7a30b214e8c5737e87640f882453a"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "yocto-queue",
+    "version": "0.1.0",
+    "license": "MIT",
+    "license_files": [
+      {
+        "path": "license",
+        "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+      }
+    ]
+  }
+]

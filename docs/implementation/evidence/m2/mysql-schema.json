@@ -1,0 +1,1404 @@
+{
+  "columns": [
+    {
+      "table": "AUTH_LOGIN_LIMIT",
+      "column": "staff_id",
+      "type": "varchar(32)",
+      "nullable": "NO",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "AUTH_LOGIN_LIMIT",
+      "column": "failure_times",
+      "type": "json",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "AUTH_LOGIN_LIMIT",
+      "column": "locked_until",
+      "type": "datetime(6)",
+      "nullable": "YES",
+      "collation": null
+    },
+    {
+      "table": "AUTH_SESSION",
+      "column": "token_hash",
+      "type": "binary(32)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "AUTH_SESSION",
+      "column": "staff_id",
+      "type": "varchar(32)",
+      "nullable": "NO",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "AUTH_SESSION",
+      "column": "register_id",
+      "type": "tinyint unsigned",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "AUTH_SESSION",
+      "column": "created_at",
+      "type": "datetime(6)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "AUTH_SESSION",
+      "column": "expires_at",
+      "type": "datetime(6)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "AUTH_SESSION",
+      "column": "revoked_at",
+      "type": "datetime(6)",
+      "nullable": "YES",
+      "collation": null
+    },
+    {
+      "table": "BROWSER_CONTEXT",
+      "column": "context_id",
+      "type": "char(36)",
+      "nullable": "NO",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "BROWSER_CONTEXT",
+      "column": "register_id",
+      "type": "tinyint unsigned",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "BROWSER_CONTEXT",
+      "column": "starting_staff_id",
+      "type": "varchar(32)",
+      "nullable": "NO",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "BROWSER_CONTEXT",
+      "column": "token_hash",
+      "type": "binary(32)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "BROWSER_CONTEXT",
+      "column": "created_at",
+      "type": "datetime(6)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "BROWSER_CONTEXT",
+      "column": "confirmed_at",
+      "type": "datetime(6)",
+      "nullable": "YES",
+      "collation": null
+    },
+    {
+      "table": "BROWSER_CONTEXT",
+      "column": "last_business_at",
+      "type": "datetime(6)",
+      "nullable": "YES",
+      "collation": null
+    },
+    {
+      "table": "BROWSER_CONTEXT",
+      "column": "manual_released_at",
+      "type": "datetime(6)",
+      "nullable": "YES",
+      "collation": null
+    },
+    {
+      "table": "BROWSER_CONTEXT",
+      "column": "invalidated_at",
+      "type": "datetime(6)",
+      "nullable": "YES",
+      "collation": null
+    },
+    {
+      "table": "CART",
+      "column": "cart_id",
+      "type": "char(36)",
+      "nullable": "NO",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "CART",
+      "column": "register_id",
+      "type": "tinyint unsigned",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "CART",
+      "column": "context_id",
+      "type": "char(36)",
+      "nullable": "NO",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "CART",
+      "column": "staff_id",
+      "type": "varchar(32)",
+      "nullable": "NO",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "CART",
+      "column": "state",
+      "type": "varchar(12)",
+      "nullable": "NO",
+      "collation": "utf8mb4_0900_bin"
+    },
+    {
+      "table": "CART",
+      "column": "version",
+      "type": "bigint unsigned",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "CART",
+      "column": "member_state",
+      "type": "varchar(12)",
+      "nullable": "NO",
+      "collation": "utf8mb4_0900_bin"
+    },
+    {
+      "table": "CART",
+      "column": "member_id",
+      "type": "varchar(32)",
+      "nullable": "YES",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "CART",
+      "column": "pending_member_id",
+      "type": "varchar(32)",
+      "nullable": "YES",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "CART",
+      "column": "active_member_operation_id",
+      "type": "char(36)",
+      "nullable": "YES",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "CART",
+      "column": "active_purchase_operation_id",
+      "type": "char(36)",
+      "nullable": "YES",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "CART",
+      "column": "purchase_prepared_version",
+      "type": "bigint unsigned",
+      "nullable": "YES",
+      "collation": null
+    },
+    {
+      "table": "CART",
+      "column": "created_at",
+      "type": "datetime(6)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "CART",
+      "column": "updated_at",
+      "type": "datetime(6)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "CART",
+      "column": "result_closed_at",
+      "type": "datetime(6)",
+      "nullable": "YES",
+      "collation": null
+    },
+    {
+      "table": "CART",
+      "column": "subtotal",
+      "type": "decimal(12,0)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "CART",
+      "column": "total",
+      "type": "decimal(12,0)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "CART",
+      "column": "tax_breakdown",
+      "type": "json",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "CART_LINE",
+      "column": "cart_id",
+      "type": "char(36)",
+      "nullable": "NO",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "CART_LINE",
+      "column": "line_id",
+      "type": "char(36)",
+      "nullable": "NO",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "CART_LINE",
+      "column": "product_id",
+      "type": "bigint unsigned",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "CART_LINE",
+      "column": "line_no",
+      "type": "int unsigned",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "CART_LINE",
+      "column": "code_snapshot",
+      "type": "varchar(32)",
+      "nullable": "NO",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "CART_LINE",
+      "column": "name_snapshot",
+      "type": "text",
+      "nullable": "NO",
+      "collation": "utf8mb4_0900_bin"
+    },
+    {
+      "table": "CART_LINE",
+      "column": "quantity",
+      "type": "tinyint unsigned",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "CART_LINE",
+      "column": "unit_price_snapshot",
+      "type": "decimal(12,0)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "CART_LINE",
+      "column": "tax_rate_snapshot",
+      "type": "decimal(5,4)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "CART_LINE",
+      "column": "discount_candidates",
+      "type": "json",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "CART_LINE",
+      "column": "discount_snapshot",
+      "type": "json",
+      "nullable": "YES",
+      "collation": null
+    },
+    {
+      "table": "CART_LINE",
+      "column": "discount_per_unit",
+      "type": "decimal(12,0)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "CART_LINE",
+      "column": "net_unit_price",
+      "type": "decimal(12,0)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "CART_LINE",
+      "column": "line_subtotal",
+      "type": "decimal(12,0)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "CART_LINE",
+      "column": "conditions_fixed_at",
+      "type": "datetime(6)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "CART_OPERATION",
+      "column": "cart_id",
+      "type": "char(36)",
+      "nullable": "NO",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "CART_OPERATION",
+      "column": "operation_id",
+      "type": "char(36)",
+      "nullable": "NO",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "CART_OPERATION",
+      "column": "kind",
+      "type": "varchar(24)",
+      "nullable": "NO",
+      "collation": "utf8mb4_0900_bin"
+    },
+    {
+      "table": "CART_OPERATION",
+      "column": "request_version",
+      "type": "bigint unsigned",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "CART_OPERATION",
+      "column": "request_payload",
+      "type": "json",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "CART_OPERATION",
+      "column": "status",
+      "type": "varchar(10)",
+      "nullable": "NO",
+      "collation": "utf8mb4_0900_bin"
+    },
+    {
+      "table": "CART_OPERATION",
+      "column": "prepared_version",
+      "type": "bigint unsigned",
+      "nullable": "YES",
+      "collation": null
+    },
+    {
+      "table": "CART_OPERATION",
+      "column": "applied_version",
+      "type": "bigint unsigned",
+      "nullable": "YES",
+      "collation": null
+    },
+    {
+      "table": "CART_OPERATION",
+      "column": "result_code",
+      "type": "varchar(64)",
+      "nullable": "YES",
+      "collation": "utf8mb4_0900_bin"
+    },
+    {
+      "table": "CART_OPERATION",
+      "column": "result_payload",
+      "type": "json",
+      "nullable": "YES",
+      "collation": null
+    },
+    {
+      "table": "CART_OPERATION",
+      "column": "next_cart_id",
+      "type": "char(36)",
+      "nullable": "YES",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "CART_OPERATION",
+      "column": "created_at",
+      "type": "datetime(6)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "CART_OPERATION",
+      "column": "completed_at",
+      "type": "datetime(6)",
+      "nullable": "YES",
+      "collation": null
+    },
+    {
+      "table": "DISCOUNT_CONDITION",
+      "column": "condition_id",
+      "type": "bigint unsigned",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "DISCOUNT_CONDITION",
+      "column": "product_id",
+      "type": "bigint unsigned",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "DISCOUNT_CONDITION",
+      "column": "valid_from",
+      "type": "datetime(6)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "DISCOUNT_CONDITION",
+      "column": "valid_to",
+      "type": "datetime(6)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "DISCOUNT_CONDITION",
+      "column": "kind",
+      "type": "varchar(10)",
+      "nullable": "NO",
+      "collation": "utf8mb4_0900_bin"
+    },
+    {
+      "table": "DISCOUNT_CONDITION",
+      "column": "rate",
+      "type": "decimal(5,4)",
+      "nullable": "YES",
+      "collation": null
+    },
+    {
+      "table": "DISCOUNT_CONDITION",
+      "column": "amount",
+      "type": "decimal(12,0)",
+      "nullable": "YES",
+      "collation": null
+    },
+    {
+      "table": "MEMBER",
+      "column": "member_id",
+      "type": "varchar(32)",
+      "nullable": "NO",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "MEMBER",
+      "column": "name",
+      "type": "text",
+      "nullable": "NO",
+      "collation": "utf8mb4_0900_bin"
+    },
+    {
+      "table": "MEMBER",
+      "column": "phone",
+      "type": "text",
+      "nullable": "NO",
+      "collation": "utf8mb4_0900_bin"
+    },
+    {
+      "table": "MEMBER",
+      "column": "address",
+      "type": "text",
+      "nullable": "NO",
+      "collation": "utf8mb4_0900_bin"
+    },
+    {
+      "table": "MEMBER",
+      "column": "gender",
+      "type": "text",
+      "nullable": "NO",
+      "collation": "utf8mb4_0900_bin"
+    },
+    {
+      "table": "MEMBER",
+      "column": "age",
+      "type": "int unsigned",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "PRICE_HISTORY",
+      "column": "history_id",
+      "type": "bigint unsigned",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "PRICE_HISTORY",
+      "column": "product_id",
+      "type": "bigint unsigned",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "PRICE_HISTORY",
+      "column": "old_price",
+      "type": "decimal(12,0)",
+      "nullable": "YES",
+      "collation": null
+    },
+    {
+      "table": "PRICE_HISTORY",
+      "column": "new_price",
+      "type": "decimal(12,0)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "PRICE_HISTORY",
+      "column": "changed_at",
+      "type": "datetime(6)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "PRODUCT",
+      "column": "product_id",
+      "type": "bigint unsigned",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "PRODUCT",
+      "column": "code",
+      "type": "varchar(32)",
+      "nullable": "NO",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "PRODUCT",
+      "column": "name",
+      "type": "text",
+      "nullable": "NO",
+      "collation": "utf8mb4_0900_bin"
+    },
+    {
+      "table": "PRODUCT",
+      "column": "unit_price",
+      "type": "decimal(12,0)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "PRODUCT",
+      "column": "tax_rate_id",
+      "type": "bigint unsigned",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "PURCHASE",
+      "column": "cart_id",
+      "type": "char(36)",
+      "nullable": "NO",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "PURCHASE",
+      "column": "staff_id",
+      "type": "varchar(32)",
+      "nullable": "NO",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "PURCHASE",
+      "column": "member_id",
+      "type": "varchar(32)",
+      "nullable": "YES",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "PURCHASE",
+      "column": "purchased_at",
+      "type": "datetime(6)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "PURCHASE",
+      "column": "subtotal",
+      "type": "decimal(12,0)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "PURCHASE",
+      "column": "total",
+      "type": "decimal(12,0)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "column": "cart_id",
+      "type": "char(36)",
+      "nullable": "NO",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "column": "line_no",
+      "type": "int unsigned",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "column": "product_id",
+      "type": "bigint unsigned",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "column": "code_snapshot",
+      "type": "varchar(32)",
+      "nullable": "NO",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "column": "name_snapshot",
+      "type": "text",
+      "nullable": "NO",
+      "collation": "utf8mb4_0900_bin"
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "column": "quantity",
+      "type": "tinyint unsigned",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "column": "unit_price_snapshot",
+      "type": "decimal(12,0)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "column": "tax_rate_snapshot",
+      "type": "decimal(5,4)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "column": "discount_snapshot",
+      "type": "json",
+      "nullable": "YES",
+      "collation": null
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "column": "discount_per_unit",
+      "type": "decimal(12,0)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "column": "net_unit_price",
+      "type": "decimal(12,0)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "column": "line_subtotal",
+      "type": "decimal(12,0)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "PURCHASE_TAX",
+      "column": "cart_id",
+      "type": "char(36)",
+      "nullable": "NO",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "PURCHASE_TAX",
+      "column": "tax_rate_snapshot",
+      "type": "decimal(5,4)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "PURCHASE_TAX",
+      "column": "taxable_subtotal",
+      "type": "decimal(12,0)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "PURCHASE_TAX",
+      "column": "tax_amount",
+      "type": "decimal(12,0)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "REGISTER",
+      "column": "register_id",
+      "type": "tinyint unsigned",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "REGISTER",
+      "column": "start_state",
+      "type": "varchar(16)",
+      "nullable": "NO",
+      "collation": "utf8mb4_0900_bin"
+    },
+    {
+      "table": "REGISTER",
+      "column": "maintenance_hold",
+      "type": "tinyint(1)",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "REGISTER",
+      "column": "active_context_id",
+      "type": "char(36)",
+      "nullable": "YES",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "REGISTER",
+      "column": "current_cart_id",
+      "type": "char(36)",
+      "nullable": "YES",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "REGISTER",
+      "column": "active_session_hash",
+      "type": "binary(32)",
+      "nullable": "YES",
+      "collation": null
+    },
+    {
+      "table": "STAFF",
+      "column": "staff_id",
+      "type": "varchar(32)",
+      "nullable": "NO",
+      "collation": "ascii_bin"
+    },
+    {
+      "table": "STAFF",
+      "column": "password_hash",
+      "type": "varchar(255)",
+      "nullable": "NO",
+      "collation": "utf8mb4_0900_bin"
+    },
+    {
+      "table": "TAX_RATE",
+      "column": "tax_rate_id",
+      "type": "bigint unsigned",
+      "nullable": "NO",
+      "collation": null
+    },
+    {
+      "table": "TAX_RATE",
+      "column": "rate",
+      "type": "decimal(5,4)",
+      "nullable": "NO",
+      "collation": null
+    }
+  ],
+  "constraints": [
+    {
+      "table": "AUTH_LOGIN_LIMIT",
+      "name": "AUTH_LOGIN_LIMIT_chk_1",
+      "type": "CHECK"
+    },
+    {
+      "table": "AUTH_LOGIN_LIMIT",
+      "name": "AUTH_LOGIN_LIMIT_chk_2",
+      "type": "CHECK"
+    },
+    {
+      "table": "AUTH_LOGIN_LIMIT",
+      "name": "PRIMARY",
+      "type": "PRIMARY KEY"
+    },
+    {
+      "table": "AUTH_SESSION",
+      "name": "AUTH_SESSION_chk_1",
+      "type": "CHECK"
+    },
+    {
+      "table": "AUTH_SESSION",
+      "name": "AUTH_SESSION_ibfk_1",
+      "type": "FOREIGN KEY"
+    },
+    {
+      "table": "AUTH_SESSION",
+      "name": "AUTH_SESSION_ibfk_2",
+      "type": "FOREIGN KEY"
+    },
+    {
+      "table": "AUTH_SESSION",
+      "name": "PRIMARY",
+      "type": "PRIMARY KEY"
+    },
+    {
+      "table": "BROWSER_CONTEXT",
+      "name": "BROWSER_CONTEXT_ibfk_1",
+      "type": "FOREIGN KEY"
+    },
+    {
+      "table": "BROWSER_CONTEXT",
+      "name": "BROWSER_CONTEXT_ibfk_2",
+      "type": "FOREIGN KEY"
+    },
+    {
+      "table": "BROWSER_CONTEXT",
+      "name": "PRIMARY",
+      "type": "PRIMARY KEY"
+    },
+    {
+      "table": "BROWSER_CONTEXT",
+      "name": "token_hash",
+      "type": "UNIQUE"
+    },
+    {
+      "table": "CART",
+      "name": "CART_chk_1",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART",
+      "name": "CART_chk_10",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART",
+      "name": "CART_chk_11",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART",
+      "name": "CART_chk_12",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART",
+      "name": "CART_chk_13",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART",
+      "name": "CART_chk_2",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART",
+      "name": "CART_chk_3",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART",
+      "name": "CART_chk_4",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART",
+      "name": "CART_chk_5",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART",
+      "name": "CART_chk_6",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART",
+      "name": "CART_chk_7",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART",
+      "name": "CART_chk_8",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART",
+      "name": "CART_chk_9",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART",
+      "name": "CART_ibfk_1",
+      "type": "FOREIGN KEY"
+    },
+    {
+      "table": "CART",
+      "name": "CART_ibfk_2",
+      "type": "FOREIGN KEY"
+    },
+    {
+      "table": "CART",
+      "name": "CART_ibfk_3",
+      "type": "FOREIGN KEY"
+    },
+    {
+      "table": "CART",
+      "name": "CART_ibfk_4",
+      "type": "FOREIGN KEY"
+    },
+    {
+      "table": "CART",
+      "name": "PRIMARY",
+      "type": "PRIMARY KEY"
+    },
+    {
+      "table": "CART_LINE",
+      "name": "cart_id",
+      "type": "UNIQUE"
+    },
+    {
+      "table": "CART_LINE",
+      "name": "cart_id_2",
+      "type": "UNIQUE"
+    },
+    {
+      "table": "CART_LINE",
+      "name": "CART_LINE_chk_1",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART_LINE",
+      "name": "CART_LINE_chk_10",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART_LINE",
+      "name": "CART_LINE_chk_11",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART_LINE",
+      "name": "CART_LINE_chk_2",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART_LINE",
+      "name": "CART_LINE_chk_3",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART_LINE",
+      "name": "CART_LINE_chk_4",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART_LINE",
+      "name": "CART_LINE_chk_5",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART_LINE",
+      "name": "CART_LINE_chk_6",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART_LINE",
+      "name": "CART_LINE_chk_7",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART_LINE",
+      "name": "CART_LINE_chk_8",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART_LINE",
+      "name": "CART_LINE_chk_9",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART_LINE",
+      "name": "CART_LINE_ibfk_1",
+      "type": "FOREIGN KEY"
+    },
+    {
+      "table": "CART_LINE",
+      "name": "CART_LINE_ibfk_2",
+      "type": "FOREIGN KEY"
+    },
+    {
+      "table": "CART_LINE",
+      "name": "PRIMARY",
+      "type": "PRIMARY KEY"
+    },
+    {
+      "table": "CART_OPERATION",
+      "name": "CART_OPERATION_chk_1",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART_OPERATION",
+      "name": "CART_OPERATION_chk_2",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART_OPERATION",
+      "name": "CART_OPERATION_chk_3",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART_OPERATION",
+      "name": "CART_OPERATION_chk_4",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART_OPERATION",
+      "name": "CART_OPERATION_chk_5",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART_OPERATION",
+      "name": "CART_OPERATION_chk_6",
+      "type": "CHECK"
+    },
+    {
+      "table": "CART_OPERATION",
+      "name": "CART_OPERATION_ibfk_1",
+      "type": "FOREIGN KEY"
+    },
+    {
+      "table": "CART_OPERATION",
+      "name": "CART_OPERATION_ibfk_2",
+      "type": "FOREIGN KEY"
+    },
+    {
+      "table": "CART_OPERATION",
+      "name": "PRIMARY",
+      "type": "PRIMARY KEY"
+    },
+    {
+      "table": "DISCOUNT_CONDITION",
+      "name": "DISCOUNT_CONDITION_chk_1",
+      "type": "CHECK"
+    },
+    {
+      "table": "DISCOUNT_CONDITION",
+      "name": "DISCOUNT_CONDITION_chk_2",
+      "type": "CHECK"
+    },
+    {
+      "table": "DISCOUNT_CONDITION",
+      "name": "DISCOUNT_CONDITION_chk_3",
+      "type": "CHECK"
+    },
+    {
+      "table": "DISCOUNT_CONDITION",
+      "name": "DISCOUNT_CONDITION_ibfk_1",
+      "type": "FOREIGN KEY"
+    },
+    {
+      "table": "DISCOUNT_CONDITION",
+      "name": "PRIMARY",
+      "type": "PRIMARY KEY"
+    },
+    {
+      "table": "MEMBER",
+      "name": "MEMBER_chk_1",
+      "type": "CHECK"
+    },
+    {
+      "table": "MEMBER",
+      "name": "MEMBER_chk_2",
+      "type": "CHECK"
+    },
+    {
+      "table": "MEMBER",
+      "name": "MEMBER_chk_3",
+      "type": "CHECK"
+    },
+    {
+      "table": "MEMBER",
+      "name": "MEMBER_chk_4",
+      "type": "CHECK"
+    },
+    {
+      "table": "MEMBER",
+      "name": "MEMBER_chk_5",
+      "type": "CHECK"
+    },
+    {
+      "table": "MEMBER",
+      "name": "PRIMARY",
+      "type": "PRIMARY KEY"
+    },
+    {
+      "table": "PRICE_HISTORY",
+      "name": "PRICE_HISTORY_chk_1",
+      "type": "CHECK"
+    },
+    {
+      "table": "PRICE_HISTORY",
+      "name": "PRICE_HISTORY_chk_2",
+      "type": "CHECK"
+    },
+    {
+      "table": "PRICE_HISTORY",
+      "name": "PRICE_HISTORY_chk_3",
+      "type": "CHECK"
+    },
+    {
+      "table": "PRICE_HISTORY",
+      "name": "PRICE_HISTORY_ibfk_1",
+      "type": "FOREIGN KEY"
+    },
+    {
+      "table": "PRICE_HISTORY",
+      "name": "PRIMARY",
+      "type": "PRIMARY KEY"
+    },
+    {
+      "table": "PRODUCT",
+      "name": "code",
+      "type": "UNIQUE"
+    },
+    {
+      "table": "PRODUCT",
+      "name": "PRIMARY",
+      "type": "PRIMARY KEY"
+    },
+    {
+      "table": "PRODUCT",
+      "name": "PRODUCT_chk_1",
+      "type": "CHECK"
+    },
+    {
+      "table": "PRODUCT",
+      "name": "PRODUCT_chk_2",
+      "type": "CHECK"
+    },
+    {
+      "table": "PRODUCT",
+      "name": "PRODUCT_ibfk_1",
+      "type": "FOREIGN KEY"
+    },
+    {
+      "table": "PURCHASE",
+      "name": "PRIMARY",
+      "type": "PRIMARY KEY"
+    },
+    {
+      "table": "PURCHASE",
+      "name": "PURCHASE_chk_1",
+      "type": "CHECK"
+    },
+    {
+      "table": "PURCHASE",
+      "name": "PURCHASE_chk_2",
+      "type": "CHECK"
+    },
+    {
+      "table": "PURCHASE",
+      "name": "PURCHASE_ibfk_1",
+      "type": "FOREIGN KEY"
+    },
+    {
+      "table": "PURCHASE",
+      "name": "PURCHASE_ibfk_2",
+      "type": "FOREIGN KEY"
+    },
+    {
+      "table": "PURCHASE",
+      "name": "PURCHASE_ibfk_3",
+      "type": "FOREIGN KEY"
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "name": "cart_id",
+      "type": "UNIQUE"
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "name": "PRIMARY",
+      "type": "PRIMARY KEY"
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "name": "PURCHASE_LINE_chk_1",
+      "type": "CHECK"
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "name": "PURCHASE_LINE_chk_10",
+      "type": "CHECK"
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "name": "PURCHASE_LINE_chk_2",
+      "type": "CHECK"
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "name": "PURCHASE_LINE_chk_3",
+      "type": "CHECK"
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "name": "PURCHASE_LINE_chk_4",
+      "type": "CHECK"
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "name": "PURCHASE_LINE_chk_5",
+      "type": "CHECK"
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "name": "PURCHASE_LINE_chk_6",
+      "type": "CHECK"
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "name": "PURCHASE_LINE_chk_7",
+      "type": "CHECK"
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "name": "PURCHASE_LINE_chk_8",
+      "type": "CHECK"
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "name": "PURCHASE_LINE_chk_9",
+      "type": "CHECK"
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "name": "PURCHASE_LINE_ibfk_1",
+      "type": "FOREIGN KEY"
+    },
+    {
+      "table": "PURCHASE_LINE",
+      "name": "PURCHASE_LINE_ibfk_2",
+      "type": "FOREIGN KEY"
+    },
+    {
+      "table": "PURCHASE_TAX",
+      "name": "PRIMARY",
+      "type": "PRIMARY KEY"
+    },
+    {
+      "table": "PURCHASE_TAX",
+      "name": "PURCHASE_TAX_chk_1",
+      "type": "CHECK"
+    },
+    {
+      "table": "PURCHASE_TAX",
+      "name": "PURCHASE_TAX_chk_2",
+      "type": "CHECK"
+    },
+    {
+      "table": "PURCHASE_TAX",
+      "name": "PURCHASE_TAX_chk_3",
+      "type": "CHECK"
+    },
+    {
+      "table": "PURCHASE_TAX",
+      "name": "PURCHASE_TAX_chk_4",
+      "type": "CHECK"
+    },
+    {
+      "table": "PURCHASE_TAX",
+      "name": "PURCHASE_TAX_ibfk_1",
+      "type": "FOREIGN KEY"
+    },
+    {
+      "table": "REGISTER",
+      "name": "PRIMARY",
+      "type": "PRIMARY KEY"
+    },
+    {
+      "table": "REGISTER",
+      "name": "REGISTER_chk_1",
+      "type": "CHECK"
+    },
+    {
+      "table": "REGISTER",
+      "name": "REGISTER_chk_2",
+      "type": "CHECK"
+    },
+    {
+      "table": "REGISTER",
+      "name": "REGISTER_chk_3",
+      "type": "CHECK"
+    },
+    {
+      "table": "REGISTER",
+      "name": "REGISTER_chk_4",
+      "type": "CHECK"
+    },
+    {
+      "table": "REGISTER",
+      "name": "REGISTER_ibfk_1",
+      "type": "FOREIGN KEY"
+    },
+    {
+      "table": "REGISTER",
+      "name": "REGISTER_ibfk_2",
+      "type": "FOREIGN KEY"
+    },
+    {
+      "table": "REGISTER",
+      "name": "REGISTER_ibfk_3",
+      "type": "FOREIGN KEY"
+    },
+    {
+      "table": "STAFF",
+      "name": "PRIMARY",
+      "type": "PRIMARY KEY"
+    },
+    {
+      "table": "STAFF",
+      "name": "STAFF_chk_1",
+      "type": "CHECK"
+    },
+    {
+      "table": "TAX_RATE",
+      "name": "PRIMARY",
+      "type": "PRIMARY KEY"
+    },
+    {
+      "table": "TAX_RATE",
+      "name": "TAX_RATE_chk_1",
+      "type": "CHECK"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "trust_registration": "user canceled OS authorization",
+  "public_certificate_left_after_cancel": true,
+  "matched_der_to_current_m2_ca": true,
+  "sha256": "22e2879f15054a5f148b40d5235ec0e7ef30ea3070535f29cdb0e41b6fdffd61",
+  "user_trust_entry_found": false,
+  "exact_certificate_removed": true,
+  "final_privileged_lookup_found_certificate": false
+}

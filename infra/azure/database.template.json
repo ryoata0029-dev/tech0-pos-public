@@ -1,0 +1,115 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "type": "string",
+      "defaultValue": "japaneast",
+      "allowedValues": [
+        "japaneast"
+      ]
+    },
+    "serverName": {
+      "type": "string"
+    },
+    "databaseName": {
+      "type": "string"
+    },
+    "administratorLogin": {
+      "type": "string"
+    },
+    "administratorPassword": {
+      "type": "securestring"
+    },
+    "backendOutboundIps": {
+      "type": "array",
+      "minLength": 1
+    },
+    "skuName": {
+      "type": "string",
+      "defaultValue": "Standard_D2ads_v5",
+      "allowedValues": [
+        "Standard_D2ads_v5"
+      ]
+    },
+    "mysqlVersion": {
+      "type": "string",
+      "defaultValue": "8.4",
+      "allowedValues": [
+        "8.4"
+      ]
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.DBforMySQL/flexibleServers",
+      "apiVersion": "2024-12-30",
+      "name": "[parameters('serverName')]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "[parameters('skuName')]",
+        "tier": "GeneralPurpose"
+      },
+      "properties": {
+        "administratorLogin": "[parameters('administratorLogin')]",
+        "administratorLoginPassword": "[parameters('administratorPassword')]",
+        "version": "[parameters('mysqlVersion')]",
+        "storage": {
+          "storageSizeGB": 32,
+          "autoGrow": "Disabled"
+        },
+        "backup": {
+          "backupRetentionDays": 7,
+          "geoRedundantBackup": "Disabled"
+        },
+        "highAvailability": {
+          "mode": "Disabled"
+        },
+        "network": {
+          "publicNetworkAccess": "Enabled"
+        }
+      }
+    },
+    {
+      "type": "Microsoft.DBforMySQL/flexibleServers/databases",
+      "apiVersion": "2024-12-30",
+      "name": "[concat(parameters('serverName'),'/',parameters('databaseName'))]",
+      "dependsOn": [
+        "[resourceId('Microsoft.DBforMySQL/flexibleServers',parameters('serverName'))]"
+      ],
+      "properties": {
+        "charset": "utf8mb4",
+        "collation": "utf8mb4_0900_ai_ci"
+      }
+    },
+    {
+      "type": "Microsoft.DBforMySQL/flexibleServers/firewallRules",
+      "apiVersion": "2024-12-30",
+      "name": "[concat(parameters('serverName'),'/backend-',copyIndex())]",
+      "copy": {
+        "name": "backendAllow",
+        "count": "[length(parameters('backendOutboundIps'))]"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.DBforMySQL/flexibleServers',parameters('serverName'))]"
+      ],
+      "properties": {
+        "startIpAddress": "[parameters('backendOutboundIps')[copyIndex()]]",
+        "endIpAddress": "[parameters('backendOutboundIps')[copyIndex()]]"
+      }
+    },
+    {
+      "type": "Microsoft.DBforMySQL/flexibleServers/configurations",
+      "apiVersion": "2024-12-30",
+      "name": "[concat(parameters('serverName'),'/require_secure_transport')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.DBforMySQL/flexibleServers',parameters('serverName'))]"
+      ],
+      "properties": {
+        "value": "ON",
+        "source": "user-override"
+      }
+    }
+  ],
+  "outputs": {}
+}

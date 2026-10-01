@@ -1,0 +1,64 @@
+[
+  {
+    "check": "unauthenticated M2 reads rejected",
+    "passed": true
+  },
+  {
+    "check": "origin and custom header guards reject all M2 writes",
+    "passed": true
+  },
+  {
+    "check": "direct backend request without relay secret rejected",
+    "passed": true
+  },
+  {
+    "check": "HTTP input validation excludes unknown fields and null password",
+    "passed": true
+  },
+  {
+    "check": "real HTTPS login and readonly auth status",
+    "passed": true,
+    "staff_id": "STAFF_A"
+  },
+  {
+    "check": "simultaneous start creates exactly one context",
+    "passed": true
+  },
+  {
+    "check": "cookie loss before first cart stops without replacement",
+    "passed": true
+  },
+  {
+    "check": "confirm response loss resolved by readonly status and idempotent confirm",
+    "passed": true
+  },
+  {
+    "check": "simultaneous cart creation and lost reply preserve one cart",
+    "passed": true,
+    "cart_id": "b039cfd7-6fb0-40b6-b29a-33ffe892551c"
+  },
+  {
+    "check": "real DB contains single context/cart and hashed resume token",
+    "passed": true
+  },
+  {
+    "check": "missing resume cookie and other staff cannot replace active transaction",
+    "passed": true
+  },
+  {
+    "check": "authenticated product/member read and not-found distinction",
+    "passed": true
+  },
+  {
+    "check": "reauthentication revokes old session and retains original cart",
+    "passed": true
+  },
+  {
+    "check": "five concurrent failures persist and subsequent attempts do not extend lock",
+    "passed": true
+  },
+  {
+    "check": "authentication response reconciliation and reads do not extend resume deadline",
+    "passed": true
+  }
+]

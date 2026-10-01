@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-01",
+  "device": "iPhone 15",
+  "ios": "26.5.2",
+  "browser": "Chrome",
+  "chrome_version": "not_obtained",
+  "method": "Mac Safari Web Inspector Cookie Add; Domain blank; explicit attributes",
+  "manual_cookie": {
+    "name": "__Host-pos_resume",
+    "domain": "wpt.live",
+    "path": "/",
+    "expires_local": "2026-10-31 13:45:00",
+    "secure": true,
+    "http_only": true,
+    "same_site": "Lax"
+  },
+  "control": {
+    "name": "m2_wpt_domain_control",
+    "http_domain": "wpt.live",
+    "stored_domain": ".wpt.live"
+  },
+  "parent": {
+    "resume": true,
+    "control": true,
+    "js_visible": false
+  },
+  "child": {
+    "resume": false,
+    "control": true,
+    "js_visible": false
+  },
+  "parent_again": {
+    "resume": true,
+    "control": true,
+    "js_visible": false
+  },
+  "host_only_verified": true,
+  "cleanup_own_two_cookies_verified": true,
+  "real_pos_credentials_sent": false
+}

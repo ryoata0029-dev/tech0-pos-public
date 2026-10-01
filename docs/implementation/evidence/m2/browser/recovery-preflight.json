@@ -1,0 +1,38 @@
+{
+  "environment": "e8a3f2017ee7",
+  "context_id": "e5f8b91d-f145-421b-bf38-89fcaea9552c",
+  "cart_id": "213f366b-49e3-4b6c-9acb-08d051ceac3f",
+  "original_version": 1,
+  "original_staff": "STAFF_A",
+  "counts": {
+    "BROWSER_CONTEXT": 1,
+    "CART": 1,
+    "CART_LINE": 0,
+    "CART_OPERATION": 0,
+    "PURCHASE": 0,
+    "PURCHASE_LINE": 0,
+    "PURCHASE_TAX": 0
+  },
+  "all_apps_stopped": true,
+  "other_user_db_connections": 0,
+  "other_innodb_transactions": 0,
+  "excluded": "own read transaction and idle event_scheduler daemon",
+  "maintenance_hold": true,
+  "temporary_grants": [
+    "GRANT USAGE ON *.* TO `pos_master`@`%`",
+    "GRANT SELECT, UPDATE (`revoked_at`) ON `pos_validation`.`AUTH_SESSION` TO `pos_master`@`%`",
+    "GRANT SELECT, UPDATE (`manual_released_at`, `token_hash`) ON `pos_validation`.`BROWSER_CONTEXT` TO `pos_master`@`%`",
+    "GRANT SELECT ON `pos_validation`.`CART_LINE` TO `pos_master`@`%`",
+    "GRANT SELECT ON `pos_validation`.`CART_OPERATION` TO `pos_master`@`%`",
+    "GRANT SELECT, UPDATE (`version`) ON `pos_validation`.`CART` TO `pos_master`@`%`",
+    "GRANT SELECT, INSERT, UPDATE ON `pos_validation`.`DISCOUNT_CONDITION` TO `pos_master`@`%`",
+    "GRANT SELECT, INSERT, UPDATE ON `pos_validation`.`MEMBER` TO `pos_master`@`%`",
+    "GRANT SELECT, INSERT ON `pos_validation`.`PRICE_HISTORY` TO `pos_master`@`%`",
+    "GRANT SELECT, INSERT, UPDATE ON `pos_validation`.`PRODUCT` TO `pos_master`@`%`",
+    "GRANT SELECT ON `pos_validation`.`PURCHASE_LINE` TO `pos_master`@`%`",
+    "GRANT SELECT ON `pos_validation`.`PURCHASE_TAX` TO `pos_master`@`%`",
+    "GRANT SELECT ON `pos_validation`.`PURCHASE` TO `pos_master`@`%`",
+    "GRANT SELECT, UPDATE (`active_session_hash`, `maintenance_hold`) ON `pos_validation`.`REGISTER` TO `pos_master`@`%`",
+    "GRANT SELECT, INSERT, UPDATE ON `pos_validation`.`TAX_RATE` TO `pos_master`@`%`"
+  ]
+}

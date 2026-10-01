@@ -1,0 +1,2 @@
+There has been no change in the accessibility tree for Window: "ウェブインスペクタ — Ryota — Chrome — wpt.live — echo-json.py".
+The focused UI element is 208 テキスト入力領域 (settable) コンソールプロンプト, Secondary Actions: 作文ツールを表示

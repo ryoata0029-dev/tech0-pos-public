@@ -1,0 +1,40 @@
+{
+  "origin": "https://wrist-men-fusion-cursor.trycloudflare.com",
+  "checks": [
+    {
+      "method": "GET",
+      "path": "/",
+      "status": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/auth/status",
+      "status": 401,
+      "expected": 401,
+      "passed": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/register/start",
+      "status": 403,
+      "expected": 403,
+      "passed": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/docs",
+      "status": 404,
+      "expected": 404,
+      "passed": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/resume?unexpected=1",
+      "status": 422,
+      "expected": 422,
+      "passed": true
+    }
+  ]
+}

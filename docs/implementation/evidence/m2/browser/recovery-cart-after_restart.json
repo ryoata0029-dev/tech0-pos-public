@@ -1,0 +1,38 @@
+{
+  "phase": "manual_recovery_after_restart",
+  "observed_at_utc": "2026-10-01 05:29:06.636957",
+  "state": {
+    "start_state": "READY",
+    "maintenance_hold": 0,
+    "active_context_id": "e5f8b91d-f145-421b-bf38-89fcaea9552c",
+    "current_cart_id": "213f366b-49e3-4b6c-9acb-08d051ceac3f",
+    "starting_staff_id": "STAFF_A",
+    "confirmed_at": "2026-10-01 03:52:07.222282",
+    "last_business_at": "2026-10-01 03:52:08.967853",
+    "manual_released_at": "2026-10-01 05:04:13.911257",
+    "invalidated_at": null,
+    "context_id": "e5f8b91d-f145-421b-bf38-89fcaea9552c",
+    "staff_id": "STAFF_A",
+    "state": "EDITING",
+    "version": 2,
+    "member_state": "UNSPECIFIED",
+    "subtotal": "0",
+    "total": "0",
+    "created_at": "2026-10-01 03:52:08.967853",
+    "updated_at": "2026-10-01 03:52:08.967853"
+  },
+  "counts": {
+    "BROWSER_CONTEXT": 1,
+    "CART": 1,
+    "CART_LINE": 0,
+    "CART_OPERATION": 0,
+    "PURCHASE": 0,
+    "PURCHASE_LINE": 0,
+    "PURCHASE_TAX": 0
+  },
+  "same_original_cart": true,
+  "matches_after_reload": true,
+  "read_only": true,
+  "cookie_hashes_read": false,
+  "user_report": "完全終了・同じURLで再起動後、ログイン・利用開始なしで購入リストに戻った"
+}

@@ -1,0 +1,11 @@
+{
+  "profile": "mac",
+  "container_running": false,
+  "ports_accepting": {
+    "3307": false,
+    "8443": false,
+    "8444": false
+  },
+  "public_http_status": 530,
+  "volumes_retained": true
+}

@@ -6,6 +6,14 @@
 /validation/.venv/
 __pycache__/
 .pytest_cache/
+.venv/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+*.tsbuildinfo
+/.m0-cache/
 
 # Local credentials, machine files and generated build output.
 .env
@@ -18,3 +26,16 @@ __pycache__/
 .DS_Store
 node_modules/
 .next/
+
+# Reserved for the new M2 isolated environment; never commit secrets or DB data.
+/.m2-local/
+
+# Independent M3 validation credentials and certificates.
+/.m3-local/
+
+# Local deployment bundles and operational evidence containing identifiers.
+/.deployment/
+/.operations-local/
+
+# Superseded intermediate output; final results are in check.log.
+/docs/implementation/evidence/m4-m6/frontend-tests.log

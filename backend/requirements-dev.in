@@ -1,0 +1,8 @@
+-r requirements.in
+# Build, static checks, lock generation and offline OpenAPI validation.
+build==1.6.1
+setuptools==84.0.0
+pip-tools==7.6.1
+ruff==0.16.9
+mypy==2.3.1
+openapi-spec-validator==0.9.0

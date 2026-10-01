@@ -1,0 +1,47 @@
+import assert from 'node:assert/strict';
+import { test } from 'node:test';
+import { clearSaved, newer, purchaseKeys, rememberPurchase, requireStable } from '../lib/pos.ts';
+const cart = '11111111-1111-4111-8111-111111111111';
+const op = '22222222-2222-4222-8222-222222222222';
+class MemoryStorage {
+  values = new Map();
+  get length() { return this.values.size; }
+  key(index) { return [...this.values.keys()][index] ?? null; }
+  getItem(key) { return this.values.get(key) ?? null; }
+  setItem(key, value) { this.values.set(key, value); }
+  removeItem(key) { this.values.delete(key); }
+}
+test('late cart responses cannot roll back exact versions above JS integer precision', () => {
+  const first = { cart: { cart_id: cart, version: '9007199254740993' } };
+  const late = { cart: { cart_id: cart, version: '9007199254740992' } };
+  assert.equal(newer(first, late), first);
+  assert.equal(newer(first, { cart: { cart_id: op, version: '1' } }).cart.cart_id, op);
+});
+test('purchase storage keeps each operation and only clears verified saved cart', () => {
+  const storage = new MemoryStorage();
+  rememberPurchase(storage, cart, op, '1');
+  rememberPurchase(storage, cart, cart, '2');
+  rememberPurchase(storage, op, cart, '1');
+  assert.equal(purchaseKeys(storage, cart).length, 2);
+  assert.deepEqual(Object.keys(JSON.parse(storage.getItem(storage.key(0)))).sort(), ['cart_id','operation_id','version']);
+  clearSaved(storage, { cart: { cart_id: cart, version: '3' }, purchase_status: 'UNKNOWN', purchase: null });
+  assert.equal(storage.length, 3);
+  clearSaved(storage, { cart: { cart_id: cart, version: '3' }, purchase_status: 'SAVED', purchase: { cart_id: op } });
+  assert.equal(storage.length, 3);
+  clearSaved(storage, { cart: { cart_id: cart, version: '3' }, purchase_status: 'SAVED', purchase: { cart_id: cart } });
+  assert.equal(storage.length, 1);
+});
+test('broken or unreadable storage fails closed rather than meaning no pending purchase', () => {
+  const storage = new MemoryStorage();
+  storage.setItem(`pos-purchase:${cart}:${op}`, '{broken');
+  assert.throws(() => purchaseKeys(storage, cart));
+  assert.throws(() => rememberPurchase({ setItem() { throw new Error('blocked'); } }, cart, op, '1'));
+});
+
+test('late edit receipt cannot acknowledge a newer saving state or notification', () => {
+  const storage = new MemoryStorage();
+  assert.throws(() => requireStable(storage,{cart:{state:'SAVING'}},0,0));
+  assert.throws(() => requireStable(storage,{cart:{state:'EDITING'}},0,1));
+  rememberPurchase(storage,cart,op,'3');
+  assert.throws(() => requireStable(storage,{cart:{state:'EDITING'}},0,0));
+});

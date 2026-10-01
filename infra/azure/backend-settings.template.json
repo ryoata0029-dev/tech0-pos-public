@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "appName": {
+      "type": "string"
+    },
+    "POS_FRONTEND_ORIGIN": {
+      "type": "string"
+    },
+    "POS_RELAY_SECRET": {
+      "type": "securestring"
+    },
+    "POS_DEPLOYMENT_VERSION": {
+      "type": "string"
+    },
+    "POS_DB_HOST": {
+      "type": "string"
+    },
+    "POS_DB_NAME": {
+      "type": "string"
+    },
+    "POS_DB_USER": {
+      "type": "string"
+    },
+    "POS_DB_PASSWORD": {
+      "type": "securestring"
+    },
+    "POS_DB_SSL_CA": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Web/sites/config",
+      "apiVersion": "2024-11-01",
+      "name": "[concat(parameters('appName'),'/appsettings')]",
+      "properties": {
+        "POS_FRONTEND_ORIGIN": "[parameters('POS_FRONTEND_ORIGIN')]",
+        "POS_RELAY_SECRET": "[parameters('POS_RELAY_SECRET')]",
+        "POS_DEPLOYMENT_VERSION": "[parameters('POS_DEPLOYMENT_VERSION')]",
+        "POS_DB_HOST": "[parameters('POS_DB_HOST')]",
+        "POS_DB_NAME": "[parameters('POS_DB_NAME')]",
+        "POS_DB_USER": "[parameters('POS_DB_USER')]",
+        "POS_DB_PASSWORD": "[parameters('POS_DB_PASSWORD')]",
+        "POS_DB_SSL_CA": "[parameters('POS_DB_SSL_CA')]",
+        "SCM_DO_BUILD_DURING_DEPLOYMENT": "false"
+      }
+    }
+  ],
+  "outputs": {}
+}

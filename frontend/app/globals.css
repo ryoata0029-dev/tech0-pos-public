@@ -1,0 +1,39 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, sans-serif;
+  background: #f5f6f8;
+  color: #17212b;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  max-width: 48rem;
+  margin: 4rem auto;
+  padding: 1.5rem;
+}
+
+h1 { font-size: 1.8rem; }
+.eyebrow { color: #456072; letter-spacing: .08em; }
+form, section { background: white; border: 1px solid #d7dfe5; border-radius: .75rem; padding: 1.5rem; margin: 1.5rem 0; }
+label { display: grid; gap: .5rem; margin-bottom: 1rem; }
+input { font: inherit; padding: .75rem; border: 1px solid #758896; border-radius: .4rem; min-width: 0; }
+button { font: inherit; background: #145d55; color: white; border: 0; border-radius: .4rem; padding: .8rem 1.2rem; margin: .5rem .5rem .5rem 0; cursor: pointer; }
+button:disabled { opacity: .55; cursor: wait; }
+button.secondary { background: #e2e9ed; color: #203846; }
+.muted { color: #516675; font-size: .9rem; }
+[role=alert] { padding: 1rem; background: #fff0cf; }
+@media (max-width: 600px) { main { margin: 1rem auto; padding: 1rem; } }
+.pos-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 1rem; }
+.pos-grid section { min-width: 0; margin: 0; padding: 1rem; }
+.pos p, .pos button { overflow-wrap: anywhere; }
+.lines { list-style: none; margin: 0; padding: 0; }
+.lines li { border-bottom: 1px solid #d7dfe5; padding: .5rem; }
+.lines .selected { background: #e0f1eb; }
+.total { font-weight: bold; font-size: 1.25rem; }
+main { max-width: 72rem; }
+@media (max-width: 767px) { .pos-grid { grid-template-columns: 1fr; } }
+
+.camera-preview { width: 100%; max-height: 280px; background: #111; object-fit: contain; }

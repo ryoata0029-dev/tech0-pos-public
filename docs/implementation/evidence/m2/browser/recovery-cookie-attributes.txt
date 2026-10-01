@@ -1,0 +1,117 @@
+Window: "ウェブインスペクタ — Ryota — Chrome — passengers-external-cst-immediately.trycloudflare.com", App: Safari.
+0 標準ウインドウ ウェブインスペクタ — Ryota — Chrome — passengers-external-cst-immediately.trycloudflare.com, Secondary Actions: Raise
+	1 スクロール領域
+		2 HTMLコンテンツ inspector-resource:///Main.html
+			3 ボタン 要素選択を開始（⇧⌘C）
+			4 ボタン デバイスの設定
+			5 ボタン ページを再読み込み（⌘R）
+キャッシュを無視してページを再読み込み（⌥⌘R）
+			6 ボタン ウェブアーカイブをダウンロード
+			7 ボタン クリックして1件のエラーをコンソールで表示
+			8 タブグループ (selectable)
+				9 タブ (selectable) 要素
+				10 タブ (selectable) コンソール
+				11 タブ (selectable) ソース
+				12 タブ (selectable) ネットワーク
+				13 タブ (selectable) タイムライン
+				14 タブ (selected) ストレージ
+				15 タブ (selectable) グラフィックス
+				16 タブ (selectable) レイヤー
+				17 タブ (selectable) 監査
+				18 タブ (selectable) 検索（⇧⌘F）
+				19 タブ (selectable) 設定（⌘,）
+			20 container ストレージ
+				21 container ナビゲーション
+					22 container ストレージ
+						23 アウトライン (selectable)
+							24 row (selected) Description: Cookie — passengers-external-cst-immediately.trycloudflare.com, Value: Cookie — passengers-external-cst-immediately.trycloudflare.com
+Cookie
+—
+passengers-external-cst-immediately.trycloudflare.com
+							25 row (selectable) Description: セッションストレージ — passengers-external-cst-immediately.trycloudflare.com, Value: セッションストレージ — passengers-external-cst-immediately.trycloudflare.com
+セッションストレージ
+—
+passengers-external-cst-immediately.trycloudflare.com
+							26 row (selectable) Description: ローカルストレージ — passengers-external-cst-immediately.trycloudflare.com, Value: ローカルストレージ — passengers-external-cst-immediately.trycloudflare.com
+ローカルストレージ
+—
+passengers-external-cst-immediately.trycloudflare.com
+						27 検索テキストフィールド (settable) フィルタ
+							28 テキスト フィルタ
+						29 テキスト すべてのストレージ
+						30 container
+							31 テキスト Cookie
+							32 ポップアップボタン (collapsed) Secondary Actions: Expand
+							33 イメージ
+				34 切り替えボタン ナビゲーションサイドバーを非表示（⇧⌘0）, Value: on
+				35 ボタン (disabled) 戻る（⌃⌘←）
+				36 ボタン (disabled) 進む（⌃⌘→）
+				37 イメージ
+				38 テキスト Cookie
+				39 ポップアップボタン (collapsed) Secondary Actions: Expand
+				40 検索テキストフィールド (settable) フィルタ
+					41 テキスト フィルタ
+				42 ボタン Cookieを追加
+				43 ボタン 更新
+				44 ボタン Cookieを消去
+				45 切り替えボタン (disabled) 詳細サイドバーを表示（⌥⌘0）, Value: off
+				46 container
+					47 テキスト 名前
+					48 テキスト 値
+					49 テキスト Domain
+					50 テキスト Path
+					51 テキスト Expires
+					52 テキスト サイズ
+					53 テキスト Secure
+					54 テキスト HttpOnly
+					55 テキスト SameSite
+					56 container __Host-pos_resume [REDACTED] passengers-external-cst-immediately.trycloudflare.com / 2026/10/31 14:00:00 60 B ✓ ✓ Lax
+			57 ボタン コンソールを非表示（⎋）
+			58 検索テキストフィールド (settable)  
+			59 ボタン (disabled) 前を検索（⇧⌘G）
+			60 ボタン (disabled) 次を検索（⌘G）
+			61 テキスト すべて
+			62 テキスト 評価
+			63 テキスト エラー
+			64 テキスト 警告
+			65 テキスト ログ
+			66 container
+				67 テキスト すべてのソース
+				68 ポップアップボタン (collapsed) Value: すべてのソース, Secondary Actions: Expand
+				69 イメージ
+			70 ボタン その他のフィルタオプション…
+			71 チェックボックス (settable, integer) ユーザのジェスチャをエミュレート, Help: ユーザジェスチャ内と同様にコンソールコマンドを実行, Value: 0
+			72 ボタン コンソールスニペットを実行…
+			73 ボタン ガベージを収集
+			74 ボタン ログを消去（⌘Kまたは⌃L）
+			75 ボタン “コンソール”タブを表示
+			76 container
+				77 テキスト 13:51:38にコンソールが消去されました
+				78 イメージ
+				79 link https://passengers-external-cst-immediately.trycloudflare.com/api/auth/status, Value: passengers-external-cst-immediately.trycloudflare.com/api/auth/status
+				80 テキスト Failed to load resource: the server responded with a status of 401 ()
+				81 イメージ
+				82 テキスト console.log(JSON.stringify({host:location.hostname,ui:document.body.innerText,resumeVisible:document.cookie.includes('__Host-pos_resume=')}))
+				83 イメージ
+				84 link user-script:26:1:2963, Value: user-script:26
+				85 テキスト {"host":"passengers-external-cst-immediately.trycloudflare.com","ui":"Tech0 · 簡易POS\n\n担当者ログイン\n\n担当者IDとパスワードを入力してください。\n\n担当者ID\nパスワード\nログイン\n状態を再確認\n","resumeVisible":false}
+				86 イメージ
+				87 テキスト undefined
+			88 テキスト入力領域 (settable) コンソールプロンプト
+			89 container
+			90 container $0の実行コンテキスト
+				91 テキスト 自動 — ページ
+	92 閉じるボタン
+	93 フルスクリーンボタン Help: このボタンにはウインドウを拡大する操作もあります, Secondary Actions: ウインドウを拡大
+	94 しまうボタン
+	95 テキスト ウェブインスペクタ — Ryota — Chrome — passengers-external-cst-immediately.trycloudflare.com
+96 menu bar
+	97 Safari
+	98 ファイル
+	99 編集
+	100 表示, ID: SafariViewMenu
+	101 履歴
+	102 ブックマーク, ID: SafariBookmarksMenu
+	103 開発
+	104 ウインドウ, ID: SafariWindowMenu
+	105 ヘルプ, ID: SafariHelpMenu

@@ -1,0 +1,26 @@
+{
+  "environment": "e8a3f2017ee7",
+  "released_at_utc": "2026-10-01 05:25:53.146881",
+  "context_id": "e5f8b91d-f145-421b-bf38-89fcaea9552c",
+  "cart_id": "213f366b-49e3-4b6c-9acb-08d051ceac3f",
+  "staff_id": "STAFF_A",
+  "version": 2,
+  "browser_read_and_hold_write_checks_passed": true,
+  "new_resume_hash_matches": true,
+  "active_auth_within_expiry": true,
+  "manual_permission_within_24h": true,
+  "all_original_business_fields_preserved": true,
+  "counts": {
+    "BROWSER_CONTEXT": 1,
+    "CART": 1,
+    "CART_LINE": 0,
+    "CART_OPERATION": 0,
+    "PURCHASE": 0,
+    "PURCHASE_LINE": 0,
+    "PURCHASE_TAX": 0
+  },
+  "register_update_rows": 1,
+  "only_maintenance_hold_changed": true,
+  "maintenance_hold": false,
+  "commit_acknowledged": true
+}

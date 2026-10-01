@@ -1,0 +1,15 @@
+{
+  "ports_closed": {
+    "3307": true,
+    "8443": true,
+    "8444": true,
+    "8453": true
+  },
+  "container_running": false,
+  "public_url_http_status": 530,
+  "tls_verification": true,
+  "tunnel_session_exit_code": 0,
+  "recovery_privileges": "USAGE only before shutdown",
+  "db_volume_retained": true,
+  "secrets_retained_private_gitignored": true
+}

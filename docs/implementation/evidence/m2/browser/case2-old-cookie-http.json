@@ -1,0 +1,31 @@
+{
+  "transport": "TLS certificate and hostname verified localhost:8443 Next.js relay",
+  "origin": "https://passengers-external-cst-immediately.trycloudflare.com",
+  "same_client_headers_and_login_body_cookie_only_difference": true,
+  "old_auth_status": 401,
+  "old_auth_code": "UNAUTHENTICATED",
+  "old_resume_login_status": 403,
+  "old_resume_login_code": "FORBIDDEN",
+  "old_resume_no_set_cookie": true,
+  "old_rejection_db_unchanged": true,
+  "new_resume_login_positive_control_status": 200,
+  "new_resume_register_and_cart_match": true,
+  "version": 3,
+  "valid_new_auth_with_old_resume_rejections": [
+    {
+      "path": "register/status",
+      "status": 403,
+      "code": "FORBIDDEN"
+    },
+    {
+      "path": "resume",
+      "status": 403,
+      "code": "FORBIDDEN"
+    }
+  ],
+  "rejected_gets_db_unchanged": true,
+  "success_control_created_test_auth": true,
+  "iphone_reauth_still_required": true,
+  "maintenance_hold": true,
+  "secrets_recorded": false
+}

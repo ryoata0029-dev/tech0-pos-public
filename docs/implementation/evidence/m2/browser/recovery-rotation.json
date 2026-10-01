@@ -1,0 +1,38 @@
+{
+  "environment": "e8a3f2017ee7",
+  "context_id": "e5f8b91d-f145-421b-bf38-89fcaea9552c",
+  "cart_id": "213f366b-49e3-4b6c-9acb-08d051ceac3f",
+  "staff_id": "STAFF_A",
+  "wrong_version_probe_rolled_back": true,
+  "failed_probe_original_state_preserved": true,
+  "hold_remained_true": true,
+  "update_rows": {
+    "AUTH_SESSION": 1,
+    "REGISTER": 1,
+    "BROWSER_CONTEXT": 1,
+    "CART": 1
+  },
+  "version_before": 1,
+  "version_after": 2,
+  "same_original_cart": true,
+  "original_business_timestamps_preserved": true,
+  "new_resume_hash_matches": true,
+  "new_old_hash_different": true,
+  "old_hash_context_count": 0,
+  "old_active_auth_revoked": true,
+  "active_auth_reference_cleared": true,
+  "manual_released_at_utc": "2026-10-01 05:04:13.911257",
+  "last_business_at_utc": "2026-10-01 03:52:08.967853",
+  "counts": {
+    "BROWSER_CONTEXT": 1,
+    "CART": 1,
+    "CART_LINE": 0,
+    "CART_OPERATION": 0,
+    "PURCHASE": 0,
+    "PURCHASE_LINE": 0,
+    "PURCHASE_TAX": 0
+  },
+  "committed": true,
+  "maintenance_hold": true,
+  "old_raw_cookie_http_rejection_verified": false
+}

@@ -1,0 +1,16 @@
+{
+  "description": "M2専用の架空データ。実在者・連絡可能な顧客情報は含まない。",
+  "staff_ids": ["STAFF_A", "STAFF_B"],
+  "members": [
+    {"member_id":"MEMBER_0","name":"演習会員ゼロ","phone":"架空・電話なし","address":"架空住所","gender":"演習用自由記述","age":0},
+    {"member_id":"MEMBER_1","name":"演習会員イチ","phone":"架空・電話なし","address":"架空住所","gender":"未指定（演習）","age":20}
+  ],
+  "taxes": [{"tax_rate_id":1,"rate":"0.08"},{"tax_rate_id":2,"rate":"0.10"}],
+  "products": [
+    {"product_id":1,"code":"0001","name":"演習食品103円","unit_price":"103","tax_rate_id":1},
+    {"product_id":2,"code":"0002","name":"演習日用品210円","unit_price":"210","tax_rate_id":2}
+  ],
+  "discounts": [
+    {"condition_id":1,"product_id":1,"kind":"RATE","rate":"0.10","amount":null,"valid_from":"2026-01-01T00:00:00Z","valid_to":"2027-01-01T00:00:00Z"}
+  ]
+}

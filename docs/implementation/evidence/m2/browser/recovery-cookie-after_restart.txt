@@ -1,0 +1,57 @@
+The following is a diff from the previous accessibility tree for Window: "ウェブインスペクタ — Ryota — Chrome — passengers-external-cst-immediately.trycloudflare.com" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+~							63 row (selected) Cookie — passengers-external-cst-immediately.trycloudflare.com
++								77 イメージ
++									78 イメージ
++									79 イメージ
++									80 イメージ
++									81 イメージ
++									82 イメージ
++									83 イメージ
++									84 イメージ
++									85 イメージ
++									86 イメージ
++									87 イメージ
++									88 イメージ
++									89 イメージ
++									90 イメージ
++									91 イメージ
++									92 イメージ
++									93 イメージ
++									94 イメージ
++									95 イメージ
++									96 イメージ
++									97 イメージ
++									98 イメージ
++									99 イメージ
++									100 イメージ
++									101 イメージ
++									102 イメージ
++									103 イメージ
++									104 イメージ
++									105 イメージ
++									106 イメージ
++									107 イメージ
++								108 container
++									109 text Cookie  —  passengers-external-cst-immediately.trycloudflare.com
++				110 イメージ
++				111 テキスト Cookie
++				112 ポップアップボタン (collapsed) Secondary Actions: Expand
++				113 検索テキストフィールド (settable) フィルタ
++					114 テキスト フィルタ
++				115 ボタン Cookieを追加
++				116 ボタン 更新
++				117 ボタン Cookieを消去
++				118 container
++					119 テキスト 名前
++					120 テキスト 値
++					121 テキスト Domain
++					122 テキスト Path
++					123 テキスト Expires
++					124 テキスト サイズ
++					125 テキスト Secure
++					126 テキスト HttpOnly
++					127 テキスト SameSite
++					128 container __Host-pos_session [REDACTED] passengers-external-cst-immediately.trycloudflare.com / 2026/10/1 22:19:14 61 B ✓ ✓ Lax
++					129 container __Host-pos_resume [REDACTED] passengers-external-cst-immediately.trycloudflare.com / 2026/10/31 14:00:00 60 B ✓ ✓ Lax
+~			42 テキスト入力領域 (settable) コンソールプロンプト
+The focused UI element is 63 row (selected) Cookie — passengers-external-cst-immediately.trycloudflare.com

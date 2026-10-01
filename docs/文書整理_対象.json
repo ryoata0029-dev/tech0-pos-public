@@ -21,6 +21,10 @@
     "設計全体レビュー.md",
     "設計承認履歴.md",
     "設計残課題.md",
-    "設計設定・DB運用.md"
+    "設計設定・DB運用.md",
+    "テスト仕様書.md",
+    "docs/tests/実施条件.md",
+    "docs/tests/テストケース.md",
+    "docs/tests/API・DB詳細.md"
   ]
 }
