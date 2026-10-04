@@ -1,0 +1,12 @@
+{
+  "ports_closed": {
+    "3307": true,
+    "8443": true,
+    "8444": true
+  },
+  "container_status": "exited",
+  "volume_retained": "tech0-pos-m4-mysql-data",
+  "secrets_git_ignored": true,
+  "secrets_absent_from_git_candidates_and_logs": true,
+  "docker_desktop_left_running": true
+}

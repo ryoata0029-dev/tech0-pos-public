@@ -1,0 +1,167 @@
+{
+  "at_utc": "2026-10-04T16:17:48.180018+00:00",
+  "method": "independent offline comparison of root-recorded real Chrome fixture/UI/native Network and DB snapshots; no live GUI/DB/network operations",
+  "status": "Q_and_J_selected_conditions_limited_verified",
+  "cases": [
+    {
+      "case_id": "O05-R20-Q",
+      "nine_projections_equal": {
+        "register": true,
+        "contexts": true,
+        "carts": true,
+        "lines": true,
+        "operations": true,
+        "purchases": true,
+        "purchase_lines": true,
+        "purchase_taxes": true,
+        "products": true
+      },
+      "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+      "version": 16,
+      "subtotal": 523,
+      "tax": 47,
+      "total": 570,
+      "quantities": [
+        3,
+        1,
+        1
+      ],
+      "operation_count": 14,
+      "purchase_count": 0,
+      "baseline_utc": "2026-10-04 16:13:27.964164",
+      "final_utc": "2026-10-04 16:14:03.205861"
+    },
+    {
+      "case_id": "O05-R20-J",
+      "nine_projections_equal": {
+        "register": true,
+        "contexts": true,
+        "carts": true,
+        "lines": true,
+        "operations": true,
+        "purchases": true,
+        "purchase_lines": true,
+        "purchase_taxes": true,
+        "products": true
+      },
+      "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+      "version": 16,
+      "subtotal": 523,
+      "tax": 47,
+      "total": 570,
+      "quantities": [
+        3,
+        1,
+        1
+      ],
+      "operation_count": 14,
+      "purchase_count": 0,
+      "baseline_utc": "2026-10-04 16:14:26.073793",
+      "final_utc": "2026-10-04 16:16:23.716082"
+    }
+  ],
+  "quota": {
+    "native_error": "QuotaExceededError",
+    "purchase_sized_probe_failed": true,
+    "owned_filler_keys": 104,
+    "fixture_version": 15,
+    "purchase_trial_baseline_version": 16,
+    "initial_SYNC_is_separate_preparation": true,
+    "UI_purchase_send_stopped_message_observed": true,
+    "native_Network_recording_active_empty_all_requests_window": true,
+    "purchase_path_rows_in_observed_window": 0
+  },
+  "broken_JSON": {
+    "intentional_broken_records": 1,
+    "after_Q_owned_cleanup_purchase_keys_zero": true,
+    "UI_raw_parse_error_observed": true,
+    "business_content_570_preserved": true,
+    "native_Network_valid_file": "recovery-j-network-observed.txt",
+    "native_Network_URL_rows": 14,
+    "observed_URLs": [
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/api/resume",
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/",
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/_next/static/chunks/1un3u08nvun28.css",
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/_next/static/chunks/3l04zcqx63h3y.js",
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/_next/static/chunks/2nic2og_5v8u5.js",
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/_next/static/chunks/1l5f4fea3w5q7.js",
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/_next/static/chunks/turbopack-1_h7c-hwik7ll.js",
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/_next/static/chunks/0epz6ysmqzpxe.js",
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/_next/static/chunks/3ywjybcnms1a4.js",
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/api/auth/status",
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/api/register/status",
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/api/resume",
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/api/register/status",
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/api/resume"
+    ],
+    "purchase_sync_resolve_path_rows": 0,
+    "invalid_original_network": "recovery-j-network.txt",
+    "invalid_reason": "root reports empty capture after native Chrome focus moved to other Notion tab; retained but excluded from acceptance"
+  },
+  "display_observation": {
+    "English_raw_parse_error": "confirmed",
+    "classification": "usability improvement candidate; no explicit Japanese fixed-message requirement found in read TC20/acceptance/design5.1.3; safety stop and content retention satisfied",
+    "recommended_followup": "map storage parse/read exceptions to a Japanese message explaining purchase-record verification failed and editing stopped; no application change in this audit"
+  },
+  "source_files": [
+    {
+      "file": "db-recovery-q-baseline.json",
+      "sha256": "1f26116a65593d3059d6e3480334e8c39c040784b00dbc21ec7932b71aaaeba8"
+    },
+    {
+      "file": "db-recovery-q-final.json",
+      "sha256": "e32e7c398e1b743c337a973db287dc272410c935a79a1ac97cff6c80a3a8a9b5"
+    },
+    {
+      "file": "db-recovery-j-baseline.json",
+      "sha256": "887eda85fe374b2616e96f7e7b8c6999d8bdd7adf471a3817a2ba6b8ac1240db"
+    },
+    {
+      "file": "db-recovery-j-final.json",
+      "sha256": "7410d61ce317156d18932d4dd036bd0e5bc1a104d27ee8548027fd67d85d966c"
+    },
+    {
+      "file": "recovery-q-fixture.json",
+      "sha256": "2e02ed92c98ed8b14c4c304938836d5863e5db632294a9d7f1d512827769409e"
+    },
+    {
+      "file": "recovery-q-ui.txt",
+      "sha256": "c5fff834b19eb4f4d1c9a8aad50e6b747068f472f1625fe93d4bdd89e154bc6c"
+    },
+    {
+      "file": "recovery-q-network.txt",
+      "sha256": "c3181c3d905613b3c279ee2a01da3ac85beabf0f169514d6da913f917e196bd7"
+    },
+    {
+      "file": "recovery-q.jpg",
+      "sha256": "3a3874345940747e8395d0086f8610ae62432e240884e30682e0b84f1e81ed69"
+    },
+    {
+      "file": "recovery-j-fixture.json",
+      "sha256": "0d8d0f4405507256562178a5a0818a608fef952b1c451d611fef096c3ba04d9c"
+    },
+    {
+      "file": "recovery-j-ui.txt",
+      "sha256": "5046abd57fa1e72ad28c7b65a1b9cbd098b6adce41377b7aa7acceab0d5868fb"
+    },
+    {
+      "file": "recovery-j-network-observed.txt",
+      "sha256": "eb17718b6bc654229d74e20231d9ecc9a2ac3b10a77b31ce61b89574abd58afe"
+    },
+    {
+      "file": "recovery-j.jpg",
+      "sha256": "a322f61ac971bddf22bd6070360a9c9c2b02a8a921293ea9be6de575177f3bf5"
+    },
+    {
+      "file": "recovery-j-network.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "limits": [
+    "Root reports one real UI purchase click; Native Network paths are captured accessibility observations, not a server access-log trace or all-time no-send guarantee.",
+    "DB invariant covers nine selected projections only; purchase HTTP absence is independently observed in the recorded Network window.",
+    "J disabled business controls are root actual UI observation and visible gray controls in screenshot; state recheck/read-only paths are not blanket forbidden.",
+    "Q tests actual native capacity exhaustion, not browser read denial, silent write loss or storage permission prohibition.",
+    "J tests intentionally broken JSON only; M and L remain unexecuted at this review."
+  ]
+}

@@ -1,0 +1,9 @@
+0 標準ウインドウ 簡易POS - Google Chrome（シークレット モード）, URL: house-tooth-commander-donor.trycloudflare.com/, Secondary Actions: Raise
+						36 container 指定されている形式で入力してください。
+							41 テキスト 担当者IDとパスワードを入力してください。
+								43 テキスト 担当者ID
+								44 テキストフィールド (settable) 担当者ID, Value: BAD@ID
+								46 テキスト パスワード
+								47 セキュリティ保護されたテキストフィールド (settable) パスワード
+	66 フルスクリーンボタン Help: このボタンにはウインドウを拡大する操作もあります, Secondary Actions: ウインドウを拡大
+The focused UI element is 44 テキストフィールド (settable) 担当者ID, Value: BAD@ID

@@ -1,0 +1,36 @@
+{
+  "at_utc": "2026-10-04T03:59:32.599125+00:00",
+  "offline_assertions": "passed",
+  "same_cart": true,
+  "line_identity_and_conditions_retained": true,
+  "snapshots_checked": 8,
+  "purchases": 0,
+  "faults": {
+    "first": {
+      "operation_id": "7a2a1266-2782-465b-be5f-6f54852ab9c5",
+      "receipt_version": 7,
+      "delay_seconds_observed": 3.004333,
+      "reference_total": 570
+    },
+    "change": {
+      "operation_id": "a16c1f65-651e-438c-a3cb-b8d72319521e",
+      "receipt_version": 11,
+      "delay_seconds_observed": 3.0065,
+      "reference_total": 537
+    }
+  },
+  "explicit_get_changed_business_state": false,
+  "relookup_confirmed_member": "MEMBER_0",
+  "member_total": 537,
+  "final_nonmember_total": 570,
+  "build_id": "JZgq0YlIZQIBqIDG2IS3O",
+  "sources_sha256": {
+    "frontend/app/register-cart.tsx": "5baccccf0cdc5c7aeae5ba37445bebe5b6aa749aebda55fb5f07e7d11db990ee",
+    "frontend/tests/register-member.test.mjs": "2ff92486cb86d3f52f8ba300d5d7acf6bb958d4ce50c97207b785bbe5795229f",
+    "frontend/tests/support/register-harness.mjs": "8348ec6cafa89cc6741c384ebf13c7bd87db51411e5bf71e3954351df48ba914"
+  },
+  "chrome_version": "154.0.8037.97",
+  "macos_version": "27.0",
+  "node_version": "v24.21.0",
+  "scope": "Mac Chrome non-camera receipt-after-COMMIT member503 display regression only"
+}

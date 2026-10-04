@@ -1,0 +1,4 @@
+
+> tech0-pos-frontend@0.0.0 lint
+> eslint . --max-warnings 0
+

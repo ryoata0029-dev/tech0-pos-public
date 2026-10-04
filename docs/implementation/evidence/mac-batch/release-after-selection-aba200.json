@@ -1,0 +1,12 @@
+{
+  "kind": "product-late",
+  "tag": "selection-aba200",
+  "started_at_utc": "2026-10-04T06:00:01.532981+00:00",
+  "gate_at_utc": "2026-10-04T06:00:12.474669+00:00",
+  "observed_at_utc": "2026-10-04T06:00:12.489621+00:00",
+  "released_at_utc": "2026-10-04T06:00:17.495369+00:00",
+  "wait_seconds": 5,
+  "actual_wait_seconds": 5.00685,
+  "after_real_lookup": true,
+  "outside_read_transaction": true
+}

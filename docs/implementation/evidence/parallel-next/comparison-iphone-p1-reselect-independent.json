@@ -1,0 +1,47 @@
+{
+  "reviewed_at_utc": "2026-10-04T07:47:02.753898+00:00",
+  "method": "offline independent saved JSON comparison; no GUI/DB/environment/network actions",
+  "sources": [
+    "db-iphone-p1-after-deselect.json",
+    "db-iphone-p1-after-reselect.json",
+    "comparison-iphone-p1-reselect.json"
+  ],
+  "source_sha256": {
+    "db-iphone-p1-after-deselect.json": "2b75a67c99eb009656da20f9a57352b94fb88225dbc704ac70c5b01701748939",
+    "db-iphone-p1-after-reselect.json": "7d84ee8a1e94d141ee8a6a8be0c64d339c3c882a4010ab380bad4662431653d2",
+    "comparison-iphone-p1-reselect.json": "369744574a35fc3bc90740fb9c4b42ef8f4896cf9cb66a76947bedcdbd1a504c"
+  },
+  "condition": "P1b",
+  "before_observed_at_utc": "2026-10-04 07:45:02.802476",
+  "after_observed_at_utc": "2026-10-04 07:46:34.031787",
+  "projection_equal": {
+    "register": true,
+    "contexts": true,
+    "carts": true,
+    "lines": true,
+    "operations": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+  "context_id": "8964dcfc-9a1a-4896-a819-3cbd745d4e1a",
+  "line_id": "82a65022-05aa-4deb-a516-7c85adde9a91",
+  "cart_state": "EDITING",
+  "cart_version": 5,
+  "quantity": 1,
+  "subtotal_yen": 103,
+  "total_yen": 113,
+  "purchase_rows": 0,
+  "operation_rows_before_and_after": 4,
+  "new_operations": 0,
+  "owner_report_recorded_in_primary_evidence": "１になってる",
+  "result": "limited_confirmation_consistent_with_owner_report",
+  "major_inconsistency_found": false,
+  "limits": [
+    "Quantity field displaying 1 after re-selection is an owner report; reviewer did not observe DOM/video.",
+    "DB projections retain the registered quantity 1; DB does not store or expose the unsent quantity 8 and does not directly demonstrate that input being cleared.",
+    "No full HTTP/request capture, camera/media state, authentication/session expiry invariance or overall TC02/M5/M7 acceptance is established."
+  ]
+}

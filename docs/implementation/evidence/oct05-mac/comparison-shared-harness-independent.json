@@ -1,0 +1,157 @@
+{
+  "at_utc": "2026-10-04T16:03:57.498044+00:00",
+  "reviewer": "mac_flow_review independent agent",
+  "method": "Read-only source/Git diff and saved JSON/log hash comparison. No live DB, network, GUI, listeners, process stop/start or application changes. Sole write is this review JSON.",
+  "status": "no_confirmed_P1_P2_in_reviewed_harness; limited_progress_report_consistent",
+  "source_files": [
+    {
+      "path": "tools/m2_local_profile.py",
+      "sha256": "d61cc14f1618563517989c0580c47e07a87a10d23b3e440aac9b35d74b92ffdb"
+    },
+    {
+      "path": "tools/m2_local_prepare.py",
+      "sha256": "f290c44b8d0ff3ee92e1785f503ba0dcfbad1338e744e3a07eee71d62d4989fd"
+    },
+    {
+      "path": "tools/m2_local_mysql.py",
+      "sha256": "6bdfb49a74864b53153745e6460280804a2ecc05010390bd997406a9e013fc47"
+    },
+    {
+      "path": "tools/m2_local_db.py",
+      "sha256": "3d21a542ce143f16ed3df9731e2ad60a0a7a410739498be6f02633a9fa841736"
+    },
+    {
+      "path": "tools/m2_database.py",
+      "sha256": "4da4722e9ba4f9c9b65ac84dc1ff829a16f1a65f9df72380a6a40a0e8f56e98b"
+    },
+    {
+      "path": "tools/m2_local_servers.py",
+      "sha256": "adad1b89c79ea46687b796dd1fe779719c4d7cab9cf29694a47d7bff8f4bea25"
+    },
+    {
+      "path": "tools/mac_recovery_setup.py",
+      "sha256": "e8689bc722bae43c760ece0592a1c7f7847b18a15fe6816649e61f1586be3cdc"
+    },
+    {
+      "path": "tools/mac_flow_db.py",
+      "sha256": "d737f87a8d283c03055a24fe937bc7e36a5d81ba795755a58c4ad1cd7643072e"
+    },
+    {
+      "path": "tools/mac_flow_tunnel.py",
+      "sha256": "420249707ee217dd0eef683b195534e73f57248219a4f36ac357242a5e807a4b"
+    },
+    {
+      "path": "tools/mac_flow_https.mjs",
+      "sha256": "f19b95212e55b4a382eebb22ca6c60895a51099a8baa34bab33c2ac2aa1e2982"
+    },
+    {
+      "path": "tools/mac_recovery_control.py",
+      "sha256": "b7c07f1c7328fe3a5e54db297f5cc9098037fa342c8577f04dcd6085a14f2b14"
+    },
+    {
+      "path": "tools/mac_recovery_backend.py",
+      "sha256": "3dc77e36bee6d11128633dec0e389d1362da1e1908adac834f6844f3dfcde039"
+    },
+    {
+      "path": "tools/mac_tc02_backend.py",
+      "sha256": "2ea8e7ec8f026a72b34da200cec31e24b2455baec421aae36babb78f7b5319bd"
+    },
+    {
+      "path": "tools/mac_product_release.py",
+      "sha256": "d347a3651a1ae7b55dbf36ff02ac442822f65533ec64521bc9ab189d577da8d9"
+    },
+    {
+      "path": "tools/oct05_mac.py",
+      "sha256": "37d76ef3f7ac2216f4bd8ca2593d322c717c5aa4164e6b2cbe419ff8091f4cdd"
+    },
+    {
+      "path": "tools/oct05_backend.py",
+      "sha256": "380db52cea46c8d0fc332dc6a13ed4dc6304f1eacbf8f8894d1aea2a5e24625a"
+    },
+    {
+      "path": "tools/oct05_member_fixture.py",
+      "sha256": "6f2d9f724517f8c7423ef1af898b7a89de638a77ccd0047eb213235a62657bf6"
+    },
+    {
+      "path": "tools/oct05_recovery_fixture.py",
+      "sha256": "38efe26f369c656dd1d0dc3c5aa1941d051a44d465761618bab0376064ec6b89"
+    },
+    {
+      "path": "tools/oct05_recovery_panel.html",
+      "sha256": "9b9361679a1ec376c97eed8728d96e7c3e9739c53160d8f66a4c81d9108521e2"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "e229e02b9bba772331953ee40887e57fef3dc6217a17f89a83bba5e4836232fb"
+    }
+  ],
+  "fixed_ports": {
+    "oct05-mac": {
+      "mysql": 3327,
+      "frontend": 8463,
+      "backend": 8464
+    },
+    "parallel-mac-next": {
+      "mysql": 3317,
+      "frontend": 8453,
+      "backend": 8454
+    },
+    "other_allowlisted_profiles": {
+      "mysql": 3307,
+      "frontend": 8443,
+      "backend": 8444
+    }
+  },
+  "checks": {
+    "fixed_profile_private_evidence_container_volume_mapping": true,
+    "existing_profile_port_mapping_preserved": true,
+    "fresh_setup_container_volume_and_port_existence_refusal": true,
+    "oct05_database_guard_uses_fixed_mysql_port": true,
+    "database_hostname_container_evidence_and_pos_validation_scope_checked": true,
+    "shutdown_requires_current_container_id_match": true,
+    "dedicated_process_records_profile_ports_and_command_marker_checked_before_signal": true,
+    "tunnel_stop_checks_fixed_profile_port_and_private_CA_command_marker": true,
+    "server_dispatch_oct05_backend_only_for_oct05": true,
+    "install_order_real_member_product_wrapper_then_C_PUT_then_B_POST_NEXT": true,
+    "C_and_B_observers_return_actual_committed_result": true,
+    "recovery_HTML_GET_exact_path_oct05_only_no_store": true,
+    "recovery_HTML_does_not_embed_or_read_secret_credentials": true,
+    "private_secret_directory_gitignored": true,
+    "oct05_wrapper_forces_profile_and_has_member_recovery_api_setup_verify_dispatch": true
+  },
+  "progress_report_review": {
+    "path": "docs/implementation/10月05日_並行進行結果.md",
+    "sha256": "eda7c4a1083b32789023abf45df987a499b2c0e92224633d439c6efb1dfc40d4",
+    "findings": [],
+    "raw_retry_families": {
+      "TC08": 25,
+      "TC11": 467,
+      "TC12": 18,
+      "TC13": 9
+    },
+    "retry_unique_cases": 519,
+    "selected_TC11_remaining": 0,
+    "original_partial_cases": 350,
+    "original_partial_not_added_to_retry_total": true,
+    "eight_direct_checks_all_zero_with_saved_hashes": true,
+    "local_tests": {
+      "python": 85,
+      "node": 123,
+      "total": 208
+    },
+    "make_exit_69_not_success": true,
+    "original_fourteen_saved_projections_unchanged": true,
+    "normal_Mac_nine_saved_projections_unchanged": true,
+    "normal_Mac_UNSTARTED_cart_purchase_zero": true,
+    "six_GUI_cases_unexecuted_not_reclassified_by_offline_or_API_checks": true,
+    "running_handoff_not_shutdown_claim": true
+  },
+  "operational_note": "Shutdown secret-exclusion audit invokes PATH git. If Apple Git is still denied by Xcode license, root must use the existing bundled Git on PATH; otherwise resource stop may finish before audit/shutdown JSON creation fails. No tool edit made for this observation.",
+  "limits": [
+    "Source review does not prove actual runtime ports/PIDs/stop behavior or browser HTTP delivery. Root saved environment checks are separate evidence.",
+    "No private secrets, Cookie, headers, request payloads or customer attributes were read/output by this review.",
+    "Progress report checks compare selected saved projections and log hashes, not all DB columns, accounts, DDL or production acceptance.",
+    "No real GUI member/recovery case was executed by this agent; no TC-wide or M7 acceptance decision.",
+    "Application hash/build verification is documented in root environment artifacts, not re-executed here."
+  ]
+}

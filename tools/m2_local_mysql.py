@@ -4,7 +4,7 @@ import json
 import socket
 import subprocess
 
-from m2_local_profile import EVIDENCE, LOCAL, NAME, VOLUME
+from m2_local_profile import BACKEND_PORT, EVIDENCE, FRONTEND_PORT, LOCAL, MYSQL_PORT, NAME, VOLUME
 
 IMAGE = "mysql@sha256:0744ee5ef89ce6ccfa13de3e579fe6b9e27f93dd70da9c06d2c908b1b193fb8d"
 
@@ -19,7 +19,7 @@ def main():
     if VOLUME in docker("volume", "ls", "--format", "{{.Name}}").splitlines():
         raise RuntimeError("Volume already exists; inspect, do not reuse")
     with socket.socket() as listener:
-        listener.bind(("127.0.0.1", 3307))
+        listener.bind(("127.0.0.1", MYSQL_PORT))
     info = json.loads(docker("image", "inspect", IMAGE))[0]
     docker("volume", "create", "--label", "purpose=tech0-pos-m2", VOLUME)
     command = [
@@ -30,7 +30,7 @@ def main():
         "--label",
         "purpose=tech0-pos-m2",
         "--publish",
-        "127.0.0.1:3307:3306",
+        f"127.0.0.1:{MYSQL_PORT}:3306",
         "--mount",
         f"type=volume,source={VOLUME},target=/var/lib/mysql",
         "-e",
@@ -70,7 +70,8 @@ def main():
         "container": NAME,
         "container_id": identity,
         "volume": VOLUME,
-        "port_binding": "127.0.0.1:3307 -> 3306",
+        "port_binding": f"127.0.0.1:{MYSQL_PORT} -> 3306",
+        "ports": {"mysql": MYSQL_PORT, "frontend": FRONTEND_PORT, "backend": BACKEND_PORT},
         "tls_required": True,
     }
     EVIDENCE.mkdir(parents=True, exist_ok=True)

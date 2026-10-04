@@ -17,6 +17,8 @@ from sqlalchemy import text
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "backend"))
 
+from m2_local_profile import MYSQL_PORT  # noqa: E402
+
 from app.infrastructure.database import create_database, transaction  # noqa: E402
 from app.infrastructure.settings import Settings  # noqa: E402
 from app.security.credentials import Passwords  # noqa: E402
@@ -81,9 +83,11 @@ def main():
         args.target != "pos_validation"
         or settings.db_name != args.target
         or settings.db_host not in ("localhost", "127.0.0.1")
-        or settings.db_port != 3307
+        or settings.db_port != MYSQL_PORT
     ):
-        raise ValueError("Write target must be the dedicated local M2 database on port 3307")
+        raise ValueError(
+            f"Write target must be the dedicated local M2 database on port {MYSQL_PORT}"
+        )
     passwords = {}
     if args.action == "seed":
         hasher = Passwords()

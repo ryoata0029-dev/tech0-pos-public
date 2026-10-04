@@ -1,0 +1,24 @@
+{
+  "at_utc": "2026-10-04T08:04:31.383455+00:00",
+  "condition": "P4a",
+  "before": "db-iphone-p4-before-background.json",
+  "after": "db-iphone-p4-after-background.json",
+  "user_report": "閉じてる",
+  "projection_equal": {
+    "register": true,
+    "contexts": true,
+    "carts": true,
+    "lines": true,
+    "operations": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "version": 10,
+  "total_yen": 11669,
+  "ean8_quantity": 3,
+  "purchases": 0,
+  "result": "limited_confirmation",
+  "limits": "Camera display closed after the requested home/Chrome return is owner reported. No direct video track, timing, visibility event or HTTP observation."
+}

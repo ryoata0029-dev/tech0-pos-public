@@ -55,6 +55,9 @@ def smoke(name: str, command: list[str], cwd: Path, expected: int) -> dict[str, 
             raise RuntimeError(f"{name}: unexpected HTTP {status}")
         if name == "frontend" and "レジの利用開始".encode() not in body:
             raise RuntimeError("Frontend startup page missing")
+        health_status, health_body = request(url + "health")
+        if health_status != 200 or json.loads(health_body) != {"status": "alive"}:
+            raise RuntimeError(f"{name}: invalid health response")
         # No configuration: API must fail closed without accessing a DB.
         for path in ("api/products/0001", "api/auth/status"):
             if request(url + path)[0] != 503:
@@ -89,7 +92,7 @@ results = [
             "--no-access-log",
         ],
         ROOT / "backend",
-        404,
+        200,
     ),
     smoke(
         "frontend",

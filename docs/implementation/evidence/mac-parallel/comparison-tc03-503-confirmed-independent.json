@@ -1,0 +1,69 @@
+{
+  "at_utc": "2026-10-04T06:39:50.341525+00:00",
+  "scope": "Read-only saved evidence comparison; receipt-after-COMMIT 503 before lookup, not live member lookup failure",
+  "candidate_id": "MEMBER_0",
+  "existing_member_id": "MEMBER_0",
+  "conditions": {
+    "unknown_to_resumed_nine_collections": {
+      "register": true,
+      "contexts": true,
+      "carts": true,
+      "lines": true,
+      "operations": true,
+      "purchases": true,
+      "purchase_lines": true,
+      "purchase_taxes": true,
+      "products": true
+    },
+    "source_lines_unchanged_through_unknown_resume": true,
+    "line_identity_price_tax_conditions_retained_after_nonmember": true,
+    "previous_sale_unchanged": {
+      "purchases": true,
+      "purchase_lines": true,
+      "purchase_taxes": true
+    },
+    "versions": [
+      15,
+      16,
+      16,
+      17
+    ],
+    "member_states": [
+      "CONFIRMED",
+      "PENDING",
+      "PENDING",
+      "NON_MEMBER"
+    ],
+    "totals": [
+      "537",
+      "537",
+      "537",
+      "570"
+    ],
+    "prepared_original_operation": true,
+    "superseded_original_operation": true,
+    "new_nonmember_operation_applied": true,
+    "receipt_after_commit_503_3_seconds": true,
+    "nonmember_recovery_clears_old_member_pending_operation_discount": true
+  },
+  "prior_sale_count": 1,
+  "new_sale_count": 0,
+  "source_sha256": {
+    "db-tc03-503-confirmed-before.json": "278a87018a537df89a63a051b419f4c960a6a7ab1ae7db7adffec3eba90fd3ae",
+    "db-tc03-503-confirmed-unknown.json": "ae835ef99714072f47ce1bed29c22a43c5090117695a37266f93190ca41ded58",
+    "db-tc03-503-confirmed-resumed.json": "17477288c871177895f073722572d4ce829b8291b1596decb6c2d90ed7a0b808",
+    "db-tc03-503-confirmed-recovered.json": "2727c40c88ac4e1d29bff96081c2957ba6f04aabfe718ddcf92bd0e1fc320e2f",
+    "ui-tc03-503-confirmed-busy.txt": "9632c5d88438e83bda943f6c2a8a07c0866d4c93a2833da7824d5b78af7f96c8",
+    "ui-tc03-503-confirmed-unknown.txt": "e7a9238a74ed6521ff875d8b9868c149b10c603509e2383c7eb164831f99dc16",
+    "ui-tc03-503-confirmed-resumed.txt": "85eeaed83d4e9f8b24e7c74005c306e5a7eeeb875e2190bab561d4e66369ace3",
+    "ui-tc03-503-confirmed-recovered.txt": "85d85bf84a9bb236b563d47102aa13e15e6e73edbe2445178d148d729abe2041",
+    "gate-parallel-member503-confirmed.json": "b35717610b102d018ced1067c84bb5f36d2a89f96cddd93895f5af417f35007c",
+    "gate-response-parallel-member503-confirmed.json": "d31988d90ce84cb0c4144a0f2cc295c2f7142128504dfae41e15af7a7db4c4d5"
+  },
+  "limits": [
+    "Confirmed MEMBER_0 reselected MEMBER_0; not an A to different registered B test",
+    "UI reviewed independently as saved DOM; exact full HTTP call counts not measured",
+    "Live member lookup hold and old late response not executed",
+    "Chrome response receipt for this gate not separately captured"
+  ]
+}

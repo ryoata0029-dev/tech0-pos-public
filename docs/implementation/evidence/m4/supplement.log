@@ -1,0 +1,3 @@
+{"utc":"2026-10-01T11:37:48.169184+00:00","request_id":"b43752e4-a80f-470b-a5b6-694ef0a80e9e","operation_id":"93b29653-2aab-43df-bf9a-1a5b078179b7","api":"/api/carts/{cart_id}/member","elapsed_ms":30.55,"result_code":"SERVICE_UNAVAILABLE","db_error":"DB_FAILURE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T11:37:48.807417+00:00","request_id":"3d023c2a-ad07-460a-886a-738809160ef1","operation_id":"d342c749-e748-4238-941c-49a005dac770","api":"/api/purchases","elapsed_ms":23.2,"result_code":"SERVICE_UNAVAILABLE","db_error":"DB_FAILURE","deployment_version":"UNSET"}
+{"passed": 16, "browser_test": false}

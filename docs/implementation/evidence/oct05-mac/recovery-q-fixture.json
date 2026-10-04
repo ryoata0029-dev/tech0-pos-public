@@ -1,0 +1,26 @@
+[
+  {
+    "at_utc": "2026-10-04T16:12:49.938Z",
+    "method": "GET",
+    "path": "resume",
+    "status": 200,
+    "operation_id": null,
+    "operation_status": null,
+    "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+    "version": "15",
+    "new_cart_id": null
+  },
+  {
+    "at_utc": "2026-10-04T16:12:49.953Z",
+    "fixture": "native-quota",
+    "native_error": "QuotaExceededError",
+    "purchase_sized_probe_failed": true,
+    "owned_keys": 104,
+    "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+    "version": "15"
+  },
+  {
+    "at_utc": "2026-10-04T16:12:59.470Z",
+    "action": "ordinary-built-POS-iframe-opened"
+  }
+]

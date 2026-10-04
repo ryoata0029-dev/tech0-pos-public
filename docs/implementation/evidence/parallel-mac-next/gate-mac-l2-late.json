@@ -1,0 +1,11 @@
+{
+  "at_utc": "2026-10-04T07:22:47.287772+00:00",
+  "tag": "mac-l2-late",
+  "kind": "member-late",
+  "after_real_receipt_commit": true,
+  "operation_id": "d9f51d2f-320c-4a06-bb4b-94b27929eeb6",
+  "cart_id": "cc63832f-e2e8-4e11-989c-5beb5425d352",
+  "version": "11",
+  "state": "EDITING",
+  "member_state": "PENDING"
+}

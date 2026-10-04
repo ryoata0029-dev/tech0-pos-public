@@ -1,0 +1,488 @@
+{
+  "results": [
+    {
+      "check": "TC19 response-discard same-request replay and sync-before-update fence",
+      "passed": true,
+      "transport": "HTTPS"
+    },
+    {
+      "check": "TC18 same-version updates have one winner without overwrite",
+      "passed": true,
+      "transport": "HTTPS"
+    },
+    {
+      "check": "TC18 concurrent purchases persist one sale",
+      "passed": true,
+      "transport": "HTTPS",
+      "observer": {
+        "connection_id": 17,
+        "state": "SAVED",
+        "version": "6",
+        "member_state": "UNSPECIFIED",
+        "counts": {
+          "PURCHASE": 1,
+          "PURCHASE_LINE": 1,
+          "PURCHASE_TAX": 1
+        },
+        "operations": [
+          [
+            "ADD_LINE",
+            "APPLIED"
+          ],
+          [
+            "SYNC",
+            "APPLIED"
+          ],
+          [
+            "SET_QUANTITY",
+            "APPLIED"
+          ],
+          [
+            "PURCHASE",
+            "APPLIED"
+          ]
+        ]
+      }
+    },
+    {
+      "check": "TC24 next-response discard converges through replay, operation GET and resume",
+      "passed": true,
+      "transport": "HTTPS"
+    },
+    {
+      "check": "TC16 receipt COMMIT ACK unread",
+      "passed": true,
+      "transport": "ASGI+real MySQL",
+      "injection": {
+        "commits_sent": 1,
+        "sale_insertions": 0,
+        "invalidated": 1,
+        "injected": true,
+        "writer_connection_id": 18,
+        "observer": {
+          "connection_id": 19,
+          "state": "SAVING",
+          "version": "8",
+          "member_state": "CONFIRMED",
+          "counts": {
+            "PURCHASE": 0,
+            "PURCHASE_LINE": 0,
+            "PURCHASE_TAX": 0
+          },
+          "operations": [
+            [
+              "ADD_LINE",
+              "APPLIED"
+            ],
+            [
+              "ADD_LINE",
+              "APPLIED"
+            ],
+            [
+              "ADD_LINE",
+              "APPLIED"
+            ],
+            [
+              "SET_MEMBER",
+              "APPLIED"
+            ],
+            [
+              "SET_QUANTITY",
+              "APPLIED"
+            ],
+            [
+              "PURCHASE",
+              "PREPARED"
+            ]
+          ]
+        },
+        "ack_read": false
+      },
+      "observed": {
+        "connection_id": 20,
+        "state": "SAVING",
+        "version": "8",
+        "member_state": "CONFIRMED",
+        "counts": {
+          "PURCHASE": 0,
+          "PURCHASE_LINE": 0,
+          "PURCHASE_TAX": 0
+        },
+        "operations": [
+          [
+            "ADD_LINE",
+            "APPLIED"
+          ],
+          [
+            "ADD_LINE",
+            "APPLIED"
+          ],
+          [
+            "ADD_LINE",
+            "APPLIED"
+          ],
+          [
+            "SET_MEMBER",
+            "APPLIED"
+          ],
+          [
+            "SET_QUANTITY",
+            "APPLIED"
+          ],
+          [
+            "PURCHASE",
+            "PREPARED"
+          ]
+        ]
+      }
+    },
+    {
+      "check": "TC16 sale COMMIT ACK unread",
+      "passed": true,
+      "transport": "ASGI+real MySQL",
+      "injection": {
+        "commits_sent": 2,
+        "sale_insertions": 1,
+        "invalidated": 1,
+        "injected": true,
+        "writer_connection_id": 24,
+        "observer": {
+          "connection_id": 25,
+          "state": "SAVED",
+          "version": "9",
+          "member_state": "CONFIRMED",
+          "counts": {
+            "PURCHASE": 1,
+            "PURCHASE_LINE": 3,
+            "PURCHASE_TAX": 2
+          },
+          "operations": [
+            [
+              "ADD_LINE",
+              "APPLIED"
+            ],
+            [
+              "ADD_LINE",
+              "APPLIED"
+            ],
+            [
+              "ADD_LINE",
+              "APPLIED"
+            ],
+            [
+              "SET_MEMBER",
+              "APPLIED"
+            ],
+            [
+              "SET_QUANTITY",
+              "APPLIED"
+            ],
+            [
+              "PURCHASE",
+              "APPLIED"
+            ]
+          ]
+        },
+        "ack_read": false
+      },
+      "observed": {
+        "connection_id": 26,
+        "state": "SAVED",
+        "version": "9",
+        "member_state": "CONFIRMED",
+        "counts": {
+          "PURCHASE": 1,
+          "PURCHASE_LINE": 3,
+          "PURCHASE_TAX": 2
+        },
+        "operations": [
+          [
+            "ADD_LINE",
+            "APPLIED"
+          ],
+          [
+            "ADD_LINE",
+            "APPLIED"
+          ],
+          [
+            "ADD_LINE",
+            "APPLIED"
+          ],
+          [
+            "SET_MEMBER",
+            "APPLIED"
+          ],
+          [
+            "SET_QUANTITY",
+            "APPLIED"
+          ],
+          [
+            "PURCHASE",
+            "APPLIED"
+          ]
+        ]
+      }
+    },
+    {
+      "check": "TC16 after sale lines SQL",
+      "passed": true,
+      "transport": "ASGI+real MySQL",
+      "injection": {
+        "commits_sent": 1,
+        "sale_insertions": 1,
+        "invalidated": 1,
+        "injected": true
+      },
+      "observed": {
+        "connection_id": 31,
+        "state": "SAVING",
+        "version": "8",
+        "member_state": "CONFIRMED",
+        "counts": {
+          "PURCHASE": 0,
+          "PURCHASE_LINE": 0,
+          "PURCHASE_TAX": 0
+        },
+        "operations": [
+          [
+            "ADD_LINE",
+            "APPLIED"
+          ],
+          [
+            "ADD_LINE",
+            "APPLIED"
+          ],
+          [
+            "ADD_LINE",
+            "APPLIED"
+          ],
+          [
+            "SET_MEMBER",
+            "APPLIED"
+          ],
+          [
+            "SET_QUANTITY",
+            "APPLIED"
+          ],
+          [
+            "PURCHASE",
+            "PREPARED"
+          ]
+        ]
+      }
+    },
+    {
+      "check": "TC16 after first sale tax SQL",
+      "passed": true,
+      "transport": "ASGI+real MySQL",
+      "injection": {
+        "commits_sent": 1,
+        "sale_insertions": 1,
+        "invalidated": 1,
+        "injected": true
+      },
+      "observed": {
+        "connection_id": 36,
+        "state": "SAVING",
+        "version": "8",
+        "member_state": "CONFIRMED",
+        "counts": {
+          "PURCHASE": 0,
+          "PURCHASE_LINE": 0,
+          "PURCHASE_TAX": 0
+        },
+        "operations": [
+          [
+            "ADD_LINE",
+            "APPLIED"
+          ],
+          [
+            "ADD_LINE",
+            "APPLIED"
+          ],
+          [
+            "ADD_LINE",
+            "APPLIED"
+          ],
+          [
+            "SET_MEMBER",
+            "APPLIED"
+          ],
+          [
+            "SET_QUANTITY",
+            "APPLIED"
+          ],
+          [
+            "PURCHASE",
+            "PREPARED"
+          ]
+        ]
+      }
+    },
+    {
+      "check": "TC17 resolve-first fences delayed purchase/retry; reopen keeps conditions; saved-first wins",
+      "passed": true
+    },
+    {
+      "check": "TC18/20 pending member fence preserves reference, expiry and rejected history",
+      "passed": true,
+      "missing_member": false
+    },
+    {
+      "check": "TC18/20 pending member fence preserves reference, expiry and rejected history",
+      "passed": true,
+      "missing_member": true
+    },
+    {
+      "check": "TC17 real MySQL lock timeout leaves confirmation unapplied, same retry succeeds",
+      "passed": true,
+      "before": {
+        "connection_id": 48,
+        "state": "EDITING",
+        "version": "7",
+        "member_state": "CONFIRMED",
+        "counts": {
+          "PURCHASE": 0,
+          "PURCHASE_LINE": 0,
+          "PURCHASE_TAX": 0
+        },
+        "operations": [
+          [
+            "ADD_LINE",
+            "APPLIED"
+          ],
+          [
+            "ADD_LINE",
+            "APPLIED"
+          ],
+          [
+            "ADD_LINE",
+            "APPLIED"
+          ],
+          [
+            "SET_MEMBER",
+            "APPLIED"
+          ],
+          [
+            "SET_QUANTITY",
+            "APPLIED"
+          ]
+        ]
+      },
+      "blocked": {
+        "connection_id": 50,
+        "state": "EDITING",
+        "version": "7",
+        "member_state": "CONFIRMED",
+        "counts": {
+          "PURCHASE": 0,
+          "PURCHASE_LINE": 0,
+          "PURCHASE_TAX": 0
+        },
+        "operations": [
+          [
+            "ADD_LINE",
+            "APPLIED"
+          ],
+          [
+            "ADD_LINE",
+            "APPLIED"
+          ],
+          [
+            "ADD_LINE",
+            "APPLIED"
+          ],
+          [
+            "SET_MEMBER",
+            "APPLIED"
+          ],
+          [
+            "SET_QUANTITY",
+            "APPLIED"
+          ]
+        ]
+      }
+    },
+    {
+      "check": "TC12 actual API read snapshot remains coherent across separate committed write",
+      "passed": true,
+      "transport": "ASGI read+HTTPS write",
+      "old_version": "7",
+      "old_total": "537",
+      "new_version": "8",
+      "new_total": "435",
+      "order": [
+        "read cart SELECT",
+        "HTTPS quantity update COMMIT",
+        "release read lines SELECT"
+      ]
+    },
+    {
+      "check": "TC18/20 pending member fence preserves reference, expiry and rejected history",
+      "passed": true,
+      "missing_member": false,
+      "pending_version": "8",
+      "fence_version": "9",
+      "operation_preserved": false
+    },
+    {
+      "check": "TC18/20 pending member fence preserves reference, expiry and rejected history",
+      "passed": true,
+      "missing_member": true,
+      "pending_version": "8",
+      "fence_version": "9",
+      "operation_preserved": true
+    },
+    {
+      "check": "TC17 receipt-committed purchase fence rejects delayed save before reopen/new purchase",
+      "passed": true,
+      "injection": {
+        "commits_sent": 1,
+        "sale_insertions": 0,
+        "invalidated": 1,
+        "injected": true,
+        "writer_connection_id": 55,
+        "observer": {
+          "connection_id": 59,
+          "state": "SAVING",
+          "version": "8",
+          "member_state": "CONFIRMED",
+          "counts": {
+            "PURCHASE": 0,
+            "PURCHASE_LINE": 0,
+            "PURCHASE_TAX": 0
+          },
+          "operations": [
+            [
+              "ADD_LINE",
+              "APPLIED"
+            ],
+            [
+              "ADD_LINE",
+              "APPLIED"
+            ],
+            [
+              "ADD_LINE",
+              "APPLIED"
+            ],
+            [
+              "SET_MEMBER",
+              "APPLIED"
+            ],
+            [
+              "SET_QUANTITY",
+              "APPLIED"
+            ],
+            [
+              "PURCHASE",
+              "PREPARED"
+            ]
+          ]
+        },
+        "ack_read": false
+      }
+    }
+  ],
+  "last_stage": "complete",
+  "browser_test": false
+}

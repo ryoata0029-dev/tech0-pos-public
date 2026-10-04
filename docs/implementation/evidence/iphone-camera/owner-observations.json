@@ -1,0 +1,161 @@
+{
+  "at_utc": "2026-10-04T05:12:51.678033+00:00",
+  "device": "iPhone 15 / Chrome (owner-operated)",
+  "cases": [
+    {
+      "id": "member-code128-success",
+      "source": "owner explicit reply",
+      "report": "表示され、カメラ表示が閉じました",
+      "expected_code": "MEMBER_0",
+      "camera_ui_closed": true,
+      "database_evidence": "db-phone-progress-1.json",
+      "track_ready_state": "not_observed"
+    },
+    {
+      "id": "product-three-formats-first-pass",
+      "source": "owner explicit reply",
+      "report": "カメラ開始のおし直しなしで各１個登録bされた。同じコードを移し続けて数量が増えた。",
+      "database_evidence": "db-product-formats.json",
+      "observed_quantities": {
+        "0001234567895": 1,
+        "00123457": 6,
+        "Ab_01": 1
+      },
+      "classification": "three formats identified; duplicate behavior not classified because repeated presentations and restarts were mixed"
+    },
+    {
+      "id": "ean8-presentation-clarification",
+      "source": "owner explicit reply",
+      "report": "意図して複数回再提示・再開始した",
+      "classification": "intentional repeats included in first-pass quantity; initial continuous-increase report preserved"
+    },
+    {
+      "id": "ean8-single-continuous-presentation",
+      "source": "owner explicit reply and read-only DB comparison",
+      "report": "7になり、そのまま止まった",
+      "requested_condition": "one camera start, same EAN8 continuously for about 5 seconds, no deliberate removal or restart, close afterwards",
+      "before_evidence": "db-before-ean8-isolated.json",
+      "after_evidence": "db-after-ean8-isolated.json",
+      "quantity_before": 6,
+      "quantity_after": 7,
+      "cart_version_before": 13,
+      "cart_version_after": 14,
+      "added_operations": 1,
+      "result": "confirmed for this continuous-presentation condition only",
+      "camera_track_ready_state": "not_observed"
+    },
+    {
+      "id": "product-missing-camera-message",
+      "source": "owner explicit reply and read-only DB comparison",
+      "report": "エラーは表示されず、すぐに同じ商品です追加する場合は一度枠から外してください。と表示されました。カート内の商品数に変化はありません。",
+      "requested_code": "PRODUCT_MISSING",
+      "after_evidence": "db-after-missing-first.json",
+      "result": "camera remains open; camera-local same-product message misleading; page-level error initially not observed by owner"
+    },
+    {
+      "id": "product-missing-presentation-and-page-error",
+      "source": "owner explicit reply",
+      "report": "ページの上部に商品が登録されていません。の表示があります。\n①は移し続けていました。ただし、ぼけて再提示扱いになった可能性はあります。",
+      "page_level_error_visible": true,
+      "intentional_continuous_presentation": true,
+      "blur_not_excluded": true,
+      "after_evidence": "db-missing-diagnostics.json",
+      "additional_rejected_operations": 7,
+      "all_requested_codes": "PRODUCT_MISSING",
+      "result_code": "PRODUCT_NOT_FOUND",
+      "cart_version": 14,
+      "cart_lines_and_amounts_unchanged": true,
+      "purchases": 0,
+      "repeat_cause": "not established; read failure may have released the existing 500ms gate",
+      "next_valid_code_and_quantity_limit_test": "not run",
+      "camera_close_instruction": "issued",
+      "camera_track_ready_state": "not_observed"
+    },
+    {
+      "id": "device-versions",
+      "source": "owner explicit reply",
+      "report": "iOS 27.0.1\nChrome 155.0.8059.24"
+    },
+    {
+      "id": "display-fix-initial-grouped-result",
+      "source": "owner explicit reply",
+      "report": "同じ商品案内になった／カメラが閉じた",
+      "classification": "negative grouped choice; individual behavior required clarification",
+      "evidence": "db-display-fix-first-retest.json"
+    },
+    {
+      "id": "display-fix-clarified-same-product",
+      "source": "owner explicit reply",
+      "report": "「同じ商品です」が表示され、カメラは開いたまま",
+      "classification": "same-product feedback observed; camera did not close"
+    },
+    {
+      "id": "display-fix-after-page-reload",
+      "source": "owner explicit reply",
+      "report": "再読み込みしたところ、カメラ内に「商品が登録されていません」が表示されました。",
+      "classification": "rejection reason observed after page reload; next valid product continuation pending",
+      "client_build_directly_observed": false
+    },
+    {
+      "id": "display-fix-next-product-without-camera-restart",
+      "source": "owner explicit reply and read-only DB comparison",
+      "report": "開始押し直しなしで1個登録、数量1で停止、カメラを閉じた",
+      "database_evidence": "db-after-missing-next-product.json",
+      "cart_version": 16,
+      "product_code": "0001",
+      "product_quantity": 1,
+      "new_applied_add_operations": 1,
+      "purchases": 0,
+      "camera_ui_closed": true,
+      "camera_track_ready_state": "not_observed",
+      "classification": "missing-product reason after reload and next-code continuation confirmed for this ordinary-response condition"
+    },
+    {
+      "id": "display-fix-quantity-limit-error",
+      "source": "owner explicit reply and read-only DB comparison",
+      "report": "上限エラーが表示され、99のまま、カメラは開いている",
+      "requested_code": "0001",
+      "database_evidence": "db-after-quantity-limit.json",
+      "cart_version": 18,
+      "rejection_code": "QUANTITY_LIMIT",
+      "quantity": 99,
+      "purchases": 0,
+      "camera_ui_open": true,
+      "next_ean13_continuation": "pending",
+      "camera_track_ready_state": "not_observed"
+    },
+    {
+      "id": "quantity-limit-next-ean13-final-observation",
+      "source": "owner explicit reply and read-only DB comparison",
+      "report": "1→2個で止まり、カメラを閉じた",
+      "database_evidence": "db-final-phone.json",
+      "cart_version": 20,
+      "ean13_quantity": 2,
+      "product0001_quantity": 99,
+      "purchases": 0,
+      "camera_ui_closed": true,
+      "camera_track_ready_state": "not_observed",
+      "unexpected_preceding_operation": "APPLIED DELETE_LINE v18→19; Code128 product6 removed before EAN13 ADD_LINE v19→20",
+      "continuation_without_restart_result": "on hold pending owner clarification of deletion and camera restart; do not classify as passed"
+    },
+    {
+      "id": "quantity-limit-next-case-procedure-clarification",
+      "source": "owner explicit reply",
+      "report": "削除して、カメラも開始し直した",
+      "classification": "DELETE_LINE and camera restart were intentional; quantity-limit→next-code-without-restart condition not executed"
+    },
+    {
+      "id": "selection-deselection-clarification",
+      "source": "owner explicit reply",
+      "report": "ごめん、選択解除ができなくて、削除したら選択解除できた。\n選択解除ができるようにしたいな。",
+      "classification": "owner deleted a selected item because deselection was unavailable; camera restart was separately confirmed; no-restart continuation remains not executed",
+      "selection_fix": "requested; new phone verification not performed"
+    }
+  ],
+  "updated_at_utc": "2026-10-04T05:44:09.350897+00:00",
+  "device_versions": {
+    "source": "owner explicit reply; not direct browser observation",
+    "ios": "27.0.1",
+    "chrome": "155.0.8059.24"
+  }
+}

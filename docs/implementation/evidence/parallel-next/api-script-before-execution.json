@@ -1,0 +1,8 @@
+{
+  "at_utc": "2026-10-04T07:04:06.999945+00:00",
+  "script": "tools/parallel_next_db_verify.py",
+  "sha256": "2e3f29228c7ffda47344b45ec0b1de00c450d2051dad538eb78dfc1d028096a8",
+  "independent_review": "m5_fix_review: no major issues; added direct independent DB monetary assertions",
+  "transport": "ASGI + real TLS MySQL",
+  "schema": "pos_api_validation"
+}

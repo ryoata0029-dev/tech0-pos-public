@@ -1,0 +1,14 @@
+{
+  "at_utc": "2026-10-04T06:57:39.980473+00:00",
+  "build_id": "5_wgTZOtPLE3as7vfiFAN",
+  "source_sha256": {
+    "frontend/app/page.tsx": "1fdc59df3c5355c78a26d7f51e938c809d9448fe6b6511a767483292dfaacfe5",
+    "frontend/app/register-cart.tsx": "ad1055a84c4f2541001c163ba4e2df1e9024c5d28a33c9b8d2d50ea5650f03a6",
+    "frontend/app/camera.tsx": "4679f937821d3447c4b89a5c505f1449b0996ab251da36e88b0d2e9c2d85f6e2",
+    "frontend/lib/pos.ts": "626e0c34d57a061396ea6f4117d4c230ae7bb9e42da8ed2007d2bc315191a669"
+  },
+  "uses_previous_verified_application_build": true,
+  "previous_checks": "evidence/mac-parallel/check-final.log",
+  "camera_image_capture": "none",
+  "current_authorization": "2026-10-04 user: 続けて同時並行で進めよう。iPhone・カメラもOK"
+}

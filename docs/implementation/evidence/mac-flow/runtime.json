@@ -1,0 +1,18 @@
+{
+  "recorded_at_utc": "2026-10-02T13:32:49Z",
+  "mac_model": "MacBookAir10,1",
+  "macos": "27.0 (26A428)",
+  "chrome": "154.0.8037.58",
+  "browser_mode": "Chrome normal; same user profile; actual desktop viewport",
+  "device_metadata_source": "read-only host metadata on 2026-10-01; normal profile confirmed in native Chrome AX",
+  "git_head": "89ba602731323863843f2f51f44a634698d20f30",
+  "dirty_worktree": true,
+  "m5_fix_included": true,
+  "frontend_build_id": "pCsqmP1hNQyTgaCyQ8nX7",
+  "source_sha256": {
+    "frontend/app/register-cart.tsx": "0c4a259d9d7767ebc5049cb188f6e2295b5f57900912bdd3a61a55a43fc79b0c",
+    "設計スキーマ.sql": "12ac6221730fa9f0eefc8c61ca579e1d94f144bd8b4f080bbe13f3ec0bb87a1c"
+  },
+  "camera_executed": false,
+  "chrome_complete_restart_executed": false
+}

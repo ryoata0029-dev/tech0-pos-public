@@ -1,0 +1,88 @@
+									72 container [ネットワーク] パネル
+										73 container network
+											74 container
+												75 ツールバー
+													76 container ネットワーク ログの記録を停止, Help: ネットワーク ログの記録を停止 - ⌘ E
+														77 切り替えボタン ネットワーク ログの記録を停止 - ⌘ E, Value: 1
+													78 container ネットワーク ログを消去, Help: ネットワーク ログを消去 - Ctrl L - ⌘ K
+														79 ボタン ネットワーク ログを消去 - Ctrl L - ⌘ K
+													80 container フィルタ
+														81 切り替えボタン フィルタ, Value: 1
+													82 container 検索
+														83 切り替えボタン 検索, Value: 0
+													84 container
+														85 チェックボックス ログを保持, Value: 0
+														86 テキスト ログを保持
+													87 container
+														88 チェックボックス キャッシュを無効化, Value: 0
+														89 テキスト キャッシュを無効化
+													90 ポップアップ ボタン スロットリング, Value: 無効: スロットリングなし
+														91 (selected) 無効: スロットリングなし
+													92 container その他のネットワーク状態…
+														93 ボタン その他のネットワーク状態…
+													94 container HAR ファイルをインポート...
+														95 ボタン HAR ファイルをインポート...
+													96 container HAR（サニタイズ済み）をエクスポート...
+														97 ボタン HAR（サニタイズ済み）をエクスポート...
+													98 container ネットワーク設定
+														99 切り替えボタン ネットワーク設定, Value: 0
+												100 ツールバー
+													101 テキスト入力領域 (settable) フィルタ, Value: products
+														102 テキスト products
+												103 container 検索フィルタを反転
+													104 チェックボックス 反転, Value: 0
+													105 テキスト 反転
+												106 container Show only/hide requests dropdown
+													107 ポップアップボタン リクエストのみを表示または非表示にする
+														108 テキスト その他のフィルタ
+												109 リストボックス 含めるリクエストの種類, Help: ⌘  を押しながらクリックして、複数のタイプを選択します
+													110 text (selected) すべて Fetch/XHR ドキュメント CSS JS フォント 画像 メディア マニフェスト Socket Wasm その他
+												111 container 概要グリッド ウィンドウ
+													112 container
+														113 container
+															114 テキスト 0 ms
+															115 テキスト 200 ms
+															116 テキスト 400 ms
+															117 テキスト 600 ms
+															118 テキスト 800 ms
+															119 テキスト 1,000 ms
+													120 スライダ 左サイズ変更, Value: 0, Details: 0 ms, Secondary Actions: Increment, Decrement
+													121 スライダ 右サイズ変更, Value: 100, Details: 1,010 ms, Secondary Actions: Increment, Decrement
+													122 イメージ
+												123 container
+													124 container
+														125 表
+															126 row
+																127 列見出し 名前 - Sortable column. Press enter to sort.
+																	128 テキスト 名前
+															129 row
+																130 セル https://house-tooth-commander-donor.trycloudflare.com/api/products/0001
+																	131 イメージ フェッチ
+																	132 テキスト 0001
+														133 container リクエスト 1 件
+															134 テキスト リクエスト 1 件
+														135 container 190 B をネットワーク経由で転送
+															136 テキスト 190 B を転送しました
+														137 container ページで 62 B のリソースが読み込まれました
+															138 テキスト 62 B 件のリソース
+													139 container
+														140 ツールバー
+															141 container 閉じる
+																142 ボタン 閉じる
+														143 タブグループ
+															144 タブ (settable, integer) ヘッダー, Value: 0
+																145 テキスト ヘッダー
+															146 タブ (settable, integer) プレビュー, Value: 0
+																147 テキスト プレビュー
+															148 タブ (selected) レスポンス, Value: 1
+																149 テキスト レスポンス
+														150 ポップアップボタン その他のタブ
+														151 container
+															152 container
+																153 テキスト入力領域 (settable) コードエディタ, Value: {"code":"0001","name":"演習食品103円","unit_price":"103"}
+																	154 container
+																		155 text { "code" : "0001" , "name" : "演習食品103円" , "unit_price" : "103" }
+															156 ツールバー
+																157 container プリティ プリント
+																	158 切り替えボタン プリティ プリント, Value: 0
+							159 テキスト ネットワーク ログ row 名前: 0001/api/products

@@ -1,0 +1,158 @@
+Exception terminating connection <pymysql.connections.Connection object at 0x10812ad50>
+Traceback (most recent call last):
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1147, in _commit_impl
+    self.engine.dialect.do_commit(self.connection)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/sqlalchemy/engine/default.py", line 715, in do_commit
+    dbapi_connection.commit()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/pymysql/connections.py", line 495, in commit
+    self._read_ok_packet()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/tools/m4_verify_https.py", line 155, in read_ok
+    raise pymysql.err.OperationalError(2013, "M4 injected unread COMMIT acknowledgement")
+pymysql.err.OperationalError: (2013, 'M4 injected unread COMMIT acknowledgement')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1147, in _commit_impl
+    self.engine.dialect.do_commit(self.connection)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/sqlalchemy/engine/default.py", line 715, in do_commit
+    dbapi_connection.commit()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/pymysql/connections.py", line 495, in commit
+    self._read_ok_packet()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/tools/m4_verify_https.py", line 155, in read_ok
+    raise pymysql.err.OperationalError(2013, "M4 injected unread COMMIT acknowledgement")
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2013, 'M4 injected unread COMMIT acknowledgement')
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/sqlalchemy/pool/base.py", line 373, in _close_connection
+    self._dialect.do_terminate(connection)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/sqlalchemy/engine/default.py", line 718, in do_terminate
+    self.do_close(dbapi_connection)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/sqlalchemy/engine/default.py", line 721, in do_close
+    dbapi_connection.close()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/pymysql/connections.py", line 424, in close
+    raise err.Error("Already closed")
+pymysql.err.Error: Already closed
+{"utc":"2026-10-01T11:35:23.932036+00:00","request_id":"0ab9e153-cbb4-4eb5-a7fe-3f8fd7b93e22","operation_id":"3adbe2a1-4a59-450a-abe3-baf7f822ddcc","api":"/api/purchases","elapsed_ms":39.9,"result_code":"SERVICE_UNAVAILABLE","db_error":"DB_FAILURE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T11:35:23.966209+00:00","request_id":"937f622e-112e-47f1-b925-259659207adb","operation_id":null,"api":"/api/carts/{cart_id}/purchase","elapsed_ms":9.27,"result_code":"SERVICE_UNAVAILABLE","db_error":"DB_FAILURE","deployment_version":"UNSET"}
+Exception terminating connection <pymysql.connections.Connection object at 0x1081a4a50>
+Traceback (most recent call last):
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1147, in _commit_impl
+    self.engine.dialect.do_commit(self.connection)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/sqlalchemy/engine/default.py", line 715, in do_commit
+    dbapi_connection.commit()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/pymysql/connections.py", line 495, in commit
+    self._read_ok_packet()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/tools/m4_verify_https.py", line 155, in read_ok
+    raise pymysql.err.OperationalError(2013, "M4 injected unread COMMIT acknowledgement")
+pymysql.err.OperationalError: (2013, 'M4 injected unread COMMIT acknowledgement')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1147, in _commit_impl
+    self.engine.dialect.do_commit(self.connection)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/sqlalchemy/engine/default.py", line 715, in do_commit
+    dbapi_connection.commit()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/pymysql/connections.py", line 495, in commit
+    self._read_ok_packet()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/tools/m4_verify_https.py", line 155, in read_ok
+    raise pymysql.err.OperationalError(2013, "M4 injected unread COMMIT acknowledgement")
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2013, 'M4 injected unread COMMIT acknowledgement')
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/sqlalchemy/pool/base.py", line 373, in _close_connection
+    self._dialect.do_terminate(connection)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/sqlalchemy/engine/default.py", line 718, in do_terminate
+    self.do_close(dbapi_connection)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/sqlalchemy/engine/default.py", line 721, in do_close
+    dbapi_connection.close()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/pymysql/connections.py", line 424, in close
+    raise err.Error("Already closed")
+pymysql.err.Error: Already closed
+{"utc":"2026-10-01T11:35:24.196370+00:00","request_id":"52740daf-a89f-473f-8f3c-34b14aa3a777","operation_id":"200095c3-8e55-477a-8d8d-4ca10635b0f4","api":"/api/purchases","elapsed_ms":38.5,"result_code":"SERVICE_UNAVAILABLE","db_error":"DB_FAILURE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T11:35:24.230607+00:00","request_id":"3cb47eb9-8704-40a0-9c6e-16f792a73f68","operation_id":null,"api":"/api/carts/{cart_id}/purchase","elapsed_ms":9.77,"result_code":"SERVICE_UNAVAILABLE","db_error":"DB_FAILURE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T11:35:24.435284+00:00","request_id":"8b92817a-5f31-4fa4-81f4-64a55603dba4","operation_id":"8de8e3e3-f154-49ec-bf33-0649d7686c8e","api":"/api/purchases","elapsed_ms":28.93,"result_code":"SERVICE_UNAVAILABLE","db_error":"DB_FAILURE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T11:35:24.462114+00:00","request_id":"f8cdbcdd-bf75-41b0-8727-7585f8e7498c","operation_id":null,"api":"/api/carts/{cart_id}/purchase","elapsed_ms":7.3,"result_code":"SERVICE_UNAVAILABLE","db_error":"DB_FAILURE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T11:35:24.664952+00:00","request_id":"8c812bf4-46b2-4a3b-8df3-f8dd6c30d94b","operation_id":"91138179-90e5-4c31-995d-0f17ef248c74","api":"/api/purchases","elapsed_ms":23.87,"result_code":"SERVICE_UNAVAILABLE","db_error":"DB_FAILURE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T11:35:24.692634+00:00","request_id":"0959546b-5872-4840-96e7-910e218a373f","operation_id":null,"api":"/api/carts/{cart_id}/purchase","elapsed_ms":8.29,"result_code":"SERVICE_UNAVAILABLE","db_error":"DB_FAILURE","deployment_version":"UNSET"}
+Exception terminating connection <pymysql.connections.Connection object at 0x1081a5bd0>
+Traceback (most recent call last):
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1147, in _commit_impl
+    self.engine.dialect.do_commit(self.connection)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/sqlalchemy/engine/default.py", line 715, in do_commit
+    dbapi_connection.commit()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/pymysql/connections.py", line 495, in commit
+    self._read_ok_packet()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/tools/m4_verify_https.py", line 155, in read_ok
+    raise pymysql.err.OperationalError(2013, "M4 injected unread COMMIT acknowledgement")
+pymysql.err.OperationalError: (2013, 'M4 injected unread COMMIT acknowledgement')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1147, in _commit_impl
+    self.engine.dialect.do_commit(self.connection)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/sqlalchemy/engine/default.py", line 715, in do_commit
+    dbapi_connection.commit()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/pymysql/connections.py", line 495, in commit
+    self._read_ok_packet()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/tools/m4_verify_https.py", line 155, in read_ok
+    raise pymysql.err.OperationalError(2013, "M4 injected unread COMMIT acknowledgement")
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2013, 'M4 injected unread COMMIT acknowledgement')
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/sqlalchemy/pool/base.py", line 373, in _close_connection
+    self._dialect.do_terminate(connection)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/sqlalchemy/engine/default.py", line 718, in do_terminate
+    self.do_close(dbapi_connection)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/sqlalchemy/engine/default.py", line 721, in do_close
+    dbapi_connection.close()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/backend/.venv/lib/python3.13/site-packages/pymysql/connections.py", line 424, in close
+    raise err.Error("Already closed")
+pymysql.err.Error: Already closed
+{"utc":"2026-10-01T11:35:25.207258+00:00","request_id":"f37da29d-a178-4485-bbd3-cc587f807c64","operation_id":"d4d2a024-805f-4dac-aded-7d2035a263cc","api":"/api/carts/{cart_id}/member","elapsed_ms":33.29,"result_code":"SERVICE_UNAVAILABLE","db_error":"DB_FAILURE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T11:35:27.390334+00:00","request_id":"1f1a0b3e-e164-4018-a90e-6a9e7b11088d","operation_id":null,"api":"/api/carts/{cart_id}","elapsed_ms":28.18,"result_code":"OK","db_error":"NONE","deployment_version":"UNSET"}
+{"passed": 13, "browser_test": false}

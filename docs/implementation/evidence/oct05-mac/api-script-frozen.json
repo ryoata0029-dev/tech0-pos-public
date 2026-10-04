@@ -1,0 +1,12 @@
+{
+  "at_utc": "2026-10-04T15:33:20.215040+00:00",
+  "script_sha256": "f51d68066f1fe712b3220947ea634ce3ee54f6e6bcc3b522afe235dbd6eb39ea",
+  "script": "tools/oct05_api_verify.py",
+  "independent_review": "B read review + root guard/prepare/matrix review; QUANTITY_LIMIT assertion addressed",
+  "actions_planned": [
+    "prepare",
+    "run"
+  ],
+  "selected_tc11_count": 467,
+  "normal_22_included_in_467": true
+}

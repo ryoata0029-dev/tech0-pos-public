@@ -1,0 +1,67 @@
+{
+  "at_utc": "2026-10-04T06:35:24.234681+00:00",
+  "scope": "Offline independent read comparison of completed TC03 missing/member success/nonmember recovery evidence; no database, GUI or network action",
+  "cart_id": "6501b600-ccf3-4e80-ad5f-3dcb949ab9cc",
+  "prior_sale_count": 1,
+  "new_sale_count": 0,
+  "comparisons": {
+    "pending_four_rejections_and_member_get": {
+      "register": true,
+      "contexts": true,
+      "carts": true,
+      "lines": true,
+      "operations": true,
+      "purchases": true,
+      "purchase_lines": true,
+      "purchase_taxes": true,
+      "products": true
+    },
+    "original_sale_unchanged_all_stages": {
+      "purchases": true,
+      "purchase_lines": true,
+      "purchase_taxes": true
+    },
+    "line_identity_quantity_price_tax_conditions_fixed": true,
+    "nonmember_recovered_lines_match_original": true,
+    "nonmember_recovered_570_null_member_pending_operation": true,
+    "four_valid_current_version_409": [
+      {
+        "method": "POST",
+        "status": 409,
+        "code": "STATE_CONFLICT"
+      },
+      {
+        "method": "PATCH",
+        "status": 409,
+        "code": "STATE_CONFLICT"
+      },
+      {
+        "method": "DELETE",
+        "status": 409,
+        "code": "STATE_CONFLICT"
+      },
+      {
+        "method": "POST",
+        "status": 409,
+        "code": "STATE_CONFLICT"
+      }
+    ],
+    "four_api_responses_keep_context": true,
+    "member_get_200_does_not_mutate_cart": true
+  },
+  "source_sha256": {
+    "db-tc03-before.json": "b054ac531fea1bf1a8f659a5a6e6603c6495fb45670c7fe028611bb4c3178bd5",
+    "db-tc03-pending-before.json": "431b5bc017118434ec2e11536a39ef4c7e93213c6895072b923b088213220f78",
+    "db-tc03-pending-after.json": "fc61507b53899b830126cd662ab3e1a244cb9cc79080ba7b998c743998d924f4",
+    "db-tc03-confirmed.json": "86e0dde7dd3f72d71015b448da8f1dbec3b21e5279b817254ac0f6b01908bd3a",
+    "db-tc03-confirmed-missing.json": "b4507b2d7d442c126cda7ad306d2cb6c8538aad983e2ae77cbcab66a41313988",
+    "db-tc03-missing-recovered.json": "939ccb778c7a2618c28fa3d2befa24b3ce90d294296ecc6e94c8c535717c70f3",
+    "tc03-four-rejections.json": "787443ed995b74aae8e80c50a881fcc6bb9c55b87e98b089973a8893f5ad6312",
+    "tc03-member-get.json": "a1b35beb114fd554eff438e57f5d6f21489f6bbf9b8e426e245fea53cd64cb70"
+  },
+  "unverified": [
+    "member 503 trials not yet fully reviewed",
+    "live member lookup hold and old late response",
+    "camera/iPhone and whole TC03/M7 acceptance"
+  ]
+}

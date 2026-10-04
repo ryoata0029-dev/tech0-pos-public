@@ -1,0 +1,11 @@
+{
+  "at_utc": "2026-10-04T04:10:08.649153+00:00",
+  "tag": "empty-change-unavailable",
+  "kind": "member-unavailable",
+  "after_real_receipt_commit": true,
+  "operation_id": "9d0a894d-3c90-4c92-99f7-632d5c14212b",
+  "cart_id": "895def4c-35db-4dad-880b-52bde541dc7e",
+  "version": "8",
+  "state": "EDITING",
+  "member_state": "PENDING"
+}

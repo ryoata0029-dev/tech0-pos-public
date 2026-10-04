@@ -1,0 +1,198 @@
+{
+  "at_utc": "2026-10-04T04:12:53.613Z",
+  "action": "blocked",
+  "requests": [
+    {
+      "method": "POST",
+      "path": "carts/895def4c-35db-4dad-880b-52bde541dc7e/lines",
+      "body": {
+        "operation_id": "f11b5886-402f-4fc9-b5a3-f7b7b215825b",
+        "version": "19",
+        "code": "0001"
+      },
+      "status": 409,
+      "value": {
+        "code": "STATE_CONFLICT",
+        "message": "操作を停止しました。状態を確認してください。"
+      }
+    },
+    {
+      "method": "PATCH",
+      "path": "carts/895def4c-35db-4dad-880b-52bde541dc7e/lines/428043bf-575d-42bf-af70-572d38264d44",
+      "body": {
+        "operation_id": "9932fe05-4b43-4216-9410-f38d370d1ee7",
+        "version": "19",
+        "quantity": 4
+      },
+      "status": 409,
+      "value": {
+        "code": "STATE_CONFLICT",
+        "message": "操作を停止しました。状態を確認してください。"
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "carts/895def4c-35db-4dad-880b-52bde541dc7e/lines/428043bf-575d-42bf-af70-572d38264d44?operation_id=e1388603-bedf-429d-87fe-d267194796b1&version=19",
+      "body": null,
+      "status": 409,
+      "value": {
+        "code": "STATE_CONFLICT",
+        "message": "操作を停止しました。状態を確認してください。"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "purchases",
+      "body": {
+        "operation_id": "580de0c9-0856-4d90-b6e9-1c8c68e1bcfd",
+        "version": "19",
+        "cart_id": "895def4c-35db-4dad-880b-52bde541dc7e"
+      },
+      "status": 409,
+      "value": {
+        "code": "STATE_CONFLICT",
+        "message": "操作を停止しました。状態を確認してください。"
+      }
+    }
+  ],
+  "before": {
+    "cart": {
+      "cart_id": "895def4c-35db-4dad-880b-52bde541dc7e",
+      "state": "EDITING",
+      "staff_id": "STAFF_A",
+      "member_state": "PENDING",
+      "pending_member_id": "MEMBER_MISSING",
+      "version": "19",
+      "member_id": null,
+      "lines": [
+        {
+          "line_no": 1,
+          "code": "0001",
+          "name": "演習食品103円",
+          "quantity": 3,
+          "unit_price": "103",
+          "tax_rate": "0.1000",
+          "discount": null,
+          "discount_per_unit": "0",
+          "net_unit_price": "103",
+          "line_subtotal": "309",
+          "line_id": "428043bf-575d-42bf-af70-572d38264d44"
+        },
+        {
+          "line_no": 2,
+          "code": "0002",
+          "name": "演習食品107円A",
+          "quantity": 1,
+          "unit_price": "107",
+          "tax_rate": "0.0800",
+          "discount": null,
+          "discount_per_unit": "0",
+          "net_unit_price": "107",
+          "line_subtotal": "107",
+          "line_id": "954681c7-cdd8-45f5-a7f8-3f5e6db5cb50"
+        },
+        {
+          "line_no": 3,
+          "code": "0003",
+          "name": "演習食品107円B",
+          "quantity": 1,
+          "unit_price": "107",
+          "tax_rate": "0.0800",
+          "discount": null,
+          "discount_per_unit": "0",
+          "net_unit_price": "107",
+          "line_subtotal": "107",
+          "line_id": "dddcaaca-694f-4dd0-8fae-1a289a0f845d"
+        }
+      ],
+      "subtotal": "523",
+      "total": "570",
+      "taxes": [
+        {
+          "tax_rate": "0.0800",
+          "tax_amount": "17",
+          "taxable_subtotal": "214"
+        },
+        {
+          "tax_rate": "0.1000",
+          "tax_amount": "30",
+          "taxable_subtotal": "309"
+        }
+      ],
+      "amounts_are_reference": true
+    },
+    "purchase_status": "NOT_REQUESTED",
+    "purchase": null
+  },
+  "after": {
+    "cart": {
+      "cart_id": "895def4c-35db-4dad-880b-52bde541dc7e",
+      "state": "EDITING",
+      "staff_id": "STAFF_A",
+      "member_state": "PENDING",
+      "pending_member_id": "MEMBER_MISSING",
+      "version": "19",
+      "member_id": null,
+      "lines": [
+        {
+          "line_no": 1,
+          "code": "0001",
+          "name": "演習食品103円",
+          "quantity": 3,
+          "unit_price": "103",
+          "tax_rate": "0.1000",
+          "discount": null,
+          "discount_per_unit": "0",
+          "net_unit_price": "103",
+          "line_subtotal": "309",
+          "line_id": "428043bf-575d-42bf-af70-572d38264d44"
+        },
+        {
+          "line_no": 2,
+          "code": "0002",
+          "name": "演習食品107円A",
+          "quantity": 1,
+          "unit_price": "107",
+          "tax_rate": "0.0800",
+          "discount": null,
+          "discount_per_unit": "0",
+          "net_unit_price": "107",
+          "line_subtotal": "107",
+          "line_id": "954681c7-cdd8-45f5-a7f8-3f5e6db5cb50"
+        },
+        {
+          "line_no": 3,
+          "code": "0003",
+          "name": "演習食品107円B",
+          "quantity": 1,
+          "unit_price": "107",
+          "tax_rate": "0.0800",
+          "discount": null,
+          "discount_per_unit": "0",
+          "net_unit_price": "107",
+          "line_subtotal": "107",
+          "line_id": "dddcaaca-694f-4dd0-8fae-1a289a0f845d"
+        }
+      ],
+      "subtotal": "523",
+      "total": "570",
+      "taxes": [
+        {
+          "tax_rate": "0.0800",
+          "tax_amount": "17",
+          "taxable_subtotal": "214"
+        },
+        {
+          "tax_rate": "0.1000",
+          "tax_amount": "30",
+          "taxable_subtotal": "309"
+        }
+      ],
+      "amounts_are_reference": true
+    },
+    "purchase_status": "NOT_REQUESTED",
+    "purchase": null
+  },
+  "completed": true,
+  "finished_at_utc": "2026-10-04T04:12:54.343Z"
+}

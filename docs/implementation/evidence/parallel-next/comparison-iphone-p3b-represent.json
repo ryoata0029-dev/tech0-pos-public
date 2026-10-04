@@ -1,0 +1,42 @@
+{
+  "at_utc": "2026-10-04T08:00:07.447843+00:00",
+  "condition": "P3b represent",
+  "before": "db-iphone-p3b-before-represent.json",
+  "after": "db-iphone-p3b-after-represent.json",
+  "user_report": "３になり、止まってる。OK",
+  "protected_projection_equal": {
+    "register": true,
+    "contexts": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "prior_operations_unchanged": true,
+  "non_target_lines_unchanged": true,
+  "new_operations": [
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "operation_id": "357f0ac4-5754-4c9f-8fa6-40436afafd06",
+      "kind": "ADD_LINE",
+      "request_version": 9,
+      "status": "APPLIED",
+      "prepared_version": null,
+      "applied_version": 10,
+      "result_code": null,
+      "next_cart_id": null,
+      "created_at": "2026-10-04 07:59:24.794818",
+      "requested_code": "00123457"
+    }
+  ],
+  "ean8_quantity_before": 2,
+  "ean8_quantity_after": 3,
+  "version_before": 9,
+  "version_after": 10,
+  "subtotal_yen": 10609,
+  "tax_yen": 1060,
+  "total_yen": 11669,
+  "purchases": 0,
+  "result": "limited_confirmation",
+  "limits": "Following the same-camera/no-restart instruction, the owner reports quantity3 and stopping. Approximately five seconds, frame-out interval, camera closure and media tracks were not directly observed."
+}

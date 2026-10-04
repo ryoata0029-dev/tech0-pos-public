@@ -1,0 +1,24 @@
+{
+  "at_utc": "2026-10-04T08:09:10.338234+00:00",
+  "condition": "P5a no dialog / P5b baseline",
+  "user_report": "でなかった",
+  "before": "db-iphone-p4-after-manual-restart.json",
+  "baseline": "db-iphone-p5-no-dialog-before.json",
+  "projection_equal": {
+    "register": true,
+    "contexts": true,
+    "carts": true,
+    "lines": true,
+    "operations": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "permission_denial_result": "not_executed_no_dialog",
+  "non_detection_result": "awaiting_owner_report",
+  "version": 11,
+  "total_yen": 11783,
+  "purchases": 0,
+  "limits": "Permission dialog absence is owner reported. No site/OS permission settings changed or forced rejection. Video and browser permissions were not directly inspected."
+}

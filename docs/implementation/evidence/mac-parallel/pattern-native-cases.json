@@ -1,0 +1,43 @@
+[
+  {
+    "label": "invalid_symbol",
+    "value_length": 6,
+    "expectedFocus": "担当者ID",
+    "focus": "The focused UI element is 44 テキストフィールド (settable) 担当者ID, Value: BAD@ID",
+    "bubble": "\t\t\t\t\t\t36 container 指定されている形式で入力してください。",
+    "at_utc": null,
+    "timestamp_note": "Exact invalid-symbol observation UTC was not separately recorded; normal tool sequence precedes timestamped boundary cases"
+  },
+  {
+    "label": "valid32_ascii",
+    "value_length": 32,
+    "expectedFocus": "パスワード",
+    "focus": "The focused UI element is 47 セキュリティ保護されたテキストフィールド (settable) パスワード",
+    "bubble": "\t\t\t\t\t\t36 container このフィールドを入力してください。 ",
+    "at_utc": "2026-10-04T06:42:57.242Z"
+  },
+  {
+    "label": "invalid33",
+    "value_length": 33,
+    "expectedFocus": "担当者ID",
+    "focus": "The focused UI element is 44 テキストフィールド (settable) 担当者ID, Value: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "bubble": "\t\t\t\t\t\t36 container 指定されている形式で入力してください。",
+    "at_utc": "2026-10-04T06:42:58.043Z"
+  },
+  {
+    "label": "valid1_hyphen",
+    "value_length": 1,
+    "expectedFocus": "パスワード",
+    "focus": "The focused UI element is 47 セキュリティ保護されたテキストフィールド (settable) パスワード",
+    "bubble": "\t\t\t\t\t\t36 container このフィールドを入力してください。 ",
+    "at_utc": "2026-10-04T06:42:58.838Z"
+  },
+  {
+    "label": "invalid_fullwidth",
+    "value_length": 1,
+    "expectedFocus": "担当者ID",
+    "focus": "The focused UI element is 44 テキストフィールド (settable) 担当者ID, Value: Ａ",
+    "bubble": "\t\t\t\t\t\t36 container 指定されている形式で入力してください。",
+    "at_utc": "2026-10-04T06:42:59.642Z"
+  }
+]

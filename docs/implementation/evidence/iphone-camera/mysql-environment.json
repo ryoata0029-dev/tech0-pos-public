@@ -1,0 +1,10 @@
+{
+  "image": "mysql@sha256:0744ee5ef89ce6ccfa13de3e579fe6b9e27f93dd70da9c06d2c908b1b193fb8d",
+  "image_id": "sha256:0744ee5ef89ce6ccfa13de3e579fe6b9e27f93dd70da9c06d2c908b1b193fb8d",
+  "architecture": "arm64",
+  "container": "tech0-pos-iphone-camera-mysql",
+  "container_id": "10cdc32b775d607773998602b55c9ed848b887f63aa6665d5f8f2129569517d0",
+  "volume": "tech0-pos-iphone-camera-mysql-data",
+  "port_binding": "127.0.0.1:3307 -> 3306",
+  "tls_required": true
+}

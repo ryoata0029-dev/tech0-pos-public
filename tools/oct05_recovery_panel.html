@@ -1,0 +1,93 @@
+<!doctype html><html lang="ja"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width"><title>10月05日 復帰専用fixture</title>
+<style>body{font:16px system-ui;margin:16px}button{padding:10px;margin:6px}pre{white-space:pre-wrap}iframe{width:100%;height:800px;border:2px solid #555}</style>
+<h1>10月05日 復帰専用fixture</h1>
+<p>新規oct05-mac専用。Cookie・パスワードは取得しません。iframeは現在の通常POSです。
+quotaと破損補助記録はこの専用originのlocalStorageだけ。遅着NEXT進行は架空取引Bの購入と終了を1回行います。</p>
+<button id="quota">TC20 native容量を満たす</button>
+<button id="broken">TC20 JSON破損1件を置く</button>
+<button id="multiple">TC20 複数記録の不整合を置く</button>
+<button id="open">通常POSをiframeで開く</button>
+<button id="clean">今回のfixture記録だけ除去</button>
+<button id="advance">TC24 次カートBを1回保存・終了してCへ進める待機</button>
+<p role="status" id="status">待機中</p><pre id="result" aria-label="fixture証跡"></pre>
+<div id="app"></div><script>
+'use strict';
+const owned=[]; const prefix='oct05-recovery-fill:';
+const fakeOps=['aaaa0001-0000-4000-8000-000000000001','aaaa0002-0000-4000-8000-000000000002'];
+const uuid=/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
+const records=[];let working=false;
+function record(value){records.push({at_utc:new Date().toISOString(),...value});document.querySelector('#result').textContent=JSON.stringify(records,null,2);}
+async function api(path,method='GET',body){
+ const response=await fetch('/api/'+path,{method,credentials:'same-origin',cache:'no-store',signal:AbortSignal.timeout(5000),headers:method==='GET'?{}:{'X-POS-Request':'1',...(body===undefined?{}:{'Content-Type':'application/json'})},body:body===undefined?undefined:JSON.stringify(body)});
+ const value=await response.json(); record({method,path,status:response.status,operation_id:value.operation_id??null,operation_status:value.operation_status??null,cart_id:value.cart?.cart_id??null,version:value.cart?.version??null,new_cart_id:value.new_cart_id??null});
+ if(!response.ok)throw new Error('API failed '+response.status);return value;
+}
+function keys(){return Array.from({length:localStorage.length},(_,i)=>localStorage.key(i)).filter(Boolean);}
+function own(key,value){if(localStorage.getItem(key)!==null)throw new Error('既存keyは変更しません');localStorage.setItem(key,value);owned.push(key);if(localStorage.getItem(key)!==value)throw new Error('Fixture readback mismatch');}
+function requireClean(){if(keys().some(k=>k.startsWith('pos-purchase:')||k.startsWith(prefix)||k.startsWith('oct05-recovery-pending:'))||owned.length)throw new Error('既存補助記録またはfixtureあり。停止します');}
+async function editing(){const value=await api('resume');if(value.cart.state!=='EDITING'||!uuid.test(value.cart.cart_id)||value.cart.member_state==='PENDING'||value.cart.lines.length===0)throw new Error('商品ありEDITINGが必要');return value.cart;}
+async function fill(){
+ requireClean();const cart=await editing();let index=0,written=0,quota=false;
+ // Native writes, no Storage prototype override. Bound total attempted data.
+ for(const size of [65536,4096,256,1]){
+  const text='Q'.repeat(size);let failed=false;
+  for(let i=0;i<30000&&index<30000;i++){
+   try{own(prefix+index,text);index++;written+=text.length;}
+   catch(error){if(error.name!=='QuotaExceededError')throw error;quota=true;failed=true;break;}
+   if(written>16*1024*1024)throw new Error('Unexpected storage capacity: fixture stops');
+  }
+  if(!failed)throw new Error('Bound reached without native quota error');
+ }
+ const key='pos-purchase:'+cart.cart_id+':'+fakeOps[0];let markerFailure=false;
+ try{own(key,JSON.stringify({cart_id:cart.cart_id,operation_id:fakeOps[0],version:cart.version}));}
+ catch(error){if(error.name!=='QuotaExceededError')throw error;markerFailure=true;}
+ if(!quota||!markerFailure)throw new Error('Purchase-sized native write did not fail; do not claim quota case');
+ record({fixture:'native-quota',native_error:'QuotaExceededError',purchase_sized_probe_failed:true,owned_keys:owned.length,cart_id:cart.cart_id,version:cart.version});
+}
+async function corrupt(multiple){requireClean();const cart=await editing();
+ const key1='pos-purchase:'+cart.cart_id+':'+fakeOps[0];
+ if(multiple){own(key1,JSON.stringify({cart_id:cart.cart_id,operation_id:fakeOps[0],version:cart.version}));own('pos-purchase:'+cart.cart_id+':'+fakeOps[1],JSON.stringify({cart_id:cart.cart_id,operation_id:fakeOps[0],version:cart.version}));}
+ else own(key1,'{broken');
+ record({fixture:multiple?'multiple-key-body-mismatch':'broken-JSON',keys_placed:multiple?2:1,cart_id:cart.cart_id,version:cart.version,requests_were_not_purchase_requests:true});
+}
+function openApp(){if(document.querySelector('iframe'))throw new Error('Close previous iframe first using cleanup');const frame=document.createElement('iframe');frame.src='/';frame.title='現在の通常POS';document.querySelector('#app').append(frame);record({action:'ordinary-built-POS-iframe-opened'});}
+function clean(){document.querySelector('#app').replaceChildren();for(const key of owned)localStorage.removeItem(key);owned.length=0;record({action:'only-fixture-owned-keys-removed',remaining_purchase_keys:keys().filter(k=>k.startsWith('pos-purchase:')).length});}
+async function advance(){
+ requireClean();const initial=await api('resume');const a=initial.cart.cart_id;
+ if(initial.cart.state!=='SAVED'||initial.purchase_status!=='SAVED'||initial.purchase?.cart_id!==a||!uuid.test(a))throw new Error('Aの保存済み結果表示が必要');
+ record({action:'waiting-for-first-real-NEXT',a});
+ const deadline=performance.now()+5000;let value;
+ do{value=await api('resume');if(value.cart.cart_id!==a)break;await new Promise(resolve=>setTimeout(resolve,80));}while(performance.now()<deadline);
+ const b=value.cart.cart_id;if(b===a||value.cart.state!=='EDITING'||value.cart.lines.length)throw new Error('空の次カートBを確認できません');
+ value=await api('carts/'+b+'/lines','POST',{operation_id:crypto.randomUUID(),version:value.cart.version,code:'0002'});
+ if(value.operation_status!=='APPLIED'||value.cart.cart_id!==b)throw new Error('B追加未確定');
+ const purchaseId=crypto.randomUUID(),marker='oct05-recovery-pending:'+b+':'+purchaseId;
+ // A fixture-only memento: does not emit a pos-purchase storage event into A.
+ // Otherwise A could navigate/sync B before the delayed response is returned.
+ // Never add this actual helper request identity to cleanup's owned list.
+ const markerValue=JSON.stringify({cart_id:b,operation_id:purchaseId,version:value.cart.version});
+ if(localStorage.getItem(marker)!==null)throw new Error('既存購入記録は変更しません');
+ localStorage.setItem(marker,markerValue);
+ if(localStorage.getItem(marker)!==markerValue)throw new Error('B購入補助記録を読戻せません。POST前停止');
+ record({action:'B-purchase-identity-retained-before-POST',cart_id:b,operation_id:purchaseId,version:value.cart.version,storage_namespace:'oct05-recovery-pending:'});
+ value=await api('purchases','POST',{operation_id:purchaseId,cart_id:b,version:value.cart.version});
+ if(value.purchase_status!=='SAVED'||value.purchase?.cart_id!==b||value.cart.cart_id!==b)throw new Error('B保存結果不明。補助記録を保持して停止');
+ localStorage.removeItem(marker);
+ value=await api('carts/'+b+'/next','POST',{operation_id:crypto.randomUUID(),version:value.cart.version});
+ const c=value.new_cart_id;if(value.operation_status!=='APPLIED'||!uuid.test(c)||c===b||value.cart.cart_id!==c||value.cart.lines.length)throw new Error('C移行未確定');
+ value=await api('carts/'+c+'/lines','POST',{operation_id:crypto.randomUUID(),version:value.cart.version,code:'0001'});
+ if(value.operation_status!=='APPLIED'||value.cart.cart_id!==c||value.cart.lines.length!==1||value.cart.lines[0].quantity!==1||value.cart.total!=='113')throw new Error('C追加の期待と不一致');
+ record({action:'C-added-once',a,b,c,version:value.cart.version,total:value.cart.total,panel_purchase_posts:1,panel_next_posts:1});
+}
+async function run(action){if(working)return;working=true;document.querySelectorAll('button').forEach(b=>b.disabled=true);document.querySelector('#status').textContent='実行中';
+ try{await action();document.querySelector('#status').textContent='操作完了・通常POSとDBを別に確認';}
+ catch(error){record({failure_name:error.name,message:error.message,automatic_retry:false});document.querySelector('#status').textContent='停止・根拠を確認';}
+ finally{working=false;document.querySelectorAll('button').forEach(b=>b.disabled=false);}}
+document.querySelector('#quota').onclick=()=>run(fill);
+document.querySelector('#broken').onclick=()=>run(()=>corrupt(false));
+document.querySelector('#multiple').onclick=()=>run(()=>corrupt(true));
+document.querySelector('#open').onclick=()=>run(openApp);
+document.querySelector('#clean').onclick=()=>run(clean);
+document.querySelector('#advance').onclick=()=>run(advance);
+</script></html>

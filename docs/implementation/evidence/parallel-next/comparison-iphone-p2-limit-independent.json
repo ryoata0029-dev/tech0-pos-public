@@ -1,0 +1,61 @@
+{
+  "reviewed_at_utc": "2026-10-04T07:50:45.570392+00:00",
+  "method": "offline independent saved JSON comparison; no GUI/DB/environment/network/document actions",
+  "sources": [
+    "db-iphone-p2-before-camera.json",
+    "db-iphone-p2-after-limit.json",
+    "comparison-iphone-p2-limit.json"
+  ],
+  "source_sha256": {
+    "db-iphone-p2-before-camera.json": "12e57d9fc5444c6b900800e9edef161e43ffe8acab30414eddeb798b13f128ab",
+    "db-iphone-p2-after-limit.json": "7a68e0d0c133fa63c02880517e5f7f5a845f2e80fb4aae3f3763c0edbe62e63a",
+    "comparison-iphone-p2-limit.json": "6bb8f05b780c7e26c01674c86824e6dcc9a7b2ab2ec214c6af58ade4c288085e"
+  },
+  "condition": "P2a",
+  "before_observed_at_utc": "2026-10-04 07:47:54.305268",
+  "after_observed_at_utc": "2026-10-04 07:50:13.140551",
+  "protected_projection_equal": {
+    "register": true,
+    "contexts": true,
+    "carts": true,
+    "lines": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "original_operation_count": 5,
+  "original_operations_unchanged": true,
+  "new_operation_count": 1,
+  "new_operation": {
+    "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+    "operation_id": "8c931113-f247-4892-acf8-52ea0ece2360",
+    "kind": "ADD_LINE",
+    "request_version": 6,
+    "status": "REJECTED",
+    "prepared_version": null,
+    "applied_version": null,
+    "result_code": "QUANTITY_LIMIT",
+    "next_cart_id": null,
+    "created_at": "2026-10-04 07:48:56.329737",
+    "requested_code": "0001"
+  },
+  "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+  "context_id": "8964dcfc-9a1a-4896-a819-3cbd745d4e1a",
+  "cart_state": "EDITING",
+  "cart_version": 6,
+  "quantity": 99,
+  "subtotal_yen": 10197,
+  "tax_yen": 1019,
+  "total_yen": 11216,
+  "purchase_rows": 0,
+  "owner_report_from_task_handoff": "エラーが表示され、数量９９のまま、カメラもひらいてます",
+  "result": "limited_confirmation_consistent_with_owner_report",
+  "major_inconsistency_found": false,
+  "limits": [
+    "Owner reported the rejection display and camera remaining open; reviewer did not observe DOM/video/media tracks.",
+    "The rejection operation receipt is QUANTITY_LIMIT; browser reception of HTTP422 and callback/timing/stream state are not directly evidenced.",
+    "P2b different-code addition without camera restart is not performed by this review and is not inferred from P2a.",
+    "Protected selected projections and five original operation projections are unchanged; authentication/session fields and all HTTP traffic are outside this comparison."
+  ]
+}

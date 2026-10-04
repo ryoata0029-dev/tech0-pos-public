@@ -1,0 +1,163 @@
+{
+  "at_utc": "2026-10-04T06:05:19.695252+00:00",
+  "build_id": "JgJjC7D_Z2jjtELoFKU-V",
+  "cart_id": "0ef16710-fc7d-4c65-a540-8b8edc0cfe8d",
+  "baseline": "db-after-deselect-ui.json",
+  "premise": "two lines, quantities 1/1, nonmember, version4; empty-cart plan adapted to preserve deselection fixture; only read-only product search replies gated",
+  "cases": [
+    {
+      "id": "old200",
+      "actual_backend_status": 200,
+      "actual_lookup_status": 200,
+      "outside_read_transaction": true,
+      "wait_seconds": 5,
+      "input_changed_before_release": true,
+      "server_return_after_seconds": null,
+      "ui_observed_after_seconds": null,
+      "deselect_disabled_while_searching": true,
+      "old_search_result_not_shown_at_observation": true,
+      "db_equal": {
+        "register": true,
+        "contexts": true,
+        "carts": true,
+        "lines": true,
+        "operations": true,
+        "purchases": true,
+        "purchase_lines": true,
+        "purchase_taxes": true,
+        "products": true
+      },
+      "browser_http_status_and_body": "not directly observed",
+      "ui_recovered_within_10_seconds": "not proven; post-release observation timing exceeded 10 seconds or was not recorded",
+      "classification": "limited UI observation; browser arrival condition remains unverified",
+      "evidence": [
+        "gate-selection-old200.json",
+        "release-after-selection-old200.json",
+        "gate-response-selection-old200.json",
+        "ui-old200-order.json",
+        "ui-old200-after.txt",
+        "db-after-old200.json"
+      ]
+    },
+    {
+      "id": "old404",
+      "actual_backend_status": 404,
+      "actual_lookup_status": 404,
+      "outside_read_transaction": true,
+      "wait_seconds": 5,
+      "input_changed_before_release": true,
+      "server_return_after_seconds": 5.210753,
+      "ui_observed_after_seconds": 13.887,
+      "deselect_disabled_while_searching": true,
+      "old_search_result_not_shown_at_observation": true,
+      "db_equal": {
+        "register": true,
+        "contexts": true,
+        "carts": true,
+        "lines": true,
+        "operations": true,
+        "purchases": true,
+        "purchase_lines": true,
+        "purchase_taxes": true,
+        "products": true
+      },
+      "browser_http_status_and_body": "not directly observed",
+      "ui_recovered_within_10_seconds": "not proven; post-release observation timing exceeded 10 seconds or was not recorded",
+      "classification": "limited UI observation; browser arrival condition remains unverified",
+      "evidence": [
+        "gate-selection-old404.json",
+        "release-after-selection-old404.json",
+        "gate-response-selection-old404.json",
+        "ui-old404-order.json",
+        "ui-old404-after.txt",
+        "db-after-old404.json"
+      ]
+    },
+    {
+      "id": "old503",
+      "actual_backend_status": 503,
+      "actual_lookup_status": 200,
+      "outside_read_transaction": true,
+      "wait_seconds": 5,
+      "input_changed_before_release": true,
+      "server_return_after_seconds": 5.942398,
+      "ui_observed_after_seconds": 13.088,
+      "deselect_disabled_while_searching": true,
+      "old_search_result_not_shown_at_observation": true,
+      "db_equal": {
+        "register": true,
+        "contexts": true,
+        "carts": true,
+        "lines": true,
+        "operations": true,
+        "purchases": true,
+        "purchase_lines": true,
+        "purchase_taxes": true,
+        "products": true
+      },
+      "browser_http_status_and_body": "not directly observed",
+      "ui_recovered_within_10_seconds": "not proven; post-release observation timing exceeded 10 seconds or was not recorded",
+      "classification": "limited UI observation; browser arrival condition remains unverified",
+      "evidence": [
+        "gate-selection-old503.json",
+        "release-after-selection-old503.json",
+        "gate-response-selection-old503.json",
+        "ui-old503-order.json",
+        "ui-old503-after.txt",
+        "db-after-old503.json"
+      ]
+    },
+    {
+      "id": "aba200",
+      "actual_backend_status": 200,
+      "actual_lookup_status": 200,
+      "outside_read_transaction": true,
+      "wait_seconds": 5,
+      "input_changed_before_release": true,
+      "server_return_after_seconds": 5.740019,
+      "ui_observed_after_seconds": 12.649,
+      "deselect_disabled_while_searching": true,
+      "old_search_result_not_shown_at_observation": true,
+      "db_equal": {
+        "register": true,
+        "contexts": true,
+        "carts": true,
+        "lines": true,
+        "operations": true,
+        "purchases": true,
+        "purchase_lines": true,
+        "purchase_taxes": true,
+        "products": true
+      },
+      "browser_http_status_and_body": "not directly observed",
+      "ui_recovered_within_10_seconds": "not proven; post-release observation timing exceeded 10 seconds or was not recorded",
+      "classification": "limited UI observation; browser arrival condition remains unverified",
+      "evidence": [
+        "gate-selection-aba200.json",
+        "release-after-selection-aba200.json",
+        "gate-response-selection-aba200.json",
+        "ui-aba200-order.json",
+        "ui-aba200-after.txt",
+        "db-after-aba200.json"
+      ]
+    }
+  ],
+  "extra_bounded503": {
+    "tag": "selection-bounded503",
+    "classification": "attempt not established: CUA click selector deadline while disabled; no deselect action delivered by that attempt",
+    "after_ui": "code0002, no old candidate/error, edit controls enabled; later ordinary ready-state deselection was successful",
+    "db_equal_at_final": {
+      "register": true,
+      "contexts": true,
+      "carts": true,
+      "lines": true,
+      "operations": true,
+      "purchases": true,
+      "purchase_lines": true,
+      "purchase_taxes": true,
+      "products": true
+    }
+  },
+  "independent_review": "mac_flow_review: normal deselection passed; A0 server replies plus later UI observations are limited evidence, not full browser response-arrival pass",
+  "result": "code input while searching, other controls disabled and DB unchanged verified; HTTP arrival classification and timely UI recovery remain unverified"
+}

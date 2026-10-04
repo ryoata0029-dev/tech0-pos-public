@@ -1,0 +1,33 @@
+{
+  "at_utc": "2026-10-04T07:30:36.912403+00:00",
+  "phase": "phone-ready-final",
+  "targets": {
+    "parallel-next": {
+      "container": "tech0-pos-parallel-next-mysql",
+      "container_id": "b0563dcd269b1dc9963d270bc6e56030bfa7f0e78beb15ffe08d4b8ecc5e7308",
+      "status": "running",
+      "ports_open": {
+        "3307": true,
+        "8443": true,
+        "8444": true
+      },
+      "processes": [
+        {
+          "name": "backend",
+          "pid": 45798,
+          "command": "/opt/homebrew/Cellar/python@3.13/3.13.13_1/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python -m uvicorn mac_tc02_backend:app --host 127.0.0.1 --port 8444 --ssl-keyfile /Users/ryotaasano/Documents/ChatGPT/POS\u30a2\u30d7\u30ea\u4f5c\u6210(Tech0\u8ab2\u984c)/.parallel-next-local/tls/server.key --ssl-certfile /Users/ryotaasano/Documents/ChatGPT/POS\u30a2\u30d7\u30ea\u4f5c\u6210(Tech0\u8ab2\u984c)/.parallel-next-local/tls/server.crt --no-access-log"
+        },
+        {
+          "name": "frontend",
+          "pid": 45799,
+          "command": "/Users/ryotaasano/Documents/ChatGPT/POS\u30a2\u30d7\u30ea\u4f5c\u6210(Tech0\u8ab2\u984c)/.m0-cache/fnm/node-versions/v24.21.0/installation/bin/node /Users/ryotaasano/Documents/ChatGPT/POS\u30a2\u30d7\u30ea\u4f5c\u6210(Tech0\u8ab2\u984c)/tools/mac_flow_https.mjs"
+        }
+      ],
+      "tunnel_pid": 45788,
+      "origin": "https://ebook-psp-provincial-recorded.trycloudflare.com",
+      "secrets_absent_from_git_candidates_and_logs": true
+    }
+  },
+  "build_id": "5_wgTZOtPLE3as7vfiFAN",
+  "build_manifest_sha256": "e95271d92c0ae62406fd5bf80116e298c396551fdaa3c63c2d46f9d105a6bc26"
+}

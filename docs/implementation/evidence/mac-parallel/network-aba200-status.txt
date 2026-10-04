@@ -1,0 +1,90 @@
+									72 container [ネットワーク] パネル
+										73 container network
+											74 container
+												75 ツールバー
+													76 container ネットワーク ログの記録を停止, Help: ネットワーク ログの記録を停止 - ⌘ E
+														77 切り替えボタン ネットワーク ログの記録を停止 - ⌘ E, Value: 1
+													78 container ネットワーク ログを消去, Help: ネットワーク ログを消去 - Ctrl L - ⌘ K
+														79 ボタン ネットワーク ログを消去 - Ctrl L - ⌘ K
+													80 container フィルタ
+														81 切り替えボタン フィルタ, Value: 1
+													82 container 検索
+														83 切り替えボタン 検索, Value: 0
+													84 container
+														85 チェックボックス ログを保持, Value: 0
+														86 テキスト ログを保持
+													87 container
+														88 チェックボックス キャッシュを無効化, Value: 0
+														89 テキスト キャッシュを無効化
+													90 ポップアップ ボタン スロットリング, Value: 無効: スロットリングなし
+														91 (selected) 無効: スロットリングなし
+													92 container その他のネットワーク状態…
+														93 ボタン その他のネットワーク状態…
+													94 container HAR ファイルをインポート...
+														95 ボタン HAR ファイルをインポート...
+													96 container HAR（サニタイズ済み）をエクスポート...
+														97 ボタン HAR（サニタイズ済み）をエクスポート...
+													98 container ネットワーク設定
+														99 切り替えボタン ネットワーク設定, Value: 0
+												100 ツールバー
+													101 テキスト入力領域 (settable) フィルタ, Value: products
+														102 テキスト products
+												103 container 検索フィルタを反転
+													104 チェックボックス 反転, Value: 0
+													105 テキスト 反転
+												106 container Show only/hide requests dropdown
+													107 ポップアップボタン リクエストのみを表示または非表示にする
+														108 テキスト その他のフィルタ
+												109 リストボックス 含めるリクエストの種類, Help: ⌘  を押しながらクリックして、複数のタイプを選択します
+													110 text (selected) すべて Fetch/XHR ドキュメント CSS JS フォント 画像 メディア マニフェスト Socket Wasm その他
+												111 container 概要グリッド ウィンドウ
+													112 container
+														113 container
+															114 テキスト 0 ms
+															115 テキスト 20 ms
+															116 テキスト 40 ms
+															117 テキスト 60 ms
+															118 テキスト 80 ms
+															119 テキスト 100 ms
+															120 テキスト 120 ms
+													121 スライダ 左サイズ変更, Value: 0, Details: 0 ms, Secondary Actions: Increment, Decrement
+													122 スライダ 右サイズ変更, Value: 100, Details: 108 ms, Secondary Actions: Increment, Decrement
+													123 イメージ
+												124 container
+													125 container
+														126 表
+															127 row
+																128 列見出し 名前 - Sortable column. Press enter to sort.
+																	129 テキスト 名前
+																130 列見出し ステータス - Sortable column. Press enter to sort.
+																	131 テキスト ステータス
+																132 列見出し タイプ - Sortable column. Press enter to sort.
+																	133 テキスト タイプ
+																134 列見出し イニシエータ - Sortable column. Press enter to sort.
+																	135 テキスト イニシエータ
+																136 列見出し サイズ - Sortable column. Press enter to sort.
+																	137 テキスト サイズ
+																138 列見出し 時間 - Sortable column. Press enter to sort.
+																	139 テキスト 時間
+															140 row
+																141 セル https://house-tooth-commander-donor.trycloudflare.com/api/products/0001
+																	142 イメージ フェッチ
+																	143 テキスト 0001
+																144 セル 200 OK
+																	145 テキスト 200
+																146 セル
+																	147 テキスト fetch
+																148 セル
+																	149 リンク 2kf87ifncfqea.js:1, Help: https://house-tooth-commander-donor.trycloudflare.com/_next/static/chunks/2kf87ifncfqea.js:1
+																		150 テキスト 2kf87ifncfqea.js:1
+																151 セル 0.2 KB をネットワーク経由で転送、リソースサイズ: 0.0 KB
+																	152 テキスト 0.2 KB
+																153 セル
+																	154 テキスト 保留中
+													155 container リクエスト 1 件
+														156 テキスト リクエスト 1 件
+													157 container 183 B をネットワーク経由で転送
+														158 テキスト 183 B を転送しました
+													159 container ページで 0 B のリソースが読み込まれました
+														160 テキスト 0 B 件のリソース
+							161 テキスト ネットワーク データを利用できます 

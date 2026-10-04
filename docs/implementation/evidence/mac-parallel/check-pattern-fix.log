@@ -1,0 +1,58 @@
+cd backend && .venv/bin/ruff check app tests ../tools
+E501 Line too long (102 > 100)
+   --> /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/tools/mac_parallel_verify.py:422:101
+    |
+420 |         "evidence": names,
+421 |         "limits": [
+422 |             "DB does not prove UI input/selection clearing, login retention or single-click behavior",
+    |                                                                                                     ^^
+423 |             "GUI evidence requires a separate independent review",
+424 |         ],
+    |
+
+E501 Line too long (126 > 100)
+   --> /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/tools/mac_parallel_verify.py:542:101
+    |
+540 |     )
+541 |     limits = [
+542 |         "Evidence confirms these empty-cart v2 cases only; deselect restrictions and whole TC02 acceptance are outside scope",
+    |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+543 |         "GUI UTC timestamps are controller observations, not a browser performance clock; Network observation was taken after ready",
+544 |     ]
+    |
+
+E501 Line too long (133 > 100)
+   --> /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/tools/mac_parallel_verify.py:543:101
+    |
+541 |     limits = [
+542 |         "Evidence confirms these empty-cart v2 cases only; deselect restrictions and whole TC02 acceptance are outside scope",
+543 |         "GUI UTC timestamps are controller observations, not a browser performance clock; Network observation was taken after ready",
+    |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+544 |     ]
+545 |     sequence = "changed_to_other_code"
+    |
+
+E501 Line too long (109 > 100)
+   --> /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/tools/mac_parallel_verify.py:560:101
+    |
+558 |                 require(
+559 |                     re.search(
+560 |                         r"await .*?\.fill\('0002'\);var t1=new Date\(\);if\(aba\)await .*?\.fill\('0001'\);",
+    |                                                                                                     ^^^^^^^^^
+561 |                         trace,
+562 |                     )
+    |
+
+E501 Line too long (110 > 100)
+   --> /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/tools/mac_parallel_verify.py:775:101
+    |
+773 |         "at_utc": datetime.now(UTC).isoformat(),
+774 |         "profile": "mac-parallel",
+775 |         "scope": "Offline saved DB/gate/GUI/Chrome Response checks for the specified Mac-parallel conditions",
+    |                                                                                                     ^^^^^^^^^^
+776 |         "result": "failed"
+777 |         if "failed" in statuses
+    |
+
+Found 5 errors.
+make: *** [lint] Error 1

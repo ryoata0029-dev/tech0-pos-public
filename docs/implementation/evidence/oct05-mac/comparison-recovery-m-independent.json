@@ -1,0 +1,85 @@
+{
+  "at_utc": "2026-10-04T16:18:42.525804+00:00",
+  "case_id": "O05-R20-M",
+  "method": "independent offline comparison of root-recorded real Chrome and nine DB projections; no live operations",
+  "status": "limited_multiple_key_body_mismatch_condition_verified",
+  "nine_projections_equal": {
+    "register": true,
+    "contexts": true,
+    "carts": true,
+    "lines": true,
+    "operations": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+  "version": 16,
+  "subtotal": 523,
+  "total": 570,
+  "quantities": [
+    3,
+    1,
+    1
+  ],
+  "operation_count": 14,
+  "purchase_count": 0,
+  "fixture": {
+    "intentional_records": 2,
+    "shape": "one valid-looking record plus one key/body operation mismatch",
+    "preceding_owned_cleanups_with_zero_purchase_keys": 2
+  },
+  "native_Network": {
+    "URL_rows": 13,
+    "observed_URLs": [
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/",
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/_next/static/chunks/1un3u08nvun28.css",
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/_next/static/chunks/3l04zcqx63h3y.js",
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/_next/static/chunks/2nic2og_5v8u5.js",
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/_next/static/chunks/1l5f4fea3w5q7.js",
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/_next/static/chunks/turbopack-1_h7c-hwik7ll.js",
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/_next/static/chunks/0epz6ysmqzpxe.js",
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/_next/static/chunks/3ywjybcnms1a4.js",
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/api/auth/status",
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/api/register/status",
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/api/resume",
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/api/register/status",
+      "https://committees-restricted-wilderness-retailers.trycloudflare.com/api/resume"
+    ],
+    "purchase_sync_resolve_path_rows": 0,
+    "recording_active_filter_empty_all_types": "root observed; raw capture has active toggle and all selected"
+  },
+  "source_files": [
+    {
+      "file": "db-recovery-m-baseline.json",
+      "sha256": "a30455f548b05f3be1d170acdca2668df61bc8463c7776f35f73295868cee5b9"
+    },
+    {
+      "file": "db-recovery-m-final.json",
+      "sha256": "9fdd655cb36a4eac253104d1b61769ace4838013c2b3d943c6e0eda8d5b173bf"
+    },
+    {
+      "file": "recovery-m-fixture.json",
+      "sha256": "0c4993321b1b5be086765bd4b96f781905865a35d944e64d4675c6d2b23f3551"
+    },
+    {
+      "file": "recovery-m-ui.txt",
+      "sha256": "94d21338427d34b73df1f4183af19166a76af59b9a4cc306d6bc9bf5e32de0ae"
+    },
+    {
+      "file": "recovery-m-network.txt",
+      "sha256": "b204a1952be0a1aba81eec1c7e6d16eb577b70aac4b1ac97e54a81fa988d7e84"
+    },
+    {
+      "file": "recovery-m.jpg",
+      "sha256": "ed0e9da1e8a0ce4534e526fbd4f222ce1872b424eabd5ec9a0a28a13e646af8f"
+    }
+  ],
+  "limits": [
+    "Does not test two valid records or response timing/removal races.",
+    "Network evidence is selected recorded browser window, not all-time request absence or server trace.",
+    "App business-operation stop is root real UI observation; read-only state recheck may remain available.",
+    "Nine projections exclude nonselected columns/tables and storage raw key bodies were not exported; fixture record and frozen served source establish intended mismatch setup."
+  ]
+}

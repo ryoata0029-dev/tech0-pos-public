@@ -1,0 +1,1067 @@
+"""Fixed parallel-next API-schema verification. Default is offline; root executes mutations."""
+
+import argparse
+import asyncio
+import hashlib
+import json
+import logging
+import os
+import re
+import subprocess
+import sys
+import time
+import traceback
+from datetime import UTC, datetime
+from decimal import Decimal
+from pathlib import Path
+from uuid import uuid4
+
+ROOT = Path(__file__).resolve().parents[1]
+LOCAL = ROOT / ".parallel-next-local"
+EVIDENCE = ROOT / "docs/implementation/evidence/parallel-next"
+NAME = "tech0-pos-parallel-next-mysql"
+VOLUME = NAME + "-data"
+DB = "pos_api_validation"
+USERS = {"root": "root", "pos_api_app": "pos_app", "pos_api_master": "pos_master"}
+USERS["pos_api_schema"] = "pos_schema"
+STAFF = "STAFF_API"
+MEMBER = "MEMBER_API"
+CODES = (
+    "API_TIE",
+    "API_CAP",
+    "API_MAX",
+    "API_HISTORY_NORMAL",
+    "API_HISTORY_SAME",
+    "API_HISTORY_FAIL",
+    "API_HISTORY_ACK",
+)
+
+
+def require(condition, reason):
+    if not condition:
+        raise ValueError(reason)
+
+
+def encode(value):
+    if isinstance(value, Decimal):
+        return str(value)
+    if isinstance(value, datetime):
+        return value.replace(tzinfo=UTC).isoformat()
+    raise TypeError("Unsupported evidence type")
+
+
+def secret_values():
+    path = LOCAL / "secrets.json"
+    require(
+        not path.is_symlink() and path.stat().st_mode & 0o077 == 0,
+        "Secret file must be a private regular file",
+    )
+    values = json.loads(path.read_text())
+    require(
+        all(
+            isinstance(values.get(k), str) and values[k]
+            for k in ("root", "pos_app", "pos_master", "pos_schema", "STAFF_A", "relay")
+        ),
+        "Missing isolated credential fields",
+    )
+    return values
+
+
+def resource_guard():
+    require(
+        os.environ.get("M2_LOCAL_PROFILE") == "parallel-next", "Fixed profile required"
+    )
+    require(
+        LOCAL.resolve() == LOCAL and EVIDENCE.resolve() == EVIDENCE,
+        "Fixed paths may not be symlinked",
+    )
+    inspected = subprocess.run(
+        ["docker", "inspect", NAME], check=True, capture_output=True, text=True
+    )
+    rows = json.loads(inspected.stdout)
+    require(len(rows) == 1, "One fixed container required")
+    row = rows[0]
+    require(
+        row["Name"] == "/" + NAME and row["State"]["Running"],
+        "Fixed container not running",
+    )
+    require(
+        row["NetworkSettings"]["Ports"].get("3306/tcp")
+        == [{"HostIp": "127.0.0.1", "HostPort": "3307"}],
+        "Unexpected port binding",
+    )
+    require(
+        any(
+            m.get("Name") == VOLUME and m["Destination"] == "/var/lib/mysql"
+            for m in row["Mounts"]
+        ),
+        "Fixed volume required",
+    )
+    return row["Config"]["Hostname"]
+
+
+def connect(user="root", database=DB, *, readonly=False):
+    import pymysql
+
+    connection = pymysql.connect(
+        host="127.0.0.1",
+        port=3307,
+        user=user,
+        password=secret_values()[USERS[user]],
+        database=database,
+        charset="utf8mb4",
+        autocommit=False,
+        ssl_ca=str(LOCAL / "tls/ca.crt"),
+        ssl_verify_cert=True,
+        ssl_verify_identity=True,
+        connect_timeout=3,
+        read_timeout=5,
+        write_timeout=5,
+        cursorclass=pymysql.cursors.DictCursor,
+    )
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute("SET SESSION time_zone='+00:00'")
+            cursor.execute(
+                "SET SESSION sql_mode='STRICT_ALL_TABLES,NO_ZERO_DATE,"
+                "NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'"
+            )
+            cursor.execute("SET SESSION innodb_lock_wait_timeout=1")
+            cursor.execute("SHOW SESSION STATUS LIKE 'Ssl_cipher'")
+            require(bool(cursor.fetchone()["Value"]), "TLS cipher absent")
+            cursor.execute(
+                "SELECT DATABASE() db,VERSION() version,@@hostname hostname,"
+                "@@require_secure_transport tls,@@global.general_log general_log,"
+                "@@global.slow_query_log slow_log"
+            )
+            identity = cursor.fetchone()
+            require(
+                identity["db"] == database
+                and identity["version"].startswith("8.4.")
+                and identity["tls"]
+                and not identity["general_log"]
+                and not identity["slow_log"],
+                "Unexpected database identity or logging/TLS flags",
+            )
+            require(
+                identity["hostname"] == EXPECTED_HOSTNAME,
+                "Container/DB hostname mismatch",
+            )
+            if readonly:
+                cursor.execute("SET TRANSACTION ISOLATION LEVEL REPEATABLE READ")
+                cursor.execute("START TRANSACTION READ ONLY")
+        return connection
+    except BaseException:
+        connection.close()
+        raise
+
+
+def sql_statements(path):
+    return [
+        s.strip()
+        for s in re.sub(r"--[^\n]*", "", path.read_text()).split(";")
+        if s.strip()
+    ]
+
+
+def prepare():
+    """No DROP/ALTER of existing schemas, accounts, or phone data. Partial failures are retained."""
+    from app.security.credentials import Passwords
+
+    with connect(database=None) as connection:
+        with connection.cursor() as cursor:
+            cursor.execute("SHOW DATABASES LIKE %s", (DB,))
+            require(
+                cursor.fetchone() is None,
+                "Dedicated schema already exists; stop for review",
+            )
+            for user in USERS:
+                if user != "root":
+                    cursor.execute(
+                        "SELECT COUNT(*) n FROM mysql.user WHERE User=%s", (user,)
+                    )
+                    require(
+                        cursor.fetchone()["n"] == 0, "Dedicated account already exists"
+                    )
+            cursor.execute(
+                "CREATE DATABASE pos_api_validation CHARACTER SET utf8mb4 "
+                "COLLATE utf8mb4_0900_bin"
+            )
+            for user in USERS:
+                if user != "root":
+                    cursor.execute(
+                        "CREATE USER %s@'%%' IDENTIFIED BY %s REQUIRE SSL",
+                        (user, secret_values()[USERS[user]]),
+                    )
+        connection.commit()
+    with connect() as connection:
+        with connection.cursor() as cursor:
+            for sql in sql_statements(ROOT / "設計スキーマ.sql"):
+                require(
+                    sql.startswith(("CREATE TABLE ", "ALTER TABLE ")), "Unexpected DDL"
+                )
+                cursor.execute(sql)
+            for sql in sql_statements(ROOT / "backend/sql/m2_grants.sql"):
+                if sql.startswith("SHOW GRANTS"):
+                    continue
+                require(sql.startswith("GRANT "), "Unexpected grants statement")
+                sql = sql.replace("`pos_validation`", "`pos_api_validation`")
+                for user in ("pos_app", "pos_master", "pos_schema"):
+                    sql = sql.replace("'" + user + "'", "'pos_api_" + user[4:] + "'")
+                cursor.execute(sql)
+            cursor.execute(
+                "INSERT INTO REGISTER(register_id,start_state,maintenance_hold) "
+                "VALUES(1,'UNSTARTED',FALSE)"
+            )
+            cursor.execute(
+                "INSERT INTO STAFF(staff_id,password_hash) VALUES(%s,%s)",
+                (STAFF, Passwords().hash(secret_values()["STAFF_A"])),
+            )
+            cursor.execute(
+                "INSERT INTO MEMBER(member_id,name,phone,address,gender,age) "
+                "VALUES(%s,'架空API会員','TEST','TEST','TEST',0)",
+                (MEMBER,),
+            )
+            cursor.execute("INSERT INTO TAX_RATE(rate) VALUES(0.10)")
+            tax10 = cursor.lastrowid
+            cursor.execute("INSERT INTO TAX_RATE(rate) VALUES(0)")
+            tax0 = cursor.lastrowid
+            for code in CODES:
+                price = 999999999999 if code == "API_MAX" else 103
+                tax = tax10 if code in ("API_TIE", "API_CAP") else tax0
+                cursor.execute(
+                    "INSERT INTO PRODUCT(code,name,unit_price,tax_rate_id) "
+                    "VALUES(%s,%s,%s,%s)",
+                    (code, "架空API商品 " + code, price, tax),
+                )
+                pid = cursor.lastrowid
+                cursor.execute(
+                    "INSERT INTO PRICE_HISTORY(product_id,old_price,new_price,changed_at) "
+                    "VALUES(%s,NULL,%s,UTC_TIMESTAMP(6))",
+                    (pid, price),
+                )
+                candidates = (
+                    [("RATE", "0.10", None), ("AMOUNT", None, 10)]
+                    if code == "API_TIE"
+                    else [("AMOUNT", None, 120), ("AMOUNT", None, 130)]
+                    if code == "API_CAP"
+                    else []
+                )
+                for kind, rate, amount in candidates:
+                    cursor.execute(
+                        "INSERT INTO DISCOUNT_CONDITION(product_id,valid_from,valid_to,"
+                        "kind,rate,amount) VALUES(%s,'2020-01-01','2099-01-01',%s,%s,%s)",
+                        (pid, kind, rate, amount),
+                    )
+        connection.commit()
+        with connection.cursor() as cursor:
+            for sql in sql_statements(ROOT / "backend/sql/m2_revoke_initial.sql"):
+                if sql.startswith("SHOW GRANTS"):
+                    continue
+                require(sql.startswith("REVOKE "), "Unexpected revoke statement")
+                cursor.execute(
+                    sql.replace("`pos_validation`", "`pos_api_validation`").replace(
+                        "'pos_master'", "'pos_api_master'"
+                    )
+                )
+        connection.commit()
+    return {
+        "schema": DB,
+        "accounts": sorted(set(USERS) - {"root"}),
+        "fixture_codes": CODES,
+        "fresh_schema_created": True,
+        "phone_schema": "pos_validation",
+        "phone_modified": False,
+    }
+
+
+def observe(cart_id=None, product_id=None):
+    """New physical TLS connection + one RR read transaction for each observation."""
+    with connect(readonly=True) as connection:
+        with connection.cursor() as cursor:
+            cursor.execute(
+                "SELECT CONNECTION_ID() connection_id,UTC_TIMESTAMP(6) at_utc"
+            )
+            result = cursor.fetchone()
+            if cart_id:
+                selects = {
+                    "cart": (
+                        "SELECT cart_id,state,version,staff_id,member_state,member_id,"
+                        "pending_member_id,active_member_operation_id,active_purchase_operation_id,"
+                        "purchase_prepared_version,subtotal,total,tax_breakdown FROM CART "
+                        "WHERE cart_id=%s"
+                    ),
+                    "context": (
+                        "SELECT b.context_id,b.last_business_at FROM BROWSER_CONTEXT b "
+                        "JOIN CART c ON c.context_id=b.context_id WHERE c.cart_id=%s"
+                    ),
+                    "lines": "SELECT * FROM CART_LINE WHERE cart_id=%s ORDER BY line_no",
+                    "operations": (
+                        "SELECT operation_id,kind,status,request_version,prepared_version,"
+                        "applied_version,result_code FROM CART_OPERATION WHERE cart_id=%s "
+                        "ORDER BY created_at,operation_id"
+                    ),
+                    "purchase": "SELECT * FROM PURCHASE WHERE cart_id=%s",
+                    "purchase_lines": "SELECT * FROM PURCHASE_LINE WHERE cart_id=%s ORDER BY line_no",
+                    "purchase_taxes": (
+                        "SELECT * FROM PURCHASE_TAX WHERE cart_id=%s "
+                        "ORDER BY tax_rate_snapshot"
+                    ),
+                }
+                for key, sql in selects.items():
+                    cursor.execute(sql, (cart_id,))
+                    result[key] = cursor.fetchall()
+                require(
+                    len(result["cart"]) == len(result["context"]) == 1,
+                    "Target cart absent",
+                )
+            if product_id:
+                cursor.execute(
+                    "SELECT product_id,code,unit_price FROM PRODUCT WHERE product_id=%s",
+                    (product_id,),
+                )
+                result["product"] = cursor.fetchall()
+                cursor.execute(
+                    "SELECT history_id,old_price,new_price,changed_at FROM PRICE_HISTORY "
+                    "WHERE product_id=%s ORDER BY history_id",
+                    (product_id,),
+                )
+                result["history"] = cursor.fetchall()
+                require(len(result["product"]) == 1, "Target product absent")
+        connection.rollback()
+    return result
+
+
+class Api:
+    def __init__(self, app):
+        self.app = app
+        self.cookies = {}
+        self.cart = None
+        self.requests = []
+
+    async def request(
+        self, method, path, body=None, *, expected=200, schema="OperationResult"
+    ):
+        from jsonschema import Draft202012Validator
+        from referencing import Registry, Resource
+
+        sent, delivered = [], False
+
+        async def receive():
+            nonlocal delivered
+            if not delivered:
+                delivered = True
+                return {
+                    "type": "http.request",
+                    "body": json.dumps(body).encode() if body else b"",
+                }
+            await asyncio.Future()
+
+        async def send(value):
+            sent.append(value)
+
+        headers = {
+            "origin": "https://localhost:8443",
+            "x-pos-request": "1",
+            "x-pos-relay": secret_values()["relay"],
+            "content-type": "application/json",
+            "cookie": "; ".join(f"{k}={v}" for k, v in self.cookies.items()),
+        }
+        await self.app(
+            {
+                "type": "http",
+                "asgi": {"version": "3.0", "spec_version": "2.4"},
+                "http_version": "1.1",
+                "method": method,
+                "scheme": "https",
+                "path": "/api/" + path,
+                "raw_path": ("/api/" + path).encode(),
+                "query_string": b"",
+                "headers": [(k.encode(), v.encode()) for k, v in headers.items()],
+                "server": ("localhost", 8444),
+                "client": ("127.0.0.1", 12345),
+                "root_path": "",
+            },
+            receive,
+            send,
+        )
+        start = next(s for s in sent if s["type"] == "http.response.start")
+        require(
+            (b"cache-control", b"no-store") in start["headers"],
+            "Missing no-store response",
+        )
+        status = start["status"]
+        value = json.loads(b"".join(s.get("body", b"") for s in sent))
+        require(status == expected, "Unexpected API status")
+        spec = json.loads((ROOT / "API契約.openapi.json").read_text())
+        spec["$schema"] = "https://json-schema.org/draft/2020-12/schema"
+        registry = Registry().with_resource("urn:pos", Resource.from_contents(spec))
+        Draft202012Validator(
+            {
+                "$ref": f"urn:pos#/components/schemas/{'Error' if status >= 400 else schema}"
+            },
+            registry=registry,
+        ).validate(value)
+        cookie_count = 0
+        for key, val in start["headers"]:
+            if key.lower() == b"set-cookie":
+                text = val.decode()
+                require(
+                    all(
+                        k in text.lower()
+                        for k in ("secure", "httponly", "samesite=lax", "path=/")
+                    )
+                    and "domain=" not in text.lower(),
+                    "Unsafe cookie attributes",
+                )
+                name, token = text.split(";", 1)[0].split("=", 1)
+                require(
+                    re.fullmatch(r"[A-Za-z0-9_-]{43}", token), "Invalid cookie shape"
+                )
+                self.cookies[name] = token
+                cookie_count += 1
+        # Login body and cookies are never written to evidence.
+        self.requests.append(
+            {
+                "method": method,
+                "path": path,
+                "status": status,
+                "operation_id": body.get("operation_id") if body else None,
+                "request_version": body.get("version") if body else None,
+                "result_code": value.get("code"),
+                "set_cookie_count": cookie_count,
+            }
+        )
+        if "cart" in value:
+            self.cart = value["cart"]
+        return value, cookie_count
+
+    def operation(self, **extra):
+        return {"operation_id": str(uuid4()), "version": self.cart["version"], **extra}
+
+
+def diagnostic_checks(cart_id):
+    queries = sql_statements(ROOT / "設計確認.sql")
+    total_query, tax_query = queries[7], queries[8]
+    require(
+        "明細" not in total_query
+        and "FROM PURCHASE p" in total_query
+        and "UNION ALL" in tax_query,
+        "Diagnostic SQL index changed",
+    )
+    baseline = observe(cart_id)
+    results = []
+    for name, mutation in (
+        ("purchase-total", "UPDATE PURCHASE SET total=total+1 WHERE cart_id=%s"),
+        (
+            "extra-zero-tax",
+            (
+                "INSERT INTO PURCHASE_TAX(cart_id,tax_rate_snapshot,taxable_subtotal,tax_amount) "
+                "VALUES(%s,0,0,0)"
+            ),
+        ),
+    ):
+        with connect() as connection:
+            try:
+                with connection.cursor() as cursor:
+                    query = total_query if name == "purchase-total" else tax_query
+                    cursor.execute(query)
+                    require(
+                        not any(r["cart_id"] == cart_id for r in cursor.fetchall()),
+                        "Normal diagnostic target not empty",
+                    )
+                    cursor.execute(mutation, (cart_id,))
+                    require(cursor.rowcount == 1, "Diagnostic mutation missed target")
+                    cursor.execute(query)
+                    detected = cursor.fetchall()
+                    require(
+                        any(r["cart_id"] == cart_id for r in detected),
+                        "Diagnostic failed to detect target",
+                    )
+                    results.append(
+                        {
+                            "condition": name,
+                            "target_detected": True,
+                            "mutations_committed": False,
+                            "same_connection_diagnostic": True,
+                        }
+                    )
+            finally:
+                connection.rollback()
+        after = observe(cart_id)
+        require(
+            all(
+                baseline[k] == after[k]
+                for k in (
+                    "cart",
+                    "lines",
+                    "purchase",
+                    "purchase_lines",
+                    "purchase_taxes",
+                    "operations",
+                    "context",
+                )
+            ),
+            "Diagnostic rollback changed committed data",
+        )
+    return results
+
+
+def saved_amounts(observed, *, subtotal, total, tax_rate, tax_amount, discount, member):
+    """Independent constants against committed SQL values, not API-to-DB echo comparisons."""
+    purchase = observed["purchase"][0]
+    line = observed["purchase_lines"][0]
+    tax = observed["purchase_taxes"][0]
+    price = Decimal(999999999999 if subtotal == 999999999999 else 103)
+    require(
+        purchase["subtotal"] == Decimal(subtotal)
+        and purchase["total"] == Decimal(total)
+        and purchase["member_id"] == member
+        and line["quantity"] == 1
+        and line["unit_price_snapshot"] == price
+        and line["discount_per_unit"] == Decimal(discount)
+        and line["net_unit_price"] == Decimal(subtotal)
+        and line["line_subtotal"] == Decimal(subtotal)
+        and line["tax_rate_snapshot"] == Decimal(tax_rate)
+        and tax["tax_rate_snapshot"] == Decimal(tax_rate)
+        and tax["taxable_subtotal"] == Decimal(subtotal)
+        and tax["tax_amount"] == Decimal(tax_amount),
+        "Committed sale/detail/tax values differ from independent expected amounts",
+    )
+
+
+def update_price(product_id, *, fail_history=False, unread_ack=False):
+    """Local master operation; not a product-admin API. Unknown COMMIT is observed, never replayed."""
+    import pymysql
+
+    before = observe(product_id=product_id)
+    result = {"before": before, "fault": None}
+    with connect("pos_api_master") as connection, connection.cursor() as cursor:
+        cursor.execute(
+            "SELECT unit_price FROM PRODUCT WHERE product_id=%s FOR UPDATE",
+            (product_id,),
+        )
+        price = cursor.fetchone()["unit_price"]
+        require(price == Decimal(103), "Price fixture not fresh")
+        cursor.execute(
+            "UPDATE PRODUCT SET unit_price=110 WHERE product_id=%s", (product_id,)
+        )
+        try:
+            cursor.execute(
+                "INSERT INTO PRICE_HISTORY(product_id,old_price,new_price,changed_at) "
+                "VALUES(%s,103,110,"
+                + ("NULL" if fail_history else "UTC_TIMESTAMP(6)")
+                + ")",
+                (product_id,),
+            )
+        except pymysql.MySQLError as error:
+            require(
+                fail_history and error.args[0] == 1048, "Unexpected history failure"
+            )
+            connection.rollback()
+            result["fault"] = {"mysql_code": 1048, "rollback": True}
+        else:
+            require(not fail_history, "History fault not injected")
+            if unread_ack:
+                command, read = connection._execute_command, connection._read_ok_packet
+                pending = False
+
+                def execute(kind, sql):
+                    nonlocal pending
+                    pending = kind == 3 and sql in ("COMMIT", b"COMMIT")
+                    return command(kind, sql)
+
+                def read_ok():
+                    nonlocal pending
+                    if not pending:
+                        return read()
+                    pending = False
+                    deadline = time.monotonic() + 3
+                    while True:
+                        observed = observe(product_id=product_id)
+                        if (
+                            observed["product"][0]["unit_price"] == Decimal(110)
+                            and len(observed["history"]) == 2
+                        ):
+                            break
+                        require(
+                            time.monotonic() < deadline,
+                            "Committed price observation timed out",
+                        )
+                        time.sleep(0.02)
+                    require(
+                        observed["connection_id"] != connection.thread_id(),
+                        "Observer reused writer",
+                    )
+                    result["fault"] = {
+                        "commit_sent": True,
+                        "ack_read": False,
+                        "writer_connection_id": connection.thread_id(),
+                        "observer": observed,
+                    }
+                    connection._force_close()
+                    raise pymysql.err.OperationalError(
+                        2013, "Injected unread price COMMIT ACK"
+                    )
+
+                connection._execute_command, connection._read_ok_packet = (
+                    execute,
+                    read_ok,
+                )
+                try:
+                    connection.commit()
+                    raise ValueError("COMMIT fault did not fire")
+                except pymysql.err.OperationalError as error:
+                    require(
+                        error.args[0] == 2013 and result["fault"] is not None,
+                        "Unexpected COMMIT error",
+                    )
+                finally:
+                    connection._execute_command, connection._read_ok_packet = (
+                        command,
+                        read,
+                    )
+            else:
+                connection.commit()
+    after = observe(product_id=product_id)
+    if fail_history:
+        require(
+            after["product"] == before["product"]
+            and after["history"] == before["history"],
+            "Failed history operation did not roll back",
+        )
+    else:
+        require(
+            after["product"][0]["unit_price"] == Decimal(110)
+            and len(after["history"]) == 2
+            and after["history"][0] == before["history"][0]
+            and after["history"][1]["old_price"] == Decimal(103)
+            and after["history"][1]["new_price"] == Decimal(110),
+            "Price/history commit mismatch",
+        )
+    result["after"] = after
+    return result
+
+
+def permission_checks():
+    import pymysql
+
+    denied = []
+    for sql in (
+        "UPDATE PRODUCT SET name=name WHERE 1=0",
+        "UPDATE PURCHASE SET total=total WHERE 1=0",
+        "DELETE FROM PURCHASE WHERE 1=0",
+        "DELETE FROM CART WHERE 1=0",
+        "INSERT INTO REGISTER(register_id,start_state) SELECT 1,'UNSTARTED' WHERE 1=0",
+        "CREATE TABLE API_PERMISSION_PROBE(id INT)",
+    ):
+        with connect("pos_api_app") as connection:
+            try:
+                with connection.cursor() as cursor:
+                    cursor.execute(sql)
+                raise ValueError("App permission unexpectedly permitted forbidden SQL")
+            except pymysql.MySQLError as error:
+                require(error.args[0] == 1142, "Unexpected permission failure")
+                denied.append({"statement_kind": sql.split()[0], "mysql_code": 1142})
+            finally:
+                connection.rollback()
+    return denied
+
+
+async def run():
+    from app.infrastructure.settings import Settings
+    from app.main import create_app
+
+    with connect(readonly=True) as connection:
+        with connection.cursor() as cursor:
+            cursor.execute(
+                "SELECT start_state,current_cart_id,active_context_id FROM REGISTER WHERE register_id=1"
+            )
+            row = cursor.fetchone()
+            require(
+                row
+                == {
+                    "start_state": "UNSTARTED",
+                    "current_cart_id": None,
+                    "active_context_id": None,
+                },
+                "API register already used; no automatic rerun",
+            )
+            cursor.execute("SELECT COUNT(*) n FROM CART")
+            require(cursor.fetchone()["n"] == 0, "API schema already has carts")
+            cursor.execute("SELECT product_id,code FROM PRODUCT ORDER BY product_id")
+            products = {r["code"]: r["product_id"] for r in cursor.fetchall()}
+            require(tuple(products) == CODES, "API-only product fixture mismatch")
+            cursor.execute(
+                "SELECT condition_id,product_id,kind FROM DISCOUNT_CONDITION ORDER BY condition_id"
+            )
+            conditions = cursor.fetchall()
+            require(
+                len(conditions) == 4
+                and all(
+                    len([r for r in conditions if r["product_id"] == products[code]])
+                    == 2
+                    for code in ("API_TIE", "API_CAP")
+                ),
+                "Discount fixture must contain two candidates for each dedicated product",
+            )
+        connection.rollback()
+    settings = Settings(
+        "https://localhost:8443",
+        secret_values()["relay"],
+        "127.0.0.1",
+        3307,
+        DB,
+        "pos_api_app",
+        secret_values()["pos_app"],
+        str(LOCAL / "tls/ca.crt"),
+    )
+    app = create_app(settings)
+    results = {
+        "transport": "actual FastAPI ASGI + real TLS MySQL; not HTTPS/browser",
+        "schema": DB,
+        "permissions": permission_checks(),
+        "cases": [],
+    }
+    async with app.router.lifespan_context(app):
+        api = Api(app)
+        await api.request(
+            "POST",
+            "login",
+            {"staff_id": STAFF, "password": secret_values()["STAFF_A"]},
+            schema="Auth",
+        )
+        await api.request("POST", "register/start", schema="Register")
+        await api.request("POST", "register/confirm", schema="Register")
+        await api.request("POST", "carts", schema="CartResult")
+
+        async def start_line(code, member=False):
+            await api.request(
+                "POST", f"carts/{api.cart['cart_id']}/lines", api.operation(code=code)
+            )
+            if member:
+                await api.request(
+                    "PUT",
+                    f"carts/{api.cart['cart_id']}/member",
+                    api.operation(member_id=MEMBER),
+                )
+
+        async def purchase():
+            body = api.operation(cart_id=api.cart["cart_id"])
+            saved, _ = await api.request("POST", "purchases", body)
+            again, _ = await api.request("POST", "purchases", body)
+            require(saved == again, "Purchase duplicate changed result")
+            observed = observe(api.cart["cart_id"])
+            require(
+                len(observed["purchase"])
+                == len(observed["purchase_lines"])
+                == len(observed["purchase_taxes"])
+                == 1,
+                "Expected exactly one sale, detail and tax row",
+            )
+            require(
+                observed["purchase"][0]["staff_id"] == STAFF, "Wrong purchase staff"
+            )
+            return saved, observed
+
+        async def next_cart():
+            await api.request(
+                "POST",
+                f"carts/{api.cart['cart_id']}/next",
+                api.operation(),
+                schema="NextResult",
+            )
+            require(not api.cart["lines"], "Next API cart is not empty")
+
+        await start_line("API_TIE", True)
+        saved, observed = await purchase()
+        saved_amounts(
+            observed,
+            subtotal=93,
+            total=102,
+            tax_rate="0.10",
+            tax_amount=9,
+            discount=10,
+            member=MEMBER,
+        )
+        discount = json.loads(observed["purchase_lines"][0]["discount_snapshot"])
+        expected_id = min(
+            r["condition_id"]
+            for r in conditions
+            if r["product_id"] == products["API_TIE"]
+        )
+        require(
+            discount["condition_id"] == str(expected_id)
+            and discount["kind"] == "RATE"
+            and discount["candidate_amount"] == "10"
+            and discount["actual_discount"] == "10"
+            and saved["purchase"]["subtotal"] == "93"
+            and saved["purchase"]["total"] == "102",
+            "Same-value discount selection differs",
+        )
+        results["cases"].append(
+            {"case": "tie-smallest-numeric-id", "observed": observed}
+        )
+        diagnostic = diagnostic_checks(api.cart["cart_id"])
+        results["cases"].append(
+            {"case": "diagnostic-positive-control-rollback", "results": diagnostic}
+        )
+        await next_cart()
+        await start_line("API_CAP", True)
+        saved, observed = await purchase()
+        saved_amounts(
+            observed,
+            subtotal=0,
+            total=0,
+            tax_rate="0.10",
+            tax_amount=0,
+            discount=103,
+            member=MEMBER,
+        )
+        discount = json.loads(observed["purchase_lines"][0]["discount_snapshot"])
+        cap_id = max(
+            r["condition_id"]
+            for r in conditions
+            if r["product_id"] == products["API_CAP"]
+        )
+        require(
+            discount["condition_id"] == str(cap_id)
+            and discount["candidate_amount"] == "130"
+            and discount["actual_discount"] == "103"
+            and saved["purchase"]["total"] == "0"
+            and observed["purchase_taxes"][0]["tax_rate_snapshot"] == Decimal("0.10")
+            and observed["purchase_taxes"][0]["tax_amount"] == 0,
+            "Pre-cap selection/zero sale mismatch",
+        )
+        results["cases"].append(
+            {"case": "candidate-before-cap-zero-detail-tax", "observed": observed}
+        )
+        await next_cart()
+        await start_line("API_MAX")
+        before = observe(api.cart["cart_id"])
+        body = api.operation(quantity=2)
+        path = f"carts/{api.cart['cart_id']}/lines/{api.cart['lines'][0]['line_id']}"
+        error, cookies = await api.request("PATCH", path, body, expected=422)
+        require(
+            error["code"] == "AMOUNT_INVALID" and cookies == 0,
+            "Amount overflow did not reject",
+        )
+        rejected = observe(api.cart["cart_id"])
+        require(
+            all(
+                before[k] == rejected[k]
+                for k in ("cart", "lines", "context", "purchase")
+            ),
+            "Rejected amount modified original data or expiry",
+        )
+        op = next(
+            r
+            for r in rejected["operations"]
+            if r["operation_id"] == body["operation_id"]
+        )
+        require(
+            op["status"] == "REJECTED"
+            and op["kind"] == "SET_QUANTITY"
+            and op["request_version"] == int(body["version"])
+            and op["applied_version"] is None
+            and op["result_code"] == "AMOUNT_INVALID",
+            "Overflow rejection receipt missing",
+        )
+        require(
+            len(rejected["operations"]) == len(before["operations"]) + 1,
+            "Overflow rejection recorded unexpected additional operations",
+        )
+        repeat, cookies = await api.request("PATCH", path, body, expected=422)
+        after_retry = observe(api.cart["cart_id"])
+        require(
+            error == repeat
+            and cookies == 0
+            and all(
+                rejected[k] == after_retry[k]
+                for k in ("cart", "lines", "context", "operations", "purchase")
+            ),
+            "Overflow retry changed state",
+        )
+        saved, observed = await purchase()
+        saved_amounts(
+            observed,
+            subtotal=999999999999,
+            total=999999999999,
+            tax_rate="0",
+            tax_amount=0,
+            discount=0,
+            member=None,
+        )
+        require(
+            saved["purchase"]["total"] == "999999999999"
+            and observed["purchase_lines"][0]["quantity"] == 1,
+            "Maximum one-unit sale failed",
+        )
+        results["cases"].append(
+            {
+                "case": "max-overflow-rejection-retry-max-one-sale",
+                "before": before,
+                "rejected": rejected,
+                "after_retry": after_retry,
+                "saved": observed,
+            }
+        )
+        for code in CODES[3:]:
+            await next_cart()
+            await start_line(code)
+            _, sale_before = await purchase()
+            require(
+                sale_before["purchase"][0]["subtotal"] == Decimal(103)
+                and sale_before["purchase"][0]["total"] == Decimal(103)
+                and sale_before["purchase_lines"][0]["unit_price_snapshot"]
+                == Decimal(103)
+                and sale_before["purchase_lines"][0]["quantity"] == 1,
+                "History baseline purchase is not the original 103-yen one-unit sale",
+            )
+            pid = products[code]
+            if code == "API_HISTORY_SAME":
+                history_before = observe(product_id=pid)
+                with connect("pos_api_master") as connection:
+                    with connection.cursor() as cursor:
+                        cursor.execute(
+                            "SELECT unit_price FROM PRODUCT WHERE product_id=%s FOR UPDATE",
+                            (pid,),
+                        )
+                        require(
+                            cursor.fetchone()["unit_price"] == Decimal(103),
+                            "Same-price source not fresh",
+                        )
+                        # Approved master procedure skips UPDATE/history when old == requested price.
+                    connection.commit()
+                history_after = observe(product_id=pid)
+                require(
+                    history_before["product"] == history_after["product"]
+                    and history_before["history"] == history_after["history"],
+                    "Same-price created history",
+                )
+                history = {
+                    "before": history_before,
+                    "after": history_after,
+                    "same_price_skipped": True,
+                }
+            else:
+                history = update_price(
+                    pid,
+                    fail_history=code.endswith("FAIL"),
+                    unread_ack=code.endswith("ACK"),
+                )
+            sale_after = observe(api.cart["cart_id"])
+            require(
+                all(
+                    sale_before[k] == sale_after[k]
+                    for k in (
+                        "cart",
+                        "lines",
+                        "purchase",
+                        "purchase_lines",
+                        "purchase_taxes",
+                        "operations",
+                        "context",
+                    )
+                ),
+                "Master operation changed saved purchase or time",
+            )
+            results["cases"].append(
+                {
+                    "case": code,
+                    "price_history": history,
+                    "saved_sale_unchanged": True,
+                    "sale_before": sale_before,
+                    "sale_after": sale_after,
+                }
+            )
+        results["api_requests"] = api.requests
+    results["condition_5"] = (
+        "not executed: requires controlled SQL observation/clock; see result document"
+    )
+    return results
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument("--prepare", action="store_true")
+    group.add_argument("--run", action="store_true")
+    args = parser.parse_args()
+    if not args.prepare and not args.run:
+        print(
+            json.dumps(
+                {
+                    "offline_only": True,
+                    "profile": "parallel-next",
+                    "schema": DB,
+                    "phone_schema": "pos_validation",
+                    "transport": "ASGI + TLS MySQL",
+                    "checks": [
+                        "tie",
+                        "pre-cap/zero",
+                        "maximum",
+                        "diagnostic rollback",
+                        "four price histories",
+                    ],
+                    "condition_5": "analysis only",
+                }
+            )
+        )
+        return 0
+    global EXPECTED_HOSTNAME
+    EXPECTED_HOSTNAME = resource_guard()
+    secret_values()
+    action = "prepare" if args.prepare else "run"
+    EVIDENCE.mkdir(parents=True, exist_ok=True)
+    output = EVIDENCE / f"api-db-{action}.json"
+    require(
+        not output.exists(), "Evidence already exists; no automatic overwrite/rerun"
+    )
+    sys.path.insert(0, str(ROOT / "backend"))
+    logging.disable(logging.CRITICAL)
+    # Reserve evidence before any DB/DDL action. Errors preserve a sanitized partial-run record.
+    with output.open("x") as stream:
+        json.dump({"status": "started", "action": action, "schema": DB}, stream)
+    try:
+        result = prepare() if args.prepare else asyncio.run(run())
+        result.update(
+            status="limited_conditions_passed",
+            at_utc=datetime.now(UTC).isoformat(),
+            source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        )
+        output.write_text(
+            json.dumps(result, default=encode, ensure_ascii=False, indent=2) + "\n"
+        )
+        print(
+            json.dumps(
+                {"status": result["status"], "output": output.name, "schema": DB}
+            )
+        )
+        return 0
+    except Exception as error:  # noqa: BLE001 - sanitize all DB/schema/ASGI failures, never emit values
+        result = {
+            "status": "stopped_partial_state_retained",
+            "action": action,
+            "schema": DB,
+            "error_type": type(error).__name__,
+            "line": traceback.extract_tb(error.__traceback__)[-1].lineno,
+            "mysql_code": error.args[0]
+            if error.args and type(error.args[0]) is int
+            else None,
+        }
+        output.write_text(json.dumps(result, indent=2) + "\n")
+        print(json.dumps(result))
+        return 1
+
+
+if __name__ == "__main__":
+    try:
+        raise SystemExit(main())
+    except Exception as error:  # noqa: BLE001 - boundary avoids printing secret-bearing tracebacks
+        print(
+            json.dumps(
+                {"stopped_before_execution": True, "error_type": type(error).__name__}
+            )
+        )
+        raise SystemExit(1) from None

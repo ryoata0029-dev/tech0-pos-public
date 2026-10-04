@@ -1,0 +1,37 @@
+{
+  "results": [
+    {
+      "check": "empty cart rejected",
+      "passed": true
+    },
+    {
+      "check": "add duplicate remains one unit",
+      "passed": true
+    },
+    {
+      "check": "member totals 306 and 537",
+      "passed": true
+    },
+    {
+      "check": "snapshots and single purchase preserved after master change",
+      "passed": true
+    },
+    {
+      "check": "next is atomic and duplicate returns same cart",
+      "passed": true
+    },
+    {
+      "check": "delete and refreshed snapshot; nonmember saved",
+      "passed": true
+    },
+    {
+      "check": "zero-yen sale with line and tax saved",
+      "passed": true
+    },
+    {
+      "check": "real DB counts and approved SQL integrity checks",
+      "passed": true
+    }
+  ],
+  "browser_test": false
+}

@@ -1,0 +1,385 @@
+{
+  "reviewed_at_utc": "2026-10-04T08:16:33.191384+00:00",
+  "scope": "P1a/b P2a/b P3a/b P4a/b P5b/c saved evidence audit; no live operations",
+  "sources": [
+    {
+      "file": "baseline-iphone-p4-background.json",
+      "sha256": "9e865b6c4c8d13da7a597ee5463f8b3850b5108be61931ff89f488b3c08b3a79"
+    },
+    {
+      "file": "baseline-iphone-p5-no-dialog.json",
+      "sha256": "77be83222d1141b9476cfb7793e67ab5f2863d03602ae0388ac40b093aea2198"
+    },
+    {
+      "file": "comparison-iphone-p1-deselect-independent.json",
+      "sha256": "52245f3488a8d2e40c65ab58f3d87cf3f9728bc1acf82873acf6703b36a2dadc"
+    },
+    {
+      "file": "comparison-iphone-p1-deselect.json",
+      "sha256": "89d0fff1e08fa9cf850f04b5749c4aab15fad56d8dca3ffc3b03435cf4aac25d"
+    },
+    {
+      "file": "comparison-iphone-p1-reselect-independent.json",
+      "sha256": "765412c4db6297603f0e0534bc05bd8e564b7c187b2c54e990881fc4ea03098e"
+    },
+    {
+      "file": "comparison-iphone-p1-reselect.json",
+      "sha256": "369744574a35fc3bc90740fb9c4b42ef8f4896cf9cb66a76947bedcdbd1a504c"
+    },
+    {
+      "file": "comparison-iphone-p2-closed-p3-before-independent.json",
+      "sha256": "47295f71f61bf5e19e82ed0e9b6acd1e89e79fc0c14fa26a601a4c8f95ba4997"
+    },
+    {
+      "file": "comparison-iphone-p2-closed-p3-before.json",
+      "sha256": "6ca21a20ce39db1262cf192a2fcf6c6cfecaa28ba3b92c2ce6829a0c77356bf8"
+    },
+    {
+      "file": "comparison-iphone-p2-limit-independent.json",
+      "sha256": "cee4c8281cfa012a242f4f77a58f5f7f46cc2129912f72a93adfece9f1c956ab"
+    },
+    {
+      "file": "comparison-iphone-p2-limit.json",
+      "sha256": "6bb8f05b780c7e26c01674c86824e6dcc9a7b2ab2ec214c6af58ade4c288085e"
+    },
+    {
+      "file": "comparison-iphone-p2-next-code-independent.json",
+      "sha256": "ba82d29107325e578876a122214bc5f0b6abe8b795759525a83b4ade56bd3919"
+    },
+    {
+      "file": "comparison-iphone-p2-next-code.json",
+      "sha256": "8def41bd94dc55c64f796e3398ecef958cbbf70fe92a0d1d6459728efe72a218"
+    },
+    {
+      "file": "comparison-iphone-p3a-hold-independent.json",
+      "sha256": "0ef44cbd69de9ec3f249995588baff4d0dbff45072512398163867a52751a1f8"
+    },
+    {
+      "file": "comparison-iphone-p3a-hold.json",
+      "sha256": "b632dc42878939bdf3fc653a28eaa512a85ac4bab2a630f0640862e5e225653c"
+    },
+    {
+      "file": "comparison-iphone-p3b-first-scan-independent.json",
+      "sha256": "673343578349beb73f51639d5e308018eda832fc9e72632b1c35de8a57397fb9"
+    },
+    {
+      "file": "comparison-iphone-p3b-first-scan.json",
+      "sha256": "008139fcee0ebb8024937b285557ed33c3fa545872b929fc641b1ad5efc804c1"
+    },
+    {
+      "file": "comparison-iphone-p3b-represent-independent.json",
+      "sha256": "b2d37fad4cee994ed8be10f4bbe02e2fe8466311f7a878322a63289ee79763ff"
+    },
+    {
+      "file": "comparison-iphone-p3b-represent.json",
+      "sha256": "3698d585afa8b2d0b6f1b46dc654ff72c2b21b7229eec56c9499447bc69e13a7"
+    },
+    {
+      "file": "comparison-iphone-p4-background-independent.json",
+      "sha256": "edb1b20fce2a8c690f9bf3ac9a25490270bacf89db6938c03b683042aec5da3d"
+    },
+    {
+      "file": "comparison-iphone-p4-background.json",
+      "sha256": "85c5b5171ac5fba1b19e5e52b185e1239cfccc7f556236dba61d1477bbb2b54b"
+    },
+    {
+      "file": "comparison-iphone-p4-manual-restart-independent.json",
+      "sha256": "6a61ba2628a7fae819f25de2a2ec1c8862455114bc4100cef1f4b7d199ea108e"
+    },
+    {
+      "file": "comparison-iphone-p4-manual-restart.json",
+      "sha256": "ceeb374cd581b02da7f2b42130068aa1ed7b6fc901fd3fb5b1a76b18ab02ddac"
+    },
+    {
+      "file": "comparison-iphone-p5-manual-entry-independent.json",
+      "sha256": "56505df65cd5f9ef02270ab8f061ec82a0c04ad15464565979c0c93b7f7286ac"
+    },
+    {
+      "file": "comparison-iphone-p5-manual-entry.json",
+      "sha256": "1813c05c2e8f15b46f07f0c616f3d37ba0fde0641bd810da2a3503d542156f27"
+    },
+    {
+      "file": "comparison-iphone-p5-nondetection-independent.json",
+      "sha256": "2b018f7cb8e1b8b414e0e114686994031524057842abf02473f881ba81b5dbc2"
+    },
+    {
+      "file": "comparison-iphone-p5-nondetection.json",
+      "sha256": "d642726ad3e0f33adfaa443f9381ccb52e6acba2531dd0c19ba24566415404c4"
+    },
+    {
+      "file": "db-iphone-p1-after-deselect.json",
+      "sha256": "2b75a67c99eb009656da20f9a57352b94fb88225dbc704ac70c5b01701748939"
+    },
+    {
+      "file": "db-iphone-p1-after-reselect.json",
+      "sha256": "7d84ee8a1e94d141ee8a6a8be0c64d339c3c882a4010ab380bad4662431653d2"
+    },
+    {
+      "file": "db-iphone-p1-before-deselect.json",
+      "sha256": "d0299d9d4a612216471cd34fb2331008c32e76f12ed0a17e710ca0b6bd8016b2"
+    },
+    {
+      "file": "db-iphone-p2-after-limit.json",
+      "sha256": "7a68e0d0c133fa63c02880517e5f7f5a845f2e80fb4aae3f3763c0edbe62e63a"
+    },
+    {
+      "file": "db-iphone-p2-after-next-code.json",
+      "sha256": "532b3caa5b9dcb11a40b6d57223232b122cd7a092995a62ca0205da123cc7138"
+    },
+    {
+      "file": "db-iphone-p2-before-camera.json",
+      "sha256": "12e57d9fc5444c6b900800e9edef161e43ffe8acab30414eddeb798b13f128ab"
+    },
+    {
+      "file": "db-iphone-p2-closed-p3-before.json",
+      "sha256": "87d184d275f80ccf77a3e1be02390a481411015994b3a1d7ea62ba36e6e116b7"
+    },
+    {
+      "file": "db-iphone-p3a-after-hold.json",
+      "sha256": "57087f8e29051e67d056505bf38c90eccba30a3f394f5d2c2445ee6206fca828"
+    },
+    {
+      "file": "db-iphone-p3b-after-represent.json",
+      "sha256": "76c985dc4ef8efc47b931e888cf63cb7c8b72c1ed5bb02685b15fdfe123cf605"
+    },
+    {
+      "file": "db-iphone-p3b-before-represent.json",
+      "sha256": "810f729128024290d8fca30efcb6b170d4efb3b8cab69a8c4174826a6802e7df"
+    },
+    {
+      "file": "db-iphone-p4-after-background.json",
+      "sha256": "c4bd14da58240f8a97dbd51773f786bec6c9e4f3bb36a38ed3b7eb6d8c717c4e"
+    },
+    {
+      "file": "db-iphone-p4-after-manual-restart.json",
+      "sha256": "7f7ae7a9695d6826f4ae455c172ff072c7bd291a6664b9811b8420dce4a89a49"
+    },
+    {
+      "file": "db-iphone-p4-before-background.json",
+      "sha256": "182ed1d68e310f9c547f724a3a8ab9862ef95dd9001b9d11179994dd6254f3bf"
+    },
+    {
+      "file": "db-iphone-p5-after-manual-entry.json",
+      "sha256": "aa37d1fa4ae90297e187a0e76ad6920532b0f8665d632054e55d2303c3ab02e7"
+    },
+    {
+      "file": "db-iphone-p5-after-nondetection.json",
+      "sha256": "394910877f6f72fc356048ddf52cd6b53d05aecc5ea50880ae9e16f2e928b1f3"
+    },
+    {
+      "file": "db-iphone-p5-no-dialog-before.json",
+      "sha256": "6681e0f0b7a2e559d30271016e61892737425dd5085299d49a05cbc18366cac9"
+    }
+  ],
+  "conditions": [
+    {
+      "condition": "P1a",
+      "before": "db-iphone-p1-before-deselect.json",
+      "after": "db-iphone-p1-after-deselect.json",
+      "independent_comparison": "comparison-iphone-p1-deselect-independent.json",
+      "version_after": 5,
+      "total_yen_after": 113,
+      "operation_increment": 0,
+      "new_operation_ids": [],
+      "status": "limited_confirmation",
+      "db_recomputed_matches": true,
+      "recorded_source_hashes_match": true
+    },
+    {
+      "condition": "P1b",
+      "before": "db-iphone-p1-after-deselect.json",
+      "after": "db-iphone-p1-after-reselect.json",
+      "independent_comparison": "comparison-iphone-p1-reselect-independent.json",
+      "version_after": 5,
+      "total_yen_after": 113,
+      "operation_increment": 0,
+      "new_operation_ids": [],
+      "status": "limited_confirmation",
+      "db_recomputed_matches": true,
+      "recorded_source_hashes_match": true
+    },
+    {
+      "condition": "P2a",
+      "before": "db-iphone-p2-before-camera.json",
+      "after": "db-iphone-p2-after-limit.json",
+      "independent_comparison": "comparison-iphone-p2-limit-independent.json",
+      "version_after": 6,
+      "total_yen_after": 11216,
+      "operation_increment": 1,
+      "new_operation_ids": [
+        "8c931113-f247-4892-acf8-52ea0ece2360"
+      ],
+      "status": "limited_confirmation",
+      "db_recomputed_matches": true,
+      "recorded_source_hashes_match": true
+    },
+    {
+      "condition": "P2b",
+      "before": "db-iphone-p2-after-limit.json",
+      "after": "db-iphone-p2-after-next-code.json",
+      "independent_comparison": "comparison-iphone-p2-next-code-independent.json",
+      "version_after": 7,
+      "total_yen_after": 11330,
+      "operation_increment": 1,
+      "new_operation_ids": [
+        "83f14fc5-008d-4429-b6f6-cd8d58fa38f3"
+      ],
+      "status": "limited_confirmation",
+      "db_recomputed_matches": true,
+      "recorded_source_hashes_match": true
+    },
+    {
+      "condition": "P3a",
+      "before": "db-iphone-p2-closed-p3-before.json",
+      "after": "db-iphone-p3a-after-hold.json",
+      "independent_comparison": "comparison-iphone-p3a-hold-independent.json",
+      "version_after": 8,
+      "total_yen_after": 11443,
+      "operation_increment": 1,
+      "new_operation_ids": [
+        "c552cffd-c53e-4847-b022-7e9ef64733ee"
+      ],
+      "status": "limited_confirmation",
+      "db_recomputed_matches": true,
+      "recorded_source_hashes_match": true
+    },
+    {
+      "condition": "P3b-initial",
+      "before": "db-iphone-p3a-after-hold.json",
+      "after": "db-iphone-p3b-before-represent.json",
+      "independent_comparison": "comparison-iphone-p3b-first-scan-independent.json",
+      "version_after": 9,
+      "total_yen_after": 11556,
+      "operation_increment": 1,
+      "new_operation_ids": [
+        "9f945010-6daa-444c-8aca-79a08fc2846a"
+      ],
+      "status": "limited_confirmation",
+      "db_recomputed_matches": true,
+      "recorded_source_hashes_match": true
+    },
+    {
+      "condition": "P3b-represent",
+      "before": "db-iphone-p3b-before-represent.json",
+      "after": "db-iphone-p3b-after-represent.json",
+      "independent_comparison": "comparison-iphone-p3b-represent-independent.json",
+      "version_after": 10,
+      "total_yen_after": 11669,
+      "operation_increment": 1,
+      "new_operation_ids": [
+        "357f0ac4-5754-4c9f-8fa6-40436afafd06"
+      ],
+      "status": "limited_confirmation",
+      "db_recomputed_matches": true,
+      "recorded_source_hashes_match": true
+    },
+    {
+      "condition": "P4a",
+      "before": "db-iphone-p4-before-background.json",
+      "after": "db-iphone-p4-after-background.json",
+      "independent_comparison": "comparison-iphone-p4-background-independent.json",
+      "version_after": 10,
+      "total_yen_after": 11669,
+      "operation_increment": 0,
+      "new_operation_ids": [],
+      "status": "limited_confirmation",
+      "db_recomputed_matches": true,
+      "recorded_source_hashes_match": true
+    },
+    {
+      "condition": "P4b",
+      "before": "db-iphone-p4-after-background.json",
+      "after": "db-iphone-p4-after-manual-restart.json",
+      "independent_comparison": "comparison-iphone-p4-manual-restart-independent.json",
+      "version_after": 11,
+      "total_yen_after": 11783,
+      "operation_increment": 1,
+      "new_operation_ids": [
+        "5101bf0b-7ec2-4500-8da0-bf97c2e05c33"
+      ],
+      "status": "limited_confirmation",
+      "db_recomputed_matches": true,
+      "recorded_source_hashes_match": true
+    },
+    {
+      "condition": "P5b",
+      "before": "db-iphone-p5-no-dialog-before.json",
+      "after": "db-iphone-p5-after-nondetection.json",
+      "independent_comparison": "comparison-iphone-p5-nondetection-independent.json",
+      "version_after": 11,
+      "total_yen_after": 11783,
+      "operation_increment": 0,
+      "new_operation_ids": [],
+      "status": "limited_confirmation",
+      "db_recomputed_matches": true,
+      "recorded_source_hashes_match": true
+    },
+    {
+      "condition": "P5c",
+      "before": "db-iphone-p5-after-nondetection.json",
+      "after": "db-iphone-p5-after-manual-entry.json",
+      "independent_comparison": "comparison-iphone-p5-manual-entry-independent.json",
+      "version_after": 12,
+      "total_yen_after": 11898,
+      "operation_increment": 1,
+      "new_operation_ids": [
+        "ec089383-fc3f-4a4b-9ece-d93801776bfd"
+      ],
+      "status": "limited_confirmation",
+      "db_recomputed_matches": true,
+      "recorded_source_hashes_match": true
+    }
+  ],
+  "all_saved_delta_expectations_match": true,
+  "prior_independent_source_hashes_verified": 36,
+  "new_operations_in_condition_deltas": {
+    "rejected_ADD_LINE": 1,
+    "applied_ADD_LINE": 6,
+    "all_ids_distinct": true
+  },
+  "bridges_all_nine_projection_equal": [
+    "P2b close confirmation",
+    "P4a camera-start preparation",
+    "P5b permission terminology baseline"
+  ],
+  "setup_separation": {
+    "P1_two_SET_QUANTITY_completed_before_P1a_baseline": "preserved in prior independent evidence; not caused by deselection",
+    "P2_quantity99_SET_QUANTITY": "v5->6 separate preparation, not P2a rejection delta"
+  },
+  "pending_history_separation": {
+    "P2b_original_pending": "retained as original stage; owner sequence-confirmation addendum supplies later limited confirmation",
+    "P3b_initial_and_represent": "distinct baseline, distinct operation IDs, one addition each"
+  },
+  "P5a": {
+    "permission_state": "owner-reported permission-granted display",
+    "denial_test": "not_executed",
+    "dialog_absence": "not_established_due_to_terminology_confusion",
+    "historical_no_dialog_baseline": "preserved unmodified; not used as definitive dialog-absence evidence"
+  },
+  "final": {
+    "version": 12,
+    "subtotal_yen": 10819,
+    "taxes_yen": {
+      "0.08": 8,
+      "0.10": 1071
+    },
+    "total_yen": 11898,
+    "quantities": {
+      "0001": 99,
+      "0001234567895": 1,
+      "00123457": 4,
+      "0002": 1
+    },
+    "operation_rows": 12,
+    "purchases": 0
+  },
+  "major_inconsistency_or_excess_acceptance_found": false,
+  "limits": [
+    "Independent checks use saved DB projections and saved owner report records, not live DB/GUI/network observations.",
+    "UI selection, camera continuity, manual restart and non-detection/manual entry are limited owner-reported outcomes; media track/decoder/visibility sequence/timing/HTTP not directly observed.",
+    "P5a refusal remains unexecuted; permission-granted display does not prove no dialog.",
+    "Camera close after P4b/P3 instructions lacks separate explicit confirmation where noted; no stream closure inferred.",
+    "Device OS/Chrome/app-version report and final environment shutdown are not included in this audit; root is collecting them.",
+    "These limited confirmations do not establish all M5 cases, permission-denial/device matrix, Azure verification or M7 acceptance."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "at_utc": "2026-10-04T16:11:31.424069+00:00",
+  "time_semantics": "phase return observed immediately after real COMMIT",
+  "tag": "o05-member-l2",
+  "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+  "old_operation_id": "3bded662-8c33-4553-b962-49c9012b96ea",
+  "new_operation_id": "fe678288-8707-458c-ab8f-424a949d7e8c",
+  "old_prepared_version": "13",
+  "new_applied_version": "14",
+  "member_state": "NON_MEMBER",
+  "member_id": null,
+  "subtotal": "523",
+  "total": "570",
+  "line_count": 3,
+  "method": "PUT",
+  "path": "/api/carts/1881e575-044d-4a4f-9c6b-9d873036bbea/member",
+  "after_real_new_selection_commit": true,
+  "outside_update_transaction": true,
+  "upstream_phase": "mac_recovery_backend"
+}

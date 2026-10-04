@@ -1,0 +1,72 @@
+{
+  "reviewed_at_utc": "2026-10-04T08:05:18.341138+00:00",
+  "condition": "P4a independent saved JSON review",
+  "sources": [
+    {
+      "file": "db-iphone-p3b-after-represent.json",
+      "sha256": "76c985dc4ef8efc47b931e888cf63cb7c8b72c1ed5bb02685b15fdfe123cf605"
+    },
+    {
+      "file": "db-iphone-p4-before-background.json",
+      "sha256": "182ed1d68e310f9c547f724a3a8ab9862ef95dd9001b9d11179994dd6254f3bf"
+    },
+    {
+      "file": "db-iphone-p4-after-background.json",
+      "sha256": "c4bd14da58240f8a97dbd51773f786bec6c9e4f3bb36a38ed3b7eb6d8c717c4e"
+    },
+    {
+      "file": "baseline-iphone-p4-background.json",
+      "sha256": "9e865b6c4c8d13da7a597ee5463f8b3850b5108be61931ff89f488b3c08b3a79"
+    },
+    {
+      "file": "comparison-iphone-p4-background.json",
+      "sha256": "85c5b5171ac5fba1b19e5e52b185e1239cfccc7f556236dba61d1477bbb2b54b"
+    }
+  ],
+  "checks": {
+    "baseline_equals_previous_represent_all_nine": true,
+    "background_all_nine_projection_equal": true,
+    "constant_cart_and_totals": true,
+    "constant_quantities_99_1_3": true,
+    "operations_ten_no_increment": true,
+    "sales_collections_empty": true,
+    "same_cart_and_context": true,
+    "primary_comparisons_match_independent_checks": true
+  },
+  "projection_equal": {
+    "register": true,
+    "contexts": true,
+    "carts": true,
+    "lines": true,
+    "operations": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "before_observed_at_utc": "2026-10-04 08:02:02.934603",
+  "after_observed_at_utc": "2026-10-04 08:04:31.288956",
+  "version": 10,
+  "subtotal_yen": 10609,
+  "tax_yen": 1060,
+  "total_yen": 11669,
+  "quantities": {
+    "0001": 99,
+    "0001234567895": 1,
+    "00123457": 3
+  },
+  "operation_count_before": 10,
+  "operation_count_after": 10,
+  "operation_increment": 0,
+  "purchases": 0,
+  "owner_setup_report": "開始した",
+  "owner_after_background_report": "閉じてる",
+  "result": "limited_owner_display_confirmation_with_saved_projection_invariance",
+  "limits": [
+    "Review only compares stored DB projection snapshots, not live DB or browser observations.",
+    "Closed camera display and no automatic restart after background/return are limited to owner report in the instructed sequence.",
+    "No direct video track, visibility event sequence, measured five-second duration, decoder or HTTP observation.",
+    "Unchanged operations do not establish absence of all HTTP requests or unprojected session/expiry changes.",
+    "Manual camera restart and addition P4b are not included in this result."
+  ]
+}

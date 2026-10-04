@@ -1,0 +1,68 @@
+{
+  "reviewed_at_utc": "2026-10-04T08:11:52.306308+00:00",
+  "condition": "P5b independent saved JSON review",
+  "sources": [
+    {
+      "file": "db-iphone-p5-no-dialog-before.json",
+      "sha256": "6681e0f0b7a2e559d30271016e61892737425dd5085299d49a05cbc18366cac9"
+    },
+    {
+      "file": "db-iphone-p5-after-nondetection.json",
+      "sha256": "394910877f6f72fc356048ddf52cd6b53d05aecc5ea50880ae9e16f2e928b1f3"
+    },
+    {
+      "file": "comparison-iphone-p5-nondetection.json",
+      "sha256": "d642726ad3e0f33adfaa443f9381ccb52e6acba2531dd0c19ba24566415404c4"
+    }
+  ],
+  "before_observed_at_utc": "2026-10-04 08:09:10.245437",
+  "after_observed_at_utc": "2026-10-04 08:10:56.581929",
+  "projection_equal": {
+    "register": true,
+    "contexts": true,
+    "carts": true,
+    "lines": true,
+    "operations": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "checks": {
+    "nine_projections_identical": true,
+    "version_totals_quantities_constants": true,
+    "operations_eleven_no_increment": true,
+    "sales_three_collections_empty": true,
+    "manual_target_0002_product2_absent": true,
+    "same_cart_context": true,
+    "primary_comparison_consistent": true
+  },
+  "version": 11,
+  "subtotal_yen": 10712,
+  "tax_yen": 1071,
+  "total_yen": 11783,
+  "quantities": {
+    "0001": 99,
+    "0001234567895": 1,
+    "00123457": 4
+  },
+  "operation_increment": 0,
+  "purchases": 0,
+  "manual_target": {
+    "code": "0002",
+    "product_id": 2,
+    "quantity_before": 0
+  },
+  "owner_nondetection_display_report": "コードをカメラに提示してください",
+  "owner_permission_clarification": "それなら、カメラの使用は許可されています。とでてました。",
+  "permission_denial_result": "not_executed",
+  "prior_no_dialog_interpretation": "Earlier no-dialog wording was ambiguous due to start-button terminology confusion; do not use the historical baseline label as established dialog absence.",
+  "result": "limited_owner_nondetection_message_confirmation_with_saved_projection_invariance",
+  "limits": [
+    "Saved JSON review only; no live DB or browser operation.",
+    "Non-detection message and permission-granted display are owner reports. Permission rejection was not performed.",
+    "No direct browser permission dialog, video/decoder, measured duration or media-track observation.",
+    "No new saved operations does not establish absence of all HTTP requests or session/expiry changes.",
+    "This is non-detection, not unknown-product rejection; P5c manual addition is not yet included."
+  ]
+}

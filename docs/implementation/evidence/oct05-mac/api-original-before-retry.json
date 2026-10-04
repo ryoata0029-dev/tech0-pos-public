@@ -1,0 +1,8 @@
+{
+  "at_utc": "2026-10-04T15:40:21.351422+00:00",
+  "database": "pos_oct05_api",
+  "purpose": "read-only observation of failed validation fixture, no recovery action",
+  "metadata": {
+    "projection_sha256": "2a96d228ce814951537f8a98022ee6f0ab8b40f5e41ea084fa61e091b5cf20e1",
+    "connection_id": 760,
+    "at_utc": 

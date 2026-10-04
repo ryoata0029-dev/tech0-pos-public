@@ -1,0 +1,11 @@
+{
+  "at_utc": "2026-10-04T03:55:55.222003+00:00",
+  "tag": "change-fault",
+  "kind": "member-unavailable",
+  "after_real_receipt_commit": true,
+  "operation_id": "a16c1f65-651e-438c-a3cb-b8d72319521e",
+  "cart_id": "ee675d4d-8782-45af-af13-26254ebf6540",
+  "version": "11",
+  "state": "EDITING",
+  "member_state": "PENDING"
+}

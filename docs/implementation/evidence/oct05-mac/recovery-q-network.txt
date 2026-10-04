@@ -1,0 +1,59 @@
+container [ネットワーク] パネル
+										72 container network
+											73 container
+												74 ツールバー
+													75 container ネットワーク ログの記録を停止, Help: ネットワーク ログの記録を停止 - ⌘ E
+														76 切り替えボタン ネットワーク ログの記録を停止 - ⌘ E, Value: 1
+													77 container ネットワーク ログを消去, Help: ネットワーク ログを消去 - Ctrl L - ⌘ K
+														78 ボタン ネットワーク ログを消去 - Ctrl L - ⌘ K
+													79 container フィルタ
+														80 切り替えボタン フィルタ, Value: 1
+													81 container 検索
+														82 切り替えボタン 検索, Value: 0
+													83 container
+														84 チェックボックス ログを保持, Value: 0
+														85 テキスト ログを保持
+													86 container
+														87 チェックボックス キャッシュを無効化, Value: 0
+														88 テキスト キャッシュを無効化
+													89 ポップアップ ボタン スロットリング, Value: 無効: スロットリングなし
+														90 (selected) 無効: スロットリングなし
+													91 container その他のネットワーク状態…
+														92 ボタン その他のネットワーク状態…
+													93 container HAR ファイルをインポート...
+														94 ボタン HAR ファイルをインポート...
+													95 container HAR（サニタイズ済み）をエクスポート...
+														96 ボタン HAR（サニタイズ済み）をエクスポート...
+													97 container ネットワーク設定
+														98 切り替えボタン ネットワーク設定, Value: 0
+												99 ツールバー
+													100 テキスト入力領域 (settable) フィルタ
+														101 テキスト フィルタ
+												102 container 検索フィルタを反転
+													103 チェックボックス 反転, Value: 0
+													104 テキスト 反転
+												105 container Show only/hide requests dropdown
+													106 ポップアップボタン リクエストのみを表示または非表示にする
+														107 テキスト その他のフィルタ
+												108 リストボックス 含めるリクエストの種類, Help: ⌘  を押しながらクリックして、複数のタイプを選択します
+													109 text (selected) すべて Fetch/XHR ドキュメント CSS JS フォント 画像 メディア マニフェスト Socket Wasm その他
+												110 container 概要グリッド ウィンドウ
+													111 container
+														112 container
+															113 テキスト 0 ms
+															114 テキスト 20 ms
+															115 テキスト 40 ms
+															116 テキスト 60 ms
+															117 テキスト 80 ms
+															118 テキスト 100 ms
+															119 テキスト 120 ms
+													120 スライダ 左サイズ変更, Value: 0, Details: 0 ms, Secondary Actions: Increment, Decrement
+													121 スライダ 右サイズ変更, Value: 100, Details: 108 ms, Secondary Actions: Increment, Decrement
+												122 container
+													123 text 現在、ネットワーク アクティビティを記録しています [ページを再読み込み] ボタンを使用するか、⌘ R を押して、リクエストを実行するか、ページを再読み込みしてください。
+													124 リンク 詳細, Help: https://developer.chrome.com/docs/devtools/network/
+														125 テキスト 詳細
+													126 ボタン ページを再読み込み
+							127 テキスト ネットワーク データを利用できます
+				128 スクロール領域
+					129 

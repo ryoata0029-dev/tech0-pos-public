@@ -1,0 +1,161 @@
+{
+  "stage": "iphone-p2-before-camera",
+  "observed_at_utc": "2026-10-04 07:47:54.305268",
+  "register": [
+    {
+      "register_id": 1,
+      "start_state": "READY",
+      "maintenance_hold": 0,
+      "active_context_id": "8964dcfc-9a1a-4896-a819-3cbd745d4e1a",
+      "current_cart_id": "47605231-5c96-439c-9533-349de5f43c0f"
+    }
+  ],
+  "contexts": [
+    {
+      "context_id": "8964dcfc-9a1a-4896-a819-3cbd745d4e1a",
+      "starting_staff_id": "STAFF_A",
+      "confirmed_at": "2026-10-04 07:38:52.158443",
+      "invalidated_at": null
+    }
+  ],
+  "carts": [
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "staff_id": "STAFF_A",
+      "state": "EDITING",
+      "version": 6,
+      "member_state": "UNSPECIFIED",
+      "member_id": null,
+      "pending_member_id": null,
+      "active_member_operation_id": null,
+      "active_purchase_operation_id": null,
+      "purchase_prepared_version": null,
+      "subtotal": "10197",
+      "total": "11216",
+      "tax_breakdown": "[{\"tax_rate\": \"0.1000\", \"tax_amount\": \"1019\", \"taxable_subtotal\": \"10197\"}]"
+    }
+  ],
+  "lines": [
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "line_id": "82a65022-05aa-4deb-a516-7c85adde9a91",
+      "line_no": 1,
+      "product_id": 1,
+      "quantity": 99,
+      "unit_price_snapshot": "103",
+      "tax_rate_snapshot": "0.1000",
+      "discount_per_unit": "0",
+      "net_unit_price": "103",
+      "line_subtotal": "10197",
+      "conditions_fixed_at": "2026-10-04 07:41:03.869926"
+    }
+  ],
+  "operations": [
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "operation_id": "21699311-c41f-44f5-8a7a-80f714393671",
+      "kind": "SYNC",
+      "request_version": 1,
+      "status": "APPLIED",
+      "prepared_version": null,
+      "applied_version": 2,
+      "result_code": null,
+      "next_cart_id": null,
+      "created_at": "2026-10-04 07:38:54.978590",
+      "requested_code": null
+    },
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "operation_id": "266a4bc6-be36-40fc-8a95-d05bd0ef3d14",
+      "kind": "ADD_LINE",
+      "request_version": 2,
+      "status": "APPLIED",
+      "prepared_version": null,
+      "applied_version": 3,
+      "result_code": null,
+      "next_cart_id": null,
+      "created_at": "2026-10-04 07:41:03.869926",
+      "requested_code": "0001"
+    },
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "operation_id": "1670a16f-5ebe-4b14-a79f-0e9f0b5830da",
+      "kind": "SET_QUANTITY",
+      "request_version": 3,
+      "status": "APPLIED",
+      "prepared_version": null,
+      "applied_version": 4,
+      "result_code": null,
+      "next_cart_id": null,
+      "created_at": "2026-10-04 07:41:14.945616",
+      "requested_code": null
+    },
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "operation_id": "616d46c7-0485-4334-bc23-c0c21a8b23ba",
+      "kind": "SET_QUANTITY",
+      "request_version": 4,
+      "status": "APPLIED",
+      "prepared_version": null,
+      "applied_version": 5,
+      "result_code": null,
+      "next_cart_id": null,
+      "created_at": "2026-10-04 07:41:27.011633",
+      "requested_code": null
+    },
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "operation_id": "14d490e3-5592-43fa-bbb7-b5855758f576",
+      "kind": "SET_QUANTITY",
+      "request_version": 5,
+      "status": "APPLIED",
+      "prepared_version": null,
+      "applied_version": 6,
+      "result_code": null,
+      "next_cart_id": null,
+      "created_at": "2026-10-04 07:47:28.819828",
+      "requested_code": null
+    }
+  ],
+  "purchases": [],
+  "purchase_lines": [],
+  "purchase_taxes": [],
+  "products": [
+    {
+      "product_id": 1,
+      "code": "0001",
+      "unit_price": "103",
+      "tax_rate_id": 2
+    },
+    {
+      "product_id": 2,
+      "code": "0002",
+      "unit_price": "107",
+      "tax_rate_id": 1
+    },
+    {
+      "product_id": 3,
+      "code": "0003",
+      "unit_price": "107",
+      "tax_rate_id": 1
+    },
+    {
+      "product_id": 4,
+      "code": "0001234567895",
+      "unit_price": "103",
+      "tax_rate_id": 2
+    },
+    {
+      "product_id": 5,
+      "code": "00123457",
+      "unit_price": "103",
+      "tax_rate_id": 2
+    },
+    {
+      "product_id": 6,
+      "code": "Ab_01",
+      "unit_price": "103",
+      "tax_rate_id": 2
+    }
+  ]
+}

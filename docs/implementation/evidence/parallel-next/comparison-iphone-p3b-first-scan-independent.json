@@ -1,0 +1,60 @@
+{
+  "reviewed_at_utc": "2026-10-04T07:59:27.808419+00:00",
+  "method": "offline independent saved JSON comparison; no GUI/DB/environment/network/document actions",
+  "sources": [
+    "db-iphone-p3a-after-hold.json",
+    "db-iphone-p3b-before-represent.json",
+    "comparison-iphone-p3b-first-scan.json"
+  ],
+  "source_sha256": {
+    "db-iphone-p3a-after-hold.json": "57087f8e29051e67d056505bf38c90eccba30a3f394f5d2c2445ee6206fca828",
+    "db-iphone-p3b-before-represent.json": "810f729128024290d8fca30efcb6b170d4efb3b8cab69a8c4174826a6802e7df",
+    "comparison-iphone-p3b-first-scan.json": "008139fcee0ebb8024937b285557ed33c3fa545872b929fc641b1ad5efc804c1"
+  },
+  "condition": "P3b-first-scan-only",
+  "before_observed_at_utc": "2026-10-04 07:56:59.124334",
+  "after_observed_at_utc": "2026-10-04 07:58:41.546142",
+  "stable_projection_equal": {
+    "register": true,
+    "contexts": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "original_operations_unchanged": 8,
+  "new_operation_count": 1,
+  "new_operation": {
+    "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+    "operation_id": "9f945010-6daa-444c-8aca-79a08fc2846a",
+    "kind": "ADD_LINE",
+    "request_version": 8,
+    "status": "APPLIED",
+    "prepared_version": null,
+    "applied_version": 9,
+    "result_code": null,
+    "next_cart_id": null,
+    "created_at": "2026-10-04 07:58:08.071364",
+    "requested_code": "00123457"
+  },
+  "other_two_lines_projection_unchanged": true,
+  "EAN8_line_identity_and_fixed_fields_unchanged": true,
+  "EAN8_quantity_before": 1,
+  "EAN8_quantity_after": 2,
+  "cart_version_before": 8,
+  "cart_version_after": 9,
+  "cart_other_projection_fields_unchanged": true,
+  "subtotal_yen": 10506,
+  "tax_yen": 1050,
+  "total_yen": 11556,
+  "purchase_rows": 0,
+  "owner_report_recorded_in_primary_evidence": "おｋ",
+  "owner_report_context_from_root_task": "Affirmation of the instruction to reach quantity2, keep the camera open, and wait with the code outside the frame.",
+  "result": "limited_first_scan_addition_confirmed_represent_not_performed",
+  "major_inconsistency_found": false,
+  "limits": [
+    "This is the first addition after the P3b start and a baseline for later re-presentation; it does not establish the re-presentation result.",
+    "Quantity2 is independently present in DB; camera-open and physical outside-frame position remain owner-reported context, not directly observed.",
+    "No timing, decoder/callback, browser HTTP or MediaStreamTrack state was directly observed."
+  ]
+}

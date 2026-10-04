@@ -1,0 +1,65 @@
+{
+  "reviewed_at_utc": "2026-10-04T08:01:06.353462+00:00",
+  "method": "offline independent saved JSON comparison; no GUI/DB/environment/network/document actions",
+  "sources": [
+    "db-iphone-p3b-before-represent.json",
+    "db-iphone-p3b-after-represent.json",
+    "comparison-iphone-p3b-represent.json",
+    "comparison-iphone-p3b-first-scan-independent.json"
+  ],
+  "source_sha256": {
+    "db-iphone-p3b-before-represent.json": "810f729128024290d8fca30efcb6b170d4efb3b8cab69a8c4174826a6802e7df",
+    "db-iphone-p3b-after-represent.json": "76c985dc4ef8efc47b931e888cf63cb7c8b72c1ed5bb02685b15fdfe123cf605",
+    "comparison-iphone-p3b-represent.json": "3698d585afa8b2d0b6f1b46dc654ff72c2b21b7229eec56c9499447bc69e13a7",
+    "comparison-iphone-p3b-first-scan-independent.json": "673343578349beb73f51639d5e308018eda832fc9e72632b1c35de8a57397fb9"
+  },
+  "condition": "P3b-representation-only",
+  "before_observed_at_utc": "2026-10-04 07:58:41.546142",
+  "after_observed_at_utc": "2026-10-04 08:00:07.356698",
+  "stable_projection_equal": {
+    "register": true,
+    "contexts": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "original_operations_unchanged": 9,
+  "new_operation_count": 1,
+  "new_operation": {
+    "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+    "operation_id": "357f0ac4-5754-4c9f-8fa6-40436afafd06",
+    "kind": "ADD_LINE",
+    "request_version": 9,
+    "status": "APPLIED",
+    "prepared_version": null,
+    "applied_version": 10,
+    "result_code": null,
+    "next_cart_id": null,
+    "created_at": "2026-10-04 07:59:24.794818",
+    "requested_code": "00123457"
+  },
+  "first_scan_operation_id_kept_separate": "9f945010-6daa-444c-8aca-79a08fc2846a",
+  "representation_operation_id_is_different": true,
+  "other_two_lines_projection_unchanged": true,
+  "EAN8_line_identity_and_fixed_fields_unchanged": true,
+  "EAN8_quantity_before": 2,
+  "EAN8_quantity_after": 3,
+  "cart_version_before": 9,
+  "cart_version_after": 10,
+  "cart_other_projection_fields_unchanged": true,
+  "subtotal_yen": 10609,
+  "tax_yen": 1060,
+  "total_yen": 11669,
+  "purchase_rows": 0,
+  "owner_report_recorded_in_primary_evidence": "３になり、止まってる。OK",
+  "instruction_context_from_root_task": "One re-presentation without pressing camera start again in the same scan session, then about five seconds holding.",
+  "result": "limited_one_represent_addition_consistent_with_owner_quantity_stability_report",
+  "major_inconsistency_found": false,
+  "limits": [
+    "The physical same-session procedure and quantity stopping are owner-reported context; reviewer did not observe live UI/video.",
+    "Approximately five seconds is an instruction, not an independently measured duration. Camera restarts, decoder/callback and MediaStreamTrack state are not directly evidenced by DB.",
+    "Initial P3b addition and this re-presentation addition have separate operation IDs and separate baselines; this comparison counts only the latter.",
+    "All lighting, blur/absence conditions and later quantity beyond the saved snapshot remain outside this limited evidence."
+  ]
+}

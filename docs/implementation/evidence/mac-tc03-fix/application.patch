@@ -1,0 +1,20 @@
+--- before/register-cart.tsx
++++ after/register-cart.tsx
+@@ -147,8 +147,15 @@
+           accept(state);
+           requireStable(localStorage,current.current,beforeNotifications,notified.current);
+           if (changingMember) setMemberUnconfirmed(false);
+-          if (state.cart.state === 'EDITING' && state.cart.member_state !== 'PENDING'
+-            && current.current.cart.state === 'EDITING' && current.current.cart.member_state !== 'PENDING') {
++          const missingMember = changingMember && request.method === 'PUT'
++            && error.status === 404 && error.code === 'MEMBER_NOT_FOUND'
++            && state.cart.member_state === 'PENDING' && current.current.cart.member_state === 'PENDING'
++            && state.cart.pending_member_id === request.body?.member_id
++            && current.current.cart.pending_member_id === request.body?.member_id
++            && state.cart.version === current.current.cart.version
++            && BigInt(state.cart.version) > BigInt(String(request.body?.version));
++          if (state.cart.state === 'EDITING' && current.current.cart.state === 'EDITING'
++            && (missingMember || (state.cart.member_state !== 'PENDING' && current.current.cart.member_state !== 'PENDING'))) {
+             pending.current = null; setPhase('ready'); return keepCamera;
+           }
+         } catch (reconciliationError) {

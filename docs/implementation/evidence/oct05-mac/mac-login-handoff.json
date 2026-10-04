@@ -1,0 +1,17 @@
+{
+  "at_utc": "2026-10-04T16:03:34.716955+00:00",
+  "observed_via": "CUA Chrome heading locator only",
+  "tab_id": "1815405328",
+  "heading": [
+    "担当者ログイン"
+  ],
+  "gui_cases_executed": 0,
+  "member_cases_waiting": 2,
+  "recovery_cases_waiting": 4,
+  "handoff_tab_marked": true,
+  "runtime_stopped": false,
+  "credential_value_not_captured": true,
+  "private_file_browser_block": "file: URL protocol refused by automatic browser approval review",
+  "environment": "environment-handoff-final.json",
+  "check_summary": "check-summary.json"
+}

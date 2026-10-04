@@ -1,0 +1,73 @@
+{
+  "at_utc": "2026-10-04T04:21:10.032007+00:00",
+  "evidence_assertions": "passed",
+  "tc03_overall": "failed; P2 remains; device/camera conditions outside current scope",
+  "defect_count": 1,
+  "defect_reproductions": [
+    {
+      "condition": "empty-notfound",
+      "priority": "P2",
+      "result": "failed",
+      "defect": "definite member-not-found followed by stable cart GET leaves member controls disabled"
+    },
+    {
+      "condition": "empty-change-notfound",
+      "priority": "P2",
+      "result": "failed",
+      "defect": "definite member-not-found followed by stable cart GET leaves member controls disabled"
+    },
+    {
+      "condition": "lines-initial-notfound",
+      "priority": "P2",
+      "result": "failed",
+      "defect": "definite member-not-found followed by stable cart GET leaves member controls disabled"
+    },
+    {
+      "condition": "lines-change-notfound",
+      "priority": "P2",
+      "result": "failed",
+      "defect": "definite member-not-found followed by stable cart GET leaves member controls disabled"
+    }
+  ],
+  "snapshots_checked": 21,
+  "same_cart": true,
+  "lines": 3,
+  "purchases": 0,
+  "blocked_api_requests": 20,
+  "member_get_did_not_confirm_cart": true,
+  "late_lookup_results": [
+    {
+      "tag": "initial-held",
+      "receipt_to_finish_seconds": 57.582606,
+      "old_operation": "REJECTED/MEMBER_LOOKUP_SUPERSEDED",
+      "new_member_id": "MEMBER_0",
+      "new_total": "537",
+      "old_browser_response_observed_before_relay_timeout": false
+    },
+    {
+      "tag": "change-held",
+      "receipt_to_finish_seconds": 0.751525,
+      "old_operation": "REJECTED/MEMBER_LOOKUP_SUPERSEDED",
+      "new_member_id": null,
+      "new_total": "570",
+      "old_browser_response_observed_before_relay_timeout": true
+    },
+    {
+      "tag": "initial-fast",
+      "receipt_to_finish_seconds": 0.960434,
+      "old_operation": "REJECTED/MEMBER_LOOKUP_SUPERSEDED",
+      "new_member_id": "MEMBER_0",
+      "new_total": "537",
+      "old_browser_response_observed_before_relay_timeout": true
+    }
+  ],
+  "final_total": 570,
+  "build_id": "JZgq0YlIZQIBqIDG2IS3O",
+  "application_sources_sha256": {
+    "frontend/app/register-cart.tsx": "5baccccf0cdc5c7aeae5ba37445bebe5b6aa749aebda55fb5f07e7d11db990ee",
+    "frontend/tests/register-member.test.mjs": "2ff92486cb86d3f52f8ba300d5d7acf6bb958d4ce50c97207b785bbe5795229f",
+    "frontend/tests/support/register-harness.mjs": "8348ec6cafa89cc6741c384ebf13c7bd87db51411e5bf71e3954351df48ba914"
+  },
+  "chrome_version": "154.0.8037.97",
+  "macos_version": "27.0"
+}

@@ -1,0 +1,11 @@
+{
+  "at_utc": "2026-10-04T07:00:44.270852+00:00",
+  "corrects": "runtime-start.json previous_checks",
+  "original_reference_was_missing": "evidence/mac-parallel/check-final.log",
+  "actual_checks": [
+    "../mac-parallel/check-pattern-fix-retry.log",
+    "../mac-parallel/build-pattern-fix.log",
+    "../mac-parallel/runtime-pattern-fix.json"
+  ],
+  "application_and_build_unchanged": true
+}

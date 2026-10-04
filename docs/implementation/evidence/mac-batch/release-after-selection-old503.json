@@ -1,0 +1,12 @@
+{
+  "kind": "product-late-unavailable",
+  "tag": "selection-old503",
+  "started_at_utc": "2026-10-04T05:58:01.636941+00:00",
+  "gate_at_utc": "2026-10-04T05:58:09.997077+00:00",
+  "observed_at_utc": "2026-10-04T05:58:10.030218+00:00",
+  "released_at_utc": "2026-10-04T05:58:15.035607+00:00",
+  "wait_seconds": 5,
+  "actual_wait_seconds": 5.006003,
+  "after_real_lookup": true,
+  "outside_read_transaction": true
+}

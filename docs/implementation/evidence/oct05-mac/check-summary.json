@@ -1,0 +1,64 @@
+{
+  "at_utc": "2026-10-04T16:02:53.959420+00:00",
+  "make_check_exit_code": 69,
+  "make_check_succeeded": false,
+  "xcode_license_accepted": false,
+  "direct_makefile_equivalent_checks_passed": true,
+  "application_suite_rerun": true,
+  "python_tests": 85,
+  "node_tests": 123,
+  "total_tests": 208,
+  "checks": [
+    {
+      "name": "backend-lint",
+      "exit_code": 0,
+      "log": "check-backend-lint.log",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "name": "backend-format",
+      "exit_code": 0,
+      "log": "check-backend-format.log",
+      "sha256": "40be2b843808698b792420e7f7e2ecc59008bc39e9de2ea0c999ada5b5c4aa48"
+    },
+    {
+      "name": "frontend-lint",
+      "exit_code": 0,
+      "log": "check-frontend-lint.log",
+      "sha256": "5c30e480bd4c390ce3e10e8eb187d4ace1a82cc2f9e184f6a28127cd15d06192"
+    },
+    {
+      "name": "backend-types",
+      "exit_code": 0,
+      "log": "check-backend-types.log",
+      "sha256": "7f43e759c997a0af903a210f4a10fd709457c5a5125336929ab037d3ed6702ce"
+    },
+    {
+      "name": "frontend-types",
+      "exit_code": 0,
+      "log": "check-frontend-types.log",
+      "sha256": "26dbbc331b1a70a409824ca289a4ea4246bc4bbf81aaaca9dbe631eaa4877551"
+    },
+    {
+      "name": "backend-tests",
+      "exit_code": 0,
+      "log": "check-backend-tests.log",
+      "sha256": "ec3c4fe78ad73e56bd45af9a1e7d1517c901f1b60aa71a19567f3e7e17c8d4e5"
+    },
+    {
+      "name": "frontend-tests",
+      "exit_code": 0,
+      "log": "check-frontend-tests.log",
+      "sha256": "a306aa899d62dd65941919c8129a66b8ba729d06560429676d523c19c98225b2"
+    },
+    {
+      "name": "contract",
+      "exit_code": 0,
+      "log": "check-contract.log",
+      "sha256": "c0f3d2e3f95879338319e601b73c91ed6b27d1b9ed370ea7e40b5221447e7db8"
+    }
+  ],
+  "build_rerun": false,
+  "environment_legacy_flag_clarification": "environment-checks-complete.json full_application_suite_rerun:false describes no test execution by verify command itself; direct full suite results recorded here",
+  "git_diff_check": "passed using preinstalled standalone Codex Git 2.53.0"
+}

@@ -1,0 +1,98 @@
+{
+  "format": [
+    {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "c02be3",
+        "wall_time_seconds": 0.000017208,
+        "exit_code": 0,
+        "original_token_count": 5,
+        "output": "All checks passed!\n"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "c4243b",
+        "wall_time_seconds": 0.00000825,
+        "exit_code": 0,
+        "original_token_count": 7,
+        "output": "18 files already formatted\n"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "d5b808",
+        "wall_time_seconds": 0.000011667,
+        "exit_code": 0,
+        "original_token_count": 69,
+        "output": "{\"offline_only\": true, \"profile\": \"parallel-next\", \"schema\": \"pos_api_validation\", \"phone_schema\": \"pos_validation\", \"transport\": \"ASGI + TLS MySQL\", \"checks\": [\"tie\", \"pre-cap/zero\", \"maximum\", \"diagnostic rollback\", \"four price histories\"], \"condition_5\": \"analysis only\"}\n"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "1cecd5",
+        "wall_time_seconds": 0.000008917,
+        "exit_code": 0,
+        "original_token_count": 64,
+        "output": "{\"offline_only\": true, \"profile\": \"parallel-next\", \"schema\": \"pos_api_validation\", \"codes\": [\"API_PERIOD\", \"API_CONSISTENCY\"], \"checks\": [\"real SQL four interval boundaries\", \"controlled master TX old/new\"], \"transport\": \"Repository + TLS MySQL; no HTTP\"}\n"
+      }
+    }
+  ],
+  "node_and_prior_document": [
+    {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "003a70",
+        "wall_time_seconds": 0.547719875,
+        "exit_code": 0,
+        "original_token_count": 29,
+        "output": "{\n  \"documents\": 90,\n  \"local_links\": 2304,\n  \"traceability_ids\": 39,\n  \"acceptance_sections\": 28,\n  \"errors\": []\n}\n"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "0ccb82",
+        "wall_time_seconds": 0.000007333,
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": ""
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "06d0d4",
+        "wall_time_seconds": 0.000008042,
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": ""
+      }
+    }
+  ],
+  "final_document_and_diff": [
+    {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "ae3ec7",
+        "wall_time_seconds": 0.512161875,
+        "exit_code": 0,
+        "original_token_count": 29,
+        "output": "{\n  \"documents\": 90,\n  \"local_links\": 2306,\n  \"traceability_ids\": 39,\n  \"acceptance_sections\": 28,\n  \"errors\": []\n}\n"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "951d15",
+        "wall_time_seconds": 0.000007125,
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": ""
+      }
+    }
+  ]
+}

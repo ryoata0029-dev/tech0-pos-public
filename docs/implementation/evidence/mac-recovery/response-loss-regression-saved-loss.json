@@ -1,0 +1,14 @@
+{
+  "kind": "purchase",
+  "tag": "regression-saved-loss",
+  "method": "POST",
+  "path": "/api/purchases",
+  "status": 200,
+  "at": "2026-10-03T13:02:03.053Z",
+  "discardedAfterApplicationResponse": true,
+  "operation_id": "12d86897-23b1-4a85-b6f8-6f10ba0894fb",
+  "operation_status": "APPLIED",
+  "cart_id": "ec0ce4b7-8b15-420c-a28f-494a30e4041c",
+  "cart_state": "SAVED",
+  "purchase_status": "SAVED"
+}

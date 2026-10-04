@@ -1,0 +1,11 @@
+{
+  "at_utc": "2026-10-03T12:45:56.725889+00:00",
+  "tag": "saving-reload",
+  "kind": "purchase-hold",
+  "after_real_receipt_commit": true,
+  "operation_id": "be96e678-7998-4314-8a93-7590a325b437",
+  "cart_id": "ecb49a55-3746-4475-96d2-1a0cf62e0bc0",
+  "version": "15",
+  "state": "SAVING",
+  "member_state": "CONFIRMED"
+}

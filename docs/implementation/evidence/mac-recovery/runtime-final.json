@@ -1,0 +1,26 @@
+{
+  "at_utc": "2026-10-03T13:11:11.753835+00:00",
+  "git_head": "89ba602731323863843f2f51f44a634698d20f30",
+  "uncommitted": true,
+  "model": "MacBookAir10,1",
+  "macos": "27.0",
+  "build": "26A428",
+  "chrome": "154.0.8037.97",
+  "next_build_id": "2RYiaZqalIHc37VkzH_oI",
+  "source_sha256": {
+    "frontend/app/register-cart.tsx": "5c0ca79731debc48bb26665cba74532bea1e9775511c754068fc4c2a660baea7",
+    "frontend/lib/pos.ts": "626e0c34d57a061396ea6f4117d4c230ae7bb9e42da8ed2007d2bc315191a669",
+    "tools/mac_recovery_backend.py": "f10549b22ea640a0093990afb8f129ea925bf7239617b896ed76c6ffcd05f782",
+    "tools/mac_flow_https.mjs": "a0d578d5573295d73d16fc8418e80989ce861ce48e37ce8861447d48a1c27857"
+  },
+  "verified": {
+    "purchases": 2,
+    "lines": 4,
+    "taxes": 3,
+    "next": 1,
+    "closed_delayed_requests": 2,
+    "response_loss_successes": 3,
+    "full_chrome_restart_executed": false
+  },
+  "verification_note": "DB/UI assertions completed before restricted sysctl; model verified separately."
+}

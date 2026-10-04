@@ -1,0 +1,79 @@
+{
+  "at_utc": "2026-10-04T05:04:55.422Z",
+  "result": "offline_decode_passed",
+  "real_camera_test": "not_run",
+  "fixtures": [
+    {
+      "id": "product-0001",
+      "format": "Code128",
+      "code": "0001",
+      "label": "既存商品103円",
+      "decoded": "0001",
+      "decoder": "@zxing/library 0.23.0",
+      "file": "product-0001.svg"
+    },
+    {
+      "id": "product-0002",
+      "format": "Code128",
+      "code": "0002",
+      "label": "既存商品107円",
+      "decoded": "0002",
+      "decoder": "@zxing/library 0.23.0",
+      "file": "product-0002.svg"
+    },
+    {
+      "id": "product-missing",
+      "format": "Code128",
+      "code": "PRODUCT_MISSING",
+      "label": "未登録商品",
+      "decoded": "PRODUCT_MISSING",
+      "decoder": "@zxing/library 0.23.0",
+      "file": "product-missing.svg"
+    },
+    {
+      "id": "member-0",
+      "format": "Code128",
+      "code": "MEMBER_0",
+      "label": "架空会員",
+      "decoded": "MEMBER_0",
+      "decoder": "@zxing/library 0.23.0",
+      "file": "member-0.svg"
+    },
+    {
+      "id": "member-missing",
+      "format": "Code128",
+      "code": "MEMBER_MISSING",
+      "label": "不存在会員",
+      "decoded": "MEMBER_MISSING",
+      "decoder": "@zxing/library 0.23.0",
+      "file": "member-missing.svg"
+    },
+    {
+      "id": "product-case",
+      "format": "Code128",
+      "code": "Ab_01",
+      "label": "大小文字保持用・専用fixture投入が必要",
+      "decoded": "Ab_01",
+      "decoder": "@zxing/library 0.23.0",
+      "file": "product-case.svg"
+    },
+    {
+      "id": "product-ean13",
+      "format": "EAN13",
+      "code": "0001234567895",
+      "label": "EAN-13・専用fixture投入が必要",
+      "decoded": "0001234567895",
+      "decoder": "@zxing/library 0.23.0",
+      "file": "product-ean13.svg"
+    },
+    {
+      "id": "product-ean8",
+      "format": "EAN8",
+      "code": "00123457",
+      "label": "EAN-8・専用fixture投入が必要",
+      "decoded": "00123457",
+      "decoder": "@zxing/library 0.23.0",
+      "file": "product-ean8.svg"
+    }
+  ]
+}

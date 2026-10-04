@@ -1,0 +1,92 @@
+{
+  "at_utc": "2026-10-04T16:24:46.160400+00:00",
+  "method": "independent file-only final snapshot/source identity and recorded shutdown audit; no DB reconnect, GUI, network or process operations",
+  "status": "recorded_dedicated_environment_shutdown_consistent",
+  "checks": {
+    "L_final_and_final_DB_all9_projections_identical": true,
+    "fixed_db_profile_container_ports": true,
+    "same_initial_final_shutdown_container_ID": true,
+    "dedicated_volume_name_unchanged_and_retained": true,
+    "only_expected3_ports_recorded_closed": true,
+    "recorded_mysql_exited": true,
+    "shutdown_fixed_profile_and_container": true,
+    "32_source_manifests_initial_final_current_equal": true,
+    "same_build_ID": true,
+    "final_owned_cleanup_pos_purchase_count_zero": true,
+    "final_cleanup_follows_L_and_precedes_shutdown": true,
+    "finalC_v3_113_and_sales2_operations22": true,
+    "recorded_known_secret_scan_success": true
+  },
+  "nine_projection_equality": {
+    "register": true,
+    "contexts": true,
+    "carts": true,
+    "lines": true,
+    "operations": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "container_id": "9aec73e2666456164012af9852caf29c466c3b736fdd967923d0b7b67a14ba08",
+  "profile": "oct05-mac",
+  "container": "tech0-pos-oct05-mac-mysql",
+  "ports_closed": {
+    "3327": true,
+    "8463": true,
+    "8464": true
+  },
+  "volume_retained": "tech0-pos-oct05-mac-mysql-data",
+  "final_current_cart_id": "988509ef-d02d-45a1-8029-33607a61027e",
+  "final_current_version": 3,
+  "final_current_total": 113,
+  "final_purchase_count": 2,
+  "final_operation_count": 22,
+  "owned_cleanup": {
+    "at_utc": "2026-10-04T16:21:07.397Z",
+    "action": "only-fixture-owned-keys-removed",
+    "remaining_purchase_keys": 0
+  },
+  "source_files": [
+    {
+      "file": "db-recovery-l-final.json",
+      "sha256": "899aa7f0e17986d619eb6275dce31739934b7c3bf58b9bd49b449c308418990d"
+    },
+    {
+      "file": "db-gui-final.json",
+      "sha256": "149ece730dbd607ad64ae86e4c116f4e70c457bfedb8a6fcdf93ea69d1b2ee86"
+    },
+    {
+      "file": "environment-initial.json",
+      "sha256": "72120c14e60a0c440b267ee437a7cf7d1621fedb5a92ed105f5d23c6290fa664"
+    },
+    {
+      "file": "mysql-environment.json",
+      "sha256": "57bd0d53def55ecbbfa53c31b070a4d7a22bfdf5b1d010669ddb9cd954865dbf"
+    },
+    {
+      "file": "environment-gui-final.json",
+      "sha256": "8d2343ec749e8a17cdf72df81e68e9796f24254db9fbd3fada07da6690d6f6dc"
+    },
+    {
+      "file": "shutdown-gui-final.json",
+      "sha256": "452c58eada2bff16c9d6751781ddc487c99d6191d0a3d6e6af6ef5d20a842f7e"
+    },
+    {
+      "file": "recovery-cleanup-final.json",
+      "sha256": "020b10193def78680bcb700969e315310ffee216b30b7c6227b6f4d3d78fcaae"
+    },
+    {
+      "file": "next-returned-o05-next-l.json",
+      "sha256": "2fc937f97691217cf127f0203a32fed8542eb5f64a023c67503c35aaa1955323"
+    }
+  ],
+  "limits": [
+    "Shutdown status/port closure/volume retention/known secret scan are root-recorded observations; child independently compared files, did not probe live state.",
+    "Final DB is recorded before process stop; volume retention does not itself prove recovery or backup restoration.",
+    "Cleanup remaining_purchase_keys counts pos-purchase namespace only; helper oct05-recovery-pending namespace absence is not directly measured by that counter.",
+    "Shutdown JSON does not enumerate tunnel process termination; do not assert all background processes absent from these fields.",
+    "Known secret equality scan success does not establish all possible secrets absent.",
+    "All selected four recovery conditions are limited evidence, not all TC20/24/28 or M7."
+  ]
+}

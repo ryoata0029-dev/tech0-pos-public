@@ -1,0 +1,7 @@
+{
+  "at_utc": "2026-10-04T04:51:45.498Z",
+  "enabled": false,
+  "intended_change": "0001 -> 0002",
+  "actual_change_performed": false,
+  "gate": "lookup-held"
+}

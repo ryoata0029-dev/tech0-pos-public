@@ -1,0 +1,315 @@
+{
+  "at_utc": "2026-10-04T15:57:12.904381+00:00",
+  "database": "pos_oct05_api",
+  "purpose": "read-only observation of failed validation fixture, no recovery action",
+  "metadata": {
+    "projection_sha256": "2a96d228ce814951537f8a98022ee6f0ab8b40f5e41ea084fa61e091b5cf20e1",
+    "connection_id": 1864,
+    "at_utc": "2026-10-04T15:57:12.891389+00:00"
+  },
+  "data": {
+    "AUTH_LOGIN_LIMIT": [
+      {
+        "failure_times": "[]",
+        "locked_until": null,
+        "staff_id": "STAFF_API_A"
+      }
+    ],
+    "AUTH_SESSION": [
+      {
+        "created_at": "2026-10-04T15:33:38.145667+00:00",
+        "expires_at": "2026-10-04T23:33:38.145667+00:00",
+        "register_id": 1,
+        "revoked_at": "2026-10-04T15:33:40.362413+00:00",
+        "staff_id": "STAFF_API_A"
+      },
+      {
+        "created_at": "2026-10-04T15:33:40.362413+00:00",
+        "expires_at": "2026-10-04T23:33:40.362413+00:00",
+        "register_id": 1,
+        "revoked_at": null,
+        "staff_id": "STAFF_API_A"
+      }
+    ],
+    "BROWSER_CONTEXT": [
+      {
+        "confirmed_at": "2026-10-04T15:33:39.396003+00:00",
+        "context_id": "0c2e538c-44fe-4dd8-8358-7ca85a8c092c",
+        "created_at": "2026-10-04T15:33:38.978759+00:00",
+        "invalidated_at": null,
+        "last_business_at": "2026-10-04T15:33:47.457871+00:00",
+        "manual_released_at": null,
+        "register_id": 1,
+        "starting_staff_id": "STAFF_API_A"
+      }
+    ],
+    "CART": [
+      {
+        "active_member_operation_id": null,
+        "active_purchase_operation_id": "55f0d6ad-be46-4e3b-a701-6e3c8f94ec8b",
+        "cart_id": "5cb9d7b4-bb03-4beb-824e-2eb9c70f5af0",
+        "context_id": "0c2e538c-44fe-4dd8-8358-7ca85a8c092c",
+        "created_at": "2026-10-04T15:33:39.834896+00:00",
+        "member_id": null,
+        "member_state": "NON_MEMBER",
+        "pending_member_id": null,
+        "purchase_prepared_version": 7,
+        "register_id": 1,
+        "result_closed_at": null,
+        "staff_id": "STAFF_API_A",
+        "state": "SAVING",
+        "subtotal": "309",
+        "tax_breakdown": "[{\"tax_rate\": \"0.1000\", \"tax_amount\": \"30\", \"taxable_subtotal\": \"309\"}]",
+        "total": "339",
+        "updated_at": "2026-10-04T15:33:47.457871+00:00",
+        "version": 8
+      }
+    ],
+    "CART_LINE": [
+      {
+        "cart_id": "5cb9d7b4-bb03-4beb-824e-2eb9c70f5af0",
+        "code_snapshot": "P103",
+        "conditions_fixed_at": "2026-10-04T15:33:43.850593+00:00",
+        "discount_candidates": "[{\"kind\": \"RATE\", \"rate\": \"0.1000\", \"amount\": null, \"valid_to\": \"2099-01-01T00:00:00Z\", \"valid_from\": \"2020-01-01T00:00:00Z\", \"condition_id\": \"1\"}]",
+        "discount_per_unit": "0",
+        "discount_snapshot": null,
+        "line_id": "2f76b493-a132-494a-a7f7-5d1ff81fbdad",
+        "line_no": 1,
+        "line_subtotal": "309",
+        "name_snapshot": "\u67b6\u7a7a\u5546\u54c1 P103",
+        "net_unit_price": "103",
+        "product_id": 1,
+        "quantity": 3,
+        "tax_rate_snapshot": "0.1000",
+        "unit_price_snapshot": "103"
+      }
+    ],
+    "CART_OPERATION": [
+      {
+        "applied_version": 2,
+        "cart_id": "5cb9d7b4-bb03-4beb-824e-2eb9c70f5af0",
+        "completed_at": "2026-10-04T15:33:42.742569+00:00",
+        "created_at": "2026-10-04T15:33:42.742569+00:00",
+        "kind": "SYNC",
+        "next_cart_id": null,
+        "operation_id": "53a650de-e22e-414e-9f06-57d284b3c98d",
+        "prepared_version": null,
+        "request_payload": "{\"version\": \"1\"}",
+        "request_version": 1,
+        "result_code": null,
+        "result_payload": null,
+        "status": "APPLIED"
+      },
+      {
+        "applied_version": 3,
+        "cart_id": "5cb9d7b4-bb03-4beb-824e-2eb9c70f5af0",
+        "completed_at": "2026-10-04T15:33:43.850593+00:00",
+        "created_at": "2026-10-04T15:33:43.850593+00:00",
+        "kind": "ADD_LINE",
+        "next_cart_id": null,
+        "operation_id": "5eb10346-57e0-46c9-8bf4-9273e58b25c2",
+        "prepared_version": null,
+        "request_payload": "{\"code\": \"P103\", \"version\": \"2\"}",
+        "request_version": 2,
+        "result_code": null,
+        "result_payload": null,
+        "status": "APPLIED"
+      },
+      {
+        "applied_version": 4,
+        "cart_id": "5cb9d7b4-bb03-4beb-824e-2eb9c70f5af0",
+        "completed_at": "2026-10-04T15:33:45.215261+00:00",
+        "created_at": "2026-10-04T15:33:45.215261+00:00",
+        "kind": "SET_QUANTITY",
+        "next_cart_id": null,
+        "operation_id": "3da59243-fafa-4f90-b753-b355ccd376e8",
+        "prepared_version": null,
+        "request_payload": "{\"line_id\": \"2f76b493-a132-494a-a7f7-5d1ff81fbdad\", \"version\": \"3\", \"quantity\": 3}",
+        "request_version": 3,
+        "result_code": null,
+        "result_payload": null,
+        "status": "APPLIED"
+      },
+      {
+        "applied_version": 6,
+        "cart_id": "5cb9d7b4-bb03-4beb-824e-2eb9c70f5af0",
+        "completed_at": "2026-10-04T15:33:46.319204+00:00",
+        "created_at": "2026-10-04T15:33:46.305361+00:00",
+        "kind": "SET_MEMBER",
+        "next_cart_id": null,
+        "operation_id": "b41eb5a5-8b3d-4d8b-82e3-4b3ec563614e",
+        "prepared_version": 5,
+        "request_payload": "{\"version\": \"4\", \"member_id\": \"MEM_API\"}",
+        "request_version": 4,
+        "result_code": null,
+        "result_payload": null,
+        "status": "APPLIED"
+      },
+      {
+        "applied_version": 7,
+        "cart_id": "5cb9d7b4-bb03-4beb-824e-2eb9c70f5af0",
+        "completed_at": "2026-10-04T15:33:46.354845+00:00",
+        "created_at": "2026-10-04T15:33:46.354845+00:00",
+        "kind": "SET_MEMBER",
+        "next_cart_id": null,
+        "operation_id": "3569ff86-43d4-4d40-902f-e55eb8684167",
+        "prepared_version": null,
+        "request_payload": "{\"version\": \"6\", \"member_id\": null}",
+        "request_version": 6,
+        "result_code": null,
+        "result_payload": null,
+        "status": "APPLIED"
+      },
+      {
+        "applied_version": null,
+        "cart_id": "5cb9d7b4-bb03-4beb-824e-2eb9c70f5af0",
+        "completed_at": null,
+        "created_at": "2026-10-04T15:33:47.457871+00:00",
+        "kind": "PURCHASE",
+        "next_cart_id": null,
+        "operation_id": "55f0d6ad-be46-4e3b-a701-6e3c8f94ec8b",
+        "prepared_version": 8,
+        "request_payload": "{\"cart_id\": \"5cb9d7b4-bb03-4beb-824e-2eb9c70f5af0\", \"version\": \"7\"}",
+        "request_version": 7,
+        "result_code": null,
+        "result_payload": null,
+        "status": "PREPARED"
+      }
+    ],
+    "DISCOUNT_CONDITION": [
+      {
+        "amount": null,
+        "condition_id": 1,
+        "kind": "RATE",
+        "product_id": 1,
+        "rate": "0.1000",
+        "valid_from": "2020-01-01T00:00:00+00:00",
+        "valid_to": "2099-01-01T00:00:00+00:00"
+      }
+    ],
+    "PRICE_HISTORY": [
+      {
+        "changed_at": "2026-10-04T15:33:24.156771+00:00",
+        "history_id": 1,
+        "new_price": "103",
+        "old_price": null,
+        "product_id": 1
+      },
+      {
+        "changed_at": "2026-10-04T15:33:24.158172+00:00",
+        "history_id": 2,
+        "new_price": "600000000000",
+        "old_price": null,
+        "product_id": 2
+      },
+      {
+        "changed_at": "2026-10-04T15:33:24.158735+00:00",
+        "history_id": 3,
+        "new_price": "500000000000",
+        "old_price": null,
+        "product_id": 3
+      },
+      {
+        "changed_at": "2026-10-04T15:33:24.159249+00:00",
+        "history_id": 4,
+        "new_price": "999999999999",
+        "old_price": null,
+        "product_id": 4
+      },
+      {
+        "changed_at": "2026-10-04T15:33:24.159752+00:00",
+        "history_id": 5,
+        "new_price": "1",
+        "old_price": null,
+        "product_id": 5
+      },
+      {
+        "changed_at": "2026-10-04T15:33:24.160243+00:00",
+        "history_id": 6,
+        "new_price": "2",
+        "old_price": null,
+        "product_id": 6
+      },
+      {
+        "changed_at": "2026-10-04T15:33:24.160722+00:00",
+        "history_id": 7,
+        "new_price": "3",
+        "old_price": null,
+        "product_id": 7
+      }
+    ],
+    "PRODUCT": [
+      {
+        "code": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "name": "\u67b6\u7a7a\u5546\u54c1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "product_id": 5,
+        "tax_rate_id": 1,
+        "unit_price": "1"
+      },
+      {
+        "code": "Case_a",
+        "name": "\u67b6\u7a7a\u5546\u54c1 Case_a",
+        "product_id": 6,
+        "tax_rate_id": 1,
+        "unit_price": "2"
+      },
+      {
+        "code": "GROSS_MAX",
+        "name": "\u67b6\u7a7a\u5546\u54c1 GROSS_MAX",
+        "product_id": 4,
+        "tax_rate_id": 2,
+        "unit_price": "999999999999"
+      },
+      {
+        "code": "MAX_A",
+        "name": "\u67b6\u7a7a\u5546\u54c1 MAX_A",
+        "product_id": 2,
+        "tax_rate_id": 1,
+        "unit_price": "600000000000"
+      },
+      {
+        "code": "MAX_B",
+        "name": "\u67b6\u7a7a\u5546\u54c1 MAX_B",
+        "product_id": 3,
+        "tax_rate_id": 1,
+        "unit_price": "500000000000"
+      },
+      {
+        "code": "P103",
+        "name": "\u67b6\u7a7a\u5546\u54c1 P103",
+        "product_id": 1,
+        "tax_rate_id": 2,
+        "unit_price": "103"
+      },
+      {
+        "code": "case_a",
+        "name": "\u67b6\u7a7a\u5546\u54c1 case_a",
+        "product_id": 7,
+        "tax_rate_id": 1,
+        "unit_price": "3"
+      }
+    ],
+    "PURCHASE": [],
+    "PURCHASE_LINE": [],
+    "PURCHASE_TAX": [],
+    "REGISTER": [
+      {
+        "active_context_id": "0c2e538c-44fe-4dd8-8358-7ca85a8c092c",
+        "current_cart_id": "5cb9d7b4-bb03-4beb-824e-2eb9c70f5af0",
+        "maintenance_hold": 0,
+        "register_id": 1,
+        "start_state": "READY"
+      }
+    ],
+    "TAX_RATE": [
+      {
+        "rate": "0.0000",
+        "tax_rate_id": 1
+      },
+      {
+        "rate": "0.1000",
+        "tax_rate_id": 2
+      }
+    ]
+  }
+}

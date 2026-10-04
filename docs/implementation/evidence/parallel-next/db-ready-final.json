@@ -1,0 +1,58 @@
+{
+  "stage": "ready-final",
+  "observed_at_utc": "2026-10-04 07:30:33.982781",
+  "register": [
+    {
+      "register_id": 1,
+      "start_state": "UNSTARTED",
+      "maintenance_hold": 0,
+      "active_context_id": null,
+      "current_cart_id": null
+    }
+  ],
+  "contexts": [],
+  "carts": [],
+  "lines": [],
+  "operations": [],
+  "purchases": [],
+  "purchase_lines": [],
+  "purchase_taxes": [],
+  "products": [
+    {
+      "product_id": 1,
+      "code": "0001",
+      "unit_price": "103",
+      "tax_rate_id": 2
+    },
+    {
+      "product_id": 2,
+      "code": "0002",
+      "unit_price": "107",
+      "tax_rate_id": 1
+    },
+    {
+      "product_id": 3,
+      "code": "0003",
+      "unit_price": "107",
+      "tax_rate_id": 1
+    },
+    {
+      "product_id": 4,
+      "code": "0001234567895",
+      "unit_price": "103",
+      "tax_rate_id": 2
+    },
+    {
+      "product_id": 5,
+      "code": "00123457",
+      "unit_price": "103",
+      "tax_rate_id": 2
+    },
+    {
+      "product_id": 6,
+      "code": "Ab_01",
+      "unit_price": "103",
+      "tax_rate_id": 2
+    }
+  ]
+}

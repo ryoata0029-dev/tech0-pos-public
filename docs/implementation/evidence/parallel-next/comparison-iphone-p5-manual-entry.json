@@ -1,0 +1,46 @@
+{
+  "at_utc": "2026-10-04T08:14:48.618045+00:00",
+  "condition": "P5c after non-detection",
+  "before": "db-iphone-p5-after-nondetection.json",
+  "after": "db-iphone-p5-after-manual-entry.json",
+  "user_report": "演習食品107円Aであってるかな？それは登録された",
+  "protected_projection_equal": {
+    "register": true,
+    "contexts": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "prior_operations_unchanged": true,
+  "prior_lines_unchanged": true,
+  "new_operations": [
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "operation_id": "ec089383-fc3f-4a4b-9ece-d93801776bfd",
+      "kind": "ADD_LINE",
+      "request_version": 11,
+      "status": "APPLIED",
+      "prepared_version": null,
+      "applied_version": 12,
+      "result_code": null,
+      "next_cart_id": null,
+      "created_at": "2026-10-04 08:11:52.936557",
+      "requested_code": "0002"
+    }
+  ],
+  "manual_code": "0002",
+  "manual_product_id": 2,
+  "manual_quantity": 1,
+  "version_before": 11,
+  "version_after": 12,
+  "subtotal_yen": 10819,
+  "taxes_yen": {
+    "0.08": 8,
+    "0.10": 1071
+  },
+  "total_yen": 11898,
+  "purchases": 0,
+  "result": "limited_confirmation",
+  "limits": "Product label and manual registration are owner reported. Database confirms code/product/quantity and one applied operation. No permission denial was performed; this is non-detection fallback."
+}

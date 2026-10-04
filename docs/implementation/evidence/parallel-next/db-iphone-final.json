@@ -1,0 +1,291 @@
+{
+  "stage": "iphone-final",
+  "observed_at_utc": "2026-10-04 08:17:45.986746",
+  "register": [
+    {
+      "register_id": 1,
+      "start_state": "READY",
+      "maintenance_hold": 0,
+      "active_context_id": "8964dcfc-9a1a-4896-a819-3cbd745d4e1a",
+      "current_cart_id": "47605231-5c96-439c-9533-349de5f43c0f"
+    }
+  ],
+  "contexts": [
+    {
+      "context_id": "8964dcfc-9a1a-4896-a819-3cbd745d4e1a",
+      "starting_staff_id": "STAFF_A",
+      "confirmed_at": "2026-10-04 07:38:52.158443",
+      "invalidated_at": null
+    }
+  ],
+  "carts": [
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "staff_id": "STAFF_A",
+      "state": "EDITING",
+      "version": 12,
+      "member_state": "UNSPECIFIED",
+      "member_id": null,
+      "pending_member_id": null,
+      "active_member_operation_id": null,
+      "active_purchase_operation_id": null,
+      "purchase_prepared_version": null,
+      "subtotal": "10819",
+      "total": "11898",
+      "tax_breakdown": "[{\"tax_rate\": \"0.0800\", \"tax_amount\": \"8\", \"taxable_subtotal\": \"107\"}, {\"tax_rate\": \"0.1000\", \"tax_amount\": \"1071\", \"taxable_subtotal\": \"10712\"}]"
+    }
+  ],
+  "lines": [
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "line_id": "82a65022-05aa-4deb-a516-7c85adde9a91",
+      "line_no": 1,
+      "product_id": 1,
+      "quantity": 99,
+      "unit_price_snapshot": "103",
+      "tax_rate_snapshot": "0.1000",
+      "discount_per_unit": "0",
+      "net_unit_price": "103",
+      "line_subtotal": "10197",
+      "conditions_fixed_at": "2026-10-04 07:41:03.869926"
+    },
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "line_id": "04409036-aac7-4f1b-bb34-5c199b78a7f0",
+      "line_no": 2,
+      "product_id": 4,
+      "quantity": 1,
+      "unit_price_snapshot": "103",
+      "tax_rate_snapshot": "0.1000",
+      "discount_per_unit": "0",
+      "net_unit_price": "103",
+      "line_subtotal": "103",
+      "conditions_fixed_at": "2026-10-04 07:51:04.322706"
+    },
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "line_id": "93ecca7a-27e1-4107-b737-1c8921006bf8",
+      "line_no": 3,
+      "product_id": 5,
+      "quantity": 4,
+      "unit_price_snapshot": "103",
+      "tax_rate_snapshot": "0.1000",
+      "discount_per_unit": "0",
+      "net_unit_price": "103",
+      "line_subtotal": "412",
+      "conditions_fixed_at": "2026-10-04 07:56:13.387712"
+    },
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "line_id": "1c26d42e-324f-4e25-bbf6-d87499bef28c",
+      "line_no": 4,
+      "product_id": 2,
+      "quantity": 1,
+      "unit_price_snapshot": "107",
+      "tax_rate_snapshot": "0.0800",
+      "discount_per_unit": "0",
+      "net_unit_price": "107",
+      "line_subtotal": "107",
+      "conditions_fixed_at": "2026-10-04 08:11:52.936557"
+    }
+  ],
+  "operations": [
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "operation_id": "21699311-c41f-44f5-8a7a-80f714393671",
+      "kind": "SYNC",
+      "request_version": 1,
+      "status": "APPLIED",
+      "prepared_version": null,
+      "applied_version": 2,
+      "result_code": null,
+      "next_cart_id": null,
+      "created_at": "2026-10-04 07:38:54.978590",
+      "requested_code": null
+    },
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "operation_id": "266a4bc6-be36-40fc-8a95-d05bd0ef3d14",
+      "kind": "ADD_LINE",
+      "request_version": 2,
+      "status": "APPLIED",
+      "prepared_version": null,
+      "applied_version": 3,
+      "result_code": null,
+      "next_cart_id": null,
+      "created_at": "2026-10-04 07:41:03.869926",
+      "requested_code": "0001"
+    },
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "operation_id": "1670a16f-5ebe-4b14-a79f-0e9f0b5830da",
+      "kind": "SET_QUANTITY",
+      "request_version": 3,
+      "status": "APPLIED",
+      "prepared_version": null,
+      "applied_version": 4,
+      "result_code": null,
+      "next_cart_id": null,
+      "created_at": "2026-10-04 07:41:14.945616",
+      "requested_code": null
+    },
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "operation_id": "616d46c7-0485-4334-bc23-c0c21a8b23ba",
+      "kind": "SET_QUANTITY",
+      "request_version": 4,
+      "status": "APPLIED",
+      "prepared_version": null,
+      "applied_version": 5,
+      "result_code": null,
+      "next_cart_id": null,
+      "created_at": "2026-10-04 07:41:27.011633",
+      "requested_code": null
+    },
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "operation_id": "14d490e3-5592-43fa-bbb7-b5855758f576",
+      "kind": "SET_QUANTITY",
+      "request_version": 5,
+      "status": "APPLIED",
+      "prepared_version": null,
+      "applied_version": 6,
+      "result_code": null,
+      "next_cart_id": null,
+      "created_at": "2026-10-04 07:47:28.819828",
+      "requested_code": null
+    },
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "operation_id": "8c931113-f247-4892-acf8-52ea0ece2360",
+      "kind": "ADD_LINE",
+      "request_version": 6,
+      "status": "REJECTED",
+      "prepared_version": null,
+      "applied_version": null,
+      "result_code": "QUANTITY_LIMIT",
+      "next_cart_id": null,
+      "created_at": "2026-10-04 07:48:56.329737",
+      "requested_code": "0001"
+    },
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "operation_id": "83f14fc5-008d-4429-b6f6-cd8d58fa38f3",
+      "kind": "ADD_LINE",
+      "request_version": 6,
+      "status": "APPLIED",
+      "prepared_version": null,
+      "applied_version": 7,
+      "result_code": null,
+      "next_cart_id": null,
+      "created_at": "2026-10-04 07:51:04.322706",
+      "requested_code": "0001234567895"
+    },
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "operation_id": "c552cffd-c53e-4847-b022-7e9ef64733ee",
+      "kind": "ADD_LINE",
+      "request_version": 7,
+      "status": "APPLIED",
+      "prepared_version": null,
+      "applied_version": 8,
+      "result_code": null,
+      "next_cart_id": null,
+      "created_at": "2026-10-04 07:56:13.387712",
+      "requested_code": "00123457"
+    },
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "operation_id": "9f945010-6daa-444c-8aca-79a08fc2846a",
+      "kind": "ADD_LINE",
+      "request_version": 8,
+      "status": "APPLIED",
+      "prepared_version": null,
+      "applied_version": 9,
+      "result_code": null,
+      "next_cart_id": null,
+      "created_at": "2026-10-04 07:58:08.071364",
+      "requested_code": "00123457"
+    },
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "operation_id": "357f0ac4-5754-4c9f-8fa6-40436afafd06",
+      "kind": "ADD_LINE",
+      "request_version": 9,
+      "status": "APPLIED",
+      "prepared_version": null,
+      "applied_version": 10,
+      "result_code": null,
+      "next_cart_id": null,
+      "created_at": "2026-10-04 07:59:24.794818",
+      "requested_code": "00123457"
+    },
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "operation_id": "5101bf0b-7ec2-4500-8da0-bf97c2e05c33",
+      "kind": "ADD_LINE",
+      "request_version": 10,
+      "status": "APPLIED",
+      "prepared_version": null,
+      "applied_version": 11,
+      "result_code": null,
+      "next_cart_id": null,
+      "created_at": "2026-10-04 08:05:33.255029",
+      "requested_code": "00123457"
+    },
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "operation_id": "ec089383-fc3f-4a4b-9ece-d93801776bfd",
+      "kind": "ADD_LINE",
+      "request_version": 11,
+      "status": "APPLIED",
+      "prepared_version": null,
+      "applied_version": 12,
+      "result_code": null,
+      "next_cart_id": null,
+      "created_at": "2026-10-04 08:11:52.936557",
+      "requested_code": "0002"
+    }
+  ],
+  "purchases": [],
+  "purchase_lines": [],
+  "purchase_taxes": [],
+  "products": [
+    {
+      "product_id": 1,
+      "code": "0001",
+      "unit_price": "103",
+      "tax_rate_id": 2
+    },
+    {
+      "product_id": 2,
+      "code": "0002",
+      "unit_price": "107",
+      "tax_rate_id": 1
+    },
+    {
+      "product_id": 3,
+      "code": "0003",
+      "unit_price": "107",
+      "tax_rate_id": 1
+    },
+    {
+      "product_id": 4,
+      "code": "0001234567895",
+      "unit_price": "103",
+      "tax_rate_id": 2
+    },
+    {
+      "product_id": 5,
+      "code": "00123457",
+      "unit_price": "103",
+      "tax_rate_id": 2
+    },
+    {
+      "product_id": 6,
+      "code": "Ab_01",
+      "unit_price": "103",
+      "tax_rate_id": 2
+    }
+  ]
+}

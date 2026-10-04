@@ -1,0 +1,124 @@
+{
+  "at_utc": "2026-10-04T16:14:01.193041+00:00",
+  "method": "Independent offline saved DB/gate/Chrome Native AX/normal POS DOM comparison. No GUI, live DB, network or shared source changes.",
+  "case_id": "O05-M-L1",
+  "status": "passed_selected_normal_two_POS_and_actual_old_409_delivery_condition",
+  "checks": {
+    "fixed_profile_container_ports": true,
+    "same_single_cart_and_staff": true,
+    "starting_member_state": true,
+    "old_receipt_commit_then_real_lookup_hold": true,
+    "hold_new_commit_release_finish_order": true,
+    "new_real_commit_then_auto_release": true,
+    "old_id_consistent_and_distinct_new": true,
+    "prepared_version_from_start": true,
+    "new_applied_and_old_finish_same_version": true,
+    "old_finish_real_rejected_superseded": true,
+    "new_choice_preserved_old_finish_and_final": true,
+    "final_active_member_purchase_ids_clear": true,
+    "exact_expected_subtotal_total": true,
+    "exact_expected_tax_buckets": true,
+    "selected_line_identity_quantity_price_tax_fixed_at_preserved": true,
+    "three_lines_3_1_1": true,
+    "old_receipt_retained_projection_matches_finish": true,
+    "no_purchase_or_saved_details": true,
+    "register_context_product_selected_projections_unchanged": true,
+    "prior_operations_preserved": true,
+    "exact_three_new_operations": true,
+    "old_record_rejected_no_applied_version": true,
+    "new_record_applied_correct_version": true,
+    "normal_recovery_sync_separate_increment": true,
+    "first_line_discount_recalculated": true,
+    "chrome_network_actual_409_and_real_code": true,
+    "chrome_network_request_duration_under_relay10": true,
+    "old_UI_stopped_no_member1_confirmation": true,
+    "new_normal_POS_choice_display": true,
+    "old_normal_POS_explicit_recovery_display": true
+  },
+  "chrome_request_duration_seconds": 2.53,
+  "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+  "old_operation_id": "8f0a0bb3-5fb0-400c-9932-b446dde56d4b",
+  "new_operation_id": "ed2414a4-623e-49f3-b9e4-bc4c722c59c4",
+  "versions": {
+    "start": 8,
+    "old_prepared": 9,
+    "new_applied": 11,
+    "old_finish": 11,
+    "explicit_recovery_final": 12
+  },
+  "final": {
+    "member_state": "CONFIRMED",
+    "member_id": "MEMBER_0",
+    "subtotal": "493",
+    "total": "537",
+    "line_quantities": [
+      3,
+      1,
+      1
+    ],
+    "purchase_count": 0
+  },
+  "source_files": [
+    {
+      "path": "gate-o05-member-l1.json",
+      "sha256": "b292582f4c224afd2cca87b1b4b0d672fa88ad9e54ace7266dec0ee72dd6c904"
+    },
+    {
+      "path": "lookup-held-o05-member-l1.json",
+      "sha256": "c3684ae3083098e69a43d4cc2db523288c8fc57e3fc52653f2cf8abd390cdece"
+    },
+    {
+      "path": "lookup-released-o05-member-l1.json",
+      "sha256": "e2d998b433e83016b6e6ee953320d62b82621729279f8fa3baa25cd975c14b15"
+    },
+    {
+      "path": "lookup-finished-o05-member-l1.json",
+      "sha256": "b4edf6ac020f4fddd30e9988f45a890e05ddabc984693ffec6b19965e20d2d0d"
+    },
+    {
+      "path": "member-old-receipt-o05-member-l1.json",
+      "sha256": "d1b44bae3255bae692547af6493166440049a7f91032d6599fac22802e2cb651"
+    },
+    {
+      "path": "member-new-commit-o05-member-l1.json",
+      "sha256": "122c77fb3d42d384476887aaae6e075c689d673fe5a64cd9b502c4afe9bcc44f"
+    },
+    {
+      "path": "member-auto-release-o05-member-l1.json",
+      "sha256": "3c44d4b4c22875c61011ccf1e34b0c27a3f1b01a9ccd8bdd8adbfd644486ff3c"
+    },
+    {
+      "path": "db-o05-m-l1-before.json",
+      "sha256": "fa7238909d1ee24651a113f9aa33b612f42bcc580907c0621304ea5d9f348fa8"
+    },
+    {
+      "path": "db-member-l1-final.json",
+      "sha256": "ced3b248c84742fc964fbb8fec40583af5c6ee53f07979a576ad850c037d2421"
+    },
+    {
+      "path": "member-l1-chrome-response.txt",
+      "sha256": "cb6b496ce4af63de9c258594ec3d21d7cc595846c9bd291108f74b4082044e29"
+    },
+    {
+      "path": "member-l1-ui-old.txt",
+      "sha256": "e28b5daf0b6420cbcf3a24c1bcfb11fd9c79e0e4c5a1380d6fb451e3bfe7bfa5"
+    },
+    {
+      "path": "member-l1-ui-new.txt",
+      "sha256": "f7dfee5a525b3b2fe90d5a3ae0d09bf103fab0b4b7859fa16cff62854207a0db"
+    },
+    {
+      "path": "member-l1-ui-recovered.txt",
+      "sha256": "9f122d662d336b48d419b5f31cd01fc5a9a1d4a802499a5a09443064cf7b79b4"
+    }
+  ],
+  "limits": [
+    "New COMMIT immediately precedes automatic release; no independent nine-projection snapshot pair exists between new COMMIT and old finish. No claim of instantaneous whole-DB invariance.",
+    "Normal second POS selection/reload actions are supported by root CUA execution trace and saved ordinary POS DOM; fixture metadata alone does not prove the human interface.",
+    "Native AX records actual Chrome Network status/body and rounded request duration; not a separate exact UTC browser-arrival clock or proof of all relay edge timing.",
+    "Fixed line condition timestamp and selected columns were compared; complete discount candidate JSON and all database columns were not exported here.",
+    "Fixture auto-release browser_http_arrival_proven=false is its own lack of browser observation; separate Chrome Native AX fills that evidence boundary.",
+    "No TC03-wide, camera or M7 acceptance decision."
+  ],
+  "initial_condition_note": "L1 actual start is UNSPECIFIED at 570, not explicitly selected NON_MEMBER."
+}

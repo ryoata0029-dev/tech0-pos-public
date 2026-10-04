@@ -1,0 +1,14 @@
+{
+  "kind": "purchase",
+  "tag": "saved-loss-reload",
+  "method": "POST",
+  "path": "/api/purchases",
+  "status": 200,
+  "at": "2026-10-03T12:47:22.823Z",
+  "discardedAfterApplicationResponse": true,
+  "operation_id": "b5c85424-0abb-4c1a-8e14-800242e44a57",
+  "operation_status": "APPLIED",
+  "cart_id": "ecb49a55-3746-4475-96d2-1a0cf62e0bc0",
+  "cart_state": "SAVED",
+  "purchase_status": "SAVED"
+}

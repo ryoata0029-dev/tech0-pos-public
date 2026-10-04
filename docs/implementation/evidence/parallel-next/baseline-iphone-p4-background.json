@@ -1,0 +1,28 @@
+{
+  "at_utc": "2026-10-04T08:02:03.028186+00:00",
+  "condition": "P4a before background",
+  "user_report": "開始した",
+  "before": "db-iphone-p3b-after-represent.json",
+  "baseline": "db-iphone-p4-before-background.json",
+  "projection_equal": {
+    "register": true,
+    "contexts": true,
+    "carts": true,
+    "lines": true,
+    "operations": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "version": 10,
+  "total_yen": 11669,
+  "quantities": {
+    "0001": 99,
+    "0001234567895": 1,
+    "00123457": 3
+  },
+  "purchases": 0,
+  "background_result": "not_yet_observed",
+  "limits": "Camera started without barcode presentation is the requested setup acknowledged by the owner; no direct video or track observation."
+}

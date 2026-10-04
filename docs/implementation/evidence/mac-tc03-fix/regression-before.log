@@ -1,0 +1,182 @@
+(node:32431) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/pos.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ member change immediately marks old conditions as reference; 503 keeps uncertainty until explicit reconciliation (62.531791ms)
+✔ member network response loss preserves reference display and explicit reason without automatic retry (20.728209ms)
+✔ member authentication loss preserves reference display and explicit reason without automatic retry (17.646792ms)
+✔ member recovery expiry preserves reference display and explicit reason without automatic retry (15.6155ms)
+✔ member-not-found reconciles to PENDING and retains reference amounts (16.788459ms)
+✔ verified member success restores authoritative conditions (11.786667ms)
+✔ verified nonmember success restores authoritative conditions (12.091667ms)
+✔ failed state check must not restore old-member certainty (13.385583ms)
+✔ same member request retry retains operation identity and clears uncertainty only on verified success (12.937833ms)
+✔ verified PREPARED member receipt exposes PENDING choices without presenting old member as applied (12.903916ms)
+✔ unverified member receipt (wrong-cart) never restores old certainty (10.047583ms)
+✔ unverified member receipt (invalid-prepared-state) never restores old certainty (9.781ms)
+✔ unverified member receipt (notification) never restores old certainty (14.929459ms)
+✖ member-not-found permits new member without extra reconcile (empty, initial) (15.532208ms)
+✖ member-not-found permits nonmember without extra reconcile (empty, initial) (9.992584ms)
+✖ member-not-found permits new member without extra reconcile (empty, change) (9.996083ms)
+✖ member-not-found permits nonmember without extra reconcile (empty, change) (9.44775ms)
+✖ member-not-found permits new member without extra reconcile (lines, initial) (10.316916ms)
+✖ member-not-found permits nonmember without extra reconcile (lines, initial) (10.0305ms)
+✖ member-not-found permits new member without extra reconcile (lines, change) (11.895416ms)
+✖ member-not-found permits nonmember without extra reconcile (lines, change) (9.643792ms)
+✔ member-not-found recovery stays stopped with failed-get (9.314708ms)
+✔ member-not-found recovery stays stopped with wrong-cart (9.330875ms)
+✔ member-not-found recovery stays stopped with old-version (13.037ms)
+✔ member-not-found recovery stays stopped with other-member (8.781917ms)
+✔ member-not-found recovery stays stopped with saving (9.572709ms)
+✔ member-not-found recovery stays stopped with notification (9.159375ms)
+✔ member-not-found recovery stays stopped with disabled (8.783125ms)
+✔ member-not-found recovery stays stopped with broken-record (18.617666ms)
+✔ member-not-found recovery stays stopped with purchase-record (9.738875ms)
+✔ member-not-found recovery stays stopped with wrong-status (8.60475ms)
+✔ member-not-found recovery stays stopped with state-conflict (9.094791ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 24
+ℹ fail 8
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 640.981125
+
+✖ failing tests:
+
+test at tests/register-member.test.mjs:149:7
+✖ member-not-found permits new member without extra reconcile (empty, initial) (15.532208ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-member.test.mjs:172:16)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/register-member.test.mjs:149:7
+✖ member-not-found permits nonmember without extra reconcile (empty, initial) (9.992584ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-member.test.mjs:172:16)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/register-member.test.mjs:149:7
+✖ member-not-found permits new member without extra reconcile (empty, change) (9.996083ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-member.test.mjs:172:16)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/register-member.test.mjs:149:7
+✖ member-not-found permits nonmember without extra reconcile (empty, change) (9.44775ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-member.test.mjs:172:16)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/register-member.test.mjs:149:7
+✖ member-not-found permits new member without extra reconcile (lines, initial) (10.316916ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-member.test.mjs:172:16)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/register-member.test.mjs:149:7
+✖ member-not-found permits nonmember without extra reconcile (lines, initial) (10.0305ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-member.test.mjs:172:16)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/register-member.test.mjs:149:7
+✖ member-not-found permits new member without extra reconcile (lines, change) (11.895416ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-member.test.mjs:172:16)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/register-member.test.mjs:149:7
+✖ member-not-found permits nonmember without extra reconcile (lines, change) (9.643792ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-member.test.mjs:172:16)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

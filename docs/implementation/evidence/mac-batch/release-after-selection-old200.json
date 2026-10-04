@@ -1,0 +1,12 @@
+{
+  "kind": "product-late",
+  "tag": "selection-old200",
+  "started_at_utc": "2026-10-04T05:54:17.454184+00:00",
+  "gate_at_utc": "2026-10-04T05:54:26.866282+00:00",
+  "observed_at_utc": "2026-10-04T05:54:26.899398+00:00",
+  "released_at_utc": "2026-10-04T05:54:31.905234+00:00",
+  "wait_seconds": 5,
+  "actual_wait_seconds": 5.006867,
+  "after_real_lookup": true,
+  "outside_read_transaction": true
+}

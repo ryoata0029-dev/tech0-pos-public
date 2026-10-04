@@ -15,14 +15,19 @@ export class ApiError extends Error {
   constructor(status: number, message: string, code: string) { super(message); this.status = status; this.code = code; }
 }
 export async function api<T>(path: string, method = 'GET', body?: unknown): Promise<T> {
-  const response = await fetch(`/api/${path}`, { method, cache: 'no-store', credentials: 'same-origin',
+  try {
+    const response = await fetch(`/api/${path}`, { method, cache: 'no-store', credentials: 'same-origin',
     signal: AbortSignal.timeout(15000),
     headers: method === 'GET' ? {} : { 'X-POS-Request': '1', ...(body === undefined ? {} : { 'Content-Type': 'application/json' }) },
     body: body === undefined ? undefined : JSON.stringify(body),
-  });
-  const value = await response.json();
-  if (!response.ok) throw new ApiError(response.status, value.message ?? '状態を確認できません。', value.code ?? 'UNKNOWN');
-  return value as T;
+    });
+    const value = await response.json();
+    if (!response.ok) throw new ApiError(response.status, value?.message ?? '状態を確認できません。', value?.code ?? 'UNKNOWN');
+    return value as T;
+  } catch (error) {
+    if (error instanceof ApiError) throw error;
+    throw new Error('通信結果を確認できません。内容を保持して再確認してください。', { cause: error });
+  }
 }
 export function newer(previous: CartResult | null, next: CartResult): CartResult {
   if (previous?.cart.cart_id === next.cart.cart_id && BigInt(previous.cart.version) > BigInt(next.cart.version)) return previous;

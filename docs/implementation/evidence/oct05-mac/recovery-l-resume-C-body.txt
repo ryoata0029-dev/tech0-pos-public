@@ -1,0 +1,104 @@
+コードエディタ, Value: {    
+"cart": {        
+"cart_id": "988509ef-d02d-45a1-8029-33607a61027e",        
+"state": "EDITING",        
+"staff_id": "STAFF_A",        
+"member_state": "UNSPECIFIED",        
+"pending_member_id": null,        
+"version": "2",        
+"member_id": null,        
+"lines": [
+            {                
+"line_no": 1,                
+"code": "0001",                
+"name": "演習食品103円",                
+"quantity": 1,                
+"unit_price": "103",                
+"tax_rate": "0.1000",                
+"discount": null,                
+"discount_per_unit": "0",                
+"net_unit_price": "103",                
+"line_subtotal": "103",                
+"line_id": "f87f9f68-b976-4ce6-9c5c-8a17c06528ad"
+            }
+        ],        
+"subtotal": "103",        
+"total": "113",        
+"taxes": [
+            {                
+"tax_rate": "0.1000",                
+"tax_amount": "10",                
+"taxable_subtotal": "103"
+            }
+        ],        
+"amounts_are_reference": false
+    },    
+"purchase_status": "NOT_REQUESTED",
+																	217 テキスト {
+																	218 container
+																		219 text "cart" : {
+																	220 container
+																		221 text "cart_id" :  "988509ef-d02d-45a1-8029-33607a61027e" ,
+																	222 container
+																		223 text "state" :  "EDITING" ,
+																	224 container
+																		225 text "staff_id" :  "STAFF_A" ,
+																	226 container
+																		227 text "member_state" :  "UNSPECIFIED" ,
+																	228 container
+																		229 text "pending_member_id" :  null ,
+																	230 container
+																		231 text "version" :  "2" ,
+																	232 container
+																		233 text "member_id" :  null ,
+																	234 container
+																		235 text "lines" : [
+																	236 テキスト             {
+																	237 container
+																		238 text "line_no" :  1 ,
+																	239 container
+																		240 text "code" :  "0001" ,
+																	241 container
+																		242 text "name" :  "演習食品103円" ,
+																	243 container
+																		244 text "quantity" :  1 ,
+																	245 container
+																		246 text "unit_price" :  "103" ,
+																	247 container
+																		248 text "tax_rate" :  "0.1000" ,
+																	249 container
+																		250 text "discount" :  null ,
+																	251 container
+																		252 text "discount_per_unit" :  "0" ,
+																	253 container
+																		254 text "net_unit_price" :  "103" ,
+																	255 container
+																		256 text "line_subtotal" :  "103" ,
+																	257 container
+																		258 text "line_id" :  "f87f9f68-b976-4ce6-9c5c-8a17c06528ad"
+																	259 テキスト             }
+																	260 テキスト         ],
+																	261 container
+																		262 text "subtotal" :  "103" ,
+																	263 container
+																		264 text "total" :  "113" ,
+																	265 container
+																		266 text "taxes" : [
+																	267 テキスト             {
+																	268 container
+																		269 text "tax_rate" :  "0.1000" ,
+																	270 container
+																		271 text "tax_amount" :  "10" ,
+																	272 container
+																		273 text "taxable_subtotal" :  "103"
+																	274 テキスト             }
+																	275 テキスト         ],
+																	276 container
+																		277 text "amounts_are_reference" :  false
+																	278 テキスト     },
+																	279 container
+																		280 text "purchase_status" :  "NOT_REQUESTED" ,
+															281 ツールバー
+																282 container プリティ プリント
+																	283 切り替えボタン プリティ プリント, Value: 1
+							284 テキスト 

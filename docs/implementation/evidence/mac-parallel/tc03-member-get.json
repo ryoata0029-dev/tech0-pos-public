@@ -1,0 +1,156 @@
+{
+  "at_utc": "2026-10-04T06:31:40.029Z",
+  "action": "lookup",
+  "requests": [
+    {
+      "method": "GET",
+      "path": "members/MEMBER_0",
+      "body": null,
+      "status": 200,
+      "value": {
+        "member_id": "MEMBER_0",
+        "confirmed": true
+      }
+    }
+  ],
+  "before": {
+    "cart": {
+      "cart_id": "6501b600-ccf3-4e80-ad5f-3dcb949ab9cc",
+      "state": "EDITING",
+      "staff_id": "STAFF_A",
+      "member_state": "PENDING",
+      "pending_member_id": "MEMBER_MISSING",
+      "version": "8",
+      "member_id": null,
+      "lines": [
+        {
+          "line_no": 1,
+          "code": "0001",
+          "name": "演習食品103円",
+          "quantity": 3,
+          "unit_price": "103",
+          "tax_rate": "0.1000",
+          "discount": null,
+          "discount_per_unit": "0",
+          "net_unit_price": "103",
+          "line_subtotal": "309",
+          "line_id": "34c67cb2-0a66-402f-83cb-f82f5c7857eb"
+        },
+        {
+          "line_no": 2,
+          "code": "0002",
+          "name": "演習食品107円A",
+          "quantity": 1,
+          "unit_price": "107",
+          "tax_rate": "0.0800",
+          "discount": null,
+          "discount_per_unit": "0",
+          "net_unit_price": "107",
+          "line_subtotal": "107",
+          "line_id": "ff0da7ef-09b0-453d-8493-70892cf92e05"
+        },
+        {
+          "line_no": 3,
+          "code": "0003",
+          "name": "演習食品107円B",
+          "quantity": 1,
+          "unit_price": "107",
+          "tax_rate": "0.0800",
+          "discount": null,
+          "discount_per_unit": "0",
+          "net_unit_price": "107",
+          "line_subtotal": "107",
+          "line_id": "cb441c43-c1a8-4dec-b3f8-76a6ec12ced7"
+        }
+      ],
+      "subtotal": "523",
+      "total": "570",
+      "taxes": [
+        {
+          "tax_rate": "0.0800",
+          "tax_amount": "17",
+          "taxable_subtotal": "214"
+        },
+        {
+          "tax_rate": "0.1000",
+          "tax_amount": "30",
+          "taxable_subtotal": "309"
+        }
+      ],
+      "amounts_are_reference": true
+    },
+    "purchase_status": "NOT_REQUESTED",
+    "purchase": null
+  },
+  "after": {
+    "cart": {
+      "cart_id": "6501b600-ccf3-4e80-ad5f-3dcb949ab9cc",
+      "state": "EDITING",
+      "staff_id": "STAFF_A",
+      "member_state": "PENDING",
+      "pending_member_id": "MEMBER_MISSING",
+      "version": "8",
+      "member_id": null,
+      "lines": [
+        {
+          "line_no": 1,
+          "code": "0001",
+          "name": "演習食品103円",
+          "quantity": 3,
+          "unit_price": "103",
+          "tax_rate": "0.1000",
+          "discount": null,
+          "discount_per_unit": "0",
+          "net_unit_price": "103",
+          "line_subtotal": "309",
+          "line_id": "34c67cb2-0a66-402f-83cb-f82f5c7857eb"
+        },
+        {
+          "line_no": 2,
+          "code": "0002",
+          "name": "演習食品107円A",
+          "quantity": 1,
+          "unit_price": "107",
+          "tax_rate": "0.0800",
+          "discount": null,
+          "discount_per_unit": "0",
+          "net_unit_price": "107",
+          "line_subtotal": "107",
+          "line_id": "ff0da7ef-09b0-453d-8493-70892cf92e05"
+        },
+        {
+          "line_no": 3,
+          "code": "0003",
+          "name": "演習食品107円B",
+          "quantity": 1,
+          "unit_price": "107",
+          "tax_rate": "0.0800",
+          "discount": null,
+          "discount_per_unit": "0",
+          "net_unit_price": "107",
+          "line_subtotal": "107",
+          "line_id": "cb441c43-c1a8-4dec-b3f8-76a6ec12ced7"
+        }
+      ],
+      "subtotal": "523",
+      "total": "570",
+      "taxes": [
+        {
+          "tax_rate": "0.0800",
+          "tax_amount": "17",
+          "taxable_subtotal": "214"
+        },
+        {
+          "tax_rate": "0.1000",
+          "tax_amount": "30",
+          "taxable_subtotal": "309"
+        }
+      ],
+      "amounts_are_reference": true
+    },
+    "purchase_status": "NOT_REQUESTED",
+    "purchase": null
+  },
+  "completed": true,
+  "finished_at_utc": "2026-10-04T06:31:40.460Z"
+}

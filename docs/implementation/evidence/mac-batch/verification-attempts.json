@@ -1,0 +1,23 @@
+{
+  "strict_aggregation_attempt": {
+    "result": "failed at old404 UI elapsed<10 assertion",
+    "observed_seconds": 13.887,
+    "explanation": "observer timing exceeded criterion; no proof of application delay; raw DB/UI records retained; aggregated final result downgraded to limited observation"
+  },
+  "bounded503_cua_attempt": {
+    "tag": "selection-bounded503",
+    "classification": "attempt not established: CUA click selector deadline while disabled; no deselect action delivered by that attempt",
+    "after_ui": "code0002, no old candidate/error, edit controls enabled; later ordinary ready-state deselection was successful",
+    "db_equal_at_final": {
+      "register": true,
+      "contexts": true,
+      "carts": true,
+      "lines": true,
+      "operations": true,
+      "purchases": true,
+      "purchase_lines": true,
+      "purchase_taxes": true,
+      "products": true
+    }
+  }
+}

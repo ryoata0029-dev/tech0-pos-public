@@ -1,0 +1,40 @@
+{
+  "stage": "before-selection-fix",
+  "observed_at_utc": "2026-10-04 05:49:55.504817",
+  "register": [
+    {
+      "register_id": 1,
+      "start_state": "UNSTARTED",
+      "maintenance_hold": 0,
+      "active_context_id": null,
+      "current_cart_id": null
+    }
+  ],
+  "contexts": [],
+  "carts": [],
+  "lines": [],
+  "operations": [],
+  "purchases": [],
+  "purchase_lines": [],
+  "purchase_taxes": [],
+  "products": [
+    {
+      "product_id": 1,
+      "code": "0001",
+      "unit_price": "103",
+      "tax_rate_id": 2
+    },
+    {
+      "product_id": 2,
+      "code": "0002",
+      "unit_price": "107",
+      "tax_rate_id": 1
+    },
+    {
+      "product_id": 3,
+      "code": "0003",
+      "unit_price": "107",
+      "tax_rate_id": 1
+    }
+  ]
+}

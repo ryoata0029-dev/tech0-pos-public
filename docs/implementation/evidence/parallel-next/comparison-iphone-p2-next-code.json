@@ -1,0 +1,42 @@
+{
+  "at_utc": "2026-10-04T07:52:01.568579+00:00",
+  "condition": "P2b",
+  "before": "db-iphone-p2-after-limit.json",
+  "after": "db-iphone-p2-after-next-code.json",
+  "user_report": "１個追加されその数量でとまりました",
+  "protected_projection_equal": {
+    "register": true,
+    "contexts": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "prior_operations_unchanged": true,
+  "new_operations": [
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "operation_id": "83f14fc5-008d-4429-b6f6-cd8d58fa38f3",
+      "kind": "ADD_LINE",
+      "request_version": 6,
+      "status": "APPLIED",
+      "prepared_version": null,
+      "applied_version": 7,
+      "result_code": null,
+      "next_cart_id": null,
+      "created_at": "2026-10-04 07:51:04.322706",
+      "requested_code": "0001234567895"
+    }
+  ],
+  "upper_line_unchanged": true,
+  "upper_quantity": 99,
+  "ean13_quantity": 1,
+  "version_before": 6,
+  "version_after": 7,
+  "subtotal_yen": 10300,
+  "tax_yen": 1030,
+  "total_yen": 11330,
+  "purchases": 0,
+  "result": "limited_confirmation",
+  "limits": "Following the no-restart/no-delete instruction, the owner reports one addition and stable quantity. No direct media track, HTTP status or timing observation. Camera closure is not yet explicitly reported."
+}

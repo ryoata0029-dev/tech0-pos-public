@@ -1,0 +1,1928 @@
+{
+  "transport": "actual FastAPI ASGI + real TLS MySQL; not HTTPS/browser",
+  "schema": "pos_api_validation",
+  "permissions": [
+    {
+      "statement_kind": "UPDATE",
+      "mysql_code": 1142
+    },
+    {
+      "statement_kind": "UPDATE",
+      "mysql_code": 1142
+    },
+    {
+      "statement_kind": "DELETE",
+      "mysql_code": 1142
+    },
+    {
+      "statement_kind": "DELETE",
+      "mysql_code": 1142
+    },
+    {
+      "statement_kind": "INSERT",
+      "mysql_code": 1142
+    },
+    {
+      "statement_kind": "CREATE",
+      "mysql_code": 1142
+    }
+  ],
+  "cases": [
+    {
+      "case": "tie-smallest-numeric-id",
+      "observed": {
+        "connection_id": 28,
+        "at_utc": "2026-10-04T07:04:18.383213+00:00",
+        "cart": [
+          {
+            "cart_id": "12777cd3-3b2c-43b3-a368-9469aa616454",
+            "state": "SAVED",
+            "version": 6,
+            "staff_id": "STAFF_API",
+            "member_state": "CONFIRMED",
+            "member_id": "MEMBER_API",
+            "pending_member_id": null,
+            "active_member_operation_id": null,
+            "active_purchase_operation_id": "098ce435-b0bd-4e07-8aff-9281df0acec6",
+            "purchase_prepared_version": 4,
+            "subtotal": "93",
+            "total": "102",
+            "tax_breakdown": "[{\"tax_rate\": \"0.1000\", \"tax_amount\": \"9\", \"taxable_subtotal\": \"93\"}]"
+          }
+        ],
+        "context": [
+          {
+            "context_id": "d42c3300-d115-4edf-af80-37168ca68e81",
+            "last_business_at": "2026-10-04T07:04:18.349648+00:00"
+          }
+        ],
+        "lines": [
+          {
+            "cart_id": "12777cd3-3b2c-43b3-a368-9469aa616454",
+            "line_id": "4de7c96f-4e5b-4ec8-81ef-f99c6ef01021",
+            "product_id": 1,
+            "line_no": 1,
+            "code_snapshot": "API_TIE",
+            "name_snapshot": "架空API商品 API_TIE",
+            "quantity": 1,
+            "unit_price_snapshot": "103",
+            "tax_rate_snapshot": "0.1000",
+            "discount_candidates": "[{\"kind\": \"RATE\", \"rate\": \"0.1000\", \"amount\": null, \"valid_to\": \"2099-01-01T00:00:00Z\", \"valid_from\": \"2020-01-01T00:00:00Z\", \"condition_id\": \"1\"}, {\"kind\": \"AMOUNT\", \"rate\": null, \"amount\": \"10\", \"valid_to\": \"2099-01-01T00:00:00Z\", \"valid_from\": \"2020-01-01T00:00:00Z\", \"condition_id\": \"2\"}]",
+            "discount_snapshot": "{\"kind\": \"RATE\", \"rate\": \"0.1000\", \"amount\": null, \"valid_to\": \"2099-01-01T00:00:00Z\", \"valid_from\": \"2020-01-01T00:00:00Z\", \"condition_id\": \"1\", \"actual_discount\": \"10\", \"candidate_amount\": \"10\"}",
+            "discount_per_unit": "10",
+            "net_unit_price": "93",
+            "line_subtotal": "93",
+            "conditions_fixed_at": "2026-10-04T07:04:18.298582+00:00"
+          }
+        ],
+        "operations": [
+          {
+            "operation_id": "19ae3796-8a8e-49e1-9477-988a8c0dddba",
+            "kind": "ADD_LINE",
+            "status": "APPLIED",
+            "request_version": 1,
+            "prepared_version": null,
+            "applied_version": 2,
+            "result_code": null
+          },
+          {
+            "operation_id": "a60aadc9-7fb6-4443-89e1-67a488ea1fd4",
+            "kind": "SET_MEMBER",
+            "status": "APPLIED",
+            "request_version": 2,
+            "prepared_version": 3,
+            "applied_version": 4,
+            "result_code": null
+          },
+          {
+            "operation_id": "098ce435-b0bd-4e07-8aff-9281df0acec6",
+            "kind": "PURCHASE",
+            "status": "APPLIED",
+            "request_version": 4,
+            "prepared_version": 5,
+            "applied_version": 6,
+            "result_code": null
+          }
+        ],
+        "purchase": [
+          {
+            "cart_id": "12777cd3-3b2c-43b3-a368-9469aa616454",
+            "staff_id": "STAFF_API",
+            "member_id": "MEMBER_API",
+            "purchased_at": "2026-10-04T07:04:18.349648+00:00",
+            "subtotal": "93",
+            "total": "102"
+          }
+        ],
+        "purchase_lines": [
+          {
+            "cart_id": "12777cd3-3b2c-43b3-a368-9469aa616454",
+            "line_no": 1,
+            "product_id": 1,
+            "code_snapshot": "API_TIE",
+            "name_snapshot": "架空API商品 API_TIE",
+            "quantity": 1,
+            "unit_price_snapshot": "103",
+            "tax_rate_snapshot": "0.1000",
+            "discount_snapshot": "{\"kind\": \"RATE\", \"rate\": \"0.1000\", \"amount\": null, \"valid_to\": \"2099-01-01T00:00:00Z\", \"valid_from\": \"2020-01-01T00:00:00Z\", \"condition_id\": \"1\", \"actual_discount\": \"10\", \"candidate_amount\": \"10\"}",
+            "discount_per_unit": "10",
+            "net_unit_price": "93",
+            "line_subtotal": "93"
+          }
+        ],
+        "purchase_taxes": [
+          {
+            "cart_id": "12777cd3-3b2c-43b3-a368-9469aa616454",
+            "tax_rate_snapshot": "0.1000",
+            "taxable_subtotal": "93",
+            "tax_amount": "9"
+          }
+        ]
+      }
+    },
+    {
+      "case": "diagnostic-positive-control-rollback",
+      "results": [
+        {
+          "condition": "purchase-total",
+          "target_detected": true,
+          "mutations_committed": false,
+          "same_connection_diagnostic": true
+        },
+        {
+          "condition": "extra-zero-tax",
+          "target_detected": true,
+          "mutations_committed": false,
+          "same_connection_diagnostic": true
+        }
+      ]
+    },
+    {
+      "case": "candidate-before-cap-zero-detail-tax",
+      "observed": {
+        "connection_id": 34,
+        "at_utc": "2026-10-04T07:04:18.527492+00:00",
+        "cart": [
+          {
+            "cart_id": "ea1d4542-3c05-4635-be18-3a3385e6ab5a",
+            "state": "SAVED",
+            "version": 6,
+            "staff_id": "STAFF_API",
+            "member_state": "CONFIRMED",
+            "member_id": "MEMBER_API",
+            "pending_member_id": null,
+            "active_member_operation_id": null,
+            "active_purchase_operation_id": "06377a68-aea2-4126-b88d-f25b42748bbb",
+            "purchase_prepared_version": 4,
+            "subtotal": "0",
+            "total": "0",
+            "tax_breakdown": "[{\"tax_rate\": \"0.1000\", \"tax_amount\": \"0\", \"taxable_subtotal\": \"0\"}]"
+          }
+        ],
+        "context": [
+          {
+            "context_id": "d42c3300-d115-4edf-af80-37168ca68e81",
+            "last_business_at": "2026-10-04T07:04:18.498402+00:00"
+          }
+        ],
+        "lines": [
+          {
+            "cart_id": "ea1d4542-3c05-4635-be18-3a3385e6ab5a",
+            "line_id": "cd1cd8ca-d588-427a-a916-0a65fac69a38",
+            "product_id": 2,
+            "line_no": 1,
+            "code_snapshot": "API_CAP",
+            "name_snapshot": "架空API商品 API_CAP",
+            "quantity": 1,
+            "unit_price_snapshot": "103",
+            "tax_rate_snapshot": "0.1000",
+            "discount_candidates": "[{\"kind\": \"AMOUNT\", \"rate\": null, \"amount\": \"120\", \"valid_to\": \"2099-01-01T00:00:00Z\", \"valid_from\": \"2020-01-01T00:00:00Z\", \"condition_id\": \"3\"}, {\"kind\": \"AMOUNT\", \"rate\": null, \"amount\": \"130\", \"valid_to\": \"2099-01-01T00:00:00Z\", \"valid_from\": \"2020-01-01T00:00:00Z\", \"condition_id\": \"4\"}]",
+            "discount_snapshot": "{\"kind\": \"AMOUNT\", \"rate\": null, \"amount\": \"130\", \"valid_to\": \"2099-01-01T00:00:00Z\", \"valid_from\": \"2020-01-01T00:00:00Z\", \"condition_id\": \"4\", \"actual_discount\": \"103\", \"candidate_amount\": \"130\"}",
+            "discount_per_unit": "103",
+            "net_unit_price": "0",
+            "line_subtotal": "0",
+            "conditions_fixed_at": "2026-10-04T07:04:18.455828+00:00"
+          }
+        ],
+        "operations": [
+          {
+            "operation_id": "bb4e948e-d7b6-4e79-9083-a2a1b76b0330",
+            "kind": "ADD_LINE",
+            "status": "APPLIED",
+            "request_version": 1,
+            "prepared_version": null,
+            "applied_version": 2,
+            "result_code": null
+          },
+          {
+            "operation_id": "3f826672-caab-470f-b1cc-3066a6391b47",
+            "kind": "SET_MEMBER",
+            "status": "APPLIED",
+            "request_version": 2,
+            "prepared_version": 3,
+            "applied_version": 4,
+            "result_code": null
+          },
+          {
+            "operation_id": "06377a68-aea2-4126-b88d-f25b42748bbb",
+            "kind": "PURCHASE",
+            "status": "APPLIED",
+            "request_version": 4,
+            "prepared_version": 5,
+            "applied_version": 6,
+            "result_code": null
+          }
+        ],
+        "purchase": [
+          {
+            "cart_id": "ea1d4542-3c05-4635-be18-3a3385e6ab5a",
+            "staff_id": "STAFF_API",
+            "member_id": "MEMBER_API",
+            "purchased_at": "2026-10-04T07:04:18.498402+00:00",
+            "subtotal": "0",
+            "total": "0"
+          }
+        ],
+        "purchase_lines": [
+          {
+            "cart_id": "ea1d4542-3c05-4635-be18-3a3385e6ab5a",
+            "line_no": 1,
+            "product_id": 2,
+            "code_snapshot": "API_CAP",
+            "name_snapshot": "架空API商品 API_CAP",
+            "quantity": 1,
+            "unit_price_snapshot": "103",
+            "tax_rate_snapshot": "0.1000",
+            "discount_snapshot": "{\"kind\": \"AMOUNT\", \"rate\": null, \"amount\": \"130\", \"valid_to\": \"2099-01-01T00:00:00Z\", \"valid_from\": \"2020-01-01T00:00:00Z\", \"condition_id\": \"4\", \"actual_discount\": \"103\", \"candidate_amount\": \"130\"}",
+            "discount_per_unit": "103",
+            "net_unit_price": "0",
+            "line_subtotal": "0"
+          }
+        ],
+        "purchase_taxes": [
+          {
+            "cart_id": "ea1d4542-3c05-4635-be18-3a3385e6ab5a",
+            "tax_rate_snapshot": "0.1000",
+            "taxable_subtotal": "0",
+            "tax_amount": "0"
+          }
+        ]
+      }
+    },
+    {
+      "case": "max-overflow-rejection-retry-max-one-sale",
+      "before": {
+        "connection_id": 35,
+        "at_utc": "2026-10-04T07:04:18.563693+00:00",
+        "cart": [
+          {
+            "cart_id": "8d717751-cac4-44c8-aab4-eafc6a5fd7a7",
+            "state": "EDITING",
+            "version": 2,
+            "staff_id": "STAFF_API",
+            "member_state": "UNSPECIFIED",
+            "member_id": null,
+            "pending_member_id": null,
+            "active_member_operation_id": null,
+            "active_purchase_operation_id": null,
+            "purchase_prepared_version": null,
+            "subtotal": "999999999999",
+            "total": "999999999999",
+            "tax_breakdown": "[{\"tax_rate\": \"0.0000\", \"tax_amount\": \"0\", \"taxable_subtotal\": \"999999999999\"}]"
+          }
+        ],
+        "context": [
+          {
+            "context_id": "d42c3300-d115-4edf-af80-37168ca68e81",
+            "last_business_at": "2026-10-04T07:04:18.547377+00:00"
+          }
+        ],
+        "lines": [
+          {
+            "cart_id": "8d717751-cac4-44c8-aab4-eafc6a5fd7a7",
+            "line_id": "548d20b3-8e09-40a8-b1cd-cbd8d4d29641",
+            "product_id": 3,
+            "line_no": 1,
+            "code_snapshot": "API_MAX",
+            "name_snapshot": "架空API商品 API_MAX",
+            "quantity": 1,
+            "unit_price_snapshot": "999999999999",
+            "tax_rate_snapshot": "0.0000",
+            "discount_candidates": "[]",
+            "discount_snapshot": null,
+            "discount_per_unit": "0",
+            "net_unit_price": "999999999999",
+            "line_subtotal": "999999999999",
+            "conditions_fixed_at": "2026-10-04T07:04:18.547377+00:00"
+          }
+        ],
+        "operations": [
+          {
+            "operation_id": "efbf7efb-0b8f-443b-959d-98526fa700ba",
+            "kind": "ADD_LINE",
+            "status": "APPLIED",
+            "request_version": 1,
+            "prepared_version": null,
+            "applied_version": 2,
+            "result_code": null
+          }
+        ],
+        "purchase": [],
+        "purchase_lines": [],
+        "purchase_taxes": []
+      },
+      "rejected": {
+        "connection_id": 36,
+        "at_utc": "2026-10-04T07:04:18.584272+00:00",
+        "cart": [
+          {
+            "cart_id": "8d717751-cac4-44c8-aab4-eafc6a5fd7a7",
+            "state": "EDITING",
+            "version": 2,
+            "staff_id": "STAFF_API",
+            "member_state": "UNSPECIFIED",
+            "member_id": null,
+            "pending_member_id": null,
+            "active_member_operation_id": null,
+            "active_purchase_operation_id": null,
+            "purchase_prepared_version": null,
+            "subtotal": "999999999999",
+            "total": "999999999999",
+            "tax_breakdown": "[{\"tax_rate\": \"0.0000\", \"tax_amount\": \"0\", \"taxable_subtotal\": \"999999999999\"}]"
+          }
+        ],
+        "context": [
+          {
+            "context_id": "d42c3300-d115-4edf-af80-37168ca68e81",
+            "last_business_at": "2026-10-04T07:04:18.547377+00:00"
+          }
+        ],
+        "lines": [
+          {
+            "cart_id": "8d717751-cac4-44c8-aab4-eafc6a5fd7a7",
+            "line_id": "548d20b3-8e09-40a8-b1cd-cbd8d4d29641",
+            "product_id": 3,
+            "line_no": 1,
+            "code_snapshot": "API_MAX",
+            "name_snapshot": "架空API商品 API_MAX",
+            "quantity": 1,
+            "unit_price_snapshot": "999999999999",
+            "tax_rate_snapshot": "0.0000",
+            "discount_candidates": "[]",
+            "discount_snapshot": null,
+            "discount_per_unit": "0",
+            "net_unit_price": "999999999999",
+            "line_subtotal": "999999999999",
+            "conditions_fixed_at": "2026-10-04T07:04:18.547377+00:00"
+          }
+        ],
+        "operations": [
+          {
+            "operation_id": "efbf7efb-0b8f-443b-959d-98526fa700ba",
+            "kind": "ADD_LINE",
+            "status": "APPLIED",
+            "request_version": 1,
+            "prepared_version": null,
+            "applied_version": 2,
+            "result_code": null
+          },
+          {
+            "operation_id": "6e5d8af4-7b8c-4217-90e6-21685bfa84f8",
+            "kind": "SET_QUANTITY",
+            "status": "REJECTED",
+            "request_version": 2,
+            "prepared_version": null,
+            "applied_version": null,
+            "result_code": "AMOUNT_INVALID"
+          }
+        ],
+        "purchase": [],
+        "purchase_lines": [],
+        "purchase_taxes": []
+      },
+      "after_retry": {
+        "connection_id": 37,
+        "at_utc": "2026-10-04T07:04:18.603406+00:00",
+        "cart": [
+          {
+            "cart_id": "8d717751-cac4-44c8-aab4-eafc6a5fd7a7",
+            "state": "EDITING",
+            "version": 2,
+            "staff_id": "STAFF_API",
+            "member_state": "UNSPECIFIED",
+            "member_id": null,
+            "pending_member_id": null,
+            "active_member_operation_id": null,
+            "active_purchase_operation_id": null,
+            "purchase_prepared_version": null,
+            "subtotal": "999999999999",
+            "total": "999999999999",
+            "tax_breakdown": "[{\"tax_rate\": \"0.0000\", \"tax_amount\": \"0\", \"taxable_subtotal\": \"999999999999\"}]"
+          }
+        ],
+        "context": [
+          {
+            "context_id": "d42c3300-d115-4edf-af80-37168ca68e81",
+            "last_business_at": "2026-10-04T07:04:18.547377+00:00"
+          }
+        ],
+        "lines": [
+          {
+            "cart_id": "8d717751-cac4-44c8-aab4-eafc6a5fd7a7",
+            "line_id": "548d20b3-8e09-40a8-b1cd-cbd8d4d29641",
+            "product_id": 3,
+            "line_no": 1,
+            "code_snapshot": "API_MAX",
+            "name_snapshot": "架空API商品 API_MAX",
+            "quantity": 1,
+            "unit_price_snapshot": "999999999999",
+            "tax_rate_snapshot": "0.0000",
+            "discount_candidates": "[]",
+            "discount_snapshot": null,
+            "discount_per_unit": "0",
+            "net_unit_price": "999999999999",
+            "line_subtotal": "999999999999",
+            "conditions_fixed_at": "2026-10-04T07:04:18.547377+00:00"
+          }
+        ],
+        "operations": [
+          {
+            "operation_id": "efbf7efb-0b8f-443b-959d-98526fa700ba",
+            "kind": "ADD_LINE",
+            "status": "APPLIED",
+            "request_version": 1,
+            "prepared_version": null,
+            "applied_version": 2,
+            "result_code": null
+          },
+          {
+            "operation_id": "6e5d8af4-7b8c-4217-90e6-21685bfa84f8",
+            "kind": "SET_QUANTITY",
+            "status": "REJECTED",
+            "request_version": 2,
+            "prepared_version": null,
+            "applied_version": null,
+            "result_code": "AMOUNT_INVALID"
+          }
+        ],
+        "purchase": [],
+        "purchase_lines": [],
+        "purchase_taxes": []
+      },
+      "saved": {
+        "connection_id": 38,
+        "at_utc": "2026-10-04T07:04:18.647330+00:00",
+        "cart": [
+          {
+            "cart_id": "8d717751-cac4-44c8-aab4-eafc6a5fd7a7",
+            "state": "SAVED",
+            "version": 4,
+            "staff_id": "STAFF_API",
+            "member_state": "UNSPECIFIED",
+            "member_id": null,
+            "pending_member_id": null,
+            "active_member_operation_id": null,
+            "active_purchase_operation_id": "2b8aeba2-55e8-4baa-9dda-8cdc8cc4c158",
+            "purchase_prepared_version": 2,
+            "subtotal": "999999999999",
+            "total": "999999999999",
+            "tax_breakdown": "[{\"tax_rate\": \"0.0000\", \"tax_amount\": \"0\", \"taxable_subtotal\": \"999999999999\"}]"
+          }
+        ],
+        "context": [
+          {
+            "context_id": "d42c3300-d115-4edf-af80-37168ca68e81",
+            "last_business_at": "2026-10-04T07:04:18.620416+00:00"
+          }
+        ],
+        "lines": [
+          {
+            "cart_id": "8d717751-cac4-44c8-aab4-eafc6a5fd7a7",
+            "line_id": "548d20b3-8e09-40a8-b1cd-cbd8d4d29641",
+            "product_id": 3,
+            "line_no": 1,
+            "code_snapshot": "API_MAX",
+            "name_snapshot": "架空API商品 API_MAX",
+            "quantity": 1,
+            "unit_price_snapshot": "999999999999",
+            "tax_rate_snapshot": "0.0000",
+            "discount_candidates": "[]",
+            "discount_snapshot": null,
+            "discount_per_unit": "0",
+            "net_unit_price": "999999999999",
+            "line_subtotal": "999999999999",
+            "conditions_fixed_at": "2026-10-04T07:04:18.547377+00:00"
+          }
+        ],
+        "operations": [
+          {
+            "operation_id": "efbf7efb-0b8f-443b-959d-98526fa700ba",
+            "kind": "ADD_LINE",
+            "status": "APPLIED",
+            "request_version": 1,
+            "prepared_version": null,
+            "applied_version": 2,
+            "result_code": null
+          },
+          {
+            "operation_id": "6e5d8af4-7b8c-4217-90e6-21685bfa84f8",
+            "kind": "SET_QUANTITY",
+            "status": "REJECTED",
+            "request_version": 2,
+            "prepared_version": null,
+            "applied_version": null,
+            "result_code": "AMOUNT_INVALID"
+          },
+          {
+            "operation_id": "2b8aeba2-55e8-4baa-9dda-8cdc8cc4c158",
+            "kind": "PURCHASE",
+            "status": "APPLIED",
+            "request_version": 2,
+            "prepared_version": 3,
+            "applied_version": 4,
+            "result_code": null
+          }
+        ],
+        "purchase": [
+          {
+            "cart_id": "8d717751-cac4-44c8-aab4-eafc6a5fd7a7",
+            "staff_id": "STAFF_API",
+            "member_id": null,
+            "purchased_at": "2026-10-04T07:04:18.620416+00:00",
+            "subtotal": "999999999999",
+            "total": "999999999999"
+          }
+        ],
+        "purchase_lines": [
+          {
+            "cart_id": "8d717751-cac4-44c8-aab4-eafc6a5fd7a7",
+            "line_no": 1,
+            "product_id": 3,
+            "code_snapshot": "API_MAX",
+            "name_snapshot": "架空API商品 API_MAX",
+            "quantity": 1,
+            "unit_price_snapshot": "999999999999",
+            "tax_rate_snapshot": "0.0000",
+            "discount_snapshot": null,
+            "discount_per_unit": "0",
+            "net_unit_price": "999999999999",
+            "line_subtotal": "999999999999"
+          }
+        ],
+        "purchase_taxes": [
+          {
+            "cart_id": "8d717751-cac4-44c8-aab4-eafc6a5fd7a7",
+            "tax_rate_snapshot": "0.0000",
+            "taxable_subtotal": "999999999999",
+            "tax_amount": "0"
+          }
+        ]
+      }
+    },
+    {
+      "case": "API_HISTORY_NORMAL",
+      "price_history": {
+        "before": {
+          "connection_id": 40,
+          "at_utc": "2026-10-04T07:04:18.724175+00:00",
+          "product": [
+            {
+              "product_id": 4,
+              "code": "API_HISTORY_NORMAL",
+              "unit_price": "103"
+            }
+          ],
+          "history": [
+            {
+              "history_id": 4,
+              "old_price": null,
+              "new_price": "103",
+              "changed_at": "2026-10-04T07:04:09.856076+00:00"
+            }
+          ]
+        },
+        "fault": null,
+        "after": {
+          "connection_id": 42,
+          "at_utc": "2026-10-04T07:04:18.744528+00:00",
+          "product": [
+            {
+              "product_id": 4,
+              "code": "API_HISTORY_NORMAL",
+              "unit_price": "110"
+            }
+          ],
+          "history": [
+            {
+              "history_id": 4,
+              "old_price": null,
+              "new_price": "103",
+              "changed_at": "2026-10-04T07:04:09.856076+00:00"
+            },
+            {
+              "history_id": 8,
+              "old_price": "103",
+              "new_price": "110",
+              "changed_at": "2026-10-04T07:04:18.736204+00:00"
+            }
+          ]
+        }
+      },
+      "saved_sale_unchanged": true,
+      "sale_before": {
+        "connection_id": 39,
+        "at_utc": "2026-10-04T07:04:18.713108+00:00",
+        "cart": [
+          {
+            "cart_id": "2253be0d-dd3f-4a33-b604-6e9ad80998be",
+            "state": "SAVED",
+            "version": 4,
+            "staff_id": "STAFF_API",
+            "member_state": "UNSPECIFIED",
+            "member_id": null,
+            "pending_member_id": null,
+            "active_member_operation_id": null,
+            "active_purchase_operation_id": "c267dd4b-a8c0-42b4-906c-3fcbc3b24a8e",
+            "purchase_prepared_version": 2,
+            "subtotal": "103",
+            "total": "103",
+            "tax_breakdown": "[{\"tax_rate\": \"0.0000\", \"tax_amount\": \"0\", \"taxable_subtotal\": \"103\"}]"
+          }
+        ],
+        "context": [
+          {
+            "context_id": "d42c3300-d115-4edf-af80-37168ca68e81",
+            "last_business_at": "2026-10-04T07:04:18.686587+00:00"
+          }
+        ],
+        "lines": [
+          {
+            "cart_id": "2253be0d-dd3f-4a33-b604-6e9ad80998be",
+            "line_id": "1efa71d4-014f-4677-9cce-360959402e32",
+            "product_id": 4,
+            "line_no": 1,
+            "code_snapshot": "API_HISTORY_NORMAL",
+            "name_snapshot": "架空API商品 API_HISTORY_NORMAL",
+            "quantity": 1,
+            "unit_price_snapshot": "103",
+            "tax_rate_snapshot": "0.0000",
+            "discount_candidates": "[]",
+            "discount_snapshot": null,
+            "discount_per_unit": "0",
+            "net_unit_price": "103",
+            "line_subtotal": "103",
+            "conditions_fixed_at": "2026-10-04T07:04:18.666189+00:00"
+          }
+        ],
+        "operations": [
+          {
+            "operation_id": "b9214510-80e9-47a1-865b-d4269b40fb38",
+            "kind": "ADD_LINE",
+            "status": "APPLIED",
+            "request_version": 1,
+            "prepared_version": null,
+            "applied_version": 2,
+            "result_code": null
+          },
+          {
+            "operation_id": "c267dd4b-a8c0-42b4-906c-3fcbc3b24a8e",
+            "kind": "PURCHASE",
+            "status": "APPLIED",
+            "request_version": 2,
+            "prepared_version": 3,
+            "applied_version": 4,
+            "result_code": null
+          }
+        ],
+        "purchase": [
+          {
+            "cart_id": "2253be0d-dd3f-4a33-b604-6e9ad80998be",
+            "staff_id": "STAFF_API",
+            "member_id": null,
+            "purchased_at": "2026-10-04T07:04:18.686587+00:00",
+            "subtotal": "103",
+            "total": "103"
+          }
+        ],
+        "purchase_lines": [
+          {
+            "cart_id": "2253be0d-dd3f-4a33-b604-6e9ad80998be",
+            "line_no": 1,
+            "product_id": 4,
+            "code_snapshot": "API_HISTORY_NORMAL",
+            "name_snapshot": "架空API商品 API_HISTORY_NORMAL",
+            "quantity": 1,
+            "unit_price_snapshot": "103",
+            "tax_rate_snapshot": "0.0000",
+            "discount_snapshot": null,
+            "discount_per_unit": "0",
+            "net_unit_price": "103",
+            "line_subtotal": "103"
+          }
+        ],
+        "purchase_taxes": [
+          {
+            "cart_id": "2253be0d-dd3f-4a33-b604-6e9ad80998be",
+            "tax_rate_snapshot": "0.0000",
+            "taxable_subtotal": "103",
+            "tax_amount": "0"
+          }
+        ]
+      },
+      "sale_after": {
+        "connection_id": 43,
+        "at_utc": "2026-10-04T07:04:18.752150+00:00",
+        "cart": [
+          {
+            "cart_id": "2253be0d-dd3f-4a33-b604-6e9ad80998be",
+            "state": "SAVED",
+            "version": 4,
+            "staff_id": "STAFF_API",
+            "member_state": "UNSPECIFIED",
+            "member_id": null,
+            "pending_member_id": null,
+            "active_member_operation_id": null,
+            "active_purchase_operation_id": "c267dd4b-a8c0-42b4-906c-3fcbc3b24a8e",
+            "purchase_prepared_version": 2,
+            "subtotal": "103",
+            "total": "103",
+            "tax_breakdown": "[{\"tax_rate\": \"0.0000\", \"tax_amount\": \"0\", \"taxable_subtotal\": \"103\"}]"
+          }
+        ],
+        "context": [
+          {
+            "context_id": "d42c3300-d115-4edf-af80-37168ca68e81",
+            "last_business_at": "2026-10-04T07:04:18.686587+00:00"
+          }
+        ],
+        "lines": [
+          {
+            "cart_id": "2253be0d-dd3f-4a33-b604-6e9ad80998be",
+            "line_id": "1efa71d4-014f-4677-9cce-360959402e32",
+            "product_id": 4,
+            "line_no": 1,
+            "code_snapshot": "API_HISTORY_NORMAL",
+            "name_snapshot": "架空API商品 API_HISTORY_NORMAL",
+            "quantity": 1,
+            "unit_price_snapshot": "103",
+            "tax_rate_snapshot": "0.0000",
+            "discount_candidates": "[]",
+            "discount_snapshot": null,
+            "discount_per_unit": "0",
+            "net_unit_price": "103",
+            "line_subtotal": "103",
+            "conditions_fixed_at": "2026-10-04T07:04:18.666189+00:00"
+          }
+        ],
+        "operations": [
+          {
+            "operation_id": "b9214510-80e9-47a1-865b-d4269b40fb38",
+            "kind": "ADD_LINE",
+            "status": "APPLIED",
+            "request_version": 1,
+            "prepared_version": null,
+            "applied_version": 2,
+            "result_code": null
+          },
+          {
+            "operation_id": "c267dd4b-a8c0-42b4-906c-3fcbc3b24a8e",
+            "kind": "PURCHASE",
+            "status": "APPLIED",
+            "request_version": 2,
+            "prepared_version": 3,
+            "applied_version": 4,
+            "result_code": null
+          }
+        ],
+        "purchase": [
+          {
+            "cart_id": "2253be0d-dd3f-4a33-b604-6e9ad80998be",
+            "staff_id": "STAFF_API",
+            "member_id": null,
+            "purchased_at": "2026-10-04T07:04:18.686587+00:00",
+            "subtotal": "103",
+            "total": "103"
+          }
+        ],
+        "purchase_lines": [
+          {
+            "cart_id": "2253be0d-dd3f-4a33-b604-6e9ad80998be",
+            "line_no": 1,
+            "product_id": 4,
+            "code_snapshot": "API_HISTORY_NORMAL",
+            "name_snapshot": "架空API商品 API_HISTORY_NORMAL",
+            "quantity": 1,
+            "unit_price_snapshot": "103",
+            "tax_rate_snapshot": "0.0000",
+            "discount_snapshot": null,
+            "discount_per_unit": "0",
+            "net_unit_price": "103",
+            "line_subtotal": "103"
+          }
+        ],
+        "purchase_taxes": [
+          {
+            "cart_id": "2253be0d-dd3f-4a33-b604-6e9ad80998be",
+            "tax_rate_snapshot": "0.0000",
+            "taxable_subtotal": "103",
+            "tax_amount": "0"
+          }
+        ]
+      }
+    },
+    {
+      "case": "API_HISTORY_SAME",
+      "price_history": {
+        "before": {
+          "connection_id": 45,
+          "at_utc": "2026-10-04T07:04:18.857002+00:00",
+          "product": [
+            {
+              "product_id": 5,
+              "code": "API_HISTORY_SAME",
+              "unit_price": "103"
+            }
+          ],
+          "history": [
+            {
+              "history_id": 5,
+              "old_price": null,
+              "new_price": "103",
+              "changed_at": "2026-10-04T07:04:09.856667+00:00"
+            }
+          ]
+        },
+        "after": {
+          "connection_id": 47,
+          "at_utc": "2026-10-04T07:04:18.873149+00:00",
+          "product": [
+            {
+              "product_id": 5,
+              "code": "API_HISTORY_SAME",
+              "unit_price": "103"
+            }
+          ],
+          "history": [
+            {
+              "history_id": 5,
+              "old_price": null,
+              "new_price": "103",
+              "changed_at": "2026-10-04T07:04:09.856667+00:00"
+            }
+          ]
+        },
+        "same_price_skipped": true
+      },
+      "saved_sale_unchanged": true,
+      "sale_before": {
+        "connection_id": 44,
+        "at_utc": "2026-10-04T07:04:18.846362+00:00",
+        "cart": [
+          {
+            "cart_id": "5e452035-ed6b-4ae9-94cf-bf62cdcaea40",
+            "state": "SAVED",
+            "version": 4,
+            "staff_id": "STAFF_API",
+            "member_state": "UNSPECIFIED",
+            "member_id": null,
+            "pending_member_id": null,
+            "active_member_operation_id": null,
+            "active_purchase_operation_id": "3add48c6-9e33-4ad1-998b-6e167034ccc4",
+            "purchase_prepared_version": 2,
+            "subtotal": "103",
+            "total": "103",
+            "tax_breakdown": "[{\"tax_rate\": \"0.0000\", \"tax_amount\": \"0\", \"taxable_subtotal\": \"103\"}]"
+          }
+        ],
+        "context": [
+          {
+            "context_id": "d42c3300-d115-4edf-af80-37168ca68e81",
+            "last_business_at": "2026-10-04T07:04:18.815917+00:00"
+          }
+        ],
+        "lines": [
+          {
+            "cart_id": "5e452035-ed6b-4ae9-94cf-bf62cdcaea40",
+            "line_id": "ba15c19e-76ba-4184-9210-653879d75950",
+            "product_id": 5,
+            "line_no": 1,
+            "code_snapshot": "API_HISTORY_SAME",
+            "name_snapshot": "架空API商品 API_HISTORY_SAME",
+            "quantity": 1,
+            "unit_price_snapshot": "103",
+            "tax_rate_snapshot": "0.0000",
+            "discount_candidates": "[]",
+            "discount_snapshot": null,
+            "discount_per_unit": "0",
+            "net_unit_price": "103",
+            "line_subtotal": "103",
+            "conditions_fixed_at": "2026-10-04T07:04:18.778825+00:00"
+          }
+        ],
+        "operations": [
+          {
+            "operation_id": "24e2aaf1-e5e3-44c5-9ff5-b3b27aaa8227",
+            "kind": "ADD_LINE",
+            "status": "APPLIED",
+            "request_version": 1,
+            "prepared_version": null,
+            "applied_version": 2,
+            "result_code": null
+          },
+          {
+            "operation_id": "3add48c6-9e33-4ad1-998b-6e167034ccc4",
+            "kind": "PURCHASE",
+            "status": "APPLIED",
+            "request_version": 2,
+            "prepared_version": 3,
+            "applied_version": 4,
+            "result_code": null
+          }
+        ],
+        "purchase": [
+          {
+            "cart_id": "5e452035-ed6b-4ae9-94cf-bf62cdcaea40",
+            "staff_id": "STAFF_API",
+            "member_id": null,
+            "purchased_at": "2026-10-04T07:04:18.815917+00:00",
+            "subtotal": "103",
+            "total": "103"
+          }
+        ],
+        "purchase_lines": [
+          {
+            "cart_id": "5e452035-ed6b-4ae9-94cf-bf62cdcaea40",
+            "line_no": 1,
+            "product_id": 5,
+            "code_snapshot": "API_HISTORY_SAME",
+            "name_snapshot": "架空API商品 API_HISTORY_SAME",
+            "quantity": 1,
+            "unit_price_snapshot": "103",
+            "tax_rate_snapshot": "0.0000",
+            "discount_snapshot": null,
+            "discount_per_unit": "0",
+            "net_unit_price": "103",
+            "line_subtotal": "103"
+          }
+        ],
+        "purchase_taxes": [
+          {
+            "cart_id": "5e452035-ed6b-4ae9-94cf-bf62cdcaea40",
+            "tax_rate_snapshot": "0.0000",
+            "taxable_subtotal": "103",
+            "tax_amount": "0"
+          }
+        ]
+      },
+      "sale_after": {
+        "connection_id": 48,
+        "at_utc": "2026-10-04T07:04:18.881301+00:00",
+        "cart": [
+          {
+            "cart_id": "5e452035-ed6b-4ae9-94cf-bf62cdcaea40",
+            "state": "SAVED",
+            "version": 4,
+            "staff_id": "STAFF_API",
+            "member_state": "UNSPECIFIED",
+            "member_id": null,
+            "pending_member_id": null,
+            "active_member_operation_id": null,
+            "active_purchase_operation_id": "3add48c6-9e33-4ad1-998b-6e167034ccc4",
+            "purchase_prepared_version": 2,
+            "subtotal": "103",
+            "total": "103",
+            "tax_breakdown": "[{\"tax_rate\": \"0.0000\", \"tax_amount\": \"0\", \"taxable_subtotal\": \"103\"}]"
+          }
+        ],
+        "context": [
+          {
+            "context_id": "d42c3300-d115-4edf-af80-37168ca68e81",
+            "last_business_at": "2026-10-04T07:04:18.815917+00:00"
+          }
+        ],
+        "lines": [
+          {
+            "cart_id": "5e452035-ed6b-4ae9-94cf-bf62cdcaea40",
+            "line_id": "ba15c19e-76ba-4184-9210-653879d75950",
+            "product_id": 5,
+            "line_no": 1,
+            "code_snapshot": "API_HISTORY_SAME",
+            "name_snapshot": "架空API商品 API_HISTORY_SAME",
+            "quantity": 1,
+            "unit_price_snapshot": "103",
+            "tax_rate_snapshot": "0.0000",
+            "discount_candidates": "[]",
+            "discount_snapshot": null,
+            "discount_per_unit": "0",
+            "net_unit_price": "103",
+            "line_subtotal": "103",
+            "conditions_fixed_at": "2026-10-04T07:04:18.778825+00:00"
+          }
+        ],
+        "operations": [
+          {
+            "operation_id": "24e2aaf1-e5e3-44c5-9ff5-b3b27aaa8227",
+            "kind": "ADD_LINE",
+            "status": "APPLIED",
+            "request_version": 1,
+            "prepared_version": null,
+            "applied_version": 2,
+            "result_code": null
+          },
+          {
+            "operation_id": "3add48c6-9e33-4ad1-998b-6e167034ccc4",
+            "kind": "PURCHASE",
+            "status": "APPLIED",
+            "request_version": 2,
+            "prepared_version": 3,
+            "applied_version": 4,
+            "result_code": null
+          }
+        ],
+        "purchase": [
+          {
+            "cart_id": "5e452035-ed6b-4ae9-94cf-bf62cdcaea40",
+            "staff_id": "STAFF_API",
+            "member_id": null,
+            "purchased_at": "2026-10-04T07:04:18.815917+00:00",
+            "subtotal": "103",
+            "total": "103"
+          }
+        ],
+        "purchase_lines": [
+          {
+            "cart_id": "5e452035-ed6b-4ae9-94cf-bf62cdcaea40",
+            "line_no": 1,
+            "product_id": 5,
+            "code_snapshot": "API_HISTORY_SAME",
+            "name_snapshot": "架空API商品 API_HISTORY_SAME",
+            "quantity": 1,
+            "unit_price_snapshot": "103",
+            "tax_rate_snapshot": "0.0000",
+            "discount_snapshot": null,
+            "discount_per_unit": "0",
+            "net_unit_price": "103",
+            "line_subtotal": "103"
+          }
+        ],
+        "purchase_taxes": [
+          {
+            "cart_id": "5e452035-ed6b-4ae9-94cf-bf62cdcaea40",
+            "tax_rate_snapshot": "0.0000",
+            "taxable_subtotal": "103",
+            "tax_amount": "0"
+          }
+        ]
+      }
+    },
+    {
+      "case": "API_HISTORY_FAIL",
+      "price_history": {
+        "before": {
+          "connection_id": 50,
+          "at_utc": "2026-10-04T07:04:18.973500+00:00",
+          "product": [
+            {
+              "product_id": 6,
+              "code": "API_HISTORY_FAIL",
+              "unit_price": "103"
+            }
+          ],
+          "history": [
+            {
+              "history_id": 6,
+              "old_price": null,
+              "new_price": "103",
+              "changed_at": "2026-10-04T07:04:09.857245+00:00"
+            }
+          ]
+        },
+        "fault": {
+          "mysql_code": 1048,
+          "rollback": true
+        },
+        "after": {
+          "connection_id": 52,
+          "at_utc": "2026-10-04T07:04:18.989086+00:00",
+          "product": [
+            {
+              "product_id": 6,
+              "code": "API_HISTORY_FAIL",
+              "unit_price": "103"
+            }
+          ],
+          "history": [
+            {
+              "history_id": 6,
+              "old_price": null,
+              "new_price": "103",
+              "changed_at": "2026-10-04T07:04:09.857245+00:00"
+            }
+          ]
+        }
+      },
+      "saved_sale_unchanged": true,
+      "sale_before": {
+        "connection_id": 49,
+        "at_utc": "2026-10-04T07:04:18.962133+00:00",
+        "cart": [
+          {
+            "cart_id": "9c5fb40f-33e9-4a48-a51d-45d7c9b397c8",
+            "state": "SAVED",
+            "version": 4,
+            "staff_id": "STAFF_API",
+            "member_state": "UNSPECIFIED",
+            "member_id": null,
+            "pending_member_id": null,
+            "active_member_operation_id": null,
+            "active_purchase_operation_id": "85003aa7-28a3-4aa8-b23a-d599adab09bb",
+            "purchase_prepared_version": 2,
+            "subtotal": "103",
+            "total": "103",
+            "tax_breakdown": "[{\"tax_rate\": \"0.0000\", \"tax_amount\": \"0\", \"taxable_subtotal\": \"103\"}]"
+          }
+        ],
+        "context": [
+          {
+            "context_id": "d42c3300-d115-4edf-af80-37168ca68e81",
+            "last_business_at": "2026-10-04T07:04:18.931101+00:00"
+          }
+        ],
+        "lines": [
+          {
+            "cart_id": "9c5fb40f-33e9-4a48-a51d-45d7c9b397c8",
+            "line_id": "748f831e-1a1e-4c88-b42f-78428ae59676",
+            "product_id": 6,
+            "line_no": 1,
+            "code_snapshot": "API_HISTORY_FAIL",
+            "name_snapshot": "架空API商品 API_HISTORY_FAIL",
+            "quantity": 1,
+            "unit_price_snapshot": "103",
+            "tax_rate_snapshot": "0.0000",
+            "discount_candidates": "[]",
+            "discount_snapshot": null,
+            "discount_per_unit": "0",
+            "net_unit_price": "103",
+            "line_subtotal": "103",
+            "conditions_fixed_at": "2026-10-04T07:04:18.905770+00:00"
+          }
+        ],
+        "operations": [
+          {
+            "operation_id": "12fa1d1b-f216-46d0-963e-513aa5ea2461",
+            "kind": "ADD_LINE",
+            "status": "APPLIED",
+            "request_version": 1,
+            "prepared_version": null,
+            "applied_version": 2,
+            "result_code": null
+          },
+          {
+            "operation_id": "85003aa7-28a3-4aa8-b23a-d599adab09bb",
+            "kind": "PURCHASE",
+            "status": "APPLIED",
+            "request_version": 2,
+            "prepared_version": 3,
+            "applied_version": 4,
+            "result_code": null
+          }
+        ],
+        "purchase": [
+          {
+            "cart_id": "9c5fb40f-33e9-4a48-a51d-45d7c9b397c8",
+            "staff_id": "STAFF_API",
+            "member_id": null,
+            "purchased_at": "2026-10-04T07:04:18.931101+00:00",
+            "subtotal": "103",
+            "total": "103"
+          }
+        ],
+        "purchase_lines": [
+          {
+            "cart_id": "9c5fb40f-33e9-4a48-a51d-45d7c9b397c8",
+            "line_no": 1,
+            "product_id": 6,
+            "code_snapshot": "API_HISTORY_FAIL",
+            "name_snapshot": "架空API商品 API_HISTORY_FAIL",
+            "quantity": 1,
+            "unit_price_snapshot": "103",
+            "tax_rate_snapshot": "0.0000",
+            "discount_snapshot": null,
+            "discount_per_unit": "0",
+            "net_unit_price": "103",
+            "line_subtotal": "103"
+          }
+        ],
+        "purchase_taxes": [
+          {
+            "cart_id": "9c5fb40f-33e9-4a48-a51d-45d7c9b397c8",
+            "tax_rate_snapshot": "0.0000",
+            "taxable_subtotal": "103",
+            "tax_amount": "0"
+          }
+        ]
+      },
+      "sale_after": {
+        "connection_id": 53,
+        "at_utc": "2026-10-04T07:04:18.996003+00:00",
+        "cart": [
+          {
+            "cart_id": "9c5fb40f-33e9-4a48-a51d-45d7c9b397c8",
+            "state": "SAVED",
+            "version": 4,
+            "staff_id": "STAFF_API",
+            "member_state": "UNSPECIFIED",
+            "member_id": null,
+            "pending_member_id": null,
+            "active_member_operation_id": null,
+            "active_purchase_operation_id": "85003aa7-28a3-4aa8-b23a-d599adab09bb",
+            "purchase_prepared_version": 2,
+            "subtotal": "103",
+            "total": "103",
+            "tax_breakdown": "[{\"tax_rate\": \"0.0000\", \"tax_amount\": \"0\", \"taxable_subtotal\": \"103\"}]"
+          }
+        ],
+        "context": [
+          {
+            "context_id": "d42c3300-d115-4edf-af80-37168ca68e81",
+            "last_business_at": "2026-10-04T07:04:18.931101+00:00"
+          }
+        ],
+        "lines": [
+          {
+            "cart_id": "9c5fb40f-33e9-4a48-a51d-45d7c9b397c8",
+            "line_id": "748f831e-1a1e-4c88-b42f-78428ae59676",
+            "product_id": 6,
+            "line_no": 1,
+            "code_snapshot": "API_HISTORY_FAIL",
+            "name_snapshot": "架空API商品 API_HISTORY_FAIL",
+            "quantity": 1,
+            "unit_price_snapshot": "103",
+            "tax_rate_snapshot": "0.0000",
+            "discount_candidates": "[]",
+            "discount_snapshot": null,
+            "discount_per_unit": "0",
+            "net_unit_price": "103",
+            "line_subtotal": "103",
+            "conditions_fixed_at": "2026-10-04T07:04:18.905770+00:00"
+          }
+        ],
+        "operations": [
+          {
+            "operation_id": "12fa1d1b-f216-46d0-963e-513aa5ea2461",
+            "kind": "ADD_LINE",
+            "status": "APPLIED",
+            "request_version": 1,
+            "prepared_version": null,
+            "applied_version": 2,
+            "result_code": null
+          },
+          {
+            "operation_id": "85003aa7-28a3-4aa8-b23a-d599adab09bb",
+            "kind": "PURCHASE",
+            "status": "APPLIED",
+            "request_version": 2,
+            "prepared_version": 3,
+            "applied_version": 4,
+            "result_code": null
+          }
+        ],
+        "purchase": [
+          {
+            "cart_id": "9c5fb40f-33e9-4a48-a51d-45d7c9b397c8",
+            "staff_id": "STAFF_API",
+            "member_id": null,
+            "purchased_at": "2026-10-04T07:04:18.931101+00:00",
+            "subtotal": "103",
+            "total": "103"
+          }
+        ],
+        "purchase_lines": [
+          {
+            "cart_id": "9c5fb40f-33e9-4a48-a51d-45d7c9b397c8",
+            "line_no": 1,
+            "product_id": 6,
+            "code_snapshot": "API_HISTORY_FAIL",
+            "name_snapshot": "架空API商品 API_HISTORY_FAIL",
+            "quantity": 1,
+            "unit_price_snapshot": "103",
+            "tax_rate_snapshot": "0.0000",
+            "discount_snapshot": null,
+            "discount_per_unit": "0",
+            "net_unit_price": "103",
+            "line_subtotal": "103"
+          }
+        ],
+        "purchase_taxes": [
+          {
+            "cart_id": "9c5fb40f-33e9-4a48-a51d-45d7c9b397c8",
+            "tax_rate_snapshot": "0.0000",
+            "taxable_subtotal": "103",
+            "tax_amount": "0"
+          }
+        ]
+      }
+    },
+    {
+      "case": "API_HISTORY_ACK",
+      "price_history": {
+        "before": {
+          "connection_id": 55,
+          "at_utc": "2026-10-04T07:04:19.076940+00:00",
+          "product": [
+            {
+              "product_id": 7,
+              "code": "API_HISTORY_ACK",
+              "unit_price": "103"
+            }
+          ],
+          "history": [
+            {
+              "history_id": 7,
+              "old_price": null,
+              "new_price": "103",
+              "changed_at": "2026-10-04T07:04:09.857721+00:00"
+            }
+          ]
+        },
+        "fault": {
+          "commit_sent": true,
+          "ack_read": false,
+          "writer_connection_id": 56,
+          "observer": {
+            "connection_id": 57,
+            "at_utc": "2026-10-04T07:04:19.093161+00:00",
+            "product": [
+              {
+                "product_id": 7,
+                "code": "API_HISTORY_ACK",
+                "unit_price": "110"
+              }
+            ],
+            "history": [
+              {
+                "history_id": 7,
+                "old_price": null,
+                "new_price": "103",
+                "changed_at": "2026-10-04T07:04:09.857721+00:00"
+              },
+              {
+                "history_id": 9,
+                "old_price": "103",
+                "new_price": "110",
+                "changed_at": "2026-10-04T07:04:19.085581+00:00"
+              }
+            ]
+          }
+        },
+        "after": {
+          "connection_id": 58,
+          "at_utc": "2026-10-04T07:04:19.099954+00:00",
+          "product": [
+            {
+              "product_id": 7,
+              "code": "API_HISTORY_ACK",
+              "unit_price": "110"
+            }
+          ],
+          "history": [
+            {
+              "history_id": 7,
+              "old_price": null,
+              "new_price": "103",
+              "changed_at": "2026-10-04T07:04:09.857721+00:00"
+            },
+            {
+              "history_id": 9,
+              "old_price": "103",
+              "new_price": "110",
+              "changed_at": "2026-10-04T07:04:19.085581+00:00"
+            }
+          ]
+        }
+      },
+      "saved_sale_unchanged": true,
+      "sale_before": {
+        "connection_id": 54,
+        "at_utc": "2026-10-04T07:04:19.066282+00:00",
+        "cart": [
+          {
+            "cart_id": "24b42948-0470-4124-a435-9959bbc38e3a",
+            "state": "SAVED",
+            "version": 4,
+            "staff_id": "STAFF_API",
+            "member_state": "UNSPECIFIED",
+            "member_id": null,
+            "pending_member_id": null,
+            "active_member_operation_id": null,
+            "active_purchase_operation_id": "40b2001a-0f27-4ffb-8716-dcb9c2e93fce",
+            "purchase_prepared_version": 2,
+            "subtotal": "103",
+            "total": "103",
+            "tax_breakdown": "[{\"tax_rate\": \"0.0000\", \"tax_amount\": \"0\", \"taxable_subtotal\": \"103\"}]"
+          }
+        ],
+        "context": [
+          {
+            "context_id": "d42c3300-d115-4edf-af80-37168ca68e81",
+            "last_business_at": "2026-10-04T07:04:19.036589+00:00"
+          }
+        ],
+        "lines": [
+          {
+            "cart_id": "24b42948-0470-4124-a435-9959bbc38e3a",
+            "line_id": "1d87f04c-ffa7-4669-8361-7d66bb928779",
+            "product_id": 7,
+            "line_no": 1,
+            "code_snapshot": "API_HISTORY_ACK",
+            "name_snapshot": "架空API商品 API_HISTORY_ACK",
+            "quantity": 1,
+            "unit_price_snapshot": "103",
+            "tax_rate_snapshot": "0.0000",
+            "discount_candidates": "[]",
+            "discount_snapshot": null,
+            "discount_per_unit": "0",
+            "net_unit_price": "103",
+            "line_subtotal": "103",
+            "conditions_fixed_at": "2026-10-04T07:04:19.016292+00:00"
+          }
+        ],
+        "operations": [
+          {
+            "operation_id": "38659202-a383-46e2-a5c5-0d883bedcf27",
+            "kind": "ADD_LINE",
+            "status": "APPLIED",
+            "request_version": 1,
+            "prepared_version": null,
+            "applied_version": 2,
+            "result_code": null
+          },
+          {
+            "operation_id": "40b2001a-0f27-4ffb-8716-dcb9c2e93fce",
+            "kind": "PURCHASE",
+            "status": "APPLIED",
+            "request_version": 2,
+            "prepared_version": 3,
+            "applied_version": 4,
+            "result_code": null
+          }
+        ],
+        "purchase": [
+          {
+            "cart_id": "24b42948-0470-4124-a435-9959bbc38e3a",
+            "staff_id": "STAFF_API",
+            "member_id": null,
+            "purchased_at": "2026-10-04T07:04:19.036589+00:00",
+            "subtotal": "103",
+            "total": "103"
+          }
+        ],
+        "purchase_lines": [
+          {
+            "cart_id": "24b42948-0470-4124-a435-9959bbc38e3a",
+            "line_no": 1,
+            "product_id": 7,
+            "code_snapshot": "API_HISTORY_ACK",
+            "name_snapshot": "架空API商品 API_HISTORY_ACK",
+            "quantity": 1,
+            "unit_price_snapshot": "103",
+            "tax_rate_snapshot": "0.0000",
+            "discount_snapshot": null,
+            "discount_per_unit": "0",
+            "net_unit_price": "103",
+            "line_subtotal": "103"
+          }
+        ],
+        "purchase_taxes": [
+          {
+            "cart_id": "24b42948-0470-4124-a435-9959bbc38e3a",
+            "tax_rate_snapshot": "0.0000",
+            "taxable_subtotal": "103",
+            "tax_amount": "0"
+          }
+        ]
+      },
+      "sale_after": {
+        "connection_id": 59,
+        "at_utc": "2026-10-04T07:04:19.107937+00:00",
+        "cart": [
+          {
+            "cart_id": "24b42948-0470-4124-a435-9959bbc38e3a",
+            "state": "SAVED",
+            "version": 4,
+            "staff_id": "STAFF_API",
+            "member_state": "UNSPECIFIED",
+            "member_id": null,
+            "pending_member_id": null,
+            "active_member_operation_id": null,
+            "active_purchase_operation_id": "40b2001a-0f27-4ffb-8716-dcb9c2e93fce",
+            "purchase_prepared_version": 2,
+            "subtotal": "103",
+            "total": "103",
+            "tax_breakdown": "[{\"tax_rate\": \"0.0000\", \"tax_amount\": \"0\", \"taxable_subtotal\": \"103\"}]"
+          }
+        ],
+        "context": [
+          {
+            "context_id": "d42c3300-d115-4edf-af80-37168ca68e81",
+            "last_business_at": "2026-10-04T07:04:19.036589+00:00"
+          }
+        ],
+        "lines": [
+          {
+            "cart_id": "24b42948-0470-4124-a435-9959bbc38e3a",
+            "line_id": "1d87f04c-ffa7-4669-8361-7d66bb928779",
+            "product_id": 7,
+            "line_no": 1,
+            "code_snapshot": "API_HISTORY_ACK",
+            "name_snapshot": "架空API商品 API_HISTORY_ACK",
+            "quantity": 1,
+            "unit_price_snapshot": "103",
+            "tax_rate_snapshot": "0.0000",
+            "discount_candidates": "[]",
+            "discount_snapshot": null,
+            "discount_per_unit": "0",
+            "net_unit_price": "103",
+            "line_subtotal": "103",
+            "conditions_fixed_at": "2026-10-04T07:04:19.016292+00:00"
+          }
+        ],
+        "operations": [
+          {
+            "operation_id": "38659202-a383-46e2-a5c5-0d883bedcf27",
+            "kind": "ADD_LINE",
+            "status": "APPLIED",
+            "request_version": 1,
+            "prepared_version": null,
+            "applied_version": 2,
+            "result_code": null
+          },
+          {
+            "operation_id": "40b2001a-0f27-4ffb-8716-dcb9c2e93fce",
+            "kind": "PURCHASE",
+            "status": "APPLIED",
+            "request_version": 2,
+            "prepared_version": 3,
+            "applied_version": 4,
+            "result_code": null
+          }
+        ],
+        "purchase": [
+          {
+            "cart_id": "24b42948-0470-4124-a435-9959bbc38e3a",
+            "staff_id": "STAFF_API",
+            "member_id": null,
+            "purchased_at": "2026-10-04T07:04:19.036589+00:00",
+            "subtotal": "103",
+            "total": "103"
+          }
+        ],
+        "purchase_lines": [
+          {
+            "cart_id": "24b42948-0470-4124-a435-9959bbc38e3a",
+            "line_no": 1,
+            "product_id": 7,
+            "code_snapshot": "API_HISTORY_ACK",
+            "name_snapshot": "架空API商品 API_HISTORY_ACK",
+            "quantity": 1,
+            "unit_price_snapshot": "103",
+            "tax_rate_snapshot": "0.0000",
+            "discount_snapshot": null,
+            "discount_per_unit": "0",
+            "net_unit_price": "103",
+            "line_subtotal": "103"
+          }
+        ],
+        "purchase_taxes": [
+          {
+            "cart_id": "24b42948-0470-4124-a435-9959bbc38e3a",
+            "tax_rate_snapshot": "0.0000",
+            "taxable_subtotal": "103",
+            "tax_amount": "0"
+          }
+        ]
+      }
+    }
+  ],
+  "api_requests": [
+    {
+      "method": "POST",
+      "path": "login",
+      "status": 200,
+      "operation_id": null,
+      "request_version": null,
+      "result_code": null,
+      "set_cookie_count": 1
+    },
+    {
+      "method": "POST",
+      "path": "register/start",
+      "status": 200,
+      "operation_id": null,
+      "request_version": null,
+      "result_code": null,
+      "set_cookie_count": 1
+    },
+    {
+      "method": "POST",
+      "path": "register/confirm",
+      "status": 200,
+      "operation_id": null,
+      "request_version": null,
+      "result_code": null,
+      "set_cookie_count": 0
+    },
+    {
+      "method": "POST",
+      "path": "carts",
+      "status": 200,
+      "operation_id": null,
+      "request_version": null,
+      "result_code": null,
+      "set_cookie_count": 1
+    },
+    {
+      "method": "POST",
+      "path": "carts/12777cd3-3b2c-43b3-a368-9469aa616454/lines",
+      "status": 200,
+      "operation_id": "19ae3796-8a8e-49e1-9477-988a8c0dddba",
+      "request_version": "1",
+      "result_code": null,
+      "set_cookie_count": 1
+    },
+    {
+      "method": "PUT",
+      "path": "carts/12777cd3-3b2c-43b3-a368-9469aa616454/member",
+      "status": 200,
+      "operation_id": "a60aadc9-7fb6-4443-89e1-67a488ea1fd4",
+      "request_version": "2",
+      "result_code": null,
+      "set_cookie_count": 1
+    },
+    {
+      "method": "POST",
+      "path": "purchases",
+      "status": 200,
+      "operation_id": "098ce435-b0bd-4e07-8aff-9281df0acec6",
+      "request_version": "4",
+      "result_code": null,
+      "set_cookie_count": 1
+    },
+    {
+      "method": "POST",
+      "path": "purchases",
+      "status": 200,
+      "operation_id": "098ce435-b0bd-4e07-8aff-9281df0acec6",
+      "request_version": "4",
+      "result_code": null,
+      "set_cookie_count": 0
+    },
+    {
+      "method": "POST",
+      "path": "carts/12777cd3-3b2c-43b3-a368-9469aa616454/next",
+      "status": 200,
+      "operation_id": "a8c6f9d1-aa1e-495e-a415-a2745bb4372a",
+      "request_version": "6",
+      "result_code": null,
+      "set_cookie_count": 1
+    },
+    {
+      "method": "POST",
+      "path": "carts/ea1d4542-3c05-4635-be18-3a3385e6ab5a/lines",
+      "status": 200,
+      "operation_id": "bb4e948e-d7b6-4e79-9083-a2a1b76b0330",
+      "request_version": "1",
+      "result_code": null,
+      "set_cookie_count": 1
+    },
+    {
+      "method": "PUT",
+      "path": "carts/ea1d4542-3c05-4635-be18-3a3385e6ab5a/member",
+      "status": 200,
+      "operation_id": "3f826672-caab-470f-b1cc-3066a6391b47",
+      "request_version": "2",
+      "result_code": null,
+      "set_cookie_count": 1
+    },
+    {
+      "method": "POST",
+      "path": "purchases",
+      "status": 200,
+      "operation_id": "06377a68-aea2-4126-b88d-f25b42748bbb",
+      "request_version": "4",
+      "result_code": null,
+      "set_cookie_count": 1
+    },
+    {
+      "method": "POST",
+      "path": "purchases",
+      "status": 200,
+      "operation_id": "06377a68-aea2-4126-b88d-f25b42748bbb",
+      "request_version": "4",
+      "result_code": null,
+      "set_cookie_count": 0
+    },
+    {
+      "method": "POST",
+      "path": "carts/ea1d4542-3c05-4635-be18-3a3385e6ab5a/next",
+      "status": 200,
+      "operation_id": "c65402c0-a719-4c5e-8cbb-cb2fa62523b0",
+      "request_version": "6",
+      "result_code": null,
+      "set_cookie_count": 1
+    },
+    {
+      "method": "POST",
+      "path": "carts/8d717751-cac4-44c8-aab4-eafc6a5fd7a7/lines",
+      "status": 200,
+      "operation_id": "efbf7efb-0b8f-443b-959d-98526fa700ba",
+      "request_version": "1",
+      "result_code": null,
+      "set_cookie_count": 1
+    },
+    {
+      "method": "PATCH",
+      "path": "carts/8d717751-cac4-44c8-aab4-eafc6a5fd7a7/lines/548d20b3-8e09-40a8-b1cd-cbd8d4d29641",
+      "status": 422,
+      "operation_id": "6e5d8af4-7b8c-4217-90e6-21685bfa84f8",
+      "request_version": "2",
+      "result_code": "AMOUNT_INVALID",
+      "set_cookie_count": 0
+    },
+    {
+      "method": "PATCH",
+      "path": "carts/8d717751-cac4-44c8-aab4-eafc6a5fd7a7/lines/548d20b3-8e09-40a8-b1cd-cbd8d4d29641",
+      "status": 422,
+      "operation_id": "6e5d8af4-7b8c-4217-90e6-21685bfa84f8",
+      "request_version": "2",
+      "result_code": "AMOUNT_INVALID",
+      "set_cookie_count": 0
+    },
+    {
+      "method": "POST",
+      "path": "purchases",
+      "status": 200,
+      "operation_id": "2b8aeba2-55e8-4baa-9dda-8cdc8cc4c158",
+      "request_version": "2",
+      "result_code": null,
+      "set_cookie_count": 1
+    },
+    {
+      "method": "POST",
+      "path": "purchases",
+      "status": 200,
+      "operation_id": "2b8aeba2-55e8-4baa-9dda-8cdc8cc4c158",
+      "request_version": "2",
+      "result_code": null,
+      "set_cookie_count": 0
+    },
+    {
+      "method": "POST",
+      "path": "carts/8d717751-cac4-44c8-aab4-eafc6a5fd7a7/next",
+      "status": 200,
+      "operation_id": "31e544ab-7097-4719-bc23-997651ccfa75",
+      "request_version": "4",
+      "result_code": null,
+      "set_cookie_count": 1
+    },
+    {
+      "method": "POST",
+      "path": "carts/2253be0d-dd3f-4a33-b604-6e9ad80998be/lines",
+      "status": 200,
+      "operation_id": "b9214510-80e9-47a1-865b-d4269b40fb38",
+      "request_version": "1",
+      "result_code": null,
+      "set_cookie_count": 1
+    },
+    {
+      "method": "POST",
+      "path": "purchases",
+      "status": 200,
+      "operation_id": "c267dd4b-a8c0-42b4-906c-3fcbc3b24a8e",
+      "request_version": "2",
+      "result_code": null,
+      "set_cookie_count": 1
+    },
+    {
+      "method": "POST",
+      "path": "purchases",
+      "status": 200,
+      "operation_id": "c267dd4b-a8c0-42b4-906c-3fcbc3b24a8e",
+      "request_version": "2",
+      "result_code": null,
+      "set_cookie_count": 0
+    },
+    {
+      "method": "POST",
+      "path": "carts/2253be0d-dd3f-4a33-b604-6e9ad80998be/next",
+      "status": 200,
+      "operation_id": "3316f9ff-9ec3-4a8b-876c-aba78419d3a0",
+      "request_version": "4",
+      "result_code": null,
+      "set_cookie_count": 1
+    },
+    {
+      "method": "POST",
+      "path": "carts/5e452035-ed6b-4ae9-94cf-bf62cdcaea40/lines",
+      "status": 200,
+      "operation_id": "24e2aaf1-e5e3-44c5-9ff5-b3b27aaa8227",
+      "request_version": "1",
+      "result_code": null,
+      "set_cookie_count": 1
+    },
+    {
+      "method": "POST",
+      "path": "purchases",
+      "status": 200,
+      "operation_id": "3add48c6-9e33-4ad1-998b-6e167034ccc4",
+      "request_version": "2",
+      "result_code": null,
+      "set_cookie_count": 1
+    },
+    {
+      "method": "POST",
+      "path": "purchases",
+      "status": 200,
+      "operation_id": "3add48c6-9e33-4ad1-998b-6e167034ccc4",
+      "request_version": "2",
+      "result_code": null,
+      "set_cookie_count": 0
+    },
+    {
+      "method": "POST",
+      "path": "carts/5e452035-ed6b-4ae9-94cf-bf62cdcaea40/next",
+      "status": 200,
+      "operation_id": "34620abd-b42b-4142-b69f-b24e33e0464f",
+      "request_version": "4",
+      "result_code": null,
+      "set_cookie_count": 1
+    },
+    {
+      "method": "POST",
+      "path": "carts/9c5fb40f-33e9-4a48-a51d-45d7c9b397c8/lines",
+      "status": 200,
+      "operation_id": "12fa1d1b-f216-46d0-963e-513aa5ea2461",
+      "request_version": "1",
+      "result_code": null,
+      "set_cookie_count": 1
+    },
+    {
+      "method": "POST",
+      "path": "purchases",
+      "status": 200,
+      "operation_id": "85003aa7-28a3-4aa8-b23a-d599adab09bb",
+      "request_version": "2",
+      "result_code": null,
+      "set_cookie_count": 1
+    },
+    {
+      "method": "POST",
+      "path": "purchases",
+      "status": 200,
+      "operation_id": "85003aa7-28a3-4aa8-b23a-d599adab09bb",
+      "request_version": "2",
+      "result_code": null,
+      "set_cookie_count": 0
+    },
+    {
+      "method": "POST",
+      "path": "carts/9c5fb40f-33e9-4a48-a51d-45d7c9b397c8/next",
+      "status": 200,
+      "operation_id": "f0dd6637-f7e1-4187-a9a7-b148d1b96f60",
+      "request_version": "4",
+      "result_code": null,
+      "set_cookie_count": 1
+    },
+    {
+      "method": "POST",
+      "path": "carts/24b42948-0470-4124-a435-9959bbc38e3a/lines",
+      "status": 200,
+      "operation_id": "38659202-a383-46e2-a5c5-0d883bedcf27",
+      "request_version": "1",
+      "result_code": null,
+      "set_cookie_count": 1
+    },
+    {
+      "method": "POST",
+      "path": "purchases",
+      "status": 200,
+      "operation_id": "40b2001a-0f27-4ffb-8716-dcb9c2e93fce",
+      "request_version": "2",
+      "result_code": null,
+      "set_cookie_count": 1
+    },
+    {
+      "method": "POST",
+      "path": "purchases",
+      "status": 200,
+      "operation_id": "40b2001a-0f27-4ffb-8716-dcb9c2e93fce",
+      "request_version": "2",
+      "result_code": null,
+      "set_cookie_count": 0
+    }
+  ],
+  "condition_5": "not executed: requires controlled SQL observation/clock; see result document",
+  "status": "limited_conditions_passed",
+  "at_utc": "2026-10-04T07:04:19.113291+00:00",
+  "source_sha256": "2e3f29228c7ffda47344b45ec0b1de00c450d2051dad538eb78dfc1d028096a8"
+}

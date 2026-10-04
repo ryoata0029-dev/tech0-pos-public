@@ -1,0 +1,49 @@
+{
+  "reviewed_at_utc": "2026-10-04T07:31:43.249135+00:00",
+  "method": "offline saved JSON and build-file comparison; no live GUI/DB/process/socket/secret scan",
+  "sources": [
+    "db-before-phone.json",
+    "db-ready-final.json",
+    "environments-phone-ready-final.json",
+    "mysql-environment.json",
+    "environments-after-mac-flows.json",
+    "../parallel-mac-next/shutdown-final.json"
+  ],
+  "before_observed_at_utc": "2026-10-04 06:58:54.553710",
+  "final_db_observed_at_utc": "2026-10-04 07:30:33.982781",
+  "phone_environment_observed_at_utc": "2026-10-04T07:30:36.912403+00:00",
+  "Mac_shutdown_observed_at_utc": "2026-10-04T07:29:46.611336+00:00",
+  "equal_sets": {
+    "register": true,
+    "contexts": true,
+    "carts": true,
+    "lines": true,
+    "operations": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "checks": {
+    "all_nine_projection_sets_equal": true,
+    "phone_register_unstarted": true,
+    "phone_cart_and_purchase_empty": true,
+    "phone_six_fixture_products_retained": true,
+    "phone_container_id_matches_initial": true,
+    "phone_running_and_ports_open_reported": true,
+    "phone_owned_pids_equal_previous_observation": true,
+    "phone_origin_equal_previous_observation": true,
+    "phone_known_private_value_scan_reported_passed": true,
+    "Mac_earlier_shutdown_reported": true,
+    "build_id_and_manifest_equal_previous_observation": true,
+    "build_files_match_saved_phone_observation": true
+  },
+  "passed": true,
+  "limits": [
+    "Nine projection sets exclude authentication/session hashes, unselected columns and API-schema data.",
+    "Phone-only verifier does not inspect or stop Mac; Mac shutdown comes from a separate earlier saved record.",
+    "Known private values and private-directory exclusion were scanned by root; reviewer did not load secrets or repeat scans.",
+    "Open loopback ports and owned process/tunnel records do not prove current public reachability or iPhone camera usability.",
+    "Owner iPhone actions, OS/Chrome version, client build and real camera tests remain unperformed/unobserved."
+  ]
+}

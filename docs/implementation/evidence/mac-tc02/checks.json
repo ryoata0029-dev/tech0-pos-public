@@ -1,0 +1,23 @@
+{
+  "at_utc": "2026-10-04T04:54:50.431949+00:00",
+  "evidence_audit": "passed; TC02 failed/incomplete retained",
+  "ruff_check_tools": "passed with backend/pyproject.toml",
+  "ruff_format_tools": "37 files passed with backend/pyproject.toml",
+  "node_check_mac_flow_https": "passed",
+  "canonical_document_links": {
+    "documents": 26,
+    "links": 1307,
+    "errors": 0
+  },
+  "git_diff_check": "passed",
+  "application_tests_and_build": "not rerun; unchanged app source/build matched prior TC03 fix",
+  "initial_check_corrections": [
+    "Evidence audit initially matched stale status text instead of result paragraph; assertion narrowed to result paragraph",
+    "Root Ruff invocation first used default settings; configured lint passed after fixing one new long line",
+    "New document link check initially ran before this record existed; record created and check repeated"
+  ],
+  "new_tc02_document_links": {
+    "count": 41,
+    "errors": 0
+  }
+}

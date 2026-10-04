@@ -1,0 +1,14 @@
+{
+  "at_utc": "2026-10-04T03:45:42.451242+00:00",
+  "updated_documents": 4,
+  "local_targets_and_explicit_anchors_checked": 94,
+  "errors": [],
+  "independent_review_open_defects": [
+    {
+      "priority": "P2",
+      "topic": "member lookup uncertain display of old member and amount",
+      "fixed": false
+    }
+  ],
+  "full_restart_conditions_passed": 7
+}

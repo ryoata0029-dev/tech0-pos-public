@@ -1,0 +1,108 @@
+{
+  "stage": "empty-change-notfound",
+  "observed_at_utc": "2026-10-04 04:35:00.023346",
+  "register": [
+    {
+      "register_id": 1,
+      "start_state": "READY",
+      "maintenance_hold": 0,
+      "active_context_id": "09cc429c-2dd6-495b-a4e0-4a0ea93982c7",
+      "current_cart_id": "c3dedc87-bd42-4a74-992b-4a1dda69ad03"
+    }
+  ],
+  "contexts": [
+    {
+      "context_id": "09cc429c-2dd6-495b-a4e0-4a0ea93982c7",
+      "starting_staff_id": "STAFF_A",
+      "confirmed_at": "2026-10-04 04:33:05.030831",
+      "invalidated_at": null
+    }
+  ],
+  "carts": [
+    {
+      "cart_id": "c3dedc87-bd42-4a74-992b-4a1dda69ad03",
+      "staff_id": "STAFF_A",
+      "state": "EDITING",
+      "version": 6,
+      "member_state": "PENDING",
+      "member_id": "MEMBER_0",
+      "pending_member_id": "MEMBER_MISSING",
+      "active_member_operation_id": "9a769a1b-f5d1-4a00-9722-bd60a83cc868",
+      "active_purchase_operation_id": null,
+      "purchase_prepared_version": null,
+      "subtotal": "0",
+      "total": "0",
+      "tax_breakdown": "[]"
+    }
+  ],
+  "lines": [],
+  "operations": [
+    {
+      "cart_id": "c3dedc87-bd42-4a74-992b-4a1dda69ad03",
+      "operation_id": "18742f0f-1f47-42f1-9bc6-c537c2703ddd",
+      "kind": "SYNC",
+      "request_version": 1,
+      "status": "APPLIED",
+      "prepared_version": null,
+      "applied_version": 2,
+      "result_code": null,
+      "next_cart_id": null
+    },
+    {
+      "cart_id": "c3dedc87-bd42-4a74-992b-4a1dda69ad03",
+      "operation_id": "65dc26d4-054b-48a6-9f10-2240c250323f",
+      "kind": "SET_MEMBER",
+      "request_version": 2,
+      "status": "REJECTED",
+      "prepared_version": 3,
+      "applied_version": null,
+      "result_code": "MEMBER_NOT_FOUND",
+      "next_cart_id": null
+    },
+    {
+      "cart_id": "c3dedc87-bd42-4a74-992b-4a1dda69ad03",
+      "operation_id": "ae0d97e3-1573-4e72-b3d7-394df7b48e09",
+      "kind": "SET_MEMBER",
+      "request_version": 3,
+      "status": "APPLIED",
+      "prepared_version": 4,
+      "applied_version": 5,
+      "result_code": null,
+      "next_cart_id": null
+    },
+    {
+      "cart_id": "c3dedc87-bd42-4a74-992b-4a1dda69ad03",
+      "operation_id": "9a769a1b-f5d1-4a00-9722-bd60a83cc868",
+      "kind": "SET_MEMBER",
+      "request_version": 5,
+      "status": "REJECTED",
+      "prepared_version": 6,
+      "applied_version": null,
+      "result_code": "MEMBER_NOT_FOUND",
+      "next_cart_id": null
+    }
+  ],
+  "purchases": [],
+  "purchase_lines": [],
+  "purchase_taxes": [],
+  "products": [
+    {
+      "product_id": 1,
+      "code": "0001",
+      "unit_price": "103",
+      "tax_rate_id": 2
+    },
+    {
+      "product_id": 2,
+      "code": "0002",
+      "unit_price": "107",
+      "tax_rate_id": 1
+    },
+    {
+      "product_id": 3,
+      "code": "0003",
+      "unit_price": "107",
+      "tax_rate_id": 1
+    }
+  ]
+}

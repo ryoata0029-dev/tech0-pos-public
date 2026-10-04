@@ -1,0 +1,328 @@
+{
+  "at_utc": "2026-10-04T15:55:39.379780+00:00",
+  "method": "independent offline JSON, raw projection, contract and frozen-source audit; no DB/network/browser/process operations",
+  "status": "limited_recorded_evidence_consistent",
+  "checks": {
+    "source_and_execution_copy_frozen": true,
+    "original_run_hash_unchanged": true,
+    "original_execution_copy_hash": true,
+    "retry_schema_and_accounts": true,
+    "fixed_container_identity": true,
+    "completed_limited_run": true,
+    "519_unique_ids_and_expected_families": true,
+    "selected_467_exact_plan_zero_remaining": true,
+    "all_62_snapshot_hashes_and_14_table_scope": true,
+    "62_distinct_snapshots": true,
+    "510_HTTP_9_SQL": true,
+    "all_HTTP_errors_set_cookie_zero": true,
+    "401_403_no_protected_payload": true,
+    "510_responses_revalidated": true,
+    "all_before_after_connection_ids_distinct": true,
+    "unchanged_labels_match_all_14_raw_tables": true,
+    "483_unchanged_cases": true,
+    "22_actual_normal_operation_entrances": true,
+    "TC11_suffix_status_matrix_matches": true,
+    "22_engine_none_503_contract_cases": true,
+    "4_business_rejections_preserve_13_tables_and_prior_operations": true,
+    "4_new_rejected_rows_no_applied_version": true,
+    "9_constraint_codes_and_rollback_snapshot_equality": true,
+    "controlled_receipt_then_resolve_save_next_sequence": true,
+    "one_purchase_line_tax_each": true,
+    "sale_independent_amount_constants": true,
+    "final_closed_and_MAX_editing_current": true,
+    "one_applied_purchase_one_closed_rejection": true,
+    "max_increment_refusals": true,
+    "original_before_snapshot_matches_original_run": true,
+    "original350_stopped_not_added_to519": true,
+    "original_before_preserved_saving_v8_sale0": true,
+    "original_after_retry_matches_all_14_raw_projections": true,
+    "original_after_retry_sha_recomputed": true,
+    "original_before_after_connection_ids_distinct": true,
+    "original350_JSON_hash_still_preserved": true,
+    "normal_Mac_before_after_9_raw_projections_equal": true,
+    "normal_Mac_identity_ports_match_and_cart_sale_zero": true,
+    "local_backend85_frontend123_total208_recorded_pass": true,
+    "local_lint_format_type_contract_logs_consistent": true,
+    "application_32_hashes_match_initial_prior_and_current_read": true,
+    "build_id_unchanged_current_file_matches": true,
+    "environment_helper_false_is_not_suite_failure_or_nonexecution": true
+  },
+  "source_files": [
+    {
+      "file": "api-run-retry.json",
+      "sha256": "0f94496a434f1492ba96ea19ef5c84d10c646162a9987f6622818fbff7dfae2b"
+    },
+    {
+      "file": "api-prepare-retry.json",
+      "sha256": "16f4426d67330c60b6e66604e62455499196bc50c2bd676383ec4ddd7cb7b522"
+    },
+    {
+      "file": "api-retry-script-frozen.json",
+      "sha256": "18da6c30e9a9b01d4da8877e187542ff2c3aad859348c2a2b63d0732f1527095"
+    },
+    {
+      "file": "oct05_api_verify.py.retry-executed.txt",
+      "sha256": "b771e3894f8376c8d79f961294995cf64f4f9fc4502c770f8f7c29930720fbbf"
+    },
+    {
+      "file": "api-run.json",
+      "sha256": "3ee8fa274f7ede7a918116600572dff0272442db1ce58b2e9786fbbe91ccbd94"
+    },
+    {
+      "file": "oct05_api_verify.py.executed.txt",
+      "sha256": "f51d68066f1fe712b3220947ea634ce3ee54f6e6bcc3b522afe235dbd6eb39ea"
+    },
+    {
+      "file": "api-original-before-retry-verified.json",
+      "sha256": "3390a0c2cc88c740610ffd56848a86a7e0939fdf91dfc9e8f24f1de6b0c2ed24"
+    },
+    {
+      "file": "mysql-environment.json",
+      "sha256": "57bd0d53def55ecbbfa53c31b070a4d7a22bfdf5b1d010669ddb9cd954865dbf"
+    },
+    {
+      "file": "../../../../tools/oct05_api_verify.py",
+      "sha256": "b771e3894f8376c8d79f961294995cf64f4f9fc4502c770f8f7c29930720fbbf"
+    },
+    {
+      "file": "comparison-original-and-mac-after-retry.json",
+      "sha256": "92933772f459f8f7a81c5b568cec691a7e6027e84aa1ab168b6f58a5678d353d"
+    },
+    {
+      "file": "api-original-after-retry.json",
+      "sha256": "8e51a34d8aa7aec06b59d670abac876c3090bc95a0086253fd07b49171df2c3d"
+    },
+    {
+      "file": "db-before-api.json",
+      "sha256": "06695e1b69d1cfe0ecf064e39d7e0514ed356bad9703587629d079c3f6c6cc63"
+    },
+    {
+      "file": "db-after-api-retry.json",
+      "sha256": "714681e1eb6f3ca17fafe18d57e4babada75774f4db36840b384cd34104ea5d2"
+    },
+    {
+      "file": "check-backend-lint.log",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "file": "check-backend-format.log",
+      "sha256": "40be2b843808698b792420e7f7e2ecc59008bc39e9de2ea0c999ada5b5c4aa48"
+    },
+    {
+      "file": "check-backend-types.log",
+      "sha256": "7f43e759c997a0af903a210f4a10fd709457c5a5125336929ab037d3ed6702ce"
+    },
+    {
+      "file": "check-backend-tests.log",
+      "sha256": "ec3c4fe78ad73e56bd45af9a1e7d1517c901f1b60aa71a19567f3e7e17c8d4e5"
+    },
+    {
+      "file": "check-frontend-lint.log",
+      "sha256": "5c30e480bd4c390ce3e10e8eb187d4ace1a82cc2f9e184f6a28127cd15d06192"
+    },
+    {
+      "file": "check-frontend-types.log",
+      "sha256": "26dbbc331b1a70a409824ca289a4ea4246bc4bbf81aaaca9dbe631eaa4877551"
+    },
+    {
+      "file": "check-frontend-tests.log",
+      "sha256": "a306aa899d62dd65941919c8129a66b8ba729d06560429676d523c19c98225b2"
+    },
+    {
+      "file": "check-contract.log",
+      "sha256": "c0f3d2e3f95879338319e601b73c91ed6b27d1b9ed370ea7e40b5221447e7db8"
+    },
+    {
+      "file": "environment-checks-complete.json",
+      "sha256": "352b450af4c8a42bab680c9df304ee9cd2277caaeb4c9a536b8634beab083ee7"
+    },
+    {
+      "file": "environment-initial.json",
+      "sha256": "72120c14e60a0c440b267ee437a7cf7d1621fedb5a92ed105f5d23c6290fa664"
+    },
+    {
+      "file": "check-oct05.log",
+      "sha256": "411522ec89779639df259fa9f595942811c505c31bc2eb85696023376304b203"
+    }
+  ],
+  "counts": {
+    "unique_cases": 519,
+    "families": {
+      "TC11": 467,
+      "TC12": 18,
+      "TC08": 25,
+      "TC13": 9
+    },
+    "selected_TC11": 467,
+    "remaining_selected_TC11": 0,
+    "normal_operation_kinds": 22,
+    "normal_suffix_ids": 23,
+    "HTTP_responses_revalidated": 510,
+    "direct_SQL_constraint_cases": 9,
+    "distinct_snapshot_hashes": 62,
+    "unchanged_cases": 483,
+    "unchanged_HTTP_cases": 474,
+    "business_rejections_with_new_record": 4,
+    "engine_none_503_contract_cases": 22
+  },
+  "HTTP_status_totals": {
+    "422": 270,
+    "403": 105,
+    "503": 22,
+    "200": 47,
+    "401": 60,
+    "409": 5,
+    "202": 1
+  },
+  "business_rejections": [
+    {
+      "case_id": "TC08-line-overflow",
+      "code": "AMOUNT_INVALID",
+      "new_rejected_operation_id": "99507b34-0059-4106-9f40-5b774be30cfe",
+      "other_13_tables_unchanged": true,
+      "prior_operations_unchanged": true
+    },
+    {
+      "case_id": "TC08-transaction-overflow",
+      "code": "AMOUNT_INVALID",
+      "new_rejected_operation_id": "813aba57-b621-4449-b846-3e3c9f43d7be",
+      "other_13_tables_unchanged": true,
+      "prior_operations_unchanged": true
+    },
+    {
+      "case_id": "TC08-gross-only-overflow",
+      "code": "AMOUNT_INVALID",
+      "new_rejected_operation_id": "45d04625-2a68-4aa6-970a-684b6a334ad9",
+      "other_13_tables_unchanged": true,
+      "prior_operations_unchanged": true
+    },
+    {
+      "case_id": "TC08-add-over99",
+      "code": "QUANTITY_LIMIT",
+      "new_rejected_operation_id": "d9a865b4-b9a2-4cac-8238-56c40df90464",
+      "other_13_tables_unchanged": true,
+      "prior_operations_unchanged": true
+    }
+  ],
+  "purchase_sequence": [
+    {
+      "case_id": "TC11-purchase-normal",
+      "cart_state": "SAVING",
+      "purchase_status": "UNKNOWN",
+      "operation_status": "PREPARED"
+    },
+    {
+      "case_id": "TC11-getOperation-normal",
+      "cart_state": "SAVING",
+      "purchase_status": "UNKNOWN",
+      "operation_status": "NOT_FOUND"
+    },
+    {
+      "case_id": "TC11-resolvePurchase-normal",
+      "cart_state": "UNSAVED",
+      "purchase_status": "UNSAVED",
+      "operation_status": "APPLIED"
+    },
+    {
+      "case_id": "TC11-purchase-saved",
+      "cart_state": "SAVED",
+      "purchase_status": "SAVED",
+      "operation_status": "APPLIED"
+    },
+    {
+      "case_id": "TC11-next-normal",
+      "cart_state": "EDITING",
+      "purchase_status": "NOT_REQUESTED",
+      "operation_status": "APPLIED"
+    }
+  ],
+  "final_sale": {
+    "count": 1,
+    "cart_id": "6986f941-dd64-45ac-b2ef-057e5ed5bacd",
+    "quantity": 1,
+    "subtotal": 103,
+    "tax": 10,
+    "total": 113
+  },
+  "final_current": {
+    "cart_id": "8ebba261-9b8d-4979-8ca2-72cbc3ec5d4d",
+    "state": "EDITING",
+    "version": "18446744073709551615",
+    "subtotal": 103,
+    "total": 113,
+    "version_was_dedicated_SQL_fixture": true
+  },
+  "original_schema": {
+    "original_run350_preserved": true,
+    "before_retry_snapshot_matches_original_run": true,
+    "before_retry_state": "SAVING v8, sale0",
+    "after_retry_live_DB_comparison": {
+      "status": "root_recorded_independent_TLS_before_after_raw_snapshots_consistent",
+      "projection_sha256": "2a96d228ce814951537f8a98022ee6f0ab8b40f5e41ea084fa61e091b5cf20e1",
+      "all_14_projections_equal": true,
+      "connection_ids_distinct": true,
+      "final_state": "SAVING v8, sale0; preserved controlled fixture; recovery not performed"
+    }
+  },
+  "limits": [
+    "Actual ASGI + TLS MySQL recorded by root; no actual HTTPS/browser coverage in these cases.",
+    "14 named projections include sanitized authentication columns; excludes STAFF/MEMBER and secret columns.",
+    "22 engine=None 503 cases do not establish a DB network outage or COMMIT failure.",
+    "SAVING202 uses real receipt COMMIT then substituted read; not a sale-writer or network-failure test.",
+    "Original350 and retry519 are separate executions; counts are not added.",
+    "Selected TC11 complete does not establish all TC11 responses, all TC cases, device/Azure or M7 acceptance.",
+    "Additional original/Mac invariance is confirmed only for root-recorded selected raw projections; child performed no live DB observation. Actual GUI six conditions remain separate and unexecuted.",
+    "All-suite success is root direct-command execution plus eight raw logs; child did not rerun any test or build. make check itself did not succeed. Existing MODULE_TYPELESS_PACKAGE_JSON warning remains in Node test output; 123 passed with zero failures/skips."
+  ],
+  "normal_Mac_after_retry": {
+    "status": "root_recorded_raw_snapshots_consistent",
+    "projection_equality": {
+      "register": true,
+      "contexts": true,
+      "carts": true,
+      "lines": true,
+      "operations": true,
+      "purchases": true,
+      "purchase_lines": true,
+      "purchase_taxes": true,
+      "products": true
+    },
+    "profile": "oct05-mac",
+    "container": "tech0-pos-oct05-mac-mysql",
+    "ports": {
+      "mysql": 3327,
+      "frontend": 8463,
+      "backend": 8464
+    },
+    "cart_count": 0,
+    "purchase_count": 0,
+    "GUI_six_conditions": "not_executed; awaiting normal login",
+    "source_final_manifest_comparison": "32 source hashes independently match initial, prior verified manifests, recorded checks environment and current filesystem; BUILD_ID matches 5_wgTZOtPLE3as7vfiFAN"
+  },
+  "after_retry_addendum_at_utc": "2026-10-04T16:00:10.472354+00:00",
+  "local_checks": {
+    "independent_review_at_utc": "2026-10-04T16:02:21.369838+00:00",
+    "execution_provenance": "root reports all eight direct Makefile-equivalent commands exited successfully; child independently read their raw logs only",
+    "backend_tests": 85,
+    "frontend_tests": 123,
+    "total_tests": 208,
+    "frontend_fail_cancel_skip_todo": 0,
+    "backend_lint": "All checks passed",
+    "backend_format": "90 already formatted",
+    "backend_type": "23 source files no issues",
+    "frontend_lint": "eslint --max-warnings0 command log; no diagnostics",
+    "frontend_type": "next typegen + tsc --noEmit log; generation success and no diagnostics",
+    "OpenAPI": "3.1.1 valid,22 operations",
+    "make_check": "make wrapper blocked before checks by Xcode license; root reported exit69, no license agreement performed",
+    "helper_full_application_suite_rerun_false": "verify() does not execute tests; this field is hardcoded by environment helper and does not negate separately recorded 208 suite successes",
+    "new_build_executed": false
+  },
+  "application_source_final": {
+    "recorded_environment": "environment-checks-complete.json",
+    "files": 32,
+    "current_file_hashes_all_match_recorded_initial_and_prior_build": true,
+    "build_id": "5_wgTZOtPLE3as7vfiFAN",
+    "current_BUILD_ID_file_matches": true,
+    "child_live_runtime_probe": false
+  }
+}

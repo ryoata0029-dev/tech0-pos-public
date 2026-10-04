@@ -1,0 +1,11 @@
+{
+  "at_utc": "2026-10-04T03:28:56.144051+00:00",
+  "tag": "saving-fault",
+  "kind": "purchase-hold",
+  "after_real_receipt_commit": true,
+  "operation_id": "76ea9d3b-cdc9-4af7-b83a-96a73b9b1b55",
+  "cart_id": "9778aaa3-ded4-4af9-b0b4-02899214e6c8",
+  "version": "15",
+  "state": "SAVING",
+  "member_state": "CONFIRMED"
+}

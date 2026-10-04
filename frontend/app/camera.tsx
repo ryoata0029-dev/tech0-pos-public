@@ -3,13 +3,15 @@ import { useEffect, useRef, useState } from 'react';
 import { MediaLease, ScanGate } from '../lib/scan-gate';
 
 type Mode = 'product' | 'member';
+export type ScanOutcome = { kind: 'confirmed' } | { kind: 'rejected'; message: string } | { kind: 'stopped' };
 export default function Camera({ mode, allowed, onCode, onClose }: {
-  mode: Mode; allowed: boolean; onCode: (code: string) => Promise<boolean>; onClose: () => void;
+  mode: Mode; allowed: boolean; onCode: (code: string) => Promise<ScanOutcome>; onClose: () => void;
 }) {
   const video = useRef<HTMLVideoElement>(null);
   const lease = useRef(new MediaLease());
   const controls = useRef<{stop: () => void} | null>(null);
   const gate = useRef(new ScanGate());
+  const rejectedCode = useRef<string | null>(null);
   const handler = useRef(onCode);
   const permitted = useRef(allowed);
   const [message, setMessage] = useState('開始ボタンでカメラを許可してください。');
@@ -47,13 +49,16 @@ export default function Camera({ mode, allowed, onCode, onClose }: {
         if (!lease.current.valid(generation) || !permitted.current || document.hidden) return;
         if (result) {
           const code = result.getText();
-          if (gate.current.repeated(code)) setMessage('同じ商品です。追加する場合は一度枠から外してください。');
+          if (gate.current.repeated(code) && rejectedCode.current !== code) setMessage('同じ商品です。追加する場合は一度枠から外してください。');
           if (!gate.current.detected(code)) return;
+          rejectedCode.current = null;
           setMessage('読み取ったコードを確認しています。');
           // No queue and no automatic retry; onCode owns one immutable operation.
-          void handler.current(code).then(confirmed => {
-            if (!confirmed || mode === 'member') { stop(); onClose(); }
-            else if (lease.current.valid(generation)) setMessage('確認しました。次の商品を提示してください。');
+          void handler.current(code).then(outcome => {
+            if (!lease.current.valid(generation) || !permitted.current || document.hidden) return;
+            if (outcome.kind === 'stopped' || mode === 'member') { stop(); onClose(); }
+            else if (outcome.kind === 'rejected') { rejectedCode.current = code; setMessage(outcome.message); }
+            else setMessage('確認しました。次の商品を提示してください。');
           }).catch(() => { stop(); onClose(); }).finally(() => gate.current.completed());
         } else if (error instanceof NotFoundException) gate.current.absent(performance.now());
         else gate.current.interrupted();

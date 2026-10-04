@@ -1,0 +1,82 @@
+[
+  {
+    "at_utc": "2026-10-04T16:12:49.938Z",
+    "method": "GET",
+    "path": "resume",
+    "status": 200,
+    "operation_id": null,
+    "operation_status": null,
+    "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+    "version": "15",
+    "new_cart_id": null
+  },
+  {
+    "at_utc": "2026-10-04T16:12:49.953Z",
+    "fixture": "native-quota",
+    "native_error": "QuotaExceededError",
+    "purchase_sized_probe_failed": true,
+    "owned_keys": 104,
+    "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+    "version": "15"
+  },
+  {
+    "at_utc": "2026-10-04T16:12:59.470Z",
+    "action": "ordinary-built-POS-iframe-opened"
+  },
+  {
+    "at_utc": "2026-10-04T16:14:18.238Z",
+    "action": "only-fixture-owned-keys-removed",
+    "remaining_purchase_keys": 0
+  },
+  {
+    "at_utc": "2026-10-04T16:14:19.393Z",
+    "method": "GET",
+    "path": "resume",
+    "status": 200,
+    "operation_id": null,
+    "operation_status": null,
+    "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+    "version": "16",
+    "new_cart_id": null
+  },
+  {
+    "at_utc": "2026-10-04T16:14:19.393Z",
+    "fixture": "broken-JSON",
+    "keys_placed": 1,
+    "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+    "version": "16",
+    "requests_were_not_purchase_requests": true
+  },
+  {
+    "at_utc": "2026-10-04T16:14:38.568Z",
+    "action": "ordinary-built-POS-iframe-opened"
+  },
+  {
+    "at_utc": "2026-10-04T16:16:43.891Z",
+    "action": "only-fixture-owned-keys-removed",
+    "remaining_purchase_keys": 0
+  },
+  {
+    "at_utc": "2026-10-04T16:16:45.412Z",
+    "method": "GET",
+    "path": "resume",
+    "status": 200,
+    "operation_id": null,
+    "operation_status": null,
+    "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+    "version": "16",
+    "new_cart_id": null
+  },
+  {
+    "at_utc": "2026-10-04T16:16:45.412Z",
+    "fixture": "multiple-key-body-mismatch",
+    "keys_placed": 2,
+    "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+    "version": "16",
+    "requests_were_not_purchase_requests": true
+  },
+  {
+    "at_utc": "2026-10-04T16:17:00.889Z",
+    "action": "ordinary-built-POS-iframe-opened"
+  }
+]

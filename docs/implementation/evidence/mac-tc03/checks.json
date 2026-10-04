@@ -1,0 +1,44 @@
+{
+  "at_utc": "2026-10-04T04:26:41.698523+00:00",
+  "scope": "TC03 test tools and result documents; application unchanged",
+  "python_targets": 11,
+  "ruff_lint": {
+    "cwd": "backend",
+    "exit_code": 0,
+    "output": "All checks passed!"
+  },
+  "ruff_format": {
+    "cwd": "backend",
+    "exit_code": 0,
+    "output": "11 files already formatted"
+  },
+  "ruff_initial_wrong_cwd": {
+    "cwd": ".",
+    "exit_code": 1,
+    "reason": "Root configuration differs; repeated with backend configuration used by Makefile, without changing unrelated code."
+  },
+  "https_javascript_syntax": {
+    "exit_code": 0
+  },
+  "canonical_links": {
+    "documents": 26,
+    "local_links": 1307,
+    "traceability_ids": 39,
+    "acceptance_sections": 28,
+    "errors": []
+  },
+  "git_diff_check": {
+    "exit_code": 0
+  },
+  "application_check_and_build": "not repeated; application hashes and build matched prior evidence",
+  "offline_evidence_audit": "passed; existing verification.json preserved",
+  "tc03_result": "failed; TC03-P2-01 remains unfixed",
+  "panel_javascript_syntax": {
+    "exit_code": 0
+  },
+  "supplementary_links": {
+    "documents": 5,
+    "local_links": 109,
+    "errors": []
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "at_utc": "2026-10-04T08:10:56.681957+00:00",
+  "condition": "P5b non-detection",
+  "before": "db-iphone-p5-no-dialog-before.json",
+  "after": "db-iphone-p5-after-nondetection.json",
+  "user_report": "コードをカメラに提示してください",
+  "projection_equal": {
+    "register": true,
+    "contexts": true,
+    "carts": true,
+    "lines": true,
+    "operations": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "version": 11,
+  "total_yen": 11783,
+  "manual_code": "0002",
+  "manual_product_id": 2,
+  "manual_before_quantity": 0,
+  "purchases": 0,
+  "result": "limited_confirmation",
+  "permission_denial": "not_performed; dialog absence requires terminology clarification",
+  "limits": "Camera message is owner reported. No direct video, decoder, browser permission dialog or timed duration observation. This is non-detection, not an unknown product or permission rejection."
+}

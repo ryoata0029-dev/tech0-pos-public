@@ -1,0 +1,47 @@
+{
+  "reviewed_at_utc": "2026-10-04T07:26:54.184536+00:00",
+  "method": "offline independent comparison of saved snapshots and runtime observations only",
+  "sources": [
+    "../parallel-next/db-before-phone.json",
+    "../parallel-next/db-after-mac-flows.json",
+    "../parallel-next/environments-after-mac-setup.json",
+    "../parallel-next/environments-after-mac-flows.json",
+    "../parallel-next/comparison-phone-after-mac-flows.json"
+  ],
+  "before_at_utc": "2026-10-04 06:58:54.553710",
+  "after_at_utc": "2026-10-04 07:26:26.619738",
+  "equal_nine_collections": {
+    "register": true,
+    "contexts": true,
+    "carts": true,
+    "lines": true,
+    "operations": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "both_saved_runtime_targets_identical": {
+    "parallel-next": true,
+    "parallel-mac-next": true
+  },
+  "disk_build_and_manifest_identical": true,
+  "phone_register": [
+    {
+      "register_id": 1,
+      "start_state": "UNSTARTED",
+      "maintenance_hold": 0,
+      "active_context_id": null,
+      "current_cart_id": null
+    }
+  ],
+  "phone_carts": 0,
+  "phone_purchases": 0,
+  "limits": [
+    "Database equality covers the exported nine snapshot projections; authentication/other tables and unexported columns are not compared.",
+    "No valid pre-Mac-setup port/process observation exists; runtime identity equality spans the two saved post-setup observations.",
+    "No phone UI/device/camera acceptance was executed by this reviewer.",
+    "Runtime build comparison is of saved disk BUILD_ID/manifest metadata, not a direct process-memory check."
+  ],
+  "passed": true
+}

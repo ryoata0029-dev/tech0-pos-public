@@ -25,7 +25,22 @@ def main():
             "relay",
         )
     }
-    if PROFILE == "mac":
+    if PROFILE in (
+        "mac",
+        "mac-flow",
+        "mac-recovery",
+        "mac-restart",
+        "mac-member",
+        "mac-tc03",
+        "mac-tc03-fix",
+        "mac-tc02",
+        "mac-batch",
+        "mac-parallel",
+        "parallel-next",
+        "parallel-mac-next",
+        "oct05-mac",
+        "iphone-camera",
+    ):
         for staff in ("STAFF_A", "STAFF_B"):
             passwords[staff] = "".join(
                 secrets.choice("abcdefghjkmnpqrstuvwxyz23456789") for _ in range(10)

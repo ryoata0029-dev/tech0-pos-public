@@ -1,0 +1,6 @@
+{
+  "nine_projections_equal": true,
+  "before": "db-before-api.json",
+  "after": "db-after-api-first.json",
+  "boundary": "Only selected Mac business columns; does not prove no HTTP traffic/all tables/latency"
+}

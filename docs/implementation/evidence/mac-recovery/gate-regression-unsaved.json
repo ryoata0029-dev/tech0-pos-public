@@ -1,0 +1,11 @@
+{
+  "at_utc": "2026-10-03T12:59:35.409455+00:00",
+  "tag": "regression-unsaved",
+  "kind": "purchase-hold",
+  "after_real_receipt_commit": true,
+  "operation_id": "8686e60b-93cf-4ff9-8830-ce46fafeb1cd",
+  "cart_id": "ec0ce4b7-8b15-420c-a28f-494a30e4041c",
+  "version": "6",
+  "state": "SAVING",
+  "member_state": "UNSPECIFIED"
+}

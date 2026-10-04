@@ -1,0 +1,42 @@
+{
+  "at_utc": "2026-10-04T07:58:41.637306+00:00",
+  "condition": "P3b first scan baseline",
+  "before": "db-iphone-p3a-after-hold.json",
+  "after": "db-iphone-p3b-before-represent.json",
+  "user_report": "おｋ",
+  "protected_projection_equal": {
+    "register": true,
+    "contexts": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "prior_operations_unchanged": true,
+  "non_target_lines_unchanged": true,
+  "new_operations": [
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "operation_id": "9f945010-6daa-444c-8aca-79a08fc2846a",
+      "kind": "ADD_LINE",
+      "request_version": 8,
+      "status": "APPLIED",
+      "prepared_version": null,
+      "applied_version": 9,
+      "result_code": null,
+      "next_cart_id": null,
+      "created_at": "2026-10-04 07:58:08.071364",
+      "requested_code": "00123457"
+    }
+  ],
+  "ean8_quantity_before": 1,
+  "ean8_quantity_after": 2,
+  "version_before": 8,
+  "version_after": 9,
+  "subtotal_yen": 10506,
+  "tax_yen": 1050,
+  "total_yen": 11556,
+  "purchases": 0,
+  "same_session_represent_result": "not_yet_observed",
+  "limits": "Acknowledges the requested first-scan quantity2/frame-out/camera-open preparation; camera and frame positions not directly observed."
+}

@@ -1,0 +1,879 @@
+{
+  "relay_records": [
+    {
+      "utc": "2026-10-04T06:21:00.890Z",
+      "api": "/api/auth/status",
+      "elapsed_ms": 70.65,
+      "result_code": "HTTP_401",
+      "request_id": "6b9d2544-de75-4b43-b3ba-b31be9436b9f",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:21:15.205Z",
+      "api": "/api/login",
+      "elapsed_ms": 77.78,
+      "result_code": "HTTP_200",
+      "request_id": "4708b3fa-34a7-4f65-b224-87670dff3d1b",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:21:15.243Z",
+      "api": "/api/auth/status",
+      "elapsed_ms": 8.7,
+      "result_code": "HTTP_200",
+      "request_id": "d5aa0526-8c76-4850-943d-aa3ea81533e5",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:21:15.287Z",
+      "api": "/api/register/status",
+      "elapsed_ms": 10.55,
+      "result_code": "HTTP_200",
+      "request_id": "aed88213-7efa-47b3-a9ff-d5f9ce2218eb",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:21:28.113Z",
+      "api": "/api/register/start",
+      "elapsed_ms": 20.95,
+      "result_code": "HTTP_200",
+      "request_id": "303dedd3-7e48-4ac7-90cf-f5b14d929e7b",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:21:28.158Z",
+      "api": "/api/auth/status",
+      "elapsed_ms": 11.73,
+      "result_code": "HTTP_200",
+      "request_id": "7fb23be5-10d0-4c55-9488-8f8f679e0b9f",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:21:28.208Z",
+      "api": "/api/register/status",
+      "elapsed_ms": 14.35,
+      "result_code": "HTTP_200",
+      "request_id": "bab8a6d8-7598-4e2b-9cef-c8e135f1458f",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:21:30.975Z",
+      "api": "/api/register/confirm",
+      "elapsed_ms": 28.86,
+      "result_code": "HTTP_200",
+      "request_id": "faa24055-ee9b-4303-bcf2-0c3efaf94446",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:21:31.016Z",
+      "api": "/api/auth/status",
+      "elapsed_ms": 10.6,
+      "result_code": "HTTP_200",
+      "request_id": "de617929-b852-4dff-845c-fd0fe942472f",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:21:31.157Z",
+      "api": "/api/register/status",
+      "elapsed_ms": 20.94,
+      "result_code": "HTTP_200",
+      "request_id": "cc264f86-621f-4c1f-9388-b21d757aafba",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:21:31.208Z",
+      "api": "/api/resume",
+      "elapsed_ms": 14.22,
+      "result_code": "HTTP_404",
+      "request_id": "2081764c-efff-4bcf-bda3-d0ec47c84e33",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:21:34.620Z",
+      "api": "/api/carts",
+      "elapsed_ms": 22.59,
+      "result_code": "HTTP_200",
+      "request_id": "3f5c7540-f9de-491a-bf06-22bea9ba5c98",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:21:34.661Z",
+      "api": "/api/auth/status",
+      "elapsed_ms": 10,
+      "result_code": "HTTP_200",
+      "request_id": "071fe462-d074-4d51-97c2-3a50e5639e6d",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:21:34.799Z",
+      "api": "/api/register/status",
+      "elapsed_ms": 20.77,
+      "result_code": "HTTP_200",
+      "request_id": "b0e6ebf6-a2c1-47b1-9256-0c97983febc9",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:21:34.863Z",
+      "api": "/api/resume",
+      "elapsed_ms": 24.97,
+      "result_code": "HTTP_200",
+      "request_id": "30aa1f95-9084-4816-b272-4a40ff43b625",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:21:34.928Z",
+      "api": "/api/register/status",
+      "elapsed_ms": 12.51,
+      "result_code": "HTTP_200",
+      "request_id": "e2d0180c-ac50-439d-aa7e-6c505847e34b",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:21:34.973Z",
+      "api": "/api/resume",
+      "elapsed_ms": 15.19,
+      "result_code": "HTTP_200",
+      "request_id": "85e11186-2ac4-4f5b-a2fb-63ff9347d572",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:21:35.039Z",
+      "api": "/api/carts/{cart_id}/sync",
+      "elapsed_ms": 29.21,
+      "result_code": "HTTP_200",
+      "request_id": "0f5850d3-ecaa-4662-ad28-3c237338cce0",
+      "operation_id": "0a3c43a7-bc53-4b5e-a68e-baac655c1d95",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:22:20.508Z",
+      "api": "/api/products/{code}",
+      "elapsed_ms": 36.87,
+      "result_code": "HTTP_200",
+      "request_id": "febd2005-02f4-4ba5-a44a-79d656253007",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:23:50.083Z",
+      "api": "/api/products/{code}",
+      "elapsed_ms": 2112.71,
+      "result_code": "HTTP_200",
+      "request_id": "c17b6df0-9d56-437b-acc2-814b1643e728",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:24:22.051Z",
+      "api": "/api/products/{code}",
+      "elapsed_ms": 19.37,
+      "result_code": "HTTP_200",
+      "request_id": "f2d50e6d-b4b7-4852-979d-4e7f1144c08d",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:24:48.858Z",
+      "api": "/api/products/{code}",
+      "elapsed_ms": 2090.57,
+      "result_code": "HTTP_404",
+      "request_id": "55e36d9b-5d43-4891-a638-0afb8074d346",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:25:01.691Z",
+      "api": "/api/products/{code}",
+      "elapsed_ms": 20.43,
+      "result_code": "HTTP_200",
+      "request_id": "53e06d21-7164-4f62-adf9-4ba921a40973",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:26:09.848Z",
+      "api": "/api/products/{code}",
+      "elapsed_ms": 2108.62,
+      "result_code": "HTTP_503",
+      "request_id": "8bb56cad-5d50-4bde-9336-3e095c6be2c4",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:26:26.733Z",
+      "api": "/api/products/{code}",
+      "elapsed_ms": 17.98,
+      "result_code": "HTTP_200",
+      "request_id": "3f7015d3-3758-4e51-b2a5-f182715df1bd",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:26:47.359Z",
+      "api": "/api/products/{code}",
+      "elapsed_ms": 2090.54,
+      "result_code": "HTTP_200",
+      "request_id": "1a4f1189-48dc-4950-aa7e-10521aec9afc",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:27:03.584Z",
+      "api": "/api/products/{code}",
+      "elapsed_ms": 18.17,
+      "result_code": "HTTP_200",
+      "request_id": "36078b70-d76e-43e1-96a8-548998ee17be",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:27:31.866Z",
+      "api": "/api/products/{code}",
+      "elapsed_ms": 19.8,
+      "result_code": "HTTP_200",
+      "request_id": "16a100de-27a8-4350-81f6-2c3faf3a5db2",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:27:50.867Z",
+      "api": "/api/carts/{cart_id}/lines",
+      "elapsed_ms": 58.57,
+      "result_code": "HTTP_200",
+      "request_id": "ad04440a-4759-4214-8ffa-5fba9b84e123",
+      "operation_id": "f464f2fd-6888-488c-8cc1-c5d73ec83037",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:28:18.019Z",
+      "api": "/api/carts/{cart_id}/lines/{line_id}",
+      "elapsed_ms": 34.17,
+      "result_code": "HTTP_200",
+      "request_id": "d026bbd4-e031-4285-9490-e45ccd6846a5",
+      "operation_id": "b55abc27-7723-4b42-8944-fbeb3b75c420",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:28:18.639Z",
+      "api": "/api/carts/{cart_id}/member",
+      "elapsed_ms": 34.51,
+      "result_code": "HTTP_200",
+      "request_id": "af31794e-d2d6-45fa-a42a-16192661a684",
+      "operation_id": "53f0b757-1bb8-49bd-bf62-b2f364fe2fe2",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:28:29.528Z",
+      "api": "/api/products/{code}",
+      "elapsed_ms": 20.66,
+      "result_code": "HTTP_200",
+      "request_id": "b20e0d39-4b3b-47b6-9592-64a38ed00529",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:28:29.947Z",
+      "api": "/api/carts/{cart_id}/lines",
+      "elapsed_ms": 32.34,
+      "result_code": "HTTP_200",
+      "request_id": "d35b3c47-2b88-4409-9108-b0e221607805",
+      "operation_id": "3bb9c826-3471-431a-a9d1-350f978c02f6",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:28:44.764Z",
+      "api": "/api/carts/{cart_id}/lines/{line_id}",
+      "elapsed_ms": 32.03,
+      "result_code": "HTTP_200",
+      "request_id": "5bdaa494-9299-4fbc-84bc-24b875cc8942",
+      "operation_id": "df280ab9-0bbd-47f7-a18a-6f1e68bc26db",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:28:45.422Z",
+      "api": "/api/products/{code}",
+      "elapsed_ms": 20.04,
+      "result_code": "HTTP_200",
+      "request_id": "3f263b6b-b5a0-4bd9-9d10-14bf24e510e0",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:28:46.320Z",
+      "api": "/api/carts/{cart_id}/lines",
+      "elapsed_ms": 28.97,
+      "result_code": "HTTP_200",
+      "request_id": "32d9054e-1f03-4a82-b770-467be9fa84a3",
+      "operation_id": "89f842ee-75ea-4360-8e40-4461437ca63b",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:28:52.084Z",
+      "api": "/api/products/{code}",
+      "elapsed_ms": 22.63,
+      "result_code": "HTTP_200",
+      "request_id": "06749c0d-05fb-4b6c-9d0b-fc123d441cfb",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:28:52.814Z",
+      "api": "/api/carts/{cart_id}/lines",
+      "elapsed_ms": 30.38,
+      "result_code": "HTTP_200",
+      "request_id": "f99beb55-5604-44cd-892c-48ddf693b5d2",
+      "operation_id": "010fada1-34fd-4ce8-ab0d-bde6eec704de",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:29:06.926Z",
+      "api": "/api/purchases",
+      "elapsed_ms": 58.02,
+      "result_code": "HTTP_200",
+      "request_id": "ade32aa4-aa4b-4c33-ac79-27f5ea9e594b",
+      "operation_id": "a2e478dc-b16f-404d-bd66-07543ce11d62",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:29:32.667Z",
+      "api": "/api/carts/{cart_id}/next",
+      "elapsed_ms": 36.81,
+      "result_code": "HTTP_200",
+      "request_id": "46e41b08-5eca-4096-8a53-6636624caf00",
+      "operation_id": "f0ab2305-46ee-44f9-82d4-a9a9638e147d",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:29:32.712Z",
+      "api": "/api/resume",
+      "elapsed_ms": 14.94,
+      "result_code": "HTTP_200",
+      "request_id": "248f1ea6-eca5-4461-bf58-80a51c96d76d",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:29:33.011Z",
+      "api": "/api/register/status",
+      "elapsed_ms": 14.34,
+      "result_code": "HTTP_200",
+      "request_id": "b1fce7f0-d190-4415-a563-1935c1991f48",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:29:33.315Z",
+      "api": "/api/resume",
+      "elapsed_ms": 17.72,
+      "result_code": "HTTP_200",
+      "request_id": "0d1bd68c-839e-45df-9727-38105564508f",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:29:33.365Z",
+      "api": "/api/carts/{cart_id}/sync",
+      "elapsed_ms": 16.1,
+      "result_code": "HTTP_200",
+      "request_id": "0163f3ed-6d0d-4960-ab33-ccd0ed2c02cb",
+      "operation_id": "2c25f13e-1c85-42bb-b2f9-ede334ad5446",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:29:52.766Z",
+      "api": "/api/products/{code}",
+      "elapsed_ms": 18.22,
+      "result_code": "HTTP_200",
+      "request_id": "1eb6d72a-1d63-4972-a7a6-d6916f8a44ec",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:29:53.262Z",
+      "api": "/api/carts/{cart_id}/lines",
+      "elapsed_ms": 30.03,
+      "result_code": "HTTP_200",
+      "request_id": "691ad82e-4c87-4838-acc4-1a354d822d08",
+      "operation_id": "0f93c0db-00bd-4669-937e-96aa608628b2",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:30:24.521Z",
+      "api": "/api/carts/{cart_id}/member",
+      "elapsed_ms": 23.65,
+      "result_code": "HTTP_200",
+      "request_id": "379d1c38-d0d8-4af7-b557-3b66a7c043cc",
+      "operation_id": "54600ee8-9462-48a4-aa9e-f5bf9d4345f6",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:30:25.677Z",
+      "api": "/api/carts/{cart_id}/lines/{line_id}",
+      "elapsed_ms": 28.21,
+      "result_code": "HTTP_200",
+      "request_id": "6868a2d2-9560-4742-8007-e2595835df8e",
+      "operation_id": "6f6c07b1-bdfd-4883-b52b-b29e085f4ede",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:30:26.332Z",
+      "api": "/api/products/{code}",
+      "elapsed_ms": 14.44,
+      "result_code": "HTTP_200",
+      "request_id": "cc61050d-2600-4bab-96b3-da64f10aa4d8",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:30:27.168Z",
+      "api": "/api/carts/{cart_id}/lines",
+      "elapsed_ms": 33.46,
+      "result_code": "HTTP_200",
+      "request_id": "7587f766-c3a9-4eb2-ba7e-71724e8f3596",
+      "operation_id": "5cc0f19f-ad41-42ef-8498-fd62ecda5330",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:30:27.649Z",
+      "api": "/api/products/{code}",
+      "elapsed_ms": 16.38,
+      "result_code": "HTTP_200",
+      "request_id": "57e63070-d786-451b-a96a-ba5117887f1f",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:30:28.537Z",
+      "api": "/api/carts/{cart_id}/lines",
+      "elapsed_ms": 22.01,
+      "result_code": "HTTP_200",
+      "request_id": "320b5add-0cbc-45a5-8047-675cde807b88",
+      "operation_id": "f5504504-ad26-464f-89e8-08be58d15c65",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:30:55.552Z",
+      "api": "/api/carts/{cart_id}/member",
+      "elapsed_ms": 40.01,
+      "result_code": "HTTP_404",
+      "request_id": "89b8d860-029e-4823-8899-32f22661bd43",
+      "operation_id": "adf2a145-75e2-4561-8a01-a50594647b10",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:30:55.597Z",
+      "api": "/api/carts/{cart_id}",
+      "elapsed_ms": 13.63,
+      "result_code": "HTTP_200",
+      "request_id": "1d08c5a0-041f-47f5-b1b9-7948750f7733",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:31:19.033Z",
+      "api": "/api/auth/status",
+      "elapsed_ms": 33.76,
+      "result_code": "HTTP_200",
+      "request_id": "ae0b3767-d46e-46ce-ae9e-959294e8366a",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:31:19.410Z",
+      "api": "/api/register/status",
+      "elapsed_ms": 18.07,
+      "result_code": "HTTP_200",
+      "request_id": "9e7f2ce6-45f2-4351-aeeb-495c1b0872c5",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:31:19.716Z",
+      "api": "/api/resume",
+      "elapsed_ms": 15.36,
+      "result_code": "HTTP_200",
+      "request_id": "c7cc77b9-1d3c-483a-9b32-086cad19d42f",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:31:20.047Z",
+      "api": "/api/register/status",
+      "elapsed_ms": 14.19,
+      "result_code": "HTTP_200",
+      "request_id": "8758ba3f-c81c-459a-912e-bf97b69b407d",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:31:20.094Z",
+      "api": "/api/resume",
+      "elapsed_ms": 13.11,
+      "result_code": "HTTP_200",
+      "request_id": "c69e093a-9a4a-4e51-959a-90c34b755e78",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:31:32.000Z",
+      "api": "/api/resume",
+      "elapsed_ms": 21.54,
+      "result_code": "HTTP_200",
+      "request_id": "43f29d74-fd71-4305-bf0d-45233756b0f2",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:31:32.051Z",
+      "api": "/api/carts/{cart_id}/lines",
+      "elapsed_ms": 13.3,
+      "result_code": "HTTP_409",
+      "request_id": "c9dde79f-9002-4925-b836-7b0718cbb3b3",
+      "operation_id": "affc833e-62ee-4778-aa77-48060c4b2143",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:31:32.100Z",
+      "api": "/api/carts/{cart_id}/lines/{line_id}",
+      "elapsed_ms": 17.2,
+      "result_code": "HTTP_409",
+      "request_id": "fd579976-71a5-43bb-b1d6-d994708d68a1",
+      "operation_id": "a1550160-0a88-4f52-8c9c-d67de8d8aad4",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:31:32.146Z",
+      "api": "/api/carts/{cart_id}/lines/{line_id}",
+      "elapsed_ms": 16.49,
+      "result_code": "HTTP_409",
+      "request_id": "258fef28-79c8-491e-b65c-f3b13f017e5d",
+      "operation_id": "39a6b0af-b6f0-4a20-8178-67b08e9a703e",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:31:32.198Z",
+      "api": "/api/purchases",
+      "elapsed_ms": 16.28,
+      "result_code": "HTTP_409",
+      "request_id": "3125438f-7c70-40dc-bcc4-f9ba58906e14",
+      "operation_id": "c797e675-87c3-47d9-94be-abfea5eda091",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:31:32.249Z",
+      "api": "/api/resume",
+      "elapsed_ms": 17.18,
+      "result_code": "HTTP_200",
+      "request_id": "d3383c88-0cf1-4e9b-808b-67c693c12ccd",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:31:40.090Z",
+      "api": "/api/resume",
+      "elapsed_ms": 18.74,
+      "result_code": "HTTP_200",
+      "request_id": "2cc2edcf-ae7d-4617-9d34-f595c0c70ee4",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:31:40.146Z",
+      "api": "/api/members/{code}",
+      "elapsed_ms": 16.61,
+      "result_code": "HTTP_200",
+      "request_id": "0e2d1aed-099f-4fe0-8999-81622404f5f0",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:31:40.444Z",
+      "api": "/api/resume",
+      "elapsed_ms": 20,
+      "result_code": "HTTP_200",
+      "request_id": "31f1aa01-1536-4d27-a9e9-daeed22fc4f1",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:32:10.818Z",
+      "api": "/api/carts/{cart_id}/member",
+      "elapsed_ms": 42.99,
+      "result_code": "HTTP_200",
+      "request_id": "248978aa-1f85-44f5-9bef-f08ad4f0e738",
+      "operation_id": "3c91fe2b-642a-48dc-8091-79bd217995d0",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:32:45.428Z",
+      "api": "/api/carts/{cart_id}/member",
+      "elapsed_ms": 37.23,
+      "result_code": "HTTP_404",
+      "request_id": "872c7465-35ca-48bf-b473-e4e026c3be17",
+      "operation_id": "f733ebd7-e67e-45d0-a67c-c5ad09fbca66",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:32:45.475Z",
+      "api": "/api/carts/{cart_id}",
+      "elapsed_ms": 9.97,
+      "result_code": "HTTP_200",
+      "request_id": "1b9d06a6-e333-4119-b35c-3dba26cd018c",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:33:25.768Z",
+      "api": "/api/carts/{cart_id}/member",
+      "elapsed_ms": 31.96,
+      "result_code": "HTTP_200",
+      "request_id": "28ecbc9f-98d0-4545-9232-1962af3a4925",
+      "operation_id": "23b59d79-3020-489e-afa0-b8e4dc1f1274",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:34:03.393Z",
+      "api": "/api/carts/{cart_id}/member",
+      "elapsed_ms": 3034.26,
+      "result_code": "HTTP_503",
+      "request_id": "bbe914e8-72a2-45fe-b988-7c6b1982307b",
+      "operation_id": "09c00579-cf48-45f8-90ee-fac05b8eaa3f",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:34:17.276Z",
+      "api": "/api/register/status",
+      "elapsed_ms": 19.36,
+      "result_code": "HTTP_200",
+      "request_id": "017ef0b9-3c57-4477-9d6c-ad64db526043",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:34:17.674Z",
+      "api": "/api/resume",
+      "elapsed_ms": 17.56,
+      "result_code": "HTTP_200",
+      "request_id": "3605ec2e-fa12-4559-a585-506f54269b0e",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:35:50.585Z",
+      "api": "/api/carts/{cart_id}/member",
+      "elapsed_ms": 40.06,
+      "result_code": "HTTP_200",
+      "request_id": "09dd6060-fc06-44f5-bba8-287c69390bf4",
+      "operation_id": "fee55de8-f514-44e8-861f-580dc74e0337",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:36:11.017Z",
+      "api": "/api/carts/{cart_id}/member",
+      "elapsed_ms": 3030.79,
+      "result_code": "HTTP_503",
+      "request_id": "39044d01-1afd-4740-940b-72ef9441f4c3",
+      "operation_id": "61825cc9-2384-4e6d-9ed6-ed793a0945af",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:36:53.102Z",
+      "api": "/api/register/status",
+      "elapsed_ms": 36.48,
+      "result_code": "HTTP_200",
+      "request_id": "ecd6b34a-a547-4f20-ad94-a0afc50b1b11",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:36:53.416Z",
+      "api": "/api/resume",
+      "elapsed_ms": 24.81,
+      "result_code": "HTTP_200",
+      "request_id": "97054a67-f03b-41ff-aaf2-c71ecbed9250",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:38:09.092Z",
+      "api": "/api/carts/{cart_id}/member",
+      "elapsed_ms": 38.12,
+      "result_code": "HTTP_200",
+      "request_id": "71ed57e8-7d42-49f4-8481-b5b67919d08d",
+      "operation_id": "e9ee41ce-0407-4dee-93be-434729a8fd77",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:41:57.179Z",
+      "api": "/api/auth/status",
+      "elapsed_ms": 56.88,
+      "result_code": "HTTP_200",
+      "request_id": "a8a34ba0-49a8-45ca-904a-5fd558176583",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:41:57.493Z",
+      "api": "/api/register/status",
+      "elapsed_ms": 21.16,
+      "result_code": "HTTP_200",
+      "request_id": "8ea7a189-abd0-4f30-9a00-7df5eef29d8a",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:41:57.876Z",
+      "api": "/api/resume",
+      "elapsed_ms": 25.48,
+      "result_code": "HTTP_200",
+      "request_id": "7f4c49a2-9535-4ab9-9929-c14ead5aafa0",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:41:58.394Z",
+      "api": "/api/register/status",
+      "elapsed_ms": 17.84,
+      "result_code": "HTTP_200",
+      "request_id": "9d27c17b-2f45-467a-a0d3-60e036f39d2a",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:41:58.552Z",
+      "api": "/api/resume",
+      "elapsed_ms": 40.86,
+      "result_code": "HTTP_200",
+      "request_id": "ad0fb97b-7447-4dc9-89f0-f2073db4a4be",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:41:58.609Z",
+      "api": "/api/carts/{cart_id}/sync",
+      "elapsed_ms": 26,
+      "result_code": "HTTP_200",
+      "request_id": "37d7681c-85dd-4f69-b9b1-bc14dc7b3f38",
+      "operation_id": "41e4604a-744c-4666-be85-416ee25260ee",
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    },
+    {
+      "utc": "2026-10-04T06:42:16.585Z",
+      "api": "/api/auth/status",
+      "elapsed_ms": 31.08,
+      "result_code": "HTTP_401",
+      "request_id": "436d5f55-2edf-4452-a2dc-43930a020f32",
+      "operation_id": null,
+      "db_error": "NOT_APPLICABLE",
+      "deployment_version": "UNSET"
+    }
+  ],
+  "login_records_after_pattern_build": [],
+  "macOS": "27.0",
+  "chrome": "154.0.8037.97",
+  "pattern_build_start_utc": "2026-10-04T06:41:33.275325+00:00",
+  "browser_test_password_empty": true
+}

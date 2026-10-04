@@ -1,0 +1,7 @@
+{
+  "at_utc": "2026-10-04T06:36:11.013597+00:00",
+  "tag": "parallel-member503-confirmed",
+  "status": 503,
+  "after_real_receipt_commit": true,
+  "delay_seconds": 3
+}

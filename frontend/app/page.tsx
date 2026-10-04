@@ -129,7 +129,7 @@ export default function Home() {
     {tabNotice && <p role="alert">{tabNotice}</p>}
     {multipleTabs && <p role="alert">複数のタブが開かれています。操作するタブを1つにしてください。</p>}
     {mode === 'login' && <form onSubmit={login}>
-      <label>担当者ID<input name="staff_id" autoComplete="username" required pattern="[A-Za-z0-9_-]{1,32}" defaultValue={expectedStaff.current ?? ''} /></label>
+      <label>担当者ID<input name="staff_id" autoComplete="username" required pattern={'[A-Za-z0-9_\\-]{1,32}'} defaultValue={expectedStaff.current ?? ''} /></label>
       <label>パスワード<input name="password" type="password" autoComplete="current-password" required /></label>
       <button disabled={busy}>ログイン</button>
     </form>}

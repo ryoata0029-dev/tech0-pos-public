@@ -1,0 +1,16 @@
+{
+  "at_utc": "2026-10-04T05:12:03.423718+00:00",
+  "build_id": "1Br0vNrgQ6qQbXu1qPCjx",
+  "sources_sha256": {
+    "frontend/app/register-cart.tsx": "9aefabfbd09562d0456008078c94e34ef36752c93c6b859787b7b222e0fd6ca3"
+  },
+  "database": "tech0-pos-iphone-camera-mysql",
+  "real_device_version": "awaiting_owner_report",
+  "stage": "camera_case_stopped_pending_display_fix",
+  "camera_frame_capture": "none",
+  "pending_owner_confirmation": "iOS and Chrome versions",
+  "db_observation": "v14 unchanged; 7 new PRODUCT_MISSING requests all rejected PRODUCT_NOT_FOUND; no purchases",
+  "owner_evidence": "owner-observations.json",
+  "camera_close_requested": true,
+  "track_stop_observation": "not observed directly"
+}

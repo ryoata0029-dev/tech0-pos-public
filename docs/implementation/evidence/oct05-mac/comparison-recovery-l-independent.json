@@ -1,0 +1,117 @@
+{
+  "at_utc": "2026-10-04T16:20:28.593853+00:00",
+  "case_id": "O05-R24-L",
+  "method": "independent offline raw DB projections, fixture transaction evidence, real Chrome native response visible fields and React UI comparison; no live operations",
+  "status": "selected_historical_NEXT_success_after_new_current_limited_verified",
+  "checks": {
+    "fixed_ABC_identities": true,
+    "fixed_environment_identity": true,
+    "saved_A_baseline_sale1": true,
+    "two_carts_added_A_B_closed_C_editing": true,
+    "A_cart_only_state_version_changed": true,
+    "prior_A_lines_sales_line_taxes_preserved": true,
+    "prior_16_operations_preserved": true,
+    "6_new_APPLIED_2NEXT_2ADD_1PURCHASE_1SYNC": true,
+    "old_NEXT_applied19_to20_B": true,
+    "second_NEXT_B4_to5_C": true,
+    "C_ADD1_to2_followed_by_SYNC2_to3": true,
+    "current_C_qty1_103_tax10_113_no_sale": true,
+    "one_B_sale_added_107_tax8_115": true,
+    "products_unchanged": true,
+    "helper4_requests_once_correspond_to_DB": true,
+    "helper_memento_before_B_purchase": true,
+    "gate_returns_historical_success_after_C_commit": true,
+    "gate_time_order_and_bounded_duration": true,
+    "Chrome_old_NEXT_200_historical_B_visible_fields": true,
+    "Chrome_resume_current_C_visible_fields": true,
+    "React_ui_C_product_qty1_113": true,
+    "Chrome_network_17_rows_includes_A_B_NEXT_and_C_SYNC": true
+  },
+  "A": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+  "B": "ef1f5ac3-6815-40a8-aa6e-33f185fd611d",
+  "C": "988509ef-d02d-45a1-8029-33607a61027e",
+  "gate_held_seconds_from_evidence_timestamps": 0.281687,
+  "browser_timing": "354ms row /353ms detail; not the same clock as gate timestamp difference",
+  "operation_delta": {
+    "NEXT": 2,
+    "ADD_LINE": 2,
+    "PURCHASE": 1,
+    "SYNC": 1
+  },
+  "prior_operation_count": 16,
+  "final_operation_count": 22,
+  "purchase_before": 1,
+  "purchase_final": 2,
+  "B_sale": {
+    "subtotal": 107,
+    "tax": 8,
+    "total": 115
+  },
+  "C_current": {
+    "state": "EDITING",
+    "version": 3,
+    "quantity": 1,
+    "subtotal": 103,
+    "tax": 10,
+    "total": 113,
+    "sale_count": 0
+  },
+  "source_files": [
+    {
+      "file": "db-recovery-l-baseline.json",
+      "sha256": "45c4035ce2b4d0ebc6f1f137a80c3e9d83f178ea91b4fd13a541fc6c7b0e632f"
+    },
+    {
+      "file": "db-recovery-l-final.json",
+      "sha256": "899aa7f0e17986d619eb6275dce31739934b7c3bf58b9bd49b449c308418990d"
+    },
+    {
+      "file": "next-held-o05-next-l.json",
+      "sha256": "ebc6b8da0cc059f4ea3df57d772c317f19aa389c61988eb366f3048d098f0b41"
+    },
+    {
+      "file": "next-progression-o05-next-l.json",
+      "sha256": "fb229faf57527b2d85a7e65f44e2dd13723ee68c89c2b6acfd61cb668009c051"
+    },
+    {
+      "file": "next-returned-o05-next-l.json",
+      "sha256": "2fc937f97691217cf127f0203a32fed8542eb5f64a023c67503c35aaa1955323"
+    },
+    {
+      "file": "recovery-l-fixture.json",
+      "sha256": "0f33223fd1e626f4339325bcab253194a8ab44d29370f2c7cc1337b187ece2d4"
+    },
+    {
+      "file": "recovery-l-ui.txt",
+      "sha256": "ba2df1e85bf8a90705d68dce7182879e652c0758d2c1ca513755e7b6e2db145b"
+    },
+    {
+      "file": "recovery-l-network.txt",
+      "sha256": "515fbdea07dfd5da89ab2dbecb79c20580917aa244ae31185594cbe5e45d62ca"
+    },
+    {
+      "file": "recovery-l.jpg",
+      "sha256": "2d2c0ebf4cd3d2ad711e3a5ae7a4a7cc2abb6a90be2d87431c268ed9fb3072d2"
+    },
+    {
+      "file": "recovery-l-old-next-response.txt",
+      "sha256": "38d4bdc6725a56ca26e6c3e7bd4bcb7774be8c286049efa26b98adfdb43edb0c"
+    },
+    {
+      "file": "recovery-l-old-next-body.txt",
+      "sha256": "ba9c7c5d8df134fd85d9333ddcb88fba722c51b204617222fc64fd23689d7dec"
+    },
+    {
+      "file": "recovery-l-resume-C-body.txt",
+      "sha256": "7f471c798782add0a6ab3a4356360594f0c9c7786fa8b2c85e32ba0f8d594b42"
+    }
+  ],
+  "limits": [
+    "Chrome response code editor accessibility is evidence for visible fields, not a guaranteed full JSON export or full schema validation.",
+    "Observed ordinary React UI totals/product match C, while response resume and DB identity separately establish C ID.",
+    "B purchase and B NEXT are explicit fixture progression API calls, not ordinary UI purchase/NEXT-handler tests.",
+    "0.281687s gate hold establishes ordering after real C commit, not prolonged latency/timeout coverage.",
+    "C initial synchronization is a separate APPLIED SYNC2→3; it is not an extra product or purchase.",
+    "This selected TC24 ordering does not cover all valid marker races, same-ID retries, response loss, Cookie/reauth state combinations, Azure or M7."
+  ]
+}

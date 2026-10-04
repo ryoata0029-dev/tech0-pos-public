@@ -1,0 +1,54 @@
+{
+  "at_utc": "2026-10-04T04:41:45.431790+00:00",
+  "offline_assertions": "passed",
+  "tc03_p2_01": "resolved within tested Mac manual-entry scope",
+  "cases": [
+    {
+      "tag": "empty-initial-notfound",
+      "result": "passed",
+      "cart_version": 3,
+      "reference_total": 0
+    },
+    {
+      "tag": "empty-change-notfound",
+      "result": "passed",
+      "cart_version": 6,
+      "reference_total": 0
+    },
+    {
+      "tag": "lines-initial-notfound",
+      "result": "passed",
+      "cart_version": 12,
+      "reference_total": 570
+    },
+    {
+      "tag": "lines-change-notfound",
+      "result": "passed",
+      "cart_version": 15,
+      "reference_total": 537
+    }
+  ],
+  "snapshots_checked": 9,
+  "same_cart": "c3dedc87-bd42-4a74-992b-4a1dda69ad03",
+  "fixed_line_conditions_retained": true,
+  "blocked_api_requests": 4,
+  "member_503_cases": 2,
+  "final_version": 21,
+  "final_total": 570,
+  "purchases": 0,
+  "local_tests": {
+    "python": 71,
+    "node": 74,
+    "total": 145
+  },
+  "build_id": "RUxKQtYgrAwNydMBUxSQa",
+  "sources_sha256": {
+    "frontend/app/register-cart.tsx": "8a77625f0176e9fc771485f54164ca5c59d3e08c121f04d9c4c463a67cec9f4c",
+    "frontend/tests/register-member.test.mjs": "161e567246e4e3ab2b2a03d19d26e107b8b833e8d65561fb6a381ad6da7429f4",
+    "tools/mac_tc03_fix.py": "b5ad743dc5338f385dca035349bbb8529fef72521d0c4eaab017f7a1d8e9043f",
+    "tools/mac_tc03_fix_verify.py": "e77aa38436524dd63ac24ae010c4415d0671f3254492c896c9e62962306d2c56"
+  },
+  "chrome_version": "154.0.8037.97",
+  "macos_version": "27.0",
+  "tc03_overall": "not accepted; iPhone, camera/Code128 and owner acceptance remain"
+}

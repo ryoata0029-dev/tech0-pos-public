@@ -1,0 +1,50 @@
+{
+  "reviewed_at_utc": "2026-10-04T07:55:20.741231+00:00",
+  "method": "offline independent saved JSON comparison and owner-report addendum; no GUI/DB/environment/network/document actions",
+  "sources": [
+    "db-iphone-p2-after-next-code.json",
+    "db-iphone-p2-closed-p3-before.json",
+    "comparison-iphone-p2-closed-p3-before.json",
+    "comparison-iphone-p2-next-code-independent.json"
+  ],
+  "source_sha256": {
+    "db-iphone-p2-after-next-code.json": "532b3caa5b9dcb11a40b6d57223232b122cd7a092995a62ca0205da123cc7138",
+    "db-iphone-p2-closed-p3-before.json": "87d184d275f80ccf77a3e1be02390a481411015994b3a1d7ea62ba36e6e116b7",
+    "comparison-iphone-p2-closed-p3-before.json": "6ca21a20ce39db1262cf192a2fcf6c6cfecaa28ba3b92c2ce6829a0c77356bf8",
+    "comparison-iphone-p2-next-code-independent.json": "ba82d29107325e578876a122214bc5f0b6abe8b795759525a83b4ade56bd3919"
+  },
+  "condition": "P2b-sequence-confirmation-and-P3a-baseline",
+  "before_observed_at_utc": "2026-10-04 07:52:01.475748",
+  "after_observed_at_utc": "2026-10-04 07:54:38.813769",
+  "projection_equal": {
+    "register": true,
+    "contexts": true,
+    "carts": true,
+    "lines": true,
+    "operations": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+  "cart_version": 7,
+  "total_yen": 11330,
+  "purchase_rows": 0,
+  "original_0001_quantity": 99,
+  "EAN13_quantity": 1,
+  "P3a_EAN8_product_id": 5,
+  "P3a_EAN8_line_absent": true,
+  "P3a_EAN8_baseline_quantity": 0,
+  "owner_report_recorded_in_primary_evidence": "手順通り実施しました",
+  "sequence_scope_from_root_task": "Owner explicitly confirmed no camera restart/no deletion between upper-limit rejection and EAN13 addition, and pressing close-to-manual after addition.",
+  "previous_pending_evidence_retained": true,
+  "result": "limited_P2b_sequence_confirmation_from_owner_report_with_DB_retention",
+  "major_inconsistency_found": false,
+  "limits": [
+    "Camera operation sequence and final close are explicitly owner reported; reviewer did not independently observe UI/video or MediaStreamTrack.readyState.",
+    "Nine selected DB projections are unchanged after reported closing; closing UI is not proof of track cessation or all HTTP absence.",
+    "P3a is not performed in this addendum; EAN8 product5 has no row before the upcoming test.",
+    "Previous pending-stage comparison is historical evidence and remains unchanged."
+  ]
+}

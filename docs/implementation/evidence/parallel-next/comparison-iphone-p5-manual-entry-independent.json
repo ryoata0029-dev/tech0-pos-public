@@ -1,0 +1,58 @@
+{
+  "reviewed_at_utc": "2026-10-04T08:15:52.149749+00:00",
+  "condition": "P5c independent saved JSON review",
+  "sources": [
+    {
+      "file": "db-iphone-p5-after-nondetection.json",
+      "sha256": "394910877f6f72fc356048ddf52cd6b53d05aecc5ea50880ae9e16f2e928b1f3"
+    },
+    {
+      "file": "db-iphone-p5-after-manual-entry.json",
+      "sha256": "aa37d1fa4ae90297e187a0e76ad6920532b0f8665d632054e55d2303c3ab02e7"
+    },
+    {
+      "file": "comparison-iphone-p5-manual-entry.json",
+      "sha256": "1813c05c2e8f15b46f07f0c616f3d37ba0fde0641bd810da2a3503d542156f27"
+    }
+  ],
+  "checks": {
+    "protected_six_projections_equal": true,
+    "eleven_prior_operations_unchanged": true,
+    "exactly_one_ADD_LINE_0002_APPLIED": true,
+    "three_prior_lines_entirely_unchanged": true,
+    "product2_quantity1_price107_tax8_percent": true,
+    "cart_fixed_fields_unchanged": true,
+    "independent_totals_and_tax_buckets": true,
+    "no_sales_rows": true,
+    "primary_comparison_consistent": true
+  },
+  "new_operation": {
+    "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+    "operation_id": "ec089383-fc3f-4a4b-9ece-d93801776bfd",
+    "kind": "ADD_LINE",
+    "request_version": 11,
+    "status": "APPLIED",
+    "prepared_version": null,
+    "applied_version": 12,
+    "result_code": null,
+    "next_cart_id": null,
+    "created_at": "2026-10-04 08:11:52.936557",
+    "requested_code": "0002"
+  },
+  "version_change": "11->12",
+  "subtotal_yen": 10819,
+  "taxes_yen": {
+    "0.08": 8,
+    "0.10": 1071
+  },
+  "total_yen": 11898,
+  "purchases": 0,
+  "owner_report": "演習食品107円Aであってるかな？それは登録された",
+  "result": "limited_manual_entry_after_nondetection_confirmation",
+  "limits": [
+    "Manual entry and displayed product name are owner reports; saved projection independently identifies code0002/product2 with quantity1 and one applied addition.",
+    "No permission rejection was performed, and permission-dialog absence is not established.",
+    "No direct browser request, decoder, video track, DOM or measured timing observation.",
+    "No live DB/environment/GUI/network operation by this reviewer."
+  ]
+}

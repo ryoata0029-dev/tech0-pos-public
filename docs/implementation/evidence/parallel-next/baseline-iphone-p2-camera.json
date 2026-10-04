@@ -1,0 +1,33 @@
+{
+  "at_utc": "2026-10-04T07:48:25.818500+00:00",
+  "condition": "P2 preparation",
+  "user_report": "99にして解除した",
+  "baseline": "db-iphone-p2-before-camera.json",
+  "upper_code": "0001",
+  "upper_quantity": 99,
+  "next_code": "0001234567895",
+  "next_product_id": 4,
+  "next_quantity": 0,
+  "cart_version": 6,
+  "subtotal_yen": 10197,
+  "tax_yen": 1019,
+  "total_yen": 11216,
+  "preparation_new_operations": [
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "operation_id": "14d490e3-5592-43fa-bbb7-b5855758f576",
+      "kind": "SET_QUANTITY",
+      "request_version": 5,
+      "status": "APPLIED",
+      "prepared_version": null,
+      "applied_version": 6,
+      "result_code": null,
+      "next_cart_id": null,
+      "created_at": "2026-10-04 07:47:28.819828",
+      "requested_code": null
+    }
+  ],
+  "purchases": 0,
+  "camera_result": "not_yet_observed",
+  "limits": "Selection cleared is an owner report. Baseline was read before the requested camera start."
+}

@@ -1,0 +1,30 @@
+{
+  "at_utc": "2026-10-04T07:54:38.912930+00:00",
+  "condition": "P2b procedure confirmation and P3a baseline",
+  "user_report": "手順通り実施しました",
+  "procedure_confirmed_as_reported": {
+    "no_restart_between_limit_and_ean13": true,
+    "no_product_delete": true,
+    "closed_after_ean13": true
+  },
+  "before": "db-iphone-p2-after-next-code.json",
+  "after": "db-iphone-p2-closed-p3-before.json",
+  "projection_equal": {
+    "register": true,
+    "contexts": true,
+    "carts": true,
+    "lines": true,
+    "operations": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "ean8_code": "00123457",
+  "ean8_product_id": 5,
+  "ean8_before_quantity": 0,
+  "version": 7,
+  "total_yen": 11330,
+  "purchases": 0,
+  "limits": "Physical procedure and camera closure are owner reports; no direct track observation. P3a has not started at this snapshot."
+}

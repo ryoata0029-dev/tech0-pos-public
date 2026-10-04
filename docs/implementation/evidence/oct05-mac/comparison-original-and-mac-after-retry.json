@@ -1,0 +1,14 @@
+{
+  "mac_nine_projections_equal": true,
+  "original_api_fourteen_projections_equal": true,
+  "original_run_evidence_hash_equal": true,
+  "mac_cart_and_sales_zero": true,
+  "source_paths": [
+    "db-before-api.json",
+    "db-after-api-retry.json",
+    "api-original-before-retry-verified.json",
+    "api-original-after-retry.json",
+    "api-run.json"
+  ],
+  "boundary": "Selected columns and saved raw JSON only; no recovery of original SAVING fixture"
+}

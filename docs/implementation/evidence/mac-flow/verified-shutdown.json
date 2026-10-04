@@ -1,0 +1,21 @@
+{
+  "business_assertions": "passed",
+  "member_total": 537,
+  "nonmember_total": 570,
+  "purchases": 2,
+  "purchase_lines": 6,
+  "purchase_tax_rows": 4,
+  "normal_next_operations": 1,
+  "failed_next_attempt_changed_business_state": false,
+  "response_loss_fault_executed": false,
+  "ports_closed": {
+    "3307": true,
+    "8443": true,
+    "8444": true
+  },
+  "container_status": "exited",
+  "volume_retained": "tech0-pos-mac-flow-mysql-data",
+  "tunnel_stopped": true,
+  "generated_secrets_absent_from_git_candidates_and_logs": true,
+  "evidence_sha256": "6cc931bfbf87d44ecc1251e554c93b237dd40781ec1ad862c64454747492ca29"
+}

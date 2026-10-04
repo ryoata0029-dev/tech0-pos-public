@@ -1,0 +1,15 @@
+{
+  "kind": "next",
+  "tag": "next-loss-reload",
+  "method": "POST",
+  "path": "/api/carts/ecb49a55-3746-4475-96d2-1a0cf62e0bc0/next",
+  "status": 200,
+  "at": "2026-10-03T12:51:21.200Z",
+  "discardedAfterApplicationResponse": true,
+  "operation_id": "ac12d844-064c-4045-b2d9-740bae704c46",
+  "operation_status": "APPLIED",
+  "cart_id": "ec0ce4b7-8b15-420c-a28f-494a30e4041c",
+  "cart_state": "EDITING",
+  "purchase_status": "NOT_REQUESTED",
+  "new_cart_id": "ec0ce4b7-8b15-420c-a28f-494a30e4041c"
+}

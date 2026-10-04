@@ -1,8 +1,18 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { clearSaved, newer, purchaseKeys, rememberPurchase, requireStable } from '../lib/pos.ts';
+import { api, ApiError, clearSaved, newer, purchaseKeys, rememberPurchase, requireStable } from '../lib/pos.ts';
 const cart = '11111111-1111-4111-8111-111111111111';
 const op = '22222222-2222-4222-8222-222222222222';
+test('API response loss is Japanese uncertainty, while defined server errors retain their classification', async t => {
+  const mocked = t.mock.method(globalThis, 'fetch', async () => { throw new TypeError('fetch failed'); });
+  await assert.rejects(api('purchases','POST',{}), /通信結果を確認できません/);
+  mocked.mock.mockImplementation(async () => new globalThis.Response('<!DOCTYPE html>proxy error',{status:502}));
+  await assert.rejects(api('purchases','POST',{}), /通信結果を確認できません/);
+  mocked.mock.mockImplementation(async () => new globalThis.Response('',{status:200}));
+  await assert.rejects(api('purchases','POST',{}), /通信結果を確認できません/);
+  mocked.mock.mockImplementation(async () => globalThis.Response.json({message:'元の拒否',code:'STATE_CONFLICT'},{status:409}));
+  await assert.rejects(api('purchases','POST',{}), error => error instanceof ApiError && error.status === 409 && error.code === 'STATE_CONFLICT' && error.message === '元の拒否');
+});
 class MemoryStorage {
   values = new Map();
   get length() { return this.values.size; }

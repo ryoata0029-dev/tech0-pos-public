@@ -1,0 +1,38 @@
+{
+  "reviewed_at_utc": "2026-10-04T07:16:03.580475+00:00",
+  "method": "offline independent comparison of saved evidence and current source/build files; no DB, process, port, GUI or network calls",
+  "sources": [
+    "../parallel-next/environments-after-mac-setup.json",
+    "mysql-environment.json",
+    "runtime-start.json",
+    "../parallel-next/mysql-environment.json",
+    "../parallel-next/runtime-start.json"
+  ],
+  "checks": {
+    "parallel-next_container": true,
+    "parallel-next_port_binding": true,
+    "parallel-next_process_set": true,
+    "parallel-next_backend_command": true,
+    "parallel-next_frontend_command": true,
+    "parallel-mac-next_container": true,
+    "parallel-mac-next_port_binding": true,
+    "parallel-mac-next_process_set": true,
+    "parallel-mac-next_backend_command": true,
+    "parallel-mac-next_frontend_command": true,
+    "distinct_process_and_tunnel_pids": true,
+    "distinct_containers": true,
+    "distinct_origins": true,
+    "build_id_consistent": true,
+    "manifest_current_matches_observation": true,
+    "all_mac_runtime_source_hashes_current": true,
+    "phone_application_hashes_match_mac_runtime": true
+  },
+  "passed": true,
+  "limits": [
+    "No valid pre-Mac-setup port/process observation was saved.",
+    "The saved post-setup process/container/port observation was executed by root, not by this reviewer.",
+    "Build/manifest/source checks inspect disk files; process memory build identity is not directly read.",
+    "Phone business DB noninterference requires separate before/after snapshot comparison.",
+    "This comparison does not establish L1/L2 business acceptance or environment shutdown."
+  ]
+}

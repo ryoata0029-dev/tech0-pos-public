@@ -1,0 +1,12 @@
+{
+  "searchStartedAtUtc": "2026-10-04T05:55:20.100Z",
+  "codeChangedAtUtc": "2026-10-04T05:55:20.413Z",
+  "oldCode": "PRODUCT_MISSING",
+  "newCode": "0002",
+  "afterAtUtc": "2026-10-04T05:55:33.987Z",
+  "controls": {
+    "search": true,
+    "deselect": true,
+    "addButtons": 0
+  }
+}

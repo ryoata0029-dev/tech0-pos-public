@@ -1,0 +1,16 @@
+{
+  "searchStartedAtUtc": "2026-10-04T06:00:11.856Z",
+  "codeChangedAtUtc": "2026-10-04T06:00:12.158Z",
+  "codeBackAtUtc": "2026-10-04T06:00:12.199Z",
+  "sequence": [
+    "0001",
+    "0002",
+    "0001"
+  ],
+  "afterAtUtc": "2026-10-04T06:00:24.505Z",
+  "controls": {
+    "search": true,
+    "deselect": true,
+    "addButtons": 0
+  }
+}

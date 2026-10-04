@@ -1,0 +1,23 @@
+{
+  "at_utc": "2026-10-04T05:07:14.695007+00:00",
+  "make_check": {
+    "exit_code": 0,
+    "backend_tests": 71,
+    "frontend_tests": 94,
+    "total": 165,
+    "lint": "passed",
+    "types": "passed",
+    "openapi_operations": 22
+  },
+  "make_build": {
+    "exit_code": 0,
+    "build_id": "1Br0vNrgQ6qQbXu1qPCjx"
+  },
+  "sources_sha256": {
+    "frontend/app/register-cart.tsx": "9aefabfbd09562d0456008078c94e34ef36752c93c6b859787b7b222e0fd6ca3",
+    "frontend/tests/register-search.test.mjs": "e10a3f6d8497d45ca877fa2fc128d0e674be0471c41e8e120bea9d3c2542235a"
+  },
+  "independent_review": "No definite new defect or overbroad permission found; read-only m4_test_review",
+  "mac_real_retest": "not_run_yet",
+  "iphone_camera": "not_run_yet"
+}

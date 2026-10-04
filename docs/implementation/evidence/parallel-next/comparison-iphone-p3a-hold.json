@@ -1,0 +1,41 @@
+{
+  "at_utc": "2026-10-04T07:56:59.212782+00:00",
+  "condition": "P3a",
+  "before": "db-iphone-p2-closed-p3-before.json",
+  "after": "db-iphone-p3a-after-hold.json",
+  "user_report": "１個登録で数量１でとまった",
+  "protected_projection_equal": {
+    "register": true,
+    "contexts": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "prior_operations_unchanged": true,
+  "prior_lines_unchanged": true,
+  "new_operations": [
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "operation_id": "c552cffd-c53e-4847-b022-7e9ef64733ee",
+      "kind": "ADD_LINE",
+      "request_version": 7,
+      "status": "APPLIED",
+      "prepared_version": null,
+      "applied_version": 8,
+      "result_code": null,
+      "next_cart_id": null,
+      "created_at": "2026-10-04 07:56:13.387712",
+      "requested_code": "00123457"
+    }
+  ],
+  "ean8_quantity": 1,
+  "version_before": 7,
+  "version_after": 8,
+  "subtotal_yen": 10403,
+  "tax_yen": 1040,
+  "total_yen": 11443,
+  "purchases": 0,
+  "result": "limited_confirmation",
+  "limits": "Quantity stopping is owner reported. Approximate five-second continuous presentation and closure were instructed, not directly timed or observed. Media tracks, decoder event sequence and browser HTTP status not observed."
+}

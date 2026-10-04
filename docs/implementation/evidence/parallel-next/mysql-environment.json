@@ -1,0 +1,10 @@
+{
+  "image": "mysql@sha256:0744ee5ef89ce6ccfa13de3e579fe6b9e27f93dd70da9c06d2c908b1b193fb8d",
+  "image_id": "sha256:0744ee5ef89ce6ccfa13de3e579fe6b9e27f93dd70da9c06d2c908b1b193fb8d",
+  "architecture": "arm64",
+  "container": "tech0-pos-parallel-next-mysql",
+  "container_id": "b0563dcd269b1dc9963d270bc6e56030bfa7f0e78beb15ffe08d4b8ecc5e7308",
+  "volume": "tech0-pos-parallel-next-mysql-data",
+  "port_binding": "127.0.0.1:3307 -> 3306",
+  "tls_required": true
+}

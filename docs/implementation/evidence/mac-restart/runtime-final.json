@@ -1,0 +1,92 @@
+{
+  "at_utc": "2026-10-04T03:40:39.181689+00:00",
+  "checks": "passed",
+  "full_restart_conditions": [
+    {
+      "state": "editing-verified",
+      "before_count": 13,
+      "stopped_count": 0,
+      "after_restart_count": 13,
+      "old_processes_reused": false,
+      "stopped_at_utc": "2026-10-04T03:19:15.546495+00:00"
+    },
+    {
+      "state": "member",
+      "before_count": 13,
+      "stopped_count": 0,
+      "after_restart_count": 13,
+      "old_processes_reused": false,
+      "stopped_at_utc": "2026-10-04T03:27:29.092764+00:00"
+    },
+    {
+      "state": "saving",
+      "before_count": 13,
+      "stopped_count": 0,
+      "after_restart_count": 13,
+      "old_processes_reused": false,
+      "stopped_at_utc": "2026-10-04T03:29:29.247892+00:00"
+    },
+    {
+      "state": "unsaved",
+      "before_count": 13,
+      "stopped_count": 0,
+      "after_restart_count": 13,
+      "old_processes_reused": false,
+      "stopped_at_utc": "2026-10-04T03:34:04.092796+00:00"
+    },
+    {
+      "state": "unknown",
+      "before_count": 13,
+      "stopped_count": 0,
+      "after_restart_count": 13,
+      "old_processes_reused": false,
+      "stopped_at_utc": "2026-10-04T03:35:55.783072+00:00"
+    },
+    {
+      "state": "saved",
+      "before_count": 13,
+      "stopped_count": 0,
+      "after_restart_count": 13,
+      "old_processes_reused": false,
+      "stopped_at_utc": "2026-10-04T03:36:51.533505+00:00"
+    },
+    {
+      "state": "next",
+      "before_count": 13,
+      "stopped_count": 0,
+      "after_restart_count": 13,
+      "old_processes_reused": false,
+      "stopped_at_utc": "2026-10-04T03:38:20.028161+00:00"
+    }
+  ],
+  "cart_ids": [
+    "9778aaa3-ded4-4af9-b0b4-02899214e6c8",
+    "78a8d0d7-0225-440c-b203-7d4edd46f4b8"
+  ],
+  "purchases": 1,
+  "purchase_total": 537,
+  "purchase_lines": 3,
+  "purchase_taxes": 2,
+  "next_operations": 1,
+  "delayed_purchase_status": "PURCHASE_ATTEMPT_CLOSED",
+  "gate_hold_seconds": 267.423236,
+  "master_price": 500,
+  "retained_unit_price": 103,
+  "chrome_installed_version_observed_after_trials": "154.0.8037.97",
+  "macos": "ProductName:\t\tmacOS\nProductVersion:\t\t27.0\nBuildVersion:\t\t26A428",
+  "git_head": "89ba602731323863843f2f51f44a634698d20f30",
+  "uncommitted_changes_included": true,
+  "frontend_build_id": "2RYiaZqalIHc37VkzH_oI",
+  "source_sha256": {
+    "frontend/app/register-cart.tsx": "5c0ca79731debc48bb26665cba74532bea1e9775511c754068fc4c2a660baea7",
+    "frontend/lib/pos.ts": "626e0c34d57a061396ea6f4117d4c230ae7bb9e42da8ed2007d2bc315191a669",
+    "tools/mac_restart.py": "693bb6b9d09bc17b2bc00686d190af102d9fb10aa88420c9c671245699f0d9ce",
+    "tools/mac_recovery_control.py": "05445a2662bcd1cb548c6b13fb35e32c439835b51f58fe2569135785fea83408",
+    "tools/mac_recovery_backend.py": "46f174876290737dd621430c1201acb9d98310c58d491ad62bb62458333917eb",
+    "tools/mac_flow_https.mjs": "cd2a879e0e1bee0244e3795eea4370a37928dbf2ddcef8f13d1f6fc7e5a6ed67",
+    "tools/m2_local_profile.py": "d17feccc50608ca6ab25b47b8104888c27fdcab6660f661ab86758d686d591d3",
+    "tools/m2_local_servers.py": "bd4a7722ab433f7031fb7f41e26ad2f577bbb504dc629efbdfcfed777851647e"
+  },
+  "final_db_sha256": "6f0a95cd88ebc9f7a96668f58751e0c1687fe79df023bcf512d268be4ea30eb3",
+  "initial_editing_attempt_without_process_stop_proof_counted": false
+}

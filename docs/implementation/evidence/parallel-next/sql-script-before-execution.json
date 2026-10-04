@@ -1,0 +1,8 @@
+{
+  "at_utc": "2026-10-04T07:07:52.882368+00:00",
+  "script": "tools/parallel_next_conditions_verify.py",
+  "sha256": "348dd7ff8a5b68c292f798f1da2b3bdf59518c380e94767acc697ad798f42d37",
+  "reused_api_script_sha256": "2e3f29228c7ffda47344b45ec0b1de00c450d2051dad538eb78dfc1d028096a8",
+  "transport": "real Repository SQL + TLS MySQL, explicit input timestamps",
+  "schema": "pos_api_validation"
+}

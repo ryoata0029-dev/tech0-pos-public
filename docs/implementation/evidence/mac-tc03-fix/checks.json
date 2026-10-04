@@ -1,0 +1,49 @@
+{
+  "at_utc": "2026-10-04T04:43:48.842100+00:00",
+  "make_check": {
+    "exit_code": 0,
+    "python_tests": 71,
+    "node_tests": 74,
+    "total_tests": 145,
+    "log": "make-check.log"
+  },
+  "make_build": {
+    "exit_code": 0,
+    "log": "make-build.log"
+  },
+  "targeted_member_tests": {
+    "total": 32,
+    "passed": 32,
+    "old_branch_failures": 8
+  },
+  "final_ruff": {
+    "configuration_cwd": "backend",
+    "lint": "passed",
+    "format_files": 68,
+    "format": "passed"
+  },
+  "supplementary_links": {
+    "documents": 6,
+    "local_links": 161,
+    "errors": []
+  },
+  "commands": {
+    "canonical_links": {
+      "exit_code": 0,
+      "stdout": "{\n  \"documents\": 26,\n  \"local_links\": 1307,\n  \"traceability_ids\": 39,\n  \"acceptance_sections\": 28,\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    "git_diff_check": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "https_javascript_syntax": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "offline_evidence_audit": "passed; 9 snapshots, 4 defect cases, 4 API rejections, 2 member503 cases",
+  "environment": "stopped; volume and evidence retained"
+}

@@ -1,0 +1,17 @@
+{
+  "before": "db-before-phone.json",
+  "after": "db-after-mac-flows.json",
+  "equal_sets": {
+    "register": true,
+    "contexts": true,
+    "carts": true,
+    "lines": true,
+    "operations": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "both_runtime_identities_unchanged": true,
+  "same_build": "5_wgTZOtPLE3as7vfiFAN"
+}

@@ -1,0 +1,85 @@
+{
+  "reviewed_at_utc": "2026-10-04T08:18:55.437658+00:00",
+  "method": "Independent read-only saved-evidence comparison; no live process, port, DB, GUI, environment or network operation",
+  "sources": [
+    {
+      "file": "shutdown-iphone-final.json",
+      "sha256": "d793c05292588852ca176bb62f7d0ef4778150fb709bb76e05fc1be991d52dd4"
+    },
+    {
+      "file": "db-iphone-final.json",
+      "sha256": "e1551da5ea79d6f892d0dda99e3cac14d764db7471d6b91b7bb3bcd5f6cc31d6"
+    },
+    {
+      "file": "db-iphone-p5-after-manual-entry.json",
+      "sha256": "aa37d1fa4ae90297e187a0e76ad6920532b0f8665d632054e55d2303c3ab02e7"
+    },
+    {
+      "file": "mysql-environment.json",
+      "sha256": "d4306bd1101393a32a957c3717145e8868cd991caa4254b95921b5fd4c41c01b"
+    },
+    {
+      "file": "environments-phone-ready-final.json",
+      "sha256": "dd521e09445db5f0067efefcfffcde7e78559bae6cc97db4ce59912a2b532a99"
+    },
+    {
+      "file": "comparison-iphone-conditions-independent-audit.json",
+      "sha256": "feecfde32e0be284939741bb58713fa96fa075c16caaa062bc2d6cd6ef251756"
+    }
+  ],
+  "checks": {
+    "final_vs_P5c_all_nine_projections_equal": true,
+    "fixed_profile_container_name_match_initial": true,
+    "initial_and_ready_container_id_match": true,
+    "retained_volume_name_match_initial": true,
+    "exact_phone_ports_reported_closed": true,
+    "container_reported_exited": true,
+    "known_secret_scan_reported_success": true,
+    "final_constants_match": true,
+    "shutdown_record_after_final_DB_snapshot": true
+  },
+  "projection_equal": {
+    "register": true,
+    "contexts": true,
+    "carts": true,
+    "lines": true,
+    "operations": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "version": 12,
+  "subtotal_yen": 10819,
+  "total_yen": 11898,
+  "quantities": {
+    "0001": 99,
+    "0002": 1,
+    "0001234567895": 1,
+    "00123457": 4
+  },
+  "operation_count": 12,
+  "purchases": 0,
+  "shutdown_record": {
+    "at_utc": "2026-10-04T08:17:51.866989+00:00",
+    "profile": "parallel-next",
+    "container": "tech0-pos-parallel-next-mysql",
+    "ports_closed": {
+      "3307": true,
+      "8443": true,
+      "8444": true
+    },
+    "container_status": "exited",
+    "volume_retained": "tech0-pos-parallel-next-mysql-data",
+    "secrets_absent_from_git_candidates_and_logs": true
+  },
+  "result": "final_data_retained_and_fixed_phone_shutdown_evidence_consistent",
+  "major_inconsistency_found": false,
+  "limits": [
+    "Port closure, container exited, volume retention and secret scanning are checked from root saved shutdown evidence; reviewer did not repeat live probes, docker inspect or secret scans.",
+    "Shutdown record identifies fixed profile/container/volume names but does not itself include final container ID; identity by ID is documented at initial and ready stages, not directly reobserved by this saved-evidence review.",
+    "Known-secret scan success is a recorded boolean, not proof of absence of every possible secret or an independently rerun scan.",
+    "DB equality applies to nine selected projections, not all tables or authentication/session expiry fields.",
+    "Device OS/Chrome/app version is pending owner report and not established by shutdown; M5/M7 full acceptance remains separate."
+  ]
+}

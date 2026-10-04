@@ -1,0 +1,54 @@
+{
+  "at_utc": "2026-10-04T06:23:51.072013+00:00",
+  "profile": "mac-parallel",
+  "scope": "Offline DB and server-gate checks only; GUI/HTTP receipt not inferred",
+  "result": "incomplete",
+  "environment": {
+    "status": "identity_passed",
+    "evidence": "mysql-environment.json"
+  },
+  "tc01": {
+    "status": "missing",
+    "missing": [
+      "db-nonmember-ready.json",
+      "db-nonmember-saved.json",
+      "db-nonmember-next-empty.json",
+      "db-nonmember-next-added.json"
+    ]
+  },
+  "tc02": [
+    {
+      "id": "old200",
+      "status": "missing",
+      "missing": [
+        "tc02-cases.json"
+      ]
+    },
+    {
+      "id": "old404",
+      "status": "missing",
+      "missing": [
+        "tc02-cases.json"
+      ]
+    },
+    {
+      "id": "old503",
+      "status": "missing",
+      "missing": [
+        "tc02-cases.json"
+      ]
+    },
+    {
+      "id": "aba200",
+      "status": "missing",
+      "missing": [
+        "tc02-cases.json"
+      ]
+    }
+  ],
+  "unverified": [
+    "TC02 browser status/body receipt and early GUI recovery",
+    "TC01 normal GUI sequence and clearing/login behavior",
+    "TC03, iPhone, camera, overall TC acceptance and owner acceptance"
+  ]
+}

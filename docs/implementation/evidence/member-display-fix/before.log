@@ -1,0 +1,252 @@
+
+> tech0-pos-frontend@0.0.0 test
+> node --test tests/*.test.mjs
+
+(node:29437) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/diagnostics.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ logs use templates and never echo member attributes, query strings or unknown paths (0.792792ms)
+(node:29438) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/pos.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ API response loss is Japanese uncertainty, while defined server errors retain their classification (31.893292ms)
+✔ late cart responses cannot roll back exact versions above JS integer precision (0.134125ms)
+✔ purchase storage keeps each operation and only clears verified saved cart (0.760584ms)
+✔ broken or unreadable storage fails closed rather than meaning no pending purchase (0.138583ms)
+✔ late edit receipt cannot acknowledge a newer saving state or notification (0.140458ms)
+(node:29439) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/recovery.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ lost confirmation reply retries original id and version without purchase or reopen (9.780167ms)
+✔ fence clears only older markers; delayed saved reply cannot clear a later purchase (0.161291ms)
+✔ member-pending fence preserves pending and never synchronizes or purchases (0.164833ms)
+✔ maintenance, broken storage, or mismatched confirmation never permit editing (0.143042ms)
+✔ delayed sync receipt carrying current SAVING never enables the editor (0.108292ms)
+(node:29440) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/pos.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ PRODUCT_NOT_FOUND: delayed reconciliation keeps Camera allowed, blocks new operations, then accepts a different code (94.068041ms)
+✔ QUANTITY_LIMIT: delayed reconciliation keeps Camera allowed, blocks new operations, then accepts a different code (33.220541ms)
+✔ definite rejection stops Camera when reconciliation encounters get-failure (31.43275ms)
+✔ definite rejection stops Camera when reconciliation encounters get-401 (18.876333ms)
+✔ definite rejection stops Camera when reconciliation encounters get-503 (45.08175ms)
+✔ definite rejection stops Camera when reconciliation encounters notification (19.225708ms)
+✔ definite rejection stops Camera when reconciliation encounters member-pending (16.162542ms)
+✔ definite rejection stops Camera when reconciliation encounters saving (13.363041ms)
+✔ definite rejection stops Camera when reconciliation encounters new-marker (25.092ms)
+✔ definite rejection stops Camera when reconciliation encounters other-cart-marker (11.864458ms)
+✔ definite rejection stops Camera when reconciliation encounters broken-storage (14.023375ms)
+✔ definite rejection stops Camera when reconciliation encounters disabled (13.960042ms)
+✔ definite rejection stops Camera when reconciliation encounters wrong-cart (17.291459ms)
+✔ uncertain/unauthorized/conflicting update stops Camera: network (12.862542ms)
+✔ uncertain/unauthorized/conflicting update stops Camera: DB_UNAVAILABLE (15.479708ms)
+✔ uncertain/unauthorized/conflicting update stops Camera: UNAUTHENTICATED (13.249375ms)
+✔ uncertain/unauthorized/conflicting update stops Camera: VERSION_CONFLICT (13.512375ms)
+(node:29441) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/pos.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ member change immediately marks old conditions as reference; 503 keeps uncertainty until explicit reconciliation (87.271ms)
+✖ member network response loss preserves reference display and explicit reason without automatic retry (40.486125ms)
+✖ member authentication loss preserves reference display and explicit reason without automatic retry (61.555708ms)
+✖ member recovery expiry preserves reference display and explicit reason without automatic retry (34.12375ms)
+✔ member-not-found reconciles to PENDING and retains reference amounts (30.386958ms)
+✖ verified member success restores authoritative conditions (14.121084ms)
+✖ verified nonmember success restores authoritative conditions (13.830875ms)
+✖ failed state check must not restore old-member certainty (17.979875ms)
+✖ same member request retry retains operation identity and clears uncertainty only on verified success (19.571458ms)
+(node:29442) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/pos.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ UNSAVED retry hides stale certainty while sending and after response loss; same request is retained (81.532291ms)
+✔ cross-tab uncertainty hides previous UNSAVED choices without discarding the cart (27.913459ms)
+✔ purchase preserves an explicit recovery-expiry reason and stays stopped (26.618583ms)
+(node:29443) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/relay.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{"utc":"2026-10-04T03:47:41.517Z","request_id":"00a5a926-9b6c-4f49-a667-5008297f0529","operation_id":null,"api":"/api/auth/status","elapsed_ms":2.61,"result_code":"HTTP_200","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-04T03:47:41.520Z","request_id":"f5a04a91-5129-47f2-8c1a-eb96d9cfeb47","operation_id":null,"api":"/api/login","elapsed_ms":0.34,"result_code":"HTTP_403","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-04T03:47:41.520Z","request_id":"dd68bd96-2339-4b06-a25e-72038f9796a0","operation_id":null,"api":"/api/login","elapsed_ms":0.14,"result_code":"HTTP_403","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-04T03:47:41.520Z","request_id":"f1bc89b6-5daf-4153-8a92-66c9caea11cb","operation_id":null,"api":"/api/login","elapsed_ms":0.13,"result_code":"HTTP_403","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-04T03:47:41.520Z","request_id":"242d471b-d4a8-40ad-92c5-d4427aefd0ea","operation_id":null,"api":"/api/login","elapsed_ms":0.1,"result_code":"HTTP_403","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-04T03:47:41.522Z","request_id":"11c03012-0be6-4ee2-9d41-feb9d86a3f0a","operation_id":null,"api":"/api/login","elapsed_ms":0.31,"result_code":"HTTP_503","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-04T03:47:41.522Z","request_id":"de03e377-d26e-41eb-9abf-0ec92eeacf05","operation_id":null,"api":"/api/auth/status","elapsed_ms":0.28,"result_code":"HTTP_503","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-04T03:47:41.522Z","request_id":"6ac8fb1e-5d88-4d82-a372-cf22a3c57ac2","operation_id":null,"api":"/api/auth/status","elapsed_ms":0.14,"result_code":"HTTP_503","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-04T03:47:41.523Z","request_id":"2eac0223-d748-4a1b-8c15-5ba2bd9ffd50","operation_id":"11111111-1111-4111-8111-111111111111","api":"/api/carts/{cart_id}/lines/{line_id}","elapsed_ms":0.48,"result_code":"HTTP_200","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-04T03:47:41.524Z","request_id":"875975b4-0b3d-4b41-b50b-92676e86689a","operation_id":"11111111-1111-4111-8111-111111111111","api":"/api/carts/{cart_id}/lines/{line_id}","elapsed_ms":0.17,"result_code":"HTTP_422","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-04T03:47:41.524Z","request_id":"ac1d592a-c272-49b6-a8d2-1e3b491c63f7","operation_id":"11111111-1111-4111-8111-111111111111","api":"/api/carts/{cart_id}/lines/{line_id}","elapsed_ms":0.09,"result_code":"HTTP_422","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+✔ allowlist rejects unexpected paths and methods (0.730917ms)
+✔ relay overwrites spoofed secret and preserves multiple Set-Cookie headers (23.215584ms)
+✔ bad origin and missing marker cause no upstream call (1.278208ms)
+✔ transport failure is sanitized and is never retried (1.418666ms)
+✔ redirect and insecure upstream fail closed (0.651ms)
+✔ M3 relay forwards DELETE query once and rejects extra or duplicate fields (1.556667ms)
+(node:29444) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/scan-gate.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ same code never repeats by time alone; different code unlocks (0.636459ms)
+✔ absence must be continuous for 500ms and excludes API busy interval (0.104167ms)
+✔ whole ASCII code only; no trim or queued detection (0.110584ms)
+✔ late media permission and attached streams stop on close (0.129291ms)
+✔ checksum/format failure interrupts absence rather than proving an empty frame (0.075125ms)
+ℹ tests 51
+ℹ suites 0
+ℹ pass 43
+ℹ fail 8
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 701.590417
+
+✖ failing tests:
+
+test at tests/register-member.test.mjs:28:1
+✖ member change immediately marks old conditions as reference; 503 keeps uncertainty until explicit reconciliation (87.271ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(view.text().includes('参考額'))
+  
+      at unconfirmed (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-member.test.mjs:21:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-member.test.mjs:31:50)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/register-member.test.mjs:49:3
+✖ member network response loss preserves reference display and explicit reason without automatic retry (40.486125ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(view.text().includes('参考額'))
+  
+      at unconfirmed (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-member.test.mjs:21:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-member.test.mjs:52:59)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/register-member.test.mjs:49:3
+✖ member authentication loss preserves reference display and explicit reason without automatic retry (61.555708ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(view.text().includes('参考額'))
+  
+      at unconfirmed (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-member.test.mjs:21:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-member.test.mjs:52:59)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/register-member.test.mjs:49:3
+✖ member recovery expiry preserves reference display and explicit reason without automatic retry (34.12375ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(view.text().includes('参考額'))
+  
+      at unconfirmed (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-member.test.mjs:21:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-member.test.mjs:52:59)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/register-member.test.mjs:72:3
+✖ verified member success restores authoritative conditions (14.121084ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(view.text().includes('参考額'))
+  
+      at unconfirmed (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-member.test.mjs:21:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-member.test.mjs:82:78)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/register-member.test.mjs:72:3
+✖ verified nonmember success restores authoritative conditions (13.830875ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(view.text().includes('参考額'))
+  
+      at unconfirmed (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-member.test.mjs:21:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-member.test.mjs:82:78)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/register-member.test.mjs:92:1
+✖ failed state check must not restore old-member certainty (17.979875ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(view.text().includes('参考額'))
+  
+      at unconfirmed (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-member.test.mjs:21:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-member.test.mjs:98:63)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/register-member.test.mjs:103:1
+✖ same member request retry retains operation identity and clears uncertainty only on verified success (19.571458ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(view.text().includes('参考額'))
+  
+      at unconfirmed (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-member.test.mjs:21:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-member.test.mjs:111:57)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

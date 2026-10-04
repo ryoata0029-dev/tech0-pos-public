@@ -1,0 +1,26 @@
+{
+  "at_utc": "2026-10-04T06:41:33.275325+00:00",
+  "profile": "mac-parallel",
+  "build_id": "5_wgTZOtPLE3as7vfiFAN",
+  "tests": {
+    "make_check": "passed",
+    "python": 78,
+    "node": 119,
+    "total": 197,
+    "log": "check-pattern-fix-retry.log",
+    "prior_lint_failure": "check-pattern-fix.log: verifier E501; string splitting only"
+  },
+  "make_build": "passed",
+  "build_log": "build-pattern-fix.log",
+  "source_sha256": {
+    "frontend/app/page.tsx": "1fdc59df3c5355c78a26d7f51e938c809d9448fe6b6511a767483292dfaacfe5",
+    "frontend/app/register-cart.tsx": "ad1055a84c4f2541001c163ba4e2df1e9024c5d28a33c9b8d2d50ea5650f03a6",
+    "frontend/tests/home-pattern.test.mjs": "87031c0e3b8fed3c87d792dea624db89f0f4381f351fdc2d818a7573785424c2",
+    "frontend/tests/support/recovery-ui-harness.mjs": "f8b2acbbe58eca5a1167935c0fa92c28220b703f178309b493d1b9ededb745f6",
+    "tools/mac_parallel_verify.py": "86c81c2364d70c07ca1e6feec973f69dda883a74da80dc55cf0511380bc07824"
+  },
+  "earlier_Mac_TC01_TC02_TC03_build": "_6zNKKv-evmUKeL_8XYLh",
+  "status": "stopped; DB volume and evidence retained",
+  "shutdown": "shutdown-final.json",
+  "final_db": "db-final.json"
+}

@@ -1,0 +1,60 @@
+{
+  "reviewed_at_utc": "2026-10-04T08:07:55.167655+00:00",
+  "condition": "P4b independent saved JSON review",
+  "sources": [
+    {
+      "file": "db-iphone-p4-after-background.json",
+      "sha256": "c4bd14da58240f8a97dbd51773f786bec6c9e4f3bb36a38ed3b7eb6d8c717c4e"
+    },
+    {
+      "file": "db-iphone-p4-after-manual-restart.json",
+      "sha256": "7f7ae7a9695d6826f4ae455c172ff072c7bd291a6664b9811b8420dce4a89a49"
+    },
+    {
+      "file": "comparison-iphone-p4-manual-restart.json",
+      "sha256": "ceeb374cd581b02da7f2b42130068aa1ed7b6fc901fd3fb5b1a76b18ab02ddac"
+    }
+  ],
+  "before_observed_at_utc": "2026-10-04 08:04:31.288956",
+  "after_observed_at_utc": "2026-10-04 08:07:06.737181",
+  "checks": {
+    "protected_six_projection_equal": true,
+    "all_prior_ten_operations_unchanged": true,
+    "exactly_one_ean8_add_applied": true,
+    "other_two_lines_entirely_unchanged": true,
+    "ean8_only_quantity_and_line_subtotal_changed": true,
+    "cart_fixed_fields_unchanged": true,
+    "independent_version_quantity_totals_constants": true,
+    "sales_three_collections_empty": true,
+    "primary_comparison_consistent": true
+  },
+  "new_operation": {
+    "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+    "operation_id": "5101bf0b-7ec2-4500-8da0-bf97c2e05c33",
+    "kind": "ADD_LINE",
+    "request_version": 10,
+    "status": "APPLIED",
+    "prepared_version": null,
+    "applied_version": 11,
+    "result_code": null,
+    "next_cart_id": null,
+    "created_at": "2026-10-04 08:05:33.255029",
+    "requested_code": "00123457"
+  },
+  "quantity_change": "3->4",
+  "version_change": "10->11",
+  "subtotal_yen": 10712,
+  "tax_yen": 1071,
+  "total_yen": 11783,
+  "purchases": 0,
+  "owner_report": "手動再開でき、数量４",
+  "result": "limited_manual_restart_owner_confirmation_with_exactly_one_saved_addition",
+  "limits": [
+    "Saved JSON comparison only; no live DB or browser operation.",
+    "Manual restart and visible quantity4 are owner reported.",
+    "Close then manual input was instructed but has no individual explicit owner confirmation here.",
+    "No direct media track, decoder, measured timing or browser HTTP observation.",
+    "One saved addition does not prove absence of all other HTTP traffic or all session/expiry changes.",
+    "Permission rejection and manual fallback P5 are not included."
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "reviewed_at_utc": "2026-10-04T07:52:49.690796+00:00",
+  "method": "offline independent saved JSON comparison; no GUI/DB/environment/network/document actions",
+  "sources": [
+    "db-iphone-p2-after-limit.json",
+    "db-iphone-p2-after-next-code.json",
+    "comparison-iphone-p2-next-code.json"
+  ],
+  "source_sha256": {
+    "db-iphone-p2-after-limit.json": "7a68e0d0c133fa63c02880517e5f7f5a845f2e80fb4aae3f3763c0edbe62e63a",
+    "db-iphone-p2-after-next-code.json": "532b3caa5b9dcb11a40b6d57223232b122cd7a092995a62ca0205da123cc7138",
+    "comparison-iphone-p2-next-code.json": "8def41bd94dc55c64f796e3398ecef958cbbf70fe92a0d1d6459728efe72a218"
+  },
+  "condition": "P2b",
+  "before_observed_at_utc": "2026-10-04 07:50:13.140551",
+  "after_observed_at_utc": "2026-10-04 07:52:01.475748",
+  "stable_projection_equal": {
+    "register": true,
+    "contexts": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "original_operations_unchanged": 6,
+  "new_operation_count": 1,
+  "new_operation": {
+    "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+    "operation_id": "83f14fc5-008d-4429-b6f6-cd8d58fa38f3",
+    "kind": "ADD_LINE",
+    "request_version": 6,
+    "status": "APPLIED",
+    "prepared_version": null,
+    "applied_version": 7,
+    "result_code": null,
+    "next_cart_id": null,
+    "created_at": "2026-10-04 07:51:04.322706",
+    "requested_code": "0001234567895"
+  },
+  "original_0001_line_projection_unchanged": true,
+  "original_quantity": 99,
+  "new_EAN13_line": {
+    "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+    "line_id": "04409036-aac7-4f1b-bb34-5c199b78a7f0",
+    "line_no": 2,
+    "product_id": 4,
+    "quantity": 1,
+    "unit_price_snapshot": "103",
+    "tax_rate_snapshot": "0.1000",
+    "discount_per_unit": "0",
+    "net_unit_price": "103",
+    "line_subtotal": "103",
+    "conditions_fixed_at": "2026-10-04 07:51:04.322706"
+  },
+  "cart_version_before": 6,
+  "cart_version_after": 7,
+  "cart_other_projection_fields_unchanged": true,
+  "subtotal_yen": 10300,
+  "tax_yen": 1030,
+  "total_yen": 11330,
+  "subtotal_delta_yen": 103,
+  "tax_delta_yen": 11,
+  "total_delta_yen": 114,
+  "purchase_rows": 0,
+  "owner_report_from_task_handoff": "１個追加されその数量でとまりました",
+  "result": "limited_addition_confirmed_camera_sequence_pending_owner_confirmation",
+  "major_inconsistency_found": false,
+  "limits": [
+    "Owner reported one addition and quantity stopping; reviewer did not observe live UI/video or measure presentation duration.",
+    "No new DELETE_LINE/SET_QUANTITY/purchase operation appears in the observed delta; this does not establish camera restart or camera-close actions.",
+    "Root will separately confirm no restart between rejection and next-code addition and final close-to-manual action. Those conditions remain unconfirmed in this review.",
+    "HTTP reception, MediaStreamTrack state, subsequent counts beyond the saved snapshot and full M5/M7 acceptance are outside this evidence."
+  ]
+}

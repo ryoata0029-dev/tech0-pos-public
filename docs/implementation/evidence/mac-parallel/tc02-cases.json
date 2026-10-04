@@ -1,0 +1,117 @@
+{
+  "cases": [
+    {
+      "id": "old200",
+      "tag": "parallel-old200",
+      "before": "db-tc02-before.json",
+      "after": "db-after-old200.json",
+      "gui": {
+        "started_at_utc": "2026-10-04T06:23:47.326Z",
+        "input_changed_at_utc": "2026-10-04T06:23:47.670Z",
+        "ready_at_utc": "2026-10-04T06:23:50.495Z",
+        "elapsed_ms": 3169,
+        "input_after": "0002",
+        "search_exists": true,
+        "search_enabled": true,
+        "candidate_absent": true,
+        "busy_dom_file": "ui-old200-busy.txt",
+        "ready_dom_file": "ui-old200-ready.txt"
+      },
+      "browser_network": {
+        "status": 200,
+        "body_code": "0001",
+        "duration_text": "3.04 s",
+        "status_file": "network-old200-status.txt",
+        "body_file": "network-old200-body.txt",
+        "observed_at_utc": "2026-10-04T06:24:04.139Z"
+      }
+    },
+    {
+      "id": "old404",
+      "tag": "parallel-old404",
+      "before": "db-tc02-before.json",
+      "after": "db-after-old404.json",
+      "gui": {
+        "started_at_utc": "2026-10-04T06:24:46.688Z",
+        "input_changed_at_utc": "2026-10-04T06:24:47.020Z",
+        "ready_at_utc": "2026-10-04T06:24:49.192Z",
+        "elapsed_ms": 2504,
+        "input_after": "0002",
+        "search_exists": true,
+        "search_enabled": true,
+        "candidate_absent": true,
+        "busy_dom_file": "ui-old404-busy.txt",
+        "ready_dom_file": "ui-old404-ready.txt"
+      },
+      "browser_network": {
+        "status": 404,
+        "request_code": "PRODUCT_MISSING",
+        "body_code": "PRODUCT_NOT_FOUND",
+        "status_file": "network-old404-status.txt",
+        "body_file": "network-old404-body.txt",
+        "observed_at_utc": "2026-10-04T06:25:01.601Z"
+      }
+    },
+    {
+      "id": "old503",
+      "tag": "parallel-old503",
+      "before": "db-tc02-before.json",
+      "after": "db-after-old503.json",
+      "gui": {
+        "started_at_utc": "2026-10-04T06:26:07.126Z",
+        "input_changed_at_utc": "2026-10-04T06:26:07.466Z",
+        "ready_at_utc": "2026-10-04T06:26:10.179Z",
+        "elapsed_ms": 3053,
+        "input_after": "0002",
+        "search_exists": true,
+        "search_enabled": true,
+        "candidate_absent": true,
+        "busy_dom_file": "ui-old503-busy.txt",
+        "ready_dom_file": "ui-old503-ready.txt"
+      },
+      "browser_network": {
+        "status": 503,
+        "request_code": "0001",
+        "body_code": "SERVICE_UNAVAILABLE",
+        "status_file": "network-old503-status.txt",
+        "body_file": "network-old503-body.txt",
+        "observed_at_utc": "2026-10-04T06:26:26.651Z",
+        "observation_retry": "First native AX click became stale after status record; fresh request row selected; no app operation retried"
+      }
+    },
+    {
+      "id": "aba200",
+      "tag": "parallel-aba200",
+      "before": "db-tc02-before.json",
+      "after": "db-after-aba200.json",
+      "gui": {
+        "started_at_utc": "2026-10-04T06:26:45.191Z",
+        "input_changed_at_utc": "2026-10-04T06:26:45.511Z",
+        "ready_at_utc": "2026-10-04T06:26:47.474Z",
+        "elapsed_ms": 2283,
+        "input_after": "0001",
+        "search_exists": true,
+        "search_enabled": true,
+        "candidate_absent": true,
+        "busy_dom_file": "ui-aba200-busy.txt",
+        "ready_dom_file": "ui-aba200-ready.txt",
+        "input_sequence": [
+          "0001",
+          "0002",
+          "0001"
+        ],
+        "sequence_evidence": "Normal CUA fill completed for 0002 before input_changed_at_utc, then awaited normal fill for 0001 before ready wait; return time not separately recorded",
+        "sequence_evidence_file": "aba-cua-sequence.txt"
+      },
+      "browser_network": {
+        "status": 200,
+        "request_code": "0001",
+        "body_code": "0001",
+        "status_file": "network-aba200-status.txt",
+        "body_file": "network-aba200-body.txt",
+        "observed_at_utc": "2026-10-04T06:27:03.477Z",
+        "observation_retry": "First native AX click became stale after status record; fresh request row selected; no app operation retried"
+      }
+    }
+  ]
+}

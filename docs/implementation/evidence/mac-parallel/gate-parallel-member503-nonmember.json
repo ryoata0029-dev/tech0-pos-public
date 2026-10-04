@@ -1,0 +1,11 @@
+{
+  "at_utc": "2026-10-04T06:34:00.384724+00:00",
+  "tag": "parallel-member503-nonmember",
+  "kind": "member-unavailable",
+  "after_real_receipt_commit": true,
+  "operation_id": "09c00579-cf48-45f8-90ee-fac05b8eaa3f",
+  "cart_id": "6501b600-ccf3-4e80-ad5f-3dcb949ab9cc",
+  "version": "13",
+  "state": "EDITING",
+  "member_state": "PENDING"
+}

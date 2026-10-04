@@ -1,0 +1,64 @@
+{
+  "reviewed_at_utc": "2026-10-04T07:45:51.341548+00:00",
+  "method": "offline independent saved JSON comparison; no GUI/DB/environment/network operations",
+  "sources": [
+    "db-iphone-p1-before-deselect.json",
+    "db-iphone-p1-after-deselect.json",
+    "comparison-iphone-p1-deselect.json"
+  ],
+  "source_sha256": {
+    "db-iphone-p1-before-deselect.json": "d0299d9d4a612216471cd34fb2331008c32e76f12ed0a17e710ca0b6bd8016b2",
+    "db-iphone-p1-after-deselect.json": "2b75a67c99eb009656da20f9a57352b94fb88225dbc704ac70c5b01701748939",
+    "comparison-iphone-p1-deselect.json": "89d0fff1e08fa9cf850f04b5749c4aab15fad56d8dca3ffc3b03435cf4aac25d"
+  },
+  "condition": "P1a",
+  "before_observed_at_utc": "2026-10-04 07:42:07.618869",
+  "after_observed_at_utc": "2026-10-04 07:45:02.802476",
+  "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+  "context_id": "8964dcfc-9a1a-4896-a819-3cbd745d4e1a",
+  "line_id": "82a65022-05aa-4deb-a516-7c85adde9a91",
+  "projection_equal": {
+    "register": true,
+    "contexts": true,
+    "carts": true,
+    "lines": true,
+    "operations": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "cart_state": "EDITING",
+  "cart_version": 5,
+  "quantity": 1,
+  "subtotal_yen": 103,
+  "total_yen": 113,
+  "purchase_rows": 0,
+  "operation_rows_before_and_after": 4,
+  "preparation_SET_QUANTITY_operations_before_baseline": [
+    {
+      "operation_id": "1670a16f-5ebe-4b14-a79f-0e9f0b5830da",
+      "created_at": "2026-10-04 07:41:14.945616",
+      "request_version": 3,
+      "applied_version": 4,
+      "status": "APPLIED"
+    },
+    {
+      "operation_id": "616d46c7-0485-4334-bc23-c0c21a8b23ba",
+      "created_at": "2026-10-04 07:41:27.011633",
+      "request_version": 4,
+      "applied_version": 5,
+      "status": "APPLIED"
+    }
+  ],
+  "new_operation_rows_between_baselines": 0,
+  "owner_report_recorded_in_primary_evidence": "想定通りです。１が残りました",
+  "result": "limited_confirmation_consistent_with_owner_report",
+  "major_inconsistency_found": false,
+  "limits": [
+    "Two preparation SET_QUANTITY operations completed before the before-deselect snapshot; they are not changes caused by deselection. Their requested quantity values are not included in this snapshot projection.",
+    "UI deselection and the unsent quantity input are owner reports, not independently observed DOM/video.",
+    "Nine selected DB projections are unchanged; no browser request trace, all-HTTP absence, session expiry invariance or camera/media preservation is established.",
+    "P1b re-selection, camera-open deselection and TC02/M5/M7 overall acceptance are outside this observation."
+  ]
+}

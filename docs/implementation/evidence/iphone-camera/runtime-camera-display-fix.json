@@ -1,0 +1,71 @@
+{
+  "at_utc": "2026-10-04T05:28:50.581918+00:00",
+  "stage": "stopped_phone_test_retained",
+  "build_id": "lHLimVliyl-yfc2bz9kbr",
+  "database": "tech0-pos-iphone-camera-mysql",
+  "same_current_trial_cart": "f98360c5-496f-4a9c-9ad6-6d5fb59e7935",
+  "sources_sha256": {
+    "frontend/app/register-cart.tsx": "cd2119ec630a7e8a009cb1fb4fb71f880b97121ffa2337395e72148cc6ec9b07",
+    "frontend/app/camera.tsx": "4679f937821d3447c4b89a5c505f1449b0996ab251da36e88b0d2e9c2d85f6e2",
+    "frontend/lib/scan-gate.ts": "31eefe5b41a1bc9f7507fd2c3ee1179d9c19847c392eb546e417e96b4ab8c8ba"
+  },
+  "check": {
+    "exit_code": 0,
+    "python_tests": 71,
+    "node_tests": 98,
+    "total": 169,
+    "openapi_operations": 22,
+    "log": "check-camera-display-fix.log"
+  },
+  "build": {
+    "exit_code": 0,
+    "log": "build-camera-display-fix.log"
+  },
+  "independent_review": {
+    "agent": "/root/m4_test_review",
+    "confirmed_new_findings": 0,
+    "scope": "scan result contract, rejection feedback, purchase/next unchanged, failure/401/notification/member-close/late-outcome stops",
+    "real_device_retest": "pending"
+  },
+  "react_best_practices_review": {
+    "skill": "vercel:react-best-practices",
+    "checked": [
+      "stable callback refs and media-effect cleanup",
+      "transient rejected code in ref and displayed reason in state",
+      "ZXing modules loaded only after explicit start",
+      "discriminated scan result and stop guards"
+    ],
+    "findings": 0
+  },
+  "scan_absence_threshold_ms": 500,
+  "scan_absence_threshold_changed": false,
+  "camera_frame_capture": "none",
+  "real_device_version": {
+    "source": "owner report",
+    "device": "iPhone 15",
+    "ios": "27.0.1",
+    "chrome": "155.0.8059.24"
+  },
+  "prior_build_record": "runtime-first-pass.json",
+  "pending_owner_confirmation": null,
+  "owner_evidence": "owner-observations.json",
+  "same_current_trial_no_context_or_cookie_deadline_extension": true,
+  "reload_report": "camera rejection reason observed after normal page reload",
+  "confirmed_owner_cases": [
+    "missing-product reason after normal reload",
+    "next0001 without camera restart, quantity1 remains, camera closed"
+  ],
+  "shutdown": {
+    "at_utc": "2026-10-04T05:41:49.968418+00:00",
+    "ports_closed": {
+      "3307": true,
+      "8443": true,
+      "8444": true
+    },
+    "container_status": "exited",
+    "volume_retained": "tech0-pos-iphone-camera-mysql-data",
+    "secrets_absent_from_git_candidates_and_logs": true
+  },
+  "final_db_evidence": "db-final-phone.json",
+  "quantity_limit_continuation": "not executed: owner deliberately deleted Code128 line and restarted camera before EAN13"
+}

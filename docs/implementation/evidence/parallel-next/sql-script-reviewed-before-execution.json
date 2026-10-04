@@ -1,0 +1,10 @@
+{
+  "at_utc": "2026-10-04T07:09:20.716710+00:00",
+  "script": "tools/parallel_next_conditions_verify.py",
+  "sha256": "165a4fd25bfdfa49e9806b823a33195b6ed64df4755cec98dfbe9378508e0ca2",
+  "replaces_pre_review_reference": "sql-script-before-execution.json",
+  "reason": "independent review requested explicit physical connection IDs and fresh engine after writer COMMIT; implemented before any execution",
+  "independent_review": "m5_fix_review: corrected source has no major issue",
+  "transport": "real Repository SQL + TLS MySQL, explicit input timestamps",
+  "schema": "pos_api_validation"
+}

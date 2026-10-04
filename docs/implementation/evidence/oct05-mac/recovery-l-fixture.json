@@ -1,0 +1,247 @@
+[
+  {
+    "at_utc": "2026-10-04T16:12:49.938Z",
+    "method": "GET",
+    "path": "resume",
+    "status": 200,
+    "operation_id": null,
+    "operation_status": null,
+    "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+    "version": "15",
+    "new_cart_id": null
+  },
+  {
+    "at_utc": "2026-10-04T16:12:49.953Z",
+    "fixture": "native-quota",
+    "native_error": "QuotaExceededError",
+    "purchase_sized_probe_failed": true,
+    "owned_keys": 104,
+    "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+    "version": "15"
+  },
+  {
+    "at_utc": "2026-10-04T16:12:59.470Z",
+    "action": "ordinary-built-POS-iframe-opened"
+  },
+  {
+    "at_utc": "2026-10-04T16:14:18.238Z",
+    "action": "only-fixture-owned-keys-removed",
+    "remaining_purchase_keys": 0
+  },
+  {
+    "at_utc": "2026-10-04T16:14:19.393Z",
+    "method": "GET",
+    "path": "resume",
+    "status": 200,
+    "operation_id": null,
+    "operation_status": null,
+    "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+    "version": "16",
+    "new_cart_id": null
+  },
+  {
+    "at_utc": "2026-10-04T16:14:19.393Z",
+    "fixture": "broken-JSON",
+    "keys_placed": 1,
+    "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+    "version": "16",
+    "requests_were_not_purchase_requests": true
+  },
+  {
+    "at_utc": "2026-10-04T16:14:38.568Z",
+    "action": "ordinary-built-POS-iframe-opened"
+  },
+  {
+    "at_utc": "2026-10-04T16:16:43.891Z",
+    "action": "only-fixture-owned-keys-removed",
+    "remaining_purchase_keys": 0
+  },
+  {
+    "at_utc": "2026-10-04T16:16:45.412Z",
+    "method": "GET",
+    "path": "resume",
+    "status": 200,
+    "operation_id": null,
+    "operation_status": null,
+    "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+    "version": "16",
+    "new_cart_id": null
+  },
+  {
+    "at_utc": "2026-10-04T16:16:45.412Z",
+    "fixture": "multiple-key-body-mismatch",
+    "keys_placed": 2,
+    "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+    "version": "16",
+    "requests_were_not_purchase_requests": true
+  },
+  {
+    "at_utc": "2026-10-04T16:17:00.889Z",
+    "action": "ordinary-built-POS-iframe-opened"
+  },
+  {
+    "at_utc": "2026-10-04T16:17:37.887Z",
+    "action": "only-fixture-owned-keys-removed",
+    "remaining_purchase_keys": 0
+  },
+  {
+    "at_utc": "2026-10-04T16:17:38.603Z",
+    "action": "ordinary-built-POS-iframe-opened"
+  },
+  {
+    "at_utc": "2026-10-04T16:18:24.647Z",
+    "method": "GET",
+    "path": "resume",
+    "status": 200,
+    "operation_id": null,
+    "operation_status": null,
+    "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+    "version": "19",
+    "new_cart_id": null
+  },
+  {
+    "at_utc": "2026-10-04T16:18:24.647Z",
+    "action": "waiting-for-first-real-NEXT",
+    "a": "1881e575-044d-4a4f-9c6b-9d873036bbea"
+  },
+  {
+    "at_utc": "2026-10-04T16:18:24.694Z",
+    "method": "GET",
+    "path": "resume",
+    "status": 200,
+    "operation_id": null,
+    "operation_status": null,
+    "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+    "version": "19",
+    "new_cart_id": null
+  },
+  {
+    "at_utc": "2026-10-04T16:18:24.890Z",
+    "method": "GET",
+    "path": "resume",
+    "status": 200,
+    "operation_id": null,
+    "operation_status": null,
+    "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+    "version": "19",
+    "new_cart_id": null
+  },
+  {
+    "at_utc": "2026-10-04T16:18:25.022Z",
+    "method": "GET",
+    "path": "resume",
+    "status": 200,
+    "operation_id": null,
+    "operation_status": null,
+    "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+    "version": "19",
+    "new_cart_id": null
+  },
+  {
+    "at_utc": "2026-10-04T16:18:25.152Z",
+    "method": "GET",
+    "path": "resume",
+    "status": 200,
+    "operation_id": null,
+    "operation_status": null,
+    "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+    "version": "19",
+    "new_cart_id": null
+  },
+  {
+    "at_utc": "2026-10-04T16:18:25.282Z",
+    "method": "GET",
+    "path": "resume",
+    "status": 200,
+    "operation_id": null,
+    "operation_status": null,
+    "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+    "version": "19",
+    "new_cart_id": null
+  },
+  {
+    "at_utc": "2026-10-04T16:18:25.452Z",
+    "method": "GET",
+    "path": "resume",
+    "status": 200,
+    "operation_id": null,
+    "operation_status": null,
+    "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+    "version": "19",
+    "new_cart_id": null
+  },
+  {
+    "at_utc": "2026-10-04T16:18:25.583Z",
+    "method": "GET",
+    "path": "resume",
+    "status": 200,
+    "operation_id": null,
+    "operation_status": null,
+    "cart_id": "ef1f5ac3-6815-40a8-aa6e-33f185fd611d",
+    "version": "1",
+    "new_cart_id": null
+  },
+  {
+    "at_utc": "2026-10-04T16:18:25.630Z",
+    "method": "POST",
+    "path": "carts/ef1f5ac3-6815-40a8-aa6e-33f185fd611d/lines",
+    "status": 200,
+    "operation_id": "43e0b59a-9931-4696-a859-e221c8002ada",
+    "operation_status": "APPLIED",
+    "cart_id": "ef1f5ac3-6815-40a8-aa6e-33f185fd611d",
+    "version": "2",
+    "new_cart_id": null
+  },
+  {
+    "at_utc": "2026-10-04T16:18:25.630Z",
+    "action": "B-purchase-identity-retained-before-POST",
+    "cart_id": "ef1f5ac3-6815-40a8-aa6e-33f185fd611d",
+    "operation_id": "525a527e-aa1e-4abf-87ff-213278c73dac",
+    "version": "2",
+    "storage_namespace": "oct05-recovery-pending:"
+  },
+  {
+    "at_utc": "2026-10-04T16:18:25.696Z",
+    "method": "POST",
+    "path": "purchases",
+    "status": 200,
+    "operation_id": "525a527e-aa1e-4abf-87ff-213278c73dac",
+    "operation_status": "APPLIED",
+    "cart_id": "ef1f5ac3-6815-40a8-aa6e-33f185fd611d",
+    "version": "4",
+    "new_cart_id": null
+  },
+  {
+    "at_utc": "2026-10-04T16:18:25.743Z",
+    "method": "POST",
+    "path": "carts/ef1f5ac3-6815-40a8-aa6e-33f185fd611d/next",
+    "status": 200,
+    "operation_id": "02892c13-fc5f-418a-8b19-b91950396332",
+    "operation_status": "APPLIED",
+    "cart_id": "988509ef-d02d-45a1-8029-33607a61027e",
+    "version": "1",
+    "new_cart_id": "988509ef-d02d-45a1-8029-33607a61027e"
+  },
+  {
+    "at_utc": "2026-10-04T16:18:25.795Z",
+    "method": "POST",
+    "path": "carts/988509ef-d02d-45a1-8029-33607a61027e/lines",
+    "status": 200,
+    "operation_id": "4dec7e7a-398b-49da-8aa2-2bec24b161c1",
+    "operation_status": "APPLIED",
+    "cart_id": "988509ef-d02d-45a1-8029-33607a61027e",
+    "version": "2",
+    "new_cart_id": null
+  },
+  {
+    "at_utc": "2026-10-04T16:18:25.795Z",
+    "action": "C-added-once",
+    "a": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+    "b": "ef1f5ac3-6815-40a8-aa6e-33f185fd611d",
+    "c": "988509ef-d02d-45a1-8029-33607a61027e",
+    "version": "2",
+    "total": "113",
+    "panel_purchase_posts": 1,
+    "panel_next_posts": 1
+  }
+]

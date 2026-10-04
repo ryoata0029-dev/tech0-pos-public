@@ -1,0 +1,28 @@
+{
+  "at_utc": "2026-10-04T05:52:04.846181+00:00",
+  "profile": "mac-batch",
+  "build_id": "JgJjC7D_Z2jjtELoFKU-V",
+  "tests": {
+    "make_check": "passed",
+    "python": 71,
+    "node": 99,
+    "total": 170,
+    "log": "check-selection-fix.log"
+  },
+  "make_build": "passed",
+  "build_log": "build-selection-fix.log",
+  "independent_review": "mac_flow_review: no actionable additional defect; local selection only; canEdit maintained; camera lifecycle not changed",
+  "source_sha256": {
+    "frontend/app/register-cart.tsx": "ad1055a84c4f2541001c163ba4e2df1e9024c5d28a33c9b8d2d50ea5650f03a6",
+    "frontend/app/camera.tsx": "4679f937821d3447c4b89a5c505f1449b0996ab251da36e88b0d2e9c2d85f6e2",
+    "frontend/tests/register-selection.test.mjs": "9ff129a4ef57fb9de1e737410b2d8ef2450cb0ddfe914603adc2db8594fa68d0",
+    "frontend/tests/support/register-harness.mjs": "713b6f88ca538941575d51ca9e403a8e524cd6fc9407b4fe250d29b4f7a78100"
+  },
+  "physical_camera_test": "not performed; phone deselection and video continuation not verified",
+  "status": "stopped; volume and evidence retained",
+  "shutdown": "shutdown-final-selection-fix.json",
+  "Mac_deselection": "passed for normal EDITING UI; database and search/member state preserved",
+  "comparison": "comparison-selection-fix.json",
+  "final_db": "db-final-selection-fix.json",
+  "additional_search_verification": "comparison-tc02-old-replies.json"
+}

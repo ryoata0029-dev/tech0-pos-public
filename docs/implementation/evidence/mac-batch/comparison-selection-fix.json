@@ -1,0 +1,27 @@
+{
+  "before": "db-before-deselect-ui.json",
+  "after": "db-after-deselect-ui.json",
+  "equal": {
+    "register": true,
+    "contexts": true,
+    "carts": true,
+    "lines": true,
+    "operations": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "cart_version": 4,
+  "line_count": 2,
+  "total": "228",
+  "purchases": 0,
+  "camera": "not opened on Mac; actual video continuity not observed",
+  "ui_evidence": [
+    "ui-selection-before.txt",
+    "ui-selection-after.txt",
+    "ui-selection-reselect.txt",
+    "ui-selection-other.txt"
+  ],
+  "result": "Mac normal EDITING deselection passed; product rows, price/tax/member/search results preserved; unsent quantity discarded"
+}

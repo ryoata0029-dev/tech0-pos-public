@@ -1,0 +1,27 @@
+{
+  "reviewed_at_utc": "2026-10-04T07:30:27.171180+00:00",
+  "method": "offline saved shutdown/identity/gate/case-result comparison only",
+  "sources": [
+    "shutdown-final.json",
+    "mysql-environment.json",
+    "comparison-member-l1.json",
+    "comparison-member-l2.json",
+    "lookup-finished-mac-l1-late.json",
+    "lookup-finished-mac-l2-late.json"
+  ],
+  "checks": {
+    "fixed_profile_container": true,
+    "only_owned_three_ports_closed": true,
+    "container_exited": true,
+    "dedicated_volume_retained": true,
+    "secret_scan_reported_success": true,
+    "both_real_old_operations_finished_before_shutdown": true,
+    "both_case_comparisons_passed": true
+  },
+  "passed": true,
+  "limits": [
+    "The reviewer did not repeat socket, process, Docker or secret scans.",
+    "Shutdown does not close or validate the phone runtime.",
+    "Closing two owned browser tabs was reported by root; it is not complete Chrome termination."
+  ]
+}

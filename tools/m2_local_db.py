@@ -8,7 +8,7 @@ import sys
 from unittest.mock import patch
 
 import pymysql
-from m2_local_profile import EVIDENCE, LOCAL, PROFILE, ROOT
+from m2_local_profile import EVIDENCE, FRONTEND_PORT, LOCAL, MYSQL_PORT, PROFILE, ROOT
 
 sys.path.insert(0, str(ROOT / "backend"))
 import m2_database  # noqa: E402
@@ -21,7 +21,7 @@ def secrets():
 def connect(user="root", database="pos_validation"):
     return pymysql.connect(
         host="127.0.0.1",
-        port=3307,
+        port=MYSQL_PORT,
         user=user,
         password=secrets()[user],
         database=database,
@@ -41,12 +41,30 @@ def configure(user):
     os.environ.update(
         POS_FRONTEND_ORIGIN=(
             (LOCAL / "public-origin.txt").read_text().strip()
-            if PROFILE in ("browser", "mac") and (LOCAL / "public-origin.txt").exists()
-            else "https://localhost:8443"
+            if PROFILE
+            in (
+                "browser",
+                "mac",
+                "mac-flow",
+                "mac-recovery",
+                "mac-restart",
+                "mac-member",
+                "mac-tc03",
+                "mac-tc03-fix",
+                "mac-tc02",
+                "mac-batch",
+                "mac-parallel",
+                "parallel-next",
+                "parallel-mac-next",
+                "oct05-mac",
+                "iphone-camera",
+            )
+            and (LOCAL / "public-origin.txt").exists()
+            else f"https://localhost:{FRONTEND_PORT}"
         ),
         POS_RELAY_SECRET=values["relay"],
         POS_DB_HOST="127.0.0.1",
-        POS_DB_PORT="3307",
+        POS_DB_PORT=str(MYSQL_PORT),
         POS_DB_NAME="pos_validation",
         POS_DB_USER=user,
         POS_DB_PASSWORD=values[user],

@@ -1,0 +1,44 @@
+(node:32387) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/pos.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ member change immediately marks old conditions as reference; 503 keeps uncertainty until explicit reconciliation (62.203916ms)
+✔ member network response loss preserves reference display and explicit reason without automatic retry (19.733333ms)
+✔ member authentication loss preserves reference display and explicit reason without automatic retry (16.515125ms)
+✔ member recovery expiry preserves reference display and explicit reason without automatic retry (15.039833ms)
+✔ member-not-found reconciles to PENDING and retains reference amounts (14.38925ms)
+✔ verified member success restores authoritative conditions (11.588125ms)
+✔ verified nonmember success restores authoritative conditions (12.609958ms)
+✔ failed state check must not restore old-member certainty (11.499708ms)
+✔ same member request retry retains operation identity and clears uncertainty only on verified success (14.031667ms)
+✔ verified PREPARED member receipt exposes PENDING choices without presenting old member as applied (10.776542ms)
+✔ unverified member receipt (wrong-cart) never restores old certainty (10.257583ms)
+✔ unverified member receipt (invalid-prepared-state) never restores old certainty (16.286791ms)
+✔ unverified member receipt (notification) never restores old certainty (19.333084ms)
+✔ member-not-found permits new member without extra reconcile (empty, initial) (14.038875ms)
+✔ member-not-found permits nonmember without extra reconcile (empty, initial) (12.87075ms)
+✔ member-not-found permits new member without extra reconcile (empty, change) (10.827958ms)
+✔ member-not-found permits nonmember without extra reconcile (empty, change) (9.685875ms)
+✔ member-not-found permits new member without extra reconcile (lines, initial) (10.324916ms)
+✔ member-not-found permits nonmember without extra reconcile (lines, initial) (12.074083ms)
+✔ member-not-found permits new member without extra reconcile (lines, change) (9.944542ms)
+✔ member-not-found permits nonmember without extra reconcile (lines, change) (10.025125ms)
+✔ member-not-found recovery stays stopped with failed-get (9.51375ms)
+✔ member-not-found recovery stays stopped with wrong-cart (13.070875ms)
+✔ member-not-found recovery stays stopped with old-version (9.060375ms)
+✔ member-not-found recovery stays stopped with other-member (9.354667ms)
+✔ member-not-found recovery stays stopped with saving (9.925583ms)
+✔ member-not-found recovery stays stopped with notification (8.94775ms)
+✔ member-not-found recovery stays stopped with disabled (17.729042ms)
+✔ member-not-found recovery stays stopped with broken-record (9.811625ms)
+✔ member-not-found recovery stays stopped with purchase-record (9.317208ms)
+✔ member-not-found recovery stays stopped with wrong-status (8.408667ms)
+✔ member-not-found recovery stays stopped with state-conflict (9.371458ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 646.604333

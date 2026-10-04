@@ -1,0 +1,16 @@
+backend/.venv/bin/python tools/smoke.py
+{
+  "scope": "M2 local HTTP fail-closed process smoke only",
+  "results": [
+    {
+      "name": "backend",
+      "http_status": 200,
+      "stopped": true
+    },
+    {
+      "name": "frontend",
+      "http_status": 200,
+      "stopped": true
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+
+> tech0-pos-frontend@0.0.0 test
+> node --test tests/*.test.mjs
+
+(node:66281) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/scan-gate.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ actual register/Camera callbacks retain PRODUCT_NOT_FOUND reason across repeated frames and accept the next product (357.8495ms)
+✔ actual register/Camera callbacks retain QUANTITY_LIMIT reason across repeated frames and accept the next product (119.747583ms)
+✔ confirmed member closes; stopped product stops media and decoder (57.695625ms)
+✔ permission/state stop while a scan waits prevents a late outcome from restoring camera feedback (9.466458ms)
+(node:66282) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/diagnostics.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ logs use templates and never echo member attributes, query strings or unknown paths (2.081709ms)
+(node:66283) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/pos.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ actual Home staff input has a valid HTML v pattern for the unchanged ASCII ID contract (332.304459ms)
+(node:66284) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/pos.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ API response loss is Japanese uncertainty, while defined server errors retain their classification (40.166542ms)
+✔ late cart responses cannot roll back exact versions above JS integer precision (0.390334ms)
+✔ purchase storage keeps each operation and only clears verified saved cart (1.848ms)
+✔ broken or unreadable storage fails closed rather than meaning no pending purchase (0.37ms)
+✔ late edit receipt cannot acknowledge a newer saving state or notification (0.597291ms)
+(node:66285) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/recovery.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ lost confirmation reply retries original id and version without purchase or reopen (21.153875ms)
+✔ fence clears only older markers; delayed saved reply cannot clear a later purchase (0.175958ms)
+✔ member-pending fence preserves pending and never synchronizes or purchases (0.170417ms)
+✔ maintenance, broken storage, or mismatched confirmation never permit editing (0.142166ms)
+✔ delayed sync receipt carrying current SAVING never enables the editor (0.121208ms)
+(node:66286) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/pos.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ PRODUCT_NOT_FOUND: delayed reconciliation keeps Camera allowed, blocks new operations, then accepts a different code (322.356084ms)
+✔ QUANTITY_LIMIT: delayed reconciliation keeps Camera allowed, blocks new operations, then accepts a different code (140.691584ms)
+✔ definite rejection stops Camera when reconciliation encounters get-failure (84.173959ms)
+✔ definite rejection stops Camera when reconciliation encounters get-401 (116.61125ms)
+✔ definite rejection stops Camera when reconciliation encounters get-503 (121.402708ms)
+✔ definite rejection stops Camera when reconciliation encounters notification (86.911916ms)
+✔ definite rejection stops Camera when reconciliation encounters member-pending (63.630917ms)
+✔ definite rejection stops Camera when reconciliation encounters saving (44.482625ms)
+✔ definite rejection stops Camera when reconciliation encounters new-marker (110.001417ms)
+✔ definite rejection stops Camera when reconciliation encounters other-cart-marker (50.821791ms)
+✔ definite rejection stops Camera when reconciliation encounters broken-storage (62.812208ms)
+✔ definite rejection stops Camera when reconciliation encounters disabled (54.89025ms)
+✔ definite rejection stops Camera when reconciliation encounters wrong-cart (106.169167ms)
+✔ uncertain/unauthorized/conflicting update stops Camera: network (54.984875ms)
+✔ uncertain/unauthorized/conflicting update stops Camera: DB_UNAVAILABLE (167.548167ms)
+✔ uncertain/unauthorized/conflicting update stops Camera: UNAUTHENTICATED (43.784625ms)
+✔ uncertain/unauthorized/conflicting update stops Camera: VERSION_CONFLICT (16.541125ms)
+(node:66287) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/pos.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ member change immediately marks old conditions as reference; 503 keeps uncertainty until explicit reconciliation (393.683084ms)
+✔ member network response loss preserves reference display and explicit reason without automatic retry (108.51675ms)
+✔ member authentication loss preserves reference display and explicit reason without automatic retry (91.784916ms)
+✔ member recovery expiry preserves reference display and explicit reason without automatic retry (97.965708ms)
+✔ member-not-found reconciles to PENDING and retains reference amounts (81.144375ms)
+✔ verified member success restores authoritative conditions (184.04325ms)
+✔ verified nonmember success restores authoritative conditions (52.545625ms)
+✔ failed state check must not restore old-member certainty (118.321791ms)
+✔ same member request retry retains operation identity and clears uncertainty only on verified success (44.389667ms)
+✔ verified PREPARED member receipt exposes PENDING choices without presenting old member as applied (25.539291ms)
+✔ unverified member receipt (wrong-cart) never restores old certainty (136.672833ms)
+✔ unverified member receipt (invalid-prepared-state) never restores old certainty (47.296625ms)
+✔ unverified member receipt (notification) never restores old certainty (45.042709ms)
+✔ member-not-found permits new member without extra reconcile (empty, initial) (121.353291ms)
+✔ member-not-found permits nonmember without extra reconcile (empty, initial) (165.806ms)
+✔ member-not-found permits new member without extra reconcile (empty, change) (56.298375ms)
+✔ member-not-found permits nonmember without extra reconcile (empty, change) (36.084209ms)
+✔ member-not-found permits new member without extra reconcile (lines, initial) (35.891667ms)
+✔ member-not-found permits nonmember without extra reconcile (lines, initial) (35.47475ms)
+✔ member-not-found permits new member without extra reconcile (lines, change) (62.97325ms)
+✔ member-not-found permits nonmember without extra reconcile (lines, change) (47.523833ms)
+✔ member-not-found recovery stays stopped with failed-get (55.081041ms)
+✔ member-not-found recovery stays stopped with wrong-cart (27.350959ms)
+✔ member-not-found recovery stays stopped with old-version (24.681959ms)
+✔ member-not-found recovery stays stopped with other-member (44.659084ms)
+✔ member-not-found recovery stays stopped with saving (31.212208ms)
+✔ member-not-found recovery stays stopped with notification (21.571084ms)
+✔ member-not-found recovery stays stopped with disabled (31.494917ms)
+✔ member-not-found recovery stays stopped with broken-record (13.032667ms)
+✔ member-not-found recovery stays stopped with purchase-record (12.558666ms)
+✔ member-not-found recovery stays stopped with wrong-status (17.347583ms)
+✔ member-not-found recovery stays stopped with state-conflict (22.308333ms)
+(node:66288) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/pos.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ UNSAVED retry hides stale certainty while sending and after response loss; same request is retained (337.645333ms)
+✔ cross-tab uncertainty hides previous UNSAVED choices without discarding the cart (105.682ms)
+✔ purchase preserves an explicit recovery-expiry reason and stays stopped (122.334458ms)
+(node:66289) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/recovery.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ served quota fixture makes current Register purchase stop before POST; cleanup restores only own filler (358.575792ms)
+✔ served multiple-key mismatch stops actual Recovery before any resolve/sync and preserves both records (22.981375ms)
+✔ fixture cleanup retains unknown B helper purchase identity without notifying the actual A UI or retrying (3.076583ms)
+✔ served fixture refuses preexisting purchase records without overwriting or sending an update (21.852208ms)
+(node:66290) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/pos.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ TC20 actual purchase handler stops before POST on write-throws (411.341125ms)
+✔ TC20 actual purchase handler stops before POST on silent-write (127.238417ms)
+✔ TC20 actual purchase handler stops before POST on read-throws (154.961292ms)
+✔ TC20 actual purchase handler stops before POST on broken-marker (100.9775ms)
+✔ TC20 Recovery resolves closed-cart marker from server SAVED before using current cart (3.284917ms)
+✔ TC20 Recovery resolves closed-cart marker from server UNKNOWN before using current cart (0.324583ms)
+✔ TC24 late successful NEXT receipt navigates using resume, never its historical next cart (59.262208ms)
+✔ TC20/28 actual Register plus Recovery stays stopped when resumed SAVING cannot be resolved (95.698458ms)
+✔ TC28 reauthentication response loss keeps EDITING context and inspects before enabling it (47.90475ms)
+✔ TC28 reauthentication response loss keeps PENDING context and inspects before enabling it (22.174416ms)
+✔ TC28 reauthentication response loss keeps SAVING context and inspects before enabling it (11.442834ms)
+✔ TC28 reauthentication response loss keeps UNKNOWN context and inspects before enabling it (8.408708ms)
+✔ TC28 reauthentication response loss keeps UNSAVED context and inspects before enabling it (71.856375ms)
+✔ TC28 reauthentication response loss keeps SAVED context and inspects before enabling it (22.942375ms)
+✔ TC28 other-staff retains cart and never automatically retries authentication or purchase (43.566ms)
+✔ TC28 reauth-401 retains cart and never automatically retries authentication or purchase (12.359084ms)
+✔ TC28 inspection-401 retains cart and never automatically retries authentication or purchase (34.737417ms)
+✔ TC28 inspection-503 retains cart and never automatically retries authentication or purchase (131.425792ms)
+✔ TC28 wrong-inspected-staff retains cart and never automatically retries authentication or purchase (36.311083ms)
+(node:66300) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/pos.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ search permits code changes and ignores old success (376.2265ms)
+✔ search permits code changes and ignores old not-found (207.347958ms)
+✔ search permits code changes and ignores old unavailable (127.062625ms)
+✔ search permits code changes and ignores old success after A-B-A (68.183083ms)
+✔ search permits code changes and ignores old not-found after A-B-A (32.168833ms)
+✔ search permits code changes and ignores old unavailable after A-B-A (20.357791ms)
+✔ late search success preserves notification stop (48.996625ms)
+✔ late search error preserves notification stop (24.6135ms)
+✔ late search success preserves disabled stop (51.369084ms)
+✔ late search error preserves disabled stop (57.466542ms)
+✔ late search success preserves member-pending stop (25.06225ms)
+✔ late search error preserves member-pending stop (42.806708ms)
+✔ late search success preserves saving stop (27.690334ms)
+✔ late search error preserves saving stop (21.651833ms)
+✔ search UNAUTHENTICATED stops even after the input changed (24.033459ms)
+✔ search RESUME_EXPIRED stops even after the input changed (25.952916ms)
+✔ search MAINTENANCE_HOLD stops even after the input changed (14.5275ms)
+✔ search FORBIDDEN stops even after the input changed (10.503833ms)
+✔ pending initialization and product update never receive the search-only input exception (17.156958ms)
+✔ member and purchase requests keep the code input disabled (35.36925ms)
+(node:66301) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/pos.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ deselect discards only local selection and unsent quantity while preserving the cart and camera (404.48025ms)
+(node:66303) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/relay.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{"utc":"2026-10-04T15:59:55.796Z","request_id":"5e1f530b-5b13-43cd-88c2-256bb3521fe4","operation_id":null,"api":"/api/auth/status","elapsed_ms":6.26,"result_code":"HTTP_200","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-04T15:59:55.803Z","request_id":"bcf0d69a-b428-4839-ae5b-9249ed17dd49","operation_id":null,"api":"/api/login","elapsed_ms":1.22,"result_code":"HTTP_403","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-04T15:59:55.805Z","request_id":"f984d3f4-e15c-4b72-a2b3-e1a1f5cc7cd4","operation_id":null,"api":"/api/login","elapsed_ms":1.28,"result_code":"HTTP_403","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-04T15:59:55.807Z","request_id":"3fdee7e9-3189-4f4c-8abb-8113583033e1","operation_id":null,"api":"/api/login","elapsed_ms":0.79,"result_code":"HTTP_403","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-04T15:59:55.887Z","request_id":"f73f7455-883d-41b6-957b-b3ff33bc8683","operation_id":null,"api":"/api/login","elapsed_ms":80.51,"result_code":"HTTP_403","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-04T15:59:55.889Z","request_id":"2ea29eae-8a3a-4a9e-a9f7-7b5e8c9bbc56","operation_id":null,"api":"/api/login","elapsed_ms":0.56,"result_code":"HTTP_503","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-04T15:59:55.891Z","request_id":"e2209010-e66f-40e8-aa1c-f07cccce4deb","operation_id":null,"api":"/api/auth/status","elapsed_ms":0.98,"result_code":"HTTP_503","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-04T15:59:55.892Z","request_id":"1dbfb503-77e0-4125-befa-bf0ca0284ef0","operation_id":null,"api":"/api/auth/status","elapsed_ms":0.41,"result_code":"HTTP_503","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-04T15:59:55.894Z","request_id":"dfb274e4-b04b-4aa3-a616-152967563930","operation_id":"11111111-1111-4111-8111-111111111111","api":"/api/carts/{cart_id}/lines/{line_id}","elapsed_ms":1.16,"result_code":"HTTP_200","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-04T15:59:55.895Z","request_id":"b231373a-2b3d-44a1-8be4-fd0a6c3e640f","operation_id":"11111111-1111-4111-8111-111111111111","api":"/api/carts/{cart_id}/lines/{line_id}","elapsed_ms":0.46,"result_code":"HTTP_422","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-04T15:59:55.895Z","request_id":"bc9c0d38-bd42-4767-83df-124af74d738c","operation_id":"11111111-1111-4111-8111-111111111111","api":"/api/carts/{cart_id}/lines/{line_id}","elapsed_ms":0.12,"result_code":"HTTP_422","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+✔ allowlist rejects unexpected paths and methods (23.372334ms)
+✔ relay overwrites spoofed secret and preserves multiple Set-Cookie headers (44.387375ms)
+✔ bad origin and missing marker cause no upstream call (85.9125ms)
+✔ transport failure is sanitized and is never retried (1.965917ms)
+✔ redirect and insecure upstream fail closed (2.079042ms)
+✔ M3 relay forwards DELETE query once and rejects extra or duplicate fields (3.176375ms)
+(node:66304) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/scan-gate.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ same code never repeats by time alone; different code unlocks (2.026459ms)
+✔ absence must be continuous for 500ms and excludes API busy interval (0.352833ms)
+✔ whole ASCII code only; no trim or queued detection (25.770375ms)
+✔ late media permission and attached streams stop on close (0.534333ms)
+✔ checksum/format failure interrupts absence rather than proving an empty frame (0.216625ms)
+ℹ tests 123
+ℹ suites 0
+ℹ pass 123
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3101.51725

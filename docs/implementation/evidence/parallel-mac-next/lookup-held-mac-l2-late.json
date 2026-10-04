@@ -1,0 +1,8 @@
+{
+  "at_utc": "2026-10-04T07:22:47.296539+00:00",
+  "tag": "mac-l2-late",
+  "operation_id": "d9f51d2f-320c-4a06-bb4b-94b27929eeb6",
+  "found": true,
+  "after_real_lookup": true,
+  "outside_update_transaction": true
+}

@@ -1,0 +1,357 @@
+(node:35043) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/pos.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ search permits code changes and ignores old success (63.655791ms)
+✖ search permits code changes and ignores old not-found (20.397584ms)
+✖ search permits code changes and ignores old unavailable (17.5195ms)
+✖ search permits code changes and ignores old success after A-B-A (14.838625ms)
+✖ search permits code changes and ignores old not-found after A-B-A (16.009083ms)
+✖ search permits code changes and ignores old unavailable after A-B-A (11.471041ms)
+✖ late search success preserves notification stop (13.66725ms)
+✖ late search error preserves notification stop (10.839959ms)
+✖ late search success preserves disabled stop (12.927875ms)
+✖ late search error preserves disabled stop (14.228375ms)
+✖ late search success preserves member-pending stop (11.188541ms)
+✖ late search error preserves member-pending stop (16.1705ms)
+✖ late search success preserves saving stop (10.853625ms)
+✖ late search error preserves saving stop (15.904ms)
+✖ search UNAUTHENTICATED stops even after the input changed (9.968ms)
+✖ search RESUME_EXPIRED stops even after the input changed (9.055583ms)
+✖ search MAINTENANCE_HOLD stops even after the input changed (10.031292ms)
+✖ search FORBIDDEN stops even after the input changed (9.364542ms)
+✔ pending initialization and member/update requests never receive the search-only input exception (11.378292ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 1
+ℹ fail 18
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 554.516292
+
+✖ failing tests:
+
+test at tests/register-search.test.mjs:36:5
+✖ search permits code changes and ignores old success (63.655791ms)
+  AssertionError [ERR_ASSERTION]: use the enabled code input without removing its disabled state
+  
+  true !== false
+  
+      at typeCode (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:15:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:39:7)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/register-search.test.mjs:36:5
+✖ search permits code changes and ignores old not-found (20.397584ms)
+  AssertionError [ERR_ASSERTION]: use the enabled code input without removing its disabled state
+  
+  true !== false
+  
+      at typeCode (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:15:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:39:7)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/register-search.test.mjs:36:5
+✖ search permits code changes and ignores old unavailable (17.5195ms)
+  AssertionError [ERR_ASSERTION]: use the enabled code input without removing its disabled state
+  
+  true !== false
+  
+      at typeCode (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:15:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:39:7)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/register-search.test.mjs:36:5
+✖ search permits code changes and ignores old success after A-B-A (14.838625ms)
+  AssertionError [ERR_ASSERTION]: use the enabled code input without removing its disabled state
+  
+  true !== false
+  
+      at typeCode (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:15:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:39:7)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/register-search.test.mjs:36:5
+✖ search permits code changes and ignores old not-found after A-B-A (16.009083ms)
+  AssertionError [ERR_ASSERTION]: use the enabled code input without removing its disabled state
+  
+  true !== false
+  
+      at typeCode (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:15:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:39:7)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/register-search.test.mjs:36:5
+✖ search permits code changes and ignores old unavailable after A-B-A (11.471041ms)
+  AssertionError [ERR_ASSERTION]: use the enabled code input without removing its disabled state
+  
+  true !== false
+  
+      at typeCode (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:15:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:39:7)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/register-search.test.mjs:67:5
+✖ late search success preserves notification stop (13.66725ms)
+  AssertionError [ERR_ASSERTION]: use the enabled code input without removing its disabled state
+  
+  true !== false
+  
+      at typeCode (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:15:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:69:74)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/register-search.test.mjs:67:5
+✖ late search error preserves notification stop (10.839959ms)
+  AssertionError [ERR_ASSERTION]: use the enabled code input without removing its disabled state
+  
+  true !== false
+  
+      at typeCode (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:15:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:69:74)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/register-search.test.mjs:67:5
+✖ late search success preserves disabled stop (12.927875ms)
+  AssertionError [ERR_ASSERTION]: use the enabled code input without removing its disabled state
+  
+  true !== false
+  
+      at typeCode (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:15:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:69:74)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/register-search.test.mjs:67:5
+✖ late search error preserves disabled stop (14.228375ms)
+  AssertionError [ERR_ASSERTION]: use the enabled code input without removing its disabled state
+  
+  true !== false
+  
+      at typeCode (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:15:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:69:74)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/register-search.test.mjs:67:5
+✖ late search success preserves member-pending stop (11.188541ms)
+  AssertionError [ERR_ASSERTION]: use the enabled code input without removing its disabled state
+  
+  true !== false
+  
+      at typeCode (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:15:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:69:74)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/register-search.test.mjs:67:5
+✖ late search error preserves member-pending stop (16.1705ms)
+  AssertionError [ERR_ASSERTION]: use the enabled code input without removing its disabled state
+  
+  true !== false
+  
+      at typeCode (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:15:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:69:74)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/register-search.test.mjs:67:5
+✖ late search success preserves saving stop (10.853625ms)
+  AssertionError [ERR_ASSERTION]: use the enabled code input without removing its disabled state
+  
+  true !== false
+  
+      at typeCode (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:15:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:69:74)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/register-search.test.mjs:67:5
+✖ late search error preserves saving stop (15.904ms)
+  AssertionError [ERR_ASSERTION]: use the enabled code input without removing its disabled state
+  
+  true !== false
+  
+      at typeCode (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:15:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:69:74)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/register-search.test.mjs:91:3
+✖ search UNAUTHENTICATED stops even after the input changed (9.968ms)
+  AssertionError [ERR_ASSERTION]: use the enabled code input without removing its disabled state
+  
+  true !== false
+  
+      at typeCode (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:15:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:93:72)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/register-search.test.mjs:91:3
+✖ search RESUME_EXPIRED stops even after the input changed (9.055583ms)
+  AssertionError [ERR_ASSERTION]: use the enabled code input without removing its disabled state
+  
+  true !== false
+  
+      at typeCode (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:15:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:93:72)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/register-search.test.mjs:91:3
+✖ search MAINTENANCE_HOLD stops even after the input changed (10.031292ms)
+  AssertionError [ERR_ASSERTION]: use the enabled code input without removing its disabled state
+  
+  true !== false
+  
+      at typeCode (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:15:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:93:72)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/register-search.test.mjs:91:3
+✖ search FORBIDDEN stops even after the input changed (9.364542ms)
+  AssertionError [ERR_ASSERTION]: use the enabled code input without removing its disabled state
+  
+  true !== false
+  
+      at typeCode (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:15:10)
+      at TestContext.<anonymous> (file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/tests/register-search.test.mjs:93:72)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

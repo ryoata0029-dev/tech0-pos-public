@@ -1,0 +1,10 @@
+{
+  "image": "mysql@sha256:0744ee5ef89ce6ccfa13de3e579fe6b9e27f93dd70da9c06d2c908b1b193fb8d",
+  "image_id": "sha256:0744ee5ef89ce6ccfa13de3e579fe6b9e27f93dd70da9c06d2c908b1b193fb8d",
+  "architecture": "arm64",
+  "container": "tech0-pos-mac-tc03-fix-mysql",
+  "container_id": "b8de58d0f9997eb3d6617124cf727c152a7cd5f6a25ab94d55fcd434887fd43e",
+  "volume": "tech0-pos-mac-tc03-fix-mysql-data",
+  "port_binding": "127.0.0.1:3307 -> 3306",
+  "tls_required": true
+}

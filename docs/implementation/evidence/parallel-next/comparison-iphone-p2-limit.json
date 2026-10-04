@@ -1,0 +1,40 @@
+{
+  "at_utc": "2026-10-04T07:50:13.234272+00:00",
+  "condition": "P2a",
+  "before": "db-iphone-p2-before-camera.json",
+  "after": "db-iphone-p2-after-limit.json",
+  "user_report": "エラーが表示され、数量９９のまま、カメラもひらいてます",
+  "protected_projection_equal": {
+    "register": true,
+    "contexts": true,
+    "carts": true,
+    "lines": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "prior_operations_unchanged": true,
+  "new_operations": [
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "operation_id": "8c931113-f247-4892-acf8-52ea0ece2360",
+      "kind": "ADD_LINE",
+      "request_version": 6,
+      "status": "REJECTED",
+      "prepared_version": null,
+      "applied_version": null,
+      "result_code": "QUANTITY_LIMIT",
+      "next_cart_id": null,
+      "created_at": "2026-10-04 07:48:56.329737",
+      "requested_code": "0001"
+    }
+  ],
+  "rejected_count": 1,
+  "version": 6,
+  "quantity": 99,
+  "total_yen": 11216,
+  "purchases": 0,
+  "result": "limited_confirmation",
+  "limits": "Camera error/open state is owner reported. Database observes definitive rejection; browser HTTP status and MediaStream tracks were not directly observed. Different-code continuity remains P2b."
+}

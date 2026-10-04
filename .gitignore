@@ -33,9 +33,34 @@ node_modules/
 # Independent M3 validation credentials and certificates.
 /.m3-local/
 
+# Independent M4 fault-injection validation credentials and certificates.
+/.m4-local/
+/.mac-flow-local/
+/.mac-recovery-local/
+
 # Local deployment bundles and operational evidence containing identifiers.
 /.deployment/
 /.operations-local/
 
 # Superseded intermediate output; final results are in check.log.
 /docs/implementation/evidence/m4-m6/frontend-tests.log
+/.mac-restart-local/
+/.mac-member-local/
+
+/.mac-tc03-local/
+
+/.mac-tc03-fix-local/
+
+/.mac-tc02-local/
+
+/.mac-batch-local/
+/.iphone-camera-local/
+
+/.mac-parallel-local/
+
+/.parallel-next-local/
+
+/.parallel-mac-next-local/
+
+# October 5 isolated trial credentials and runtime
+/.oct05-mac-local/

@@ -1,0 +1,42 @@
+{
+  "at_utc": "2026-10-04T04:53:31.323897+00:00",
+  "audit_result": "passed",
+  "tc02_overall": "failed_and_incomplete",
+  "db_snapshots": 5,
+  "cart_id": "6ead9e07-d945-4692-b610-909f9f7e8599",
+  "line_id": "3d6690f4-6fe4-46ee-8155-5ecb6af33dd8",
+  "final_quantity": 2,
+  "purchases": 0,
+  "gates": {
+    "lookup-unavailable": {
+      "status": 503,
+      "elapsed_seconds": 3.005943
+    },
+    "lookup-held": {
+      "status": 200,
+      "elapsed_seconds": 0.312884
+    }
+  },
+  "passed_scope": [
+    "same_line_increment_and_fixed_conditions",
+    "success_input_clear",
+    "result_clear_on_code_change_after_lookup",
+    "missing_and_unavailable_distinguished",
+    "normal_relookup",
+    "read_only_searches_keep_db_unchanged",
+    "held_200_release"
+  ],
+  "failed_scope": {
+    "TC02-P2-01": "product code input disabled during lookup"
+  },
+  "unconfirmed_scope": [
+    "changed_code_then_old_response",
+    "iPhone",
+    "camera",
+    "full_TC02",
+    "owner_acceptance"
+  ],
+  "missing_http_capture": "No direct HTTP capture; checked UI and actual fixture",
+  "application_unchanged": true,
+  "environment_stopped": true
+}

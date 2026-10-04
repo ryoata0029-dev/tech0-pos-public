@@ -1,0 +1,19 @@
+{
+  "at_utc": "2026-10-04T04:01:53.777509+00:00",
+  "supplementary_documents": 4,
+  "targets_checked": 71,
+  "errors": [],
+  "canonical_document_link_check": {
+    "documents": 26,
+    "local_links": 1307,
+    "traceability_ids": 39,
+    "acceptance_sections": 28,
+    "errors": []
+  },
+  "ruff_lint": "passed",
+  "ruff_format": "11 files already formatted",
+  "https_relay_node_syntax": "passed",
+  "git_diff_check": "passed",
+  "independent_review": "no further definite application defect; publication wording corrected",
+  "application_check_and_build": "previous fix run retained; same source hashes and build ID; not rerun"
+}

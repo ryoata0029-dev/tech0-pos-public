@@ -1,0 +1,36 @@
+2026-10-04T04:51:45.730Z
+- main:
+  - paragraph: Tech0 · 簡易POS
+  - heading "商品登録・会計" [level=1]
+  - status: 状態を確認しました。
+  - paragraph:
+    - text: 担当者：
+    - strong: STAFF_A
+  - status: 商品を確認しました。追加時に価格を確定します。
+  - region "商品と会員の入力":
+    - heading "会員" [level=2]
+    - button "会員をカメラで読む"
+    - paragraph: 会員：未指定の非会員
+    - text: 変更先の会員ID
+    - textbox "変更先の会員ID"
+    - button "照会・再照会" [disabled]
+    - button "非会員として続ける"
+    - heading "商品" [level=2]
+    - button "商品をカメラで読む"
+    - text: 商品コード
+    - textbox "商品コード": "0001"
+    - button "検索"
+    - paragraph: 演習食品103円 ／ 税抜単価 103円
+    - paragraph: 追加時に価格を確定
+    - button "追加"
+  - region "購入リスト":
+    - heading "購入リスト" [level=2]
+    - list:
+      - button "演習食品103円"
+      - paragraph: 数量 2 ／ 税抜単価 103円
+      - paragraph: 値引き額（行合計）0円 ／ 税抜小計 206円
+    - paragraph: 税抜合計（値引き後）：206円
+    - paragraph: 消費税（10％）：20円
+    - paragraph: 税込合計：226円
+    - button "購入確定"
+- alert

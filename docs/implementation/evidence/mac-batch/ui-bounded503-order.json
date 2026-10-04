@@ -1,0 +1,8 @@
+{
+  "searchStartedAtUtc": "2026-10-04T06:02:52.675Z",
+  "codeChangedAtUtc": "2026-10-04T06:02:52.995Z",
+  "afterAtUtc": "2026-10-04T06:03:52.064Z",
+  "oldCode": "0001",
+  "newCode": "0002",
+  "earlyDeselect": "CUA selector deadline while button disabled; no UI click delivered; ordinary deselection not retested by that attempt"
+}

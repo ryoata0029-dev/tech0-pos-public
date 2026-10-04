@@ -1,0 +1,12 @@
+{
+  "kind": "product-late-missing",
+  "tag": "selection-old404",
+  "started_at_utc": "2026-10-04T05:55:03.181303+00:00",
+  "gate_at_utc": "2026-10-04T05:55:20.213594+00:00",
+  "observed_at_utc": "2026-10-04T05:55:20.265518+00:00",
+  "released_at_utc": "2026-10-04T05:55:25.271049+00:00",
+  "wait_seconds": 5,
+  "actual_wait_seconds": 5.006164,
+  "after_real_lookup": true,
+  "outside_read_transaction": true
+}

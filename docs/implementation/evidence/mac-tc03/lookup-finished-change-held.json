@@ -1,0 +1,72 @@
+{
+  "at_utc": "2026-10-04T04:18:24.222312+00:00",
+  "tag": "change-held",
+  "operation_id": "d56c31c7-8854-4816-b4c6-a7cd5fc88a33",
+  "operation_status": "REJECTED",
+  "code": "MEMBER_LOOKUP_SUPERSEDED",
+  "cart": {
+    "cart_id": "895def4c-35db-4dad-880b-52bde541dc7e",
+    "state": "EDITING",
+    "staff_id": "STAFF_A",
+    "member_state": "NON_MEMBER",
+    "pending_member_id": null,
+    "version": "36",
+    "member_id": null,
+    "lines": [
+      {
+        "line_no": 1,
+        "code": "0001",
+        "name": "\u6f14\u7fd2\u98df\u54c1103\u5186",
+        "quantity": 3,
+        "unit_price": "103",
+        "tax_rate": "0.1000",
+        "discount": null,
+        "discount_per_unit": "0",
+        "net_unit_price": "103",
+        "line_subtotal": "309",
+        "line_id": "428043bf-575d-42bf-af70-572d38264d44"
+      },
+      {
+        "line_no": 2,
+        "code": "0002",
+        "name": "\u6f14\u7fd2\u98df\u54c1107\u5186A",
+        "quantity": 1,
+        "unit_price": "107",
+        "tax_rate": "0.0800",
+        "discount": null,
+        "discount_per_unit": "0",
+        "net_unit_price": "107",
+        "line_subtotal": "107",
+        "line_id": "954681c7-cdd8-45f5-a7f8-3f5e6db5cb50"
+      },
+      {
+        "line_no": 3,
+        "code": "0003",
+        "name": "\u6f14\u7fd2\u98df\u54c1107\u5186B",
+        "quantity": 1,
+        "unit_price": "107",
+        "tax_rate": "0.0800",
+        "discount": null,
+        "discount_per_unit": "0",
+        "net_unit_price": "107",
+        "line_subtotal": "107",
+        "line_id": "dddcaaca-694f-4dd0-8fae-1a289a0f845d"
+      }
+    ],
+    "subtotal": "523",
+    "total": "570",
+    "taxes": [
+      {
+        "tax_rate": "0.0800",
+        "tax_amount": "17",
+        "taxable_subtotal": "214"
+      },
+      {
+        "tax_rate": "0.1000",
+        "tax_amount": "30",
+        "taxable_subtotal": "309"
+      }
+    ],
+    "amounts_are_reference": false
+  }
+}

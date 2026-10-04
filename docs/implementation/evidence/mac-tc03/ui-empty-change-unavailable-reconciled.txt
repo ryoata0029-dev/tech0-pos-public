@@ -1,0 +1,31 @@
+2026-10-04T04:10:25.025Z
+- main:
+  - paragraph: Tech0 · 簡易POS
+  - heading "商品登録・会計" [level=1]
+  - status: 状態を確認しました。
+  - paragraph:
+    - text: 担当者：
+    - strong: STAFF_A
+  - status: カートの状態を確認しました。
+  - region "商品と会員の入力":
+    - heading "会員" [level=2]
+    - button "会員をカメラで読む"
+    - paragraph: 会員：会員確認待ち
+    - text: 変更先の会員ID
+    - textbox "変更先の会員ID": MEMBER_0
+    - button "照会・再照会"
+    - button "非会員として続ける"
+    - heading "商品" [level=2]
+    - button "商品をカメラで読む" [disabled]
+    - text: 商品コード
+    - textbox "商品コード" [disabled]
+    - button "検索" [disabled]
+  - region "購入リスト":
+    - heading "購入リスト" [level=2]
+    - alert: 変更前の参考額・会員確認待ち
+    - paragraph: 商品はまだ登録されていません。
+    - list
+    - paragraph: 税抜合計（値引き後）：0円
+    - paragraph: 税込合計：0円
+    - button "購入確定" [disabled]
+- alert

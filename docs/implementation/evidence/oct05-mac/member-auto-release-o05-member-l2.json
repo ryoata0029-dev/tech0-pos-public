@@ -1,0 +1,12 @@
+{
+  "at_utc": "2026-10-04T16:11:31.425407+00:00",
+  "tag": "o05-member-l2",
+  "cart_id": "1881e575-044d-4a4f-9c6b-9d873036bbea",
+  "old_operation_id": "3bded662-8c33-4553-b962-49c9012b96ea",
+  "new_operation_id": "fe678288-8707-458c-ab8f-424a949d7e8c",
+  "new_commit_evidence": "member-new-commit-o05-member-l2.json",
+  "hold_elapsed_seconds": 1.462749,
+  "old_receipt_elapsed_seconds": 1.474282,
+  "release_after_actual_new_commit": true,
+  "browser_http_arrival_proven": false
+}

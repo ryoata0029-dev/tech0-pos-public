@@ -1,0 +1,23 @@
+{
+  "at_utc": "2026-10-04T07:33:46.026781+00:00",
+  "reason": "Backend-config final Ruff lint/format corrections after successful DB runs",
+  "normalization": "Ignore location metadata and docstrings; sort contiguous import-only groups. Preserve all other AST nodes including SQL literal values.",
+  "records": [
+    {
+      "source": "tools/parallel_next_db_verify.py",
+      "executed_source": "docs/implementation/evidence/parallel-next/parallel_next_db_verify.py.executed.txt",
+      "executed_sha256": "2e3f29228c7ffda47344b45ec0b1de00c450d2051dad538eb78dfc1d028096a8",
+      "current_sha256": "1565941170e27a7389d93c797d48e1494c74ae82ce123ccac4ca581a84d4d871",
+      "normalized_ast_equal": true
+    },
+    {
+      "source": "tools/parallel_next_conditions_verify.py",
+      "executed_source": "docs/implementation/evidence/parallel-next/parallel_next_conditions_verify.py.executed.txt",
+      "executed_sha256": "165a4fd25bfdfa49e9806b823a33195b6ed64df4755cec98dfbe9378508e0ca2",
+      "current_sha256": "4a14185e1a072f07265eedb263e2bc0d4dc979fe1fb79985606b3ac3f0d768ad",
+      "normalized_ast_equal": true
+    }
+  ],
+  "database_rerun": false,
+  "application_source_changed": false
+}

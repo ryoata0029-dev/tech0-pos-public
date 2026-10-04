@@ -1,0 +1,24 @@
+{
+  "at_utc": "2026-10-04T07:46:34.124391+00:00",
+  "condition": "P1b",
+  "before": "db-iphone-p1-after-deselect.json",
+  "after": "db-iphone-p1-after-reselect.json",
+  "user_report": "１になってる",
+  "projection_equal": {
+    "register": true,
+    "contexts": true,
+    "carts": true,
+    "lines": true,
+    "operations": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "cart_version": 5,
+  "quantity": 1,
+  "total_yen": 113,
+  "purchases": 0,
+  "result": "limited_confirmation",
+  "limits": "Input value 1 after reselect is reported by the owner; selected database projections are unchanged. No direct DOM, browser request capture or camera observation."
+}

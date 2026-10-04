@@ -1,0 +1,15 @@
+{
+  "before": "db-before-phone.json",
+  "after": "db-after-sql-conditions.json",
+  "equal_sets": {
+    "register": true,
+    "contexts": true,
+    "carts": true,
+    "lines": true,
+    "operations": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  }
+}

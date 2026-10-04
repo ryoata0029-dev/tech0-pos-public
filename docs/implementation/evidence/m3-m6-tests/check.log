@@ -1,0 +1,409 @@
+cd backend && .venv/bin/ruff check app tests ../tools
+All checks passed!
+cd backend && .venv/bin/ruff format --check app tests ../tools
+53 files already formatted
+sh tools/frontend.sh run lint
+
+> tech0-pos-frontend@0.0.0 lint
+> eslint . --max-warnings 0
+
+cd backend && .venv/bin/mypy
+Success: no issues found in 23 source files
+sh tools/frontend.sh run typecheck
+
+> tech0-pos-frontend@0.0.0 typecheck
+> next typegen && tsc --noEmit
+
+Generating route types...
+✓ Types generated successfully
+cd backend && .venv/bin/python -m unittest discover -s tests -v
+test_cookie_auth_maintenance_and_pending_do_not_allow_writes (test_business.BusinessApiTests.test_cookie_auth_maintenance_and_pending_do_not_allow_writes) ... {"utc":"2026-10-01T10:55:46.945961+00:00","request_id":"8d08bf53-6ebe-42ff-abb9-d457a5578683","operation_id":null,"api":"/api/login","elapsed_ms":3.09,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:46.947567+00:00","request_id":"458b44ac-ecd6-4c81-877e-989ee0a8ffa8","operation_id":null,"api":"/api/register/start","elapsed_ms":0.76,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:46.948715+00:00","request_id":"24d8a9a8-1bdc-46bf-bf0a-f008b2252742","operation_id":null,"api":"/api/register/confirm","elapsed_ms":0.65,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:46.949836+00:00","request_id":"061f41a6-7456-4914-88b4-8264439258d2","operation_id":null,"api":"/api/carts","elapsed_ms":0.7,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:46.955749+00:00","request_id":"0532c46c-776a-4adb-a902-a0912831f40d","operation_id":"ef5d3629-fc73-4bc1-a23a-b4fb07090627","api":"/api/carts/{cart_id}/lines","elapsed_ms":5.45,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:46.958125+00:00","request_id":"716b245f-9760-4be5-994c-76dc72fd70f0","operation_id":"0c39ba0a-7961-47a6-a071-b9b2c7f91816","api":"/api/carts/{cart_id}/lines","elapsed_ms":0.77,"result_code":"UNAUTHENTICATED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:46.959399+00:00","request_id":"7ea9cab2-c3bd-4fa7-ba23-2b21d243bc1f","operation_id":"0c39ba0a-7961-47a6-a071-b9b2c7f91816","api":"/api/carts/{cart_id}/lines","elapsed_ms":0.74,"result_code":"FORBIDDEN","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:46.960013+00:00","request_id":"f42bae72-e83c-4949-bc97-0d46c9b696df","operation_id":"0c39ba0a-7961-47a6-a071-b9b2c7f91816","api":"UNKNOWN_ROUTE","elapsed_ms":0.11,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:46.961110+00:00","request_id":"90ae5031-3e2b-4c6f-8a8d-9f8eb9c5a4e6","operation_id":"0c39ba0a-7961-47a6-a071-b9b2c7f91816","api":"/api/carts/{cart_id}/lines","elapsed_ms":0.72,"result_code":"MAINTENANCE_HOLD","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:46.962624+00:00","request_id":"912bee3c-d209-4607-afad-358964c06301","operation_id":null,"api":"/api/resume","elapsed_ms":1.03,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:46.963906+00:00","request_id":"07419338-77c2-4462-960e-f4ab62cf14f0","operation_id":"5cecb91d-0377-4697-a03b-00d77d75524f","api":"/api/carts/{cart_id}/sync","elapsed_ms":0.82,"result_code":"MAINTENANCE_HOLD","db_error":"NONE","deployment_version":"UNSET"}
+ok
+test_corrupt_persisted_snapshot_stops_and_amount_overflow_is_atomic (test_business.BusinessApiTests.test_corrupt_persisted_snapshot_stops_and_amount_overflow_is_atomic) ... {"utc":"2026-10-01T10:55:46.966725+00:00","request_id":"f7ceed94-35bf-4fa6-9478-88042dfab211","operation_id":null,"api":"/api/login","elapsed_ms":1.71,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:46.967855+00:00","request_id":"c70dec4c-1ba6-466e-a1c3-b3d0743af50d","operation_id":null,"api":"/api/register/start","elapsed_ms":0.59,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:46.968934+00:00","request_id":"da33bf33-c85f-43ab-a60a-234a75e05484","operation_id":null,"api":"/api/register/confirm","elapsed_ms":0.57,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:46.969980+00:00","request_id":"237a4ea1-da93-4007-92b8-c0522b2f849f","operation_id":null,"api":"/api/carts","elapsed_ms":0.6,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:46.975963+00:00","request_id":"b7554a24-12f9-40ac-af4f-334f224653d4","operation_id":"6107b80a-39a8-4c1f-8c3f-1122e409e6ac","api":"/api/carts/{cart_id}/lines","elapsed_ms":5.38,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:46.977934+00:00","request_id":"b69134c3-6495-4f51-a403-67dafe28d2ed","operation_id":"6d44242d-0342-4696-9beb-8173338d80f9","api":"/api/carts/{cart_id}/lines","elapsed_ms":0.91,"result_code":"AMOUNT_INVALID","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:46.979241+00:00","request_id":"588bf0e9-78c0-4e94-9f2b-511aa92e53f2","operation_id":"6d44242d-0342-4696-9beb-8173338d80f9","api":"/api/carts/{cart_id}/lines","elapsed_ms":0.81,"result_code":"AMOUNT_INVALID","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:46.980336+00:00","request_id":"748832f8-16fd-4b19-9f0a-a6d606d555b0","operation_id":null,"api":"/api/resume","elapsed_ms":0.62,"result_code":"HTTP_503","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:46.981888+00:00","request_id":"fdf88123-66aa-40fb-842e-d7729c3db283","operation_id":"c678b849-fe80-45c1-939e-d05f34c59fcd","api":"/api/purchases","elapsed_ms":1.13,"result_code":"HTTP_503","db_error":"NONE","deployment_version":"UNSET"}
+ok
+test_empty_rejected_zero_purchase_allowed_and_version_headroom (test_business.BusinessApiTests.test_empty_rejected_zero_purchase_allowed_and_version_headroom) ... {"utc":"2026-10-01T10:55:46.984560+00:00","request_id":"4d666087-c8c9-4fb0-8dbe-2b254894ce0b","operation_id":null,"api":"/api/login","elapsed_ms":1.67,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:46.985693+00:00","request_id":"5d343cce-d668-4160-8c02-0a640d5cee01","operation_id":null,"api":"/api/register/start","elapsed_ms":0.59,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:46.986715+00:00","request_id":"c03695c7-b02d-4ce9-95d1-245139b838ea","operation_id":null,"api":"/api/register/confirm","elapsed_ms":0.55,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:46.987724+00:00","request_id":"50b9bc73-fa6c-4b63-9920-6e81db431f2e","operation_id":null,"api":"/api/carts","elapsed_ms":0.59,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:46.993089+00:00","request_id":"8b143929-c3b5-4491-a897-7e5956fe63f4","operation_id":"6b631a59-c37e-4e9d-8229-37227ad7f3a7","api":"/api/purchases","elapsed_ms":4.89,"result_code":"STATE_CONFLICT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:46.994566+00:00","request_id":"c2c8de9f-7854-44af-a626-1626ba7b6f01","operation_id":"7b2fad1d-bbda-4b24-a5b5-04ded1f0b18e","api":"/api/carts/{cart_id}/lines","elapsed_ms":0.94,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:46.997116+00:00","request_id":"07cc344d-fffe-44e0-ba0b-e52612792b71","operation_id":"399fd510-ee07-4795-9167-7a7e35520caa","api":"/api/carts/{cart_id}/member","elapsed_ms":1.45,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:46.999323+00:00","request_id":"1a192310-2576-4787-9a7f-9ad724b09c5b","operation_id":"60dddf64-f125-461b-ba64-a22d51572b53","api":"/api/purchases","elapsed_ms":1.23,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+ok
+test_failed_save_phase_rolls_back_sale_but_keeps_prepared_no_get_save (test_business.BusinessApiTests.test_failed_save_phase_rolls_back_sale_but_keeps_prepared_no_get_save) ... {"utc":"2026-10-01T10:55:47.003523+00:00","request_id":"7c911352-9dac-488b-bb2c-29304903dc0b","operation_id":null,"api":"/api/login","elapsed_ms":2.01,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.004704+00:00","request_id":"92f2f984-74af-4c3d-bdd5-281aebad2f61","operation_id":null,"api":"/api/register/start","elapsed_ms":0.61,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.005793+00:00","request_id":"3831710c-f07e-4ad4-8f57-f00d7b7b43a3","operation_id":null,"api":"/api/register/confirm","elapsed_ms":0.61,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.006851+00:00","request_id":"05362fd3-93a1-422b-a221-60de9f4ded9c","operation_id":null,"api":"/api/carts","elapsed_ms":0.61,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.012005+00:00","request_id":"7449aacf-94d3-4f51-82ef-f69bd905a4a9","operation_id":"e2a67175-9e56-4f8b-b9a7-9824e1214d1a","api":"/api/carts/{cart_id}/lines","elapsed_ms":4.65,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.014144+00:00","request_id":"eb2587eb-e18f-40e3-9e23-821a726a0563","operation_id":"f1d29f5e-106d-4c25-9b6f-9cf86f5986dd","api":"/api/purchases","elapsed_ms":1.18,"result_code":"SERVICE_UNAVAILABLE","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.015568+00:00","request_id":"60fd7c8f-af89-457a-9294-2931d6f47675","operation_id":null,"api":"/api/resume","elapsed_ms":0.92,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.016796+00:00","request_id":"d85813a3-a386-40a4-b744-8de31b3ee078","operation_id":"8ccbcdf9-2e82-498c-97b7-03edc33db134","api":"/api/carts/{cart_id}/lines","elapsed_ms":0.77,"result_code":"STATE_CONFLICT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.018388+00:00","request_id":"b610de62-73fe-4663-b22c-1b5459f9064b","operation_id":"f1d29f5e-106d-4c25-9b6f-9cf86f5986dd","api":"/api/purchases","elapsed_ms":1.1,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+ok
+test_idempotency_mismatch_old_version_and_recorded_rejections (test_business.BusinessApiTests.test_idempotency_mismatch_old_version_and_recorded_rejections) ... {"utc":"2026-10-01T10:55:47.021963+00:00","request_id":"e7b40746-b2c2-4f54-aed6-8e303272bd50","operation_id":null,"api":"/api/login","elapsed_ms":1.65,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.023082+00:00","request_id":"79cc7477-47ca-46b5-ac1e-e37f3da2eec0","operation_id":null,"api":"/api/register/start","elapsed_ms":0.59,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.024203+00:00","request_id":"25feec39-e9a5-4d04-8ffc-b5f7d6066a41","operation_id":null,"api":"/api/register/confirm","elapsed_ms":0.61,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.027082+00:00","request_id":"af4213c1-2ce9-457b-a23b-2c8eb70a7291","operation_id":null,"api":"/api/carts","elapsed_ms":2.43,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.032285+00:00","request_id":"bc89e4a0-73ed-415e-8ec2-97c2cba8a576","operation_id":"7be03e9f-6268-4871-88f9-1ebdbcb8cb7c","api":"/api/carts/{cart_id}/lines","elapsed_ms":4.63,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.034160+00:00","request_id":"f0ebb55a-058e-476e-8420-51eb497e53c9","operation_id":"b938aaba-764e-4a54-b692-83ec8c9536a2","api":"/api/carts/{cart_id}/lines","elapsed_ms":0.95,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.036130+00:00","request_id":"fff827f3-3454-4563-a20c-5666856a9aa8","operation_id":"7be03e9f-6268-4871-88f9-1ebdbcb8cb7c","api":"/api/carts/{cart_id}/lines","elapsed_ms":0.86,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.037860+00:00","request_id":"f369db4a-e852-4618-be3f-956a8810228c","operation_id":"7be03e9f-6268-4871-88f9-1ebdbcb8cb7c","api":"/api/carts/{cart_id}/lines","elapsed_ms":0.73,"result_code":"OPERATION_MISMATCH","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.039127+00:00","request_id":"325b097a-07b4-4e0f-95a4-18491d1ae224","operation_id":"9f80a887-3be6-45c2-b5bd-3d0249d6ec54","api":"/api/carts/{cart_id}/lines","elapsed_ms":0.79,"result_code":"VERSION_CONFLICT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.040967+00:00","request_id":"3ee04f64-48a7-4feb-8a0b-804113fa1bc0","operation_id":"6514e3b1-40cf-4fb9-9e90-de299124bc55","api":"/api/carts/{cart_id}/lines","elapsed_ms":1.26,"result_code":"PRODUCT_NOT_FOUND","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.042394+00:00","request_id":"ad305a3d-fb30-472c-befe-c7529a04395c","operation_id":"6514e3b1-40cf-4fb9-9e90-de299124bc55","api":"/api/carts/{cart_id}/lines","elapsed_ms":0.86,"result_code":"PRODUCT_NOT_FOUND","db_error":"NONE","deployment_version":"UNSET"}
+ok
+test_member_nonmember_save_and_next (test_business.BusinessApiTests.test_member_nonmember_save_and_next) ... {"utc":"2026-10-01T10:55:47.045165+00:00","request_id":"c83e076d-1e43-4132-97fc-d1c9eaaa57e3","operation_id":null,"api":"/api/login","elapsed_ms":1.68,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.046286+00:00","request_id":"c5cf5774-81c9-43c2-9b9e-3be46fe3b43a","operation_id":null,"api":"/api/register/start","elapsed_ms":0.57,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.047275+00:00","request_id":"12e8c444-2fbe-4f1f-8c86-ac9c46d6ba36","operation_id":null,"api":"/api/register/confirm","elapsed_ms":0.54,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.048416+00:00","request_id":"41a21ca5-1e18-4b48-930e-827446b4b7cf","operation_id":null,"api":"/api/carts","elapsed_ms":0.68,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.053794+00:00","request_id":"ae642a55-7c6a-49e3-9df0-551fd88c4b83","operation_id":"b9294e39-d339-41f7-92fd-808e0d7ae45e","api":"/api/carts/{cart_id}/lines","elapsed_ms":4.88,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.055888+00:00","request_id":"3f210814-24e5-4a52-8e59-4f08ba74984a","operation_id":"c846d730-ae0b-40b5-b2f4-265b373206d5","api":"/api/carts/{cart_id}/lines/{line_id}","elapsed_ms":1.14,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.058520+00:00","request_id":"e825b097-6921-496f-8f7f-c7b8d211c96a","operation_id":"e5184b33-9ddb-47c7-9789-dd74a6037b08","api":"/api/carts/{cart_id}/member","elapsed_ms":1.49,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.060525+00:00","request_id":"839fe046-065b-47c3-b58a-473561752977","operation_id":"16b29ae3-eda3-45ab-95ba-be3b322d5a9f","api":"/api/carts/{cart_id}/lines","elapsed_ms":1.01,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.062665+00:00","request_id":"a74de721-86e6-46ad-bf73-987527908a6e","operation_id":"de98d41e-7644-483e-9df9-b216547e7263","api":"/api/carts/{cart_id}/lines","elapsed_ms":1.03,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.065468+00:00","request_id":"61fe93ab-b267-4739-84e4-7adefcbe1656","operation_id":"c8c23634-90f4-446d-8b88-d92a11f0c90c","api":"/api/purchases","elapsed_ms":1.54,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.069096+00:00","request_id":"3152cc66-7b9c-44fd-83d2-87e00535a416","operation_id":"c8c23634-90f4-446d-8b88-d92a11f0c90c","api":"/api/purchases","elapsed_ms":1.31,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.072629+00:00","request_id":"957f94c4-2faf-4387-8f08-528a7160cb18","operation_id":"3d7ea3de-5780-41bf-be4e-378285fe8807","api":"/api/carts/{cart_id}/next","elapsed_ms":1.15,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.074415+00:00","request_id":"33d4c974-5ec7-4b7c-9f58-6c20703f0236","operation_id":"3d7ea3de-5780-41bf-be4e-378285fe8807","api":"/api/carts/{cart_id}/next","elapsed_ms":0.98,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.076014+00:00","request_id":"9fbf1cd2-ffcf-4d05-b6f3-9f546aaa1df4","operation_id":"650b7715-3d1b-404a-80e1-c056294ce03c","api":"/api/carts/{cart_id}/next","elapsed_ms":0.83,"result_code":"STATE_CONFLICT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.077455+00:00","request_id":"9ae45afe-2d71-41a8-bb0a-32434f8079ce","operation_id":"5959b68f-3577-4504-b31c-77eb9238d26a","api":"/api/carts/{cart_id}/lines","elapsed_ms":0.96,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.079716+00:00","request_id":"e0f74636-70ec-451a-82f8-dfa4871360fc","operation_id":"04745bc8-493b-4e63-9bf9-280c48bfe624","api":"/api/purchases","elapsed_ms":1.34,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+ok
+test_member_pending_blocks_all_edits_and_late_lookup_cannot_overwrite (test_business.BusinessApiTests.test_member_pending_blocks_all_edits_and_late_lookup_cannot_overwrite) ... {"utc":"2026-10-01T10:55:47.083648+00:00","request_id":"0ad85c2a-fefd-4ba0-bf73-07d2ceb5caaa","operation_id":null,"api":"/api/login","elapsed_ms":2.0,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.084769+00:00","request_id":"a6a265a3-a7e0-427f-b2d9-c263635f49f0","operation_id":null,"api":"/api/register/start","elapsed_ms":0.59,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.085779+00:00","request_id":"28414ce8-db5d-46d4-85f6-ada6df107c82","operation_id":null,"api":"/api/register/confirm","elapsed_ms":0.54,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.086787+00:00","request_id":"37bea2fd-2e48-471c-a521-b575176b3398","operation_id":null,"api":"/api/carts","elapsed_ms":0.6,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.092703+00:00","request_id":"8bf7dc24-8ecb-4e20-b443-5ca8f7e94ff5","operation_id":"9a72f19a-1e93-4ce8-a7f2-96a698400849","api":"/api/carts/{cart_id}/lines","elapsed_ms":5.45,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.095226+00:00","request_id":"db9e28a6-13d8-424b-9d96-33be015e2008","operation_id":"e3a5176e-ceac-4431-b1a7-741fc808715b","api":"/api/carts/{cart_id}/member","elapsed_ms":1.43,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.097533+00:00","request_id":"62d0d592-7c30-4e46-8fa0-7d4f587a6083","operation_id":"a0161836-ea62-492f-950e-f6df3ed03323","api":"/api/carts/{cart_id}/member","elapsed_ms":1.25,"result_code":"MEMBER_NOT_FOUND","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.099254+00:00","request_id":"e06661de-7a52-42a5-938d-5f154b24639a","operation_id":null,"api":"/api/resume","elapsed_ms":1.23,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.100590+00:00","request_id":"f593dc0a-64bc-4e44-bc77-8afad2e155bf","operation_id":"59cddd70-bcb5-4b35-8b14-0df85dbc1d52","api":"/api/carts/{cart_id}/lines","elapsed_ms":0.82,"result_code":"STATE_CONFLICT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.101933+00:00","request_id":"3bce15a8-5bb6-4b94-9be4-f8bc0e1d2e84","operation_id":"665777a1-fd49-4f82-9d9d-981810a53d84","api":"/api/carts/{cart_id}/lines/{line_id}","elapsed_ms":0.82,"result_code":"STATE_CONFLICT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.103170+00:00","request_id":"b996ba8a-75bc-4bda-a023-f2504d565572","operation_id":"6cf02ee7-1d54-41b7-bb5f-66805f7933b0","api":"/api/purchases","elapsed_ms":0.74,"result_code":"STATE_CONFLICT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.104545+00:00","request_id":"3c8b8459-2e7f-4cd0-8ce6-09d128d8e436","operation_id":"ad35abb0-3d2e-46a7-9614-d650a66a19de","api":"/api/carts/{cart_id}/member","elapsed_ms":0.9,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.106228+00:00","request_id":"730ee40f-206f-461a-a5bb-baeabc2437e0","operation_id":null,"api":"/api/resume","elapsed_ms":0.81,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.108273+00:00","request_id":"6368645a-a110-4eb6-a865-89fb56b61a12","operation_id":"196fe0b2-0889-4912-a80c-27a3e342af50","api":"/api/carts/{cart_id}/member","elapsed_ms":1.43,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+ok
+test_next_failure_rolls_back_pointer_closed_and_new_cart_together (test_business.BusinessApiTests.test_next_failure_rolls_back_pointer_closed_and_new_cart_together) ... {"utc":"2026-10-01T10:55:47.112129+00:00","request_id":"87a54e5c-3692-4ad9-a817-13d1d3257be0","operation_id":null,"api":"/api/login","elapsed_ms":1.74,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.113267+00:00","request_id":"40f4b5b3-7ce4-4b42-9b78-88242ded2d41","operation_id":null,"api":"/api/register/start","elapsed_ms":0.58,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.114301+00:00","request_id":"9a132c46-70f0-4a97-844d-490c24263adc","operation_id":null,"api":"/api/register/confirm","elapsed_ms":0.58,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.115344+00:00","request_id":"f6c0aac2-7294-41f3-a572-510a07eb4d2a","operation_id":null,"api":"/api/carts","elapsed_ms":0.6,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.120386+00:00","request_id":"47287610-b2e7-44d6-abec-a5f6d22c3a6f","operation_id":"f912bc67-ccee-41f8-9f31-134be7012876","api":"/api/carts/{cart_id}/lines","elapsed_ms":4.58,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.122884+00:00","request_id":"558f8263-f7c4-4560-adee-74eb9e610790","operation_id":"2c0af341-37bb-461e-8c8e-b3e8e3edbbf8","api":"/api/purchases","elapsed_ms":1.5,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.125517+00:00","request_id":"89bf5841-74b4-44b5-b5b2-2bfedade1407","operation_id":"7ee51683-8a60-447f-8495-f29aff48be07","api":"/api/carts/{cart_id}/next","elapsed_ms":1.06,"result_code":"SERVICE_UNAVAILABLE","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.126950+00:00","request_id":"34b59c1f-05a5-4901-a95e-448af8279c44","operation_id":"7ee51683-8a60-447f-8495-f29aff48be07","api":"/api/carts/{cart_id}/next","elapsed_ms":0.87,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+ok
+test_pending_resolve_preserves_reference_and_invalidates_late_member (test_business.BusinessApiTests.test_pending_resolve_preserves_reference_and_invalidates_late_member) ... {"utc":"2026-10-01T10:55:47.130062+00:00","request_id":"2abf8c89-bcb4-44a3-8a14-b5f73c5893d1","operation_id":null,"api":"/api/login","elapsed_ms":1.77,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.131234+00:00","request_id":"3683356f-9ca2-4d4b-8826-54774149c30f","operation_id":null,"api":"/api/register/start","elapsed_ms":0.61,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.132250+00:00","request_id":"f627f71f-02b4-4da4-86b4-86dea61a7ccd","operation_id":null,"api":"/api/register/confirm","elapsed_ms":0.56,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.133569+00:00","request_id":"63ed8216-d20d-4d57-80f0-b914f58a7bce","operation_id":null,"api":"/api/carts","elapsed_ms":0.87,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.138736+00:00","request_id":"eb855a0b-d7b1-49d7-be83-6bf2a4616ffd","operation_id":"13be46cc-c2d4-49de-9a25-e5b4c77a948f","api":"/api/carts/{cart_id}/lines","elapsed_ms":4.7,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.141099+00:00","request_id":"d0f3efc7-a923-40e3-9400-37206302c5dd","operation_id":"98414a29-9e4e-4d8a-817c-8b59a6368d0b","api":"/api/carts/{cart_id}/member","elapsed_ms":1.28,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.142987+00:00","request_id":"9701f9a8-f205-453d-98dd-acfd4fa57721","operation_id":null,"api":"/api/resume","elapsed_ms":0.75,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.144496+00:00","request_id":"b804f3a7-00e8-4aca-8ecf-b58baea4ad73","operation_id":"45d40f39-fae4-414a-94b9-0bb4ee64de41","api":"/api/carts/{cart_id}/resolve-purchase","elapsed_ms":1.05,"result_code":"PURCHASE_FENCED_MEMBER_PENDING","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.146348+00:00","request_id":"769b3257-60d7-4aad-80ff-b2ec2e4ae17e","operation_id":"3d85e2b2-e376-407b-a3be-ef307d581366","api":"/api/purchases","elapsed_ms":0.75,"result_code":"STATE_CONFLICT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.147983+00:00","request_id":"961f410f-2104-4a87-93ca-1c0ece671cdf","operation_id":"a8254cd5-cc84-4077-a629-88d1ef83967f","api":"/api/carts/{cart_id}/member","elapsed_ms":1.15,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+ok
+test_prepared_member_retry_does_not_lookup_or_clear_pending (test_business.BusinessApiTests.test_prepared_member_retry_does_not_lookup_or_clear_pending) ... {"utc":"2026-10-01T10:55:47.151118+00:00","request_id":"fec2ab7e-ab3d-4bfe-a579-123a44cc54bd","operation_id":null,"api":"/api/login","elapsed_ms":1.68,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.152244+00:00","request_id":"0d090412-938c-4532-9b19-546f3e18fd9a","operation_id":null,"api":"/api/register/start","elapsed_ms":0.59,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.153299+00:00","request_id":"943911cf-ecf0-43b1-b483-fb82b82536fb","operation_id":null,"api":"/api/register/confirm","elapsed_ms":0.57,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.154322+00:00","request_id":"af19f940-60b3-4b52-b695-75339ad666e6","operation_id":null,"api":"/api/carts","elapsed_ms":0.6,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.160443+00:00","request_id":"4506ccf8-60b3-4dce-967c-e12b9e5db97c","operation_id":"8a7aae5f-91fc-4263-9f8d-6b5b3e851e15","api":"/api/carts/{cart_id}/lines","elapsed_ms":5.66,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.162616+00:00","request_id":"86458897-49f5-44b9-bef9-c0b0c0deeefa","operation_id":"890da41e-e302-421e-82d5-d98cd46500cb","api":"/api/carts/{cart_id}/member","elapsed_ms":0.92,"result_code":"PREPARED","db_error":"NONE","deployment_version":"UNSET"}
+ok
+test_quantity_limit_sync_no_business_touch_and_closed_operation_get (test_business.BusinessApiTests.test_quantity_limit_sync_no_business_touch_and_closed_operation_get) ... {"utc":"2026-10-01T10:55:47.165796+00:00","request_id":"7222eee4-6541-47fb-a3c0-13004e4bc5ce","operation_id":null,"api":"/api/login","elapsed_ms":1.69,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.167000+00:00","request_id":"efd9e382-a404-4b21-87d7-604748552cef","operation_id":null,"api":"/api/register/start","elapsed_ms":0.63,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.168060+00:00","request_id":"210319b5-2b6c-44d8-96d5-e5908ce84d33","operation_id":null,"api":"/api/register/confirm","elapsed_ms":0.57,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.169443+00:00","request_id":"4bec1c72-07fc-46d4-ae18-31ed0e8d188c","operation_id":null,"api":"/api/carts","elapsed_ms":0.92,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.174573+00:00","request_id":"cf7f9586-c10a-419f-affa-9ebe61a2aef0","operation_id":"42c5326f-7f51-442b-84f1-58e846274230","api":"/api/carts/{cart_id}/lines","elapsed_ms":4.65,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.176619+00:00","request_id":"d229123f-3295-4b35-ada7-3c7db9db9dd1","operation_id":"f3373ae2-9502-4174-844c-8166a9c0cf4b","api":"/api/carts/{cart_id}/lines/{line_id}","elapsed_ms":0.99,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.178362+00:00","request_id":"ebb86ed6-e5b7-463f-b27f-a81454c16895","operation_id":"c3540dd7-a505-4e55-9f21-096825d54e80","api":"/api/carts/{cart_id}/lines","elapsed_ms":0.85,"result_code":"QUANTITY_LIMIT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.179734+00:00","request_id":"dc237060-17ab-4af9-95bf-a35ca277635c","operation_id":"5d1e41bb-544c-46f5-af0a-8cfc9922700d","api":"/api/carts/{cart_id}/sync","elapsed_ms":0.87,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.183525+00:00","request_id":"2654d4a9-4c79-45b4-8feb-cde8f3c9a07e","operation_id":"130f9e5b-8aeb-4b90-9c17-39ec298bf297","api":"/api/purchases","elapsed_ms":2.93,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.185920+00:00","request_id":"24961afa-bfb9-4615-b4d2-54640c1e5dac","operation_id":"97cb4bc9-2803-4c43-a2bf-cb21f10f3137","api":"/api/carts/{cart_id}/next","elapsed_ms":0.92,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.187787+00:00","request_id":"a802149c-97d6-4668-aa1f-b76d00c053cb","operation_id":"97cb4bc9-2803-4c43-a2bf-cb21f10f3137","api":"/api/carts/{cart_id}/operations/{operation_id}","elapsed_ms":1.1,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+ok
+test_resolve_before_delayed_purchase_and_saved_wins (test_business.BusinessApiTests.test_resolve_before_delayed_purchase_and_saved_wins) ... {"utc":"2026-10-01T10:55:47.191816+00:00","request_id":"8ff8c12f-fa25-453a-9690-d8f32b21d895","operation_id":null,"api":"/api/login","elapsed_ms":1.96,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.193137+00:00","request_id":"51268728-ee87-4fbf-bc96-e4a875f8f287","operation_id":null,"api":"/api/register/start","elapsed_ms":0.64,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.194182+00:00","request_id":"41388d53-5da4-44b7-991a-ef4d7ee691d7","operation_id":null,"api":"/api/register/confirm","elapsed_ms":0.57,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.195223+00:00","request_id":"8b2508f5-60ed-496c-891f-40e8d8be7119","operation_id":null,"api":"/api/carts","elapsed_ms":0.62,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.200610+00:00","request_id":"c967b735-d82d-4efa-b196-d71cbfee7f49","operation_id":"b22b4e96-deeb-4c82-9214-09bd3e8abc0e","api":"/api/carts/{cart_id}/lines","elapsed_ms":4.94,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.202441+00:00","request_id":"93c1fecc-172a-4094-a070-7f91d8ac6222","operation_id":"751700ec-7cae-4260-b98b-6bdcee6129e5","api":"/api/carts/{cart_id}/resolve-purchase","elapsed_ms":0.93,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.204047+00:00","request_id":"9648c598-01bc-4f1b-84b9-0bca5e4988fb","operation_id":"fca106ca-31d8-474d-aa1c-fd3949d43a6a","api":"/api/purchases","elapsed_ms":0.72,"result_code":"VERSION_CONFLICT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.205711+00:00","request_id":"7905287b-ae60-4096-b25e-d67eae229321","operation_id":"5e36e4e9-d9ba-48e2-b549-21ed9ad8cf05","api":"/api/purchases","elapsed_ms":1.17,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.207910+00:00","request_id":"7ed2329d-6f50-4e09-bc82-7e0f0a4e1811","operation_id":"e18ba89a-4aa9-47fc-9870-f73fd30b7d69","api":"/api/carts/{cart_id}/resolve-purchase","elapsed_ms":0.88,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.210069+00:00","request_id":"267b10a2-feed-4700-88a9-47d5598727e3","operation_id":"31297b4d-dd31-4528-8e0a-ca94c51f124a","api":"/api/carts/{cart_id}/reopen","elapsed_ms":0.88,"result_code":"STATE_CONFLICT","db_error":"NONE","deployment_version":"UNSET"}
+ok
+test_resolve_failure_rolls_back_fence_and_operation_together (test_business.BusinessApiTests.test_resolve_failure_rolls_back_fence_and_operation_together) ... {"utc":"2026-10-01T10:55:47.213162+00:00","request_id":"4d75fb69-89aa-413f-ad76-5a096169cb76","operation_id":null,"api":"/api/login","elapsed_ms":1.99,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.214379+00:00","request_id":"cd291edd-39d4-4dde-8211-bb9459d51c1c","operation_id":null,"api":"/api/register/start","elapsed_ms":0.63,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.215456+00:00","request_id":"70702beb-6960-465d-9435-6b058726aaec","operation_id":null,"api":"/api/register/confirm","elapsed_ms":0.57,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.216493+00:00","request_id":"ab45fc25-53ca-4e66-a5e1-a584726a72d2","operation_id":null,"api":"/api/carts","elapsed_ms":0.61,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.221502+00:00","request_id":"f7302465-dddf-414b-9e06-739accf04f32","operation_id":"cc3a83eb-f3a4-4619-af64-cdd602998f5d","api":"/api/carts/{cart_id}/lines","elapsed_ms":4.55,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.223425+00:00","request_id":"4d101a9b-0bc8-4a0a-9ed5-7495ddf1bcd3","operation_id":"a6dbd310-a880-46e6-84f8-20b6fd19ac00","api":"/api/carts/{cart_id}/resolve-purchase","elapsed_ms":0.89,"result_code":"SERVICE_UNAVAILABLE","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.225469+00:00","request_id":"99aa48e4-a452-4617-a1da-0f1ee9798264","operation_id":"a6dbd310-a880-46e6-84f8-20b6fd19ac00","api":"/api/carts/{cart_id}/resolve-purchase","elapsed_ms":1.26,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+ok
+test_resolve_fences_prepared_purchase_and_reopen_is_explicit (test_business.BusinessApiTests.test_resolve_fences_prepared_purchase_and_reopen_is_explicit) ... {"utc":"2026-10-01T10:55:47.228697+00:00","request_id":"5d73f22c-62ad-4b4e-aeaa-bdc43ccbbc88","operation_id":null,"api":"/api/login","elapsed_ms":1.67,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.229874+00:00","request_id":"37ca8c34-3a33-4156-8cd0-3824cb4e1a63","operation_id":null,"api":"/api/register/start","elapsed_ms":0.63,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.230879+00:00","request_id":"c1b148bf-326a-4eb7-8e03-656310bb048e","operation_id":null,"api":"/api/register/confirm","elapsed_ms":0.54,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.231949+00:00","request_id":"fe1e02ea-cb6b-484c-b2de-bfa4240ff3e1","operation_id":null,"api":"/api/carts","elapsed_ms":0.61,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.237308+00:00","request_id":"2a9cf098-947e-4bab-990a-413422244aa5","operation_id":"2a49f3a8-5a64-41fa-a56f-c19be2e05356","api":"/api/carts/{cart_id}/lines","elapsed_ms":4.9,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.239533+00:00","request_id":"40d1ee25-a35b-49b5-895e-72e09ce1dee6","operation_id":"851e78c3-16c3-4d8d-83e8-22041b1d9b3b","api":"/api/purchases","elapsed_ms":1.23,"result_code":"SERVICE_UNAVAILABLE","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.241060+00:00","request_id":"1958e59b-51ce-462a-ac82-3ba518631a5c","operation_id":"59dceb38-67ca-41d0-a303-906e53307b9f","api":"/api/carts/{cart_id}/resolve-purchase","elapsed_ms":0.98,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.242830+00:00","request_id":"bfac8ff9-2745-497a-89f0-b269766b87f0","operation_id":"59dceb38-67ca-41d0-a303-906e53307b9f","api":"/api/carts/{cart_id}/resolve-purchase","elapsed_ms":0.84,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.244527+00:00","request_id":"f3662fd6-fd5f-47f4-a6fe-a002b07caa09","operation_id":"851e78c3-16c3-4d8d-83e8-22041b1d9b3b","api":"/api/purchases","elapsed_ms":0.8,"result_code":"PURCHASE_ATTEMPT_CLOSED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.245757+00:00","request_id":"35edf04f-7af6-4718-84de-4db933e52c53","operation_id":"7ab30483-a0f7-477f-af37-a14e0fdd6e4c","api":"/api/carts/{cart_id}/lines","elapsed_ms":0.74,"result_code":"STATE_CONFLICT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.247131+00:00","request_id":"f5789c19-3b53-4545-b08e-7ed33c438668","operation_id":"58fc1d39-e7c0-4560-a3fc-40e5e6cbe83e","api":"/api/carts/{cart_id}/reopen","elapsed_ms":0.87,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.249332+00:00","request_id":"a1d6ef4b-4560-4724-bc52-37b9539b1402","operation_id":"58fc1d39-e7c0-4560-a3fc-40e5e6cbe83e","api":"/api/carts/{cart_id}/reopen","elapsed_ms":1.25,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.251215+00:00","request_id":"e819a8d8-3345-4652-8e67-95abed512253","operation_id":"eda9123c-e841-4398-b2f0-dab9e786650a","api":"/api/carts/{cart_id}/lines","elapsed_ms":0.99,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.253821+00:00","request_id":"037901b0-9b78-4bd3-b158-15e48c0c27a9","operation_id":"d3e69cd1-7509-4ac6-9b22-44954fc4b16d","api":"/api/purchases","elapsed_ms":1.52,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+ok
+test_saved_other_operation_returns_original_before_version_check (test_business.BusinessApiTests.test_saved_other_operation_returns_original_before_version_check) ... {"utc":"2026-10-01T10:55:47.258461+00:00","request_id":"8f72edf4-2fdf-4754-96c0-4cd3039ce880","operation_id":null,"api":"/api/login","elapsed_ms":2.03,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.260049+00:00","request_id":"4843943d-f3ed-4a2e-886a-7897bac2111e","operation_id":null,"api":"/api/register/start","elapsed_ms":0.82,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.261139+00:00","request_id":"2180d67a-d1dc-42dc-b47a-8853e3d0ac11","operation_id":null,"api":"/api/register/confirm","elapsed_ms":0.58,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.262214+00:00","request_id":"fc97eaa8-d80d-4a41-bba2-1d4754cd2c3d","operation_id":null,"api":"/api/carts","elapsed_ms":0.64,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.267742+00:00","request_id":"dd5ab794-383e-4186-a909-1b69f2064925","operation_id":"086419ae-238f-4aeb-9984-3a5c2a755857","api":"/api/carts/{cart_id}/lines","elapsed_ms":5.06,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.269858+00:00","request_id":"fa71e67b-cb14-445f-a19f-ce71e07e2824","operation_id":"9553f928-9209-4b7f-8afc-72e2bb74c168","api":"/api/purchases","elapsed_ms":1.17,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.272061+00:00","request_id":"49fa181e-4751-42a8-85b7-2557fa9c4b20","operation_id":"94b2eb8f-0bc9-4c04-9002-aaf12fbc9e9d","api":"/api/purchases","elapsed_ms":0.87,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+ok
+test_snapshot_retained_and_delete_readd_refreshes (test_business.BusinessApiTests.test_snapshot_retained_and_delete_readd_refreshes) ... {"utc":"2026-10-01T10:55:47.275716+00:00","request_id":"04b4a82b-b162-46e4-899e-84556e0adf7d","operation_id":null,"api":"/api/login","elapsed_ms":1.7,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.277297+00:00","request_id":"dbadb058-8f33-4c47-8a96-f10b97c7588b","operation_id":null,"api":"/api/register/start","elapsed_ms":0.98,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.278437+00:00","request_id":"784298b1-fdab-41db-b26f-1a818ac261ff","operation_id":null,"api":"/api/register/confirm","elapsed_ms":0.61,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.279495+00:00","request_id":"eefb85c4-451b-42ff-9b70-ff938f9eaeff","operation_id":null,"api":"/api/carts","elapsed_ms":0.61,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.284648+00:00","request_id":"c7bda226-100f-47c1-a9ed-911e1cc8e1f2","operation_id":"8592a49c-9dc2-490c-8d18-57a2c6a56d65","api":"/api/carts/{cart_id}/lines","elapsed_ms":4.68,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.286468+00:00","request_id":"03b33a5b-793d-4d0a-a604-38f1d206a2da","operation_id":"599739d2-86bd-4b86-9448-bc7f8ca7041d","api":"/api/carts/{cart_id}/lines","elapsed_ms":0.89,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.288665+00:00","request_id":"4094fdeb-8590-429d-a419-17bfbe790f95","operation_id":"53be3af7-df4a-4dac-8a36-e5424a1a4519","api":"/api/carts/{cart_id}/member","elapsed_ms":1.32,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.291044+00:00","request_id":"39538cb7-9cd3-496f-8ca6-8d2cc88cfe27","operation_id":"cfa605b7-4421-47a4-b994-3b41015b7842","api":"/api/carts/{cart_id}/lines/{line_id}","elapsed_ms":1.24,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.292708+00:00","request_id":"fa8b8121-7029-4808-89be-f8e1094a68af","operation_id":"cfa605b7-4421-47a4-b994-3b41015b7842","api":"/api/carts/{cart_id}/lines/{line_id}","elapsed_ms":1.07,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.294149+00:00","request_id":"bea1a067-34f3-4814-8d57-b7a7c7d74cc0","operation_id":"3deb203e-f933-43fc-95d1-8dca03817108","api":"/api/carts/{cart_id}/lines","elapsed_ms":0.96,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+ok
+test_untrusted_input_delete_query_and_overflow (test_business.BusinessApiTests.test_untrusted_input_delete_query_and_overflow) ... {"utc":"2026-10-01T10:55:47.297561+00:00","request_id":"02aa45ce-c8b4-4d74-839f-a7d71b68d346","operation_id":null,"api":"/api/login","elapsed_ms":1.75,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.298823+00:00","request_id":"d9b8ac7b-67d5-460a-ba25-145fddbcffaf","operation_id":null,"api":"/api/register/start","elapsed_ms":0.62,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.299867+00:00","request_id":"a198a19b-ca0e-4fc2-88bf-d9c5a65a92d3","operation_id":null,"api":"/api/register/confirm","elapsed_ms":0.57,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.300942+00:00","request_id":"55aba352-955e-4112-ab4b-5ccca82b733c","operation_id":null,"api":"/api/carts","elapsed_ms":0.64,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.306615+00:00","request_id":"9d45523b-98b8-4540-8a3a-d2eaec8bcadb","operation_id":"3e6d62af-d378-4c08-83a5-a80b44fe6b12","api":"/api/carts/{cart_id}/lines","elapsed_ms":5.13,"result_code":"APPLIED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.308391+00:00","request_id":"5cb259c6-089f-4f0f-afd2-ff812d7d7e71","operation_id":"5cd4320a-f21e-433e-846a-1063c40a1e7b","api":"/api/carts/{cart_id}/lines/{line_id}","elapsed_ms":0.64,"result_code":"INVALID_INPUT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.309360+00:00","request_id":"97e71fc6-3f9d-4417-bf4c-61c640c1430c","operation_id":"1e5df676-6b75-462b-9168-141da2e218cc","api":"/api/carts/{cart_id}/lines/{line_id}","elapsed_ms":0.45,"result_code":"INVALID_INPUT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.310267+00:00","request_id":"5ce95b4d-be04-4dff-9d66-f5d20bd86a20","operation_id":"f10fded5-a3e0-4dbc-921c-0f20d1492ae0","api":"/api/carts/{cart_id}/lines/{line_id}","elapsed_ms":0.45,"result_code":"INVALID_INPUT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.311186+00:00","request_id":"20e9df30-e800-4b60-867b-980930e169c4","operation_id":"f42b07a7-06fc-4ba2-873e-19d5653575cb","api":"/api/carts/{cart_id}/lines/{line_id}","elapsed_ms":0.45,"result_code":"INVALID_INPUT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.312084+00:00","request_id":"10a0d74a-0f98-4b20-a780-6944f100bf69","operation_id":"74981f8f-1e40-490a-89f1-4cf16034014f","api":"/api/carts/{cart_id}/lines/{line_id}","elapsed_ms":0.46,"result_code":"INVALID_INPUT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.313094+00:00","request_id":"7804aeda-2254-42e0-8ba7-33d450eb3e25","operation_id":"3d0b6b45-6022-4c7e-8229-40482b494267","api":"/api/carts/{cart_id}/lines/{line_id}","elapsed_ms":0.51,"result_code":"INVALID_INPUT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.314296+00:00","request_id":"067ef31c-c9dd-42a5-a22b-ebb66d140fbb","operation_id":"f1f5394e-ba07-4bf5-9b22-34c817b6a8b8","api":"/api/carts/{cart_id}/lines","elapsed_ms":0.75,"result_code":"INVALID_INPUT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.315275+00:00","request_id":"79cdc3c3-9a28-41c7-860c-2e409f55a007","operation_id":"39a0f119-d22d-433a-94d7-61f3eca0978e","api":"/api/purchases","elapsed_ms":0.45,"result_code":"INVALID_INPUT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.315839+00:00","request_id":"be2b50b4-0043-4e19-846d-215534fac9f6","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.12,"result_code":"HTTP_422","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.316995+00:00","request_id":"e57274a3-6f63-414d-ad4d-bad41607ba47","operation_id":"3461542f-0d6d-455e-86e6-21f7a7ea74d9","api":"/api/purchases","elapsed_ms":0.79,"result_code":"VERSION_LIMIT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.317925+00:00","request_id":"fb9c61df-db26-4d56-8c66-1dce0cbbe100","operation_id":"b39e2084-cf81-42fd-bad5-80477410a212","api":"/api/carts/{cart_id}/lines","elapsed_ms":0.44,"result_code":"INVALID_INPUT","db_error":"NONE","deployment_version":"UNSET"}
+ok
+test_business_rejection_rolls_back_without_commit (test_database.TransactionTests.test_business_rejection_rolls_back_without_commit) ... ok
+test_read_snapshot_is_readonly_rr_and_rolled_back_before_return (test_database.TransactionTests.test_read_snapshot_is_readonly_rr_and_rolled_back_before_return) ... ok
+test_write_commit_failure_invalidates_and_never_replays (test_database.TransactionTests.test_write_commit_failure_invalidates_and_never_replays) ... ok
+test_config_disallows_open_networks_invalid_origins_and_missing_values (test_operations.EvidenceTests.test_config_disallows_open_networks_invalid_origins_and_missing_values) ... ok
+test_health_reads_no_database_and_does_not_log_success (test_operations.EvidenceTests.test_health_reads_no_database_and_does_not_log_success) ... ok
+test_logs_classify_numeric_errno_without_exception_text_or_secret_version (test_operations.EvidenceTests.test_logs_classify_numeric_errno_without_exception_text_or_secret_version) ... ok
+test_performance_duplicate_record_is_not_ten_separate_measurements (test_operations.EvidenceTests.test_performance_duplicate_record_is_not_ten_separate_measurements) ... ok
+test_performance_individual_limit_complete_devices_and_each_idle (test_operations.EvidenceTests.test_performance_individual_limit_complete_devices_and_each_idle) ... ok
+test_restore_checks_all_tables_and_preserves_missing_differences (test_operations.EvidenceTests.test_restore_checks_all_tables_and_preserves_missing_differences) ... ok
+test_member_flag_cannot_be_coerced (test_pricing.PricingTests.test_member_flag_cannot_be_coerced) ... ok
+test_tc06_cap_actual_discount_but_preserve_candidate (test_pricing.PricingTests.test_tc06_cap_actual_discount_but_preserve_candidate) ... ok
+test_tc06_maximum_single_discount (test_pricing.PricingTests.test_tc06_maximum_single_discount) ... ok
+test_tc06_member_306 (test_pricing.PricingTests.test_tc06_member_306) ... ok
+test_tc06_mixed_tax_537 (test_pricing.PricingTests.test_tc06_mixed_tax_537) ... ok
+test_tc06_non_member_339_and_570 (test_pricing.PricingTests.test_tc06_non_member_339_and_570) ... ok
+test_tc06_select_before_price_cap (test_pricing.PricingTests.test_tc06_select_before_price_cap) ... ok
+test_tc06_tie_uses_numeric_id_not_iteration_order (test_pricing.PricingTests.test_tc06_tie_uses_numeric_id_not_iteration_order) ... ok
+test_tc07_pure_snapshot_remains_unchanged (test_pricing.PricingTests.test_tc07_pure_snapshot_remains_unchanged) ... ok
+test_tc08_every_stored_aggregate_overflow (test_pricing.PricingTests.test_tc08_every_stored_aggregate_overflow) ... ok
+test_tc08_invalid_snapshot_inputs (test_pricing.PricingTests.test_tc08_invalid_snapshot_inputs) ... ok
+test_tc08_maximum_and_rate_endpoints (test_pricing.PricingTests.test_tc08_maximum_and_rate_endpoints) ... ok
+test_tc10_empty_editable_cart_but_no_purchase (test_pricing.PricingTests.test_tc10_empty_editable_cart_but_no_purchase) ... ok
+test_six_attributes_and_unsigned_integer_boundaries (test_seed_validation.MemberSeedTests.test_six_attributes_and_unsigned_integer_boundaries) ... ok
+test_text_capacity_measured_in_utf8_bytes_and_no_gender_enum (test_seed_validation.MemberSeedTests.test_text_capacity_measured_in_utf8_bytes_and_no_gender_enum) ... ok
+test_argon2_and_token_parameters (test_startup.StartupTests.test_argon2_and_token_parameters) ... ok
+test_auth_cookie_age_counts_time_spent_persisting_session (test_startup.StartupTests.test_auth_cookie_age_counts_time_spent_persisting_session) ... ok
+test_cookie_handshake_and_idempotent_cart_creation (test_startup.StartupTests.test_cookie_handshake_and_idempotent_cart_creation) ... ok
+test_cookie_loss_and_wrong_owner_do_not_replace_context (test_startup.StartupTests.test_cookie_loss_and_wrong_owner_do_not_replace_context) ... ok
+test_fifth_failure_locks_without_extending_or_revoking_session (test_startup.StartupTests.test_fifth_failure_locks_without_extending_or_revoking_session) ... ok
+test_limit_corruption_is_not_silently_reset (test_startup.StartupTests.test_limit_corruption_is_not_silently_reset) ... ok
+test_maintenance_allows_auth_and_reads_but_blocks_writes (test_startup.StartupTests.test_maintenance_allows_auth_and_reads_but_blocks_writes) ... ok
+test_missing_register_and_lost_cart_pointer_stop (test_startup.StartupTests.test_missing_register_and_lost_cart_pointer_stop) ... ok
+test_missing_staff_is_limited_and_hash_error_is_not_a_failure (test_startup.StartupTests.test_missing_staff_is_limited_and_hash_error_is_not_a_failure) ... ok
+test_other_cart_id_and_nonempty_later_milestone_fail_closed (test_startup.StartupTests.test_other_cart_id_and_nonempty_later_milestone_fail_closed) ... ok
+test_pending_cookie_survives_reauthentication (test_startup.StartupTests.test_pending_cookie_survives_reauthentication) ... ok
+test_reauthentication_only_changes_session_for_all_cart_states (test_startup.StartupTests.test_reauthentication_only_changes_session_for_all_cart_states) ... ok
+test_resume_24_hour_boundary_and_manual_release (test_startup.StartupTests.test_resume_24_hour_boundary_and_manual_release) ... ok
+test_session_rotation_expiry_and_no_resume_extension (test_startup.StartupTests.test_session_rotation_expiry_and_no_resume_extension) ... ok
+test_success_does_not_clear_failures_and_window_excludes_lower_endpoint (test_startup.StartupTests.test_success_does_not_clear_failures_and_window_excludes_lower_endpoint) ... ok
+test_commit_failure_is_503_not_auth_failure_and_never_sets_cookie (test_startup_api.ApiTests.test_commit_failure_is_503_not_auth_failure_and_never_sets_cookie) ... {"utc":"2026-10-01T10:55:47.537848+00:00","request_id":"5491a8f4-ebdb-4281-9a63-e339c9f29f2c","operation_id":null,"api":"/api/login","elapsed_ms":2.06,"result_code":"SERVICE_UNAVAILABLE","db_error":"NONE","deployment_version":"UNSET"}
+ok
+test_failed_login_commits_limit_then_returns_401_without_cookie_changes (test_startup_api.ApiTests.test_failed_login_commits_limit_then_returns_401_without_cookie_changes) ... {"utc":"2026-10-01T10:55:47.541014+00:00","request_id":"8f030ed4-f71e-4ca1-943c-1377f7d708d3","operation_id":null,"api":"/api/login","elapsed_ms":2.08,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.542370+00:00","request_id":"05b64240-7dea-4459-82ca-0afe39c75b8e","operation_id":null,"api":"/api/reauth","elapsed_ms":0.68,"result_code":"UNAUTHENTICATED","db_error":"NONE","deployment_version":"UNSET"}
+ok
+test_full_initial_http_flow_matches_openapi (test_startup_api.ApiTests.test_full_initial_http_flow_matches_openapi) ... {"utc":"2026-10-01T10:55:47.545018+00:00","request_id":"a1a2712b-f38e-4761-9fc1-aac3d4ced16e","operation_id":null,"api":"/api/login","elapsed_ms":1.67,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.546288+00:00","request_id":"941ecf08-92c9-4f14-9cb2-c7ae971f964f","operation_id":null,"api":"/api/auth/status","elapsed_ms":0.67,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.547391+00:00","request_id":"9b928a3f-a8e4-481c-9f52-72d53cc2df2e","operation_id":null,"api":"/api/register/start","elapsed_ms":0.57,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.548465+00:00","request_id":"82306d0c-7879-4f11-8dfb-ed62c5992487","operation_id":null,"api":"/api/register/confirm","elapsed_ms":0.54,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.549530+00:00","request_id":"4f21b5c4-3353-4c27-bd33-8d4e54a133cf","operation_id":null,"api":"/api/register/confirm","elapsed_ms":0.58,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.551218+00:00","request_id":"88d09a6e-80c1-4627-9834-2858e804d1fa","operation_id":null,"api":"/api/carts","elapsed_ms":1.07,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.552575+00:00","request_id":"559d17f4-a020-4cfd-8499-409b347a8cff","operation_id":null,"api":"/api/carts","elapsed_ms":0.71,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.554062+00:00","request_id":"cbb7f9b5-fa8a-4485-8929-6c06d6e6f12c","operation_id":null,"api":"/api/resume","elapsed_ms":0.64,"result_code":"HTTP_200","db_error":"NONE","deployment_version":"UNSET"}
+ok
+test_input_errors_do_not_reflect_password_or_coerce_staff (test_startup_api.ApiTests.test_input_errors_do_not_reflect_password_or_coerce_staff) ... {"utc":"2026-10-01T10:55:47.556698+00:00","request_id":"8a17166c-9ff8-4055-b4ff-be37e2e3ef49","operation_id":null,"api":"/api/login","elapsed_ms":1.56,"result_code":"INVALID_INPUT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.557780+00:00","request_id":"c7609c11-e95d-4efb-8628-7fbe4c3271e3","operation_id":null,"api":"/api/login","elapsed_ms":0.56,"result_code":"INVALID_INPUT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.558840+00:00","request_id":"7c44916e-af62-434e-b3fd-6ee4566de712","operation_id":null,"api":"/api/login","elapsed_ms":0.5,"result_code":"INVALID_INPUT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.559904+00:00","request_id":"2f67d0ba-7023-4ee6-a216-fd9ddcfbe9cd","operation_id":null,"api":"/api/login","elapsed_ms":0.52,"result_code":"INVALID_INPUT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.561177+00:00","request_id":"2f2d5ec7-00a9-44da-8646-83db62929f71","operation_id":null,"api":"/api/login","elapsed_ms":0.75,"result_code":"INVALID_INPUT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.562145+00:00","request_id":"232763a4-ad93-4f16-a62e-5b1dc1b0fdd6","operation_id":null,"api":"/api/login","elapsed_ms":0.45,"result_code":"INVALID_INPUT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.563054+00:00","request_id":"844366d4-d3a4-477b-98cb-6e900bfe181e","operation_id":null,"api":"/api/login","elapsed_ms":0.43,"result_code":"INVALID_INPUT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.563942+00:00","request_id":"4cb87291-408c-4eb5-bd08-05925c014f50","operation_id":null,"api":"/api/login","elapsed_ms":0.41,"result_code":"INVALID_INPUT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.564881+00:00","request_id":"8a07b000-c1b8-4e75-9ed5-4d9ad66b8add","operation_id":null,"api":"/api/login","elapsed_ms":0.48,"result_code":"INVALID_INPUT","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.565624+00:00","request_id":"d0abafbf-4894-49f4-a9e0-4d7f56969e45","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.23,"result_code":"HTTP_422","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.566251+00:00","request_id":"a50bc087-3331-4a11-a7d2-dd1f78b71c22","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.16,"result_code":"HTTP_422","db_error":"NONE","deployment_version":"UNSET"}
+ok
+test_origin_and_relay_rejection_precedes_any_write (test_startup_api.ApiTests.test_origin_and_relay_rejection_precedes_any_write) ... {"utc":"2026-10-01T10:55:47.567503+00:00","request_id":"e3d7628c-8f86-49d5-9e7e-ed6266b51fb0","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.2,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.568137+00:00","request_id":"32f0a958-ff57-490c-8613-14379fc82708","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.14,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.568728+00:00","request_id":"1c2660b7-2a8d-4377-94ff-bf4efc415194","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.14,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.569338+00:00","request_id":"b4615d8a-9791-400f-8bb1-592f103d12ba","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.16,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.569867+00:00","request_id":"8ba88a72-b0b5-4b06-87cd-6155864a4420","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.12,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.570364+00:00","request_id":"6e4f101b-5f4f-43fa-b12f-d32bbf0d9719","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.11,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.570973+00:00","request_id":"b3f8e45a-988e-4cc2-96d5-e5b18d91d4ae","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.13,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.571502+00:00","request_id":"14853917-0223-4514-9cbc-99bac599cf13","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.12,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.572002+00:00","request_id":"307f7895-de73-4c25-bd7f-07064d0fa374","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.11,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.572524+00:00","request_id":"b6a517a1-4b29-46f0-8bc7-6aedd19fcff3","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.13,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.573220+00:00","request_id":"36c007a5-7bac-48e6-97d2-411cdc60eaca","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.16,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.573769+00:00","request_id":"8bcc3a84-2012-438c-af01-948a2633b19e","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.12,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.574404+00:00","request_id":"304a77d0-043b-4556-aa5d-1150ff93e42e","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.14,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.574927+00:00","request_id":"237abc4a-98f8-4a8f-8b69-9d4e823075fc","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.11,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.575399+00:00","request_id":"3e1ec370-986f-43bb-8773-9f3e3fea0be8","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.11,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.575870+00:00","request_id":"3318b34b-5a1e-472d-95e6-b5b28bfe82c0","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.11,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.576327+00:00","request_id":"b1b1c0ee-8bc9-4d04-9270-f26fdc88aa35","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.11,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.576809+00:00","request_id":"2f7168e2-f502-4d28-962e-c2174405acbb","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.11,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.577289+00:00","request_id":"567d5290-22f7-4e8a-9e74-b62a75c345e8","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.12,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.577751+00:00","request_id":"61dc600c-f77f-4192-aeb9-05314f53a6a3","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.1,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.578204+00:00","request_id":"1f3f4555-501b-4db5-a6e0-2877e5f9f939","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.1,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.578745+00:00","request_id":"3b0641c7-390d-4b28-ab3d-0a79860b6562","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.12,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.579191+00:00","request_id":"d46e9d22-aac2-4b1b-b46d-cdca8d4dc750","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.1,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.579626+00:00","request_id":"d29d735c-2809-4e39-a1f7-687663a0aacc","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.1,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.580061+00:00","request_id":"6176adb4-1817-4fdf-8053-7c1f90a4bc1b","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.1,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.580488+00:00","request_id":"838f8578-9e59-4ca0-adf7-f4ddf4c91a4a","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.1,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.581320+00:00","request_id":"cf21f92c-f776-4a50-9e95-a22e7179323e","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.47,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.581798+00:00","request_id":"c95bb80a-1173-4fc2-b6de-a94573da3c82","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.11,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.582234+00:00","request_id":"16f8948e-f272-4d11-9ede-6492757c0545","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.1,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.582712+00:00","request_id":"6e3dba1c-03cd-422e-9a1a-40adf1826fc9","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.13,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.583233+00:00","request_id":"1acfc22a-fd9b-485c-8a45-17926f7442eb","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.12,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.583778+00:00","request_id":"058e794c-b66d-4992-a1ff-0185533efd05","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.14,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.584344+00:00","request_id":"acbb9181-45f7-428c-9cd0-4422b7f37e07","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.13,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.584818+00:00","request_id":"f5a5f8c2-6128-4643-8ccb-eeacdeea235b","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.11,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.585280+00:00","request_id":"579bcdb9-16e4-4778-8b43-9882582b7ce8","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.1,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.585726+00:00","request_id":"8f4bda98-95e9-4a99-8f9c-5039fe25bcc4","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.1,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.586276+00:00","request_id":"6c56c74b-3e3a-4404-9b56-3429a13c4c7f","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.14,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.586772+00:00","request_id":"b11be188-3d95-4912-9e37-c970f98a2c5f","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.11,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.587242+00:00","request_id":"d03bfb14-ca5f-4536-83b0-d16bee24f95c","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.11,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.587697+00:00","request_id":"8fd8d28b-7acf-423c-b9cc-b01d35095795","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.11,"result_code":"HTTP_403","db_error":"NONE","deployment_version":"UNSET"}
+ok
+test_unauthenticated_read_and_write_protected (test_startup_api.ApiTests.test_unauthenticated_read_and_write_protected) ... {"utc":"2026-10-01T10:55:47.590392+00:00","request_id":"5a97662a-3442-4208-8163-03ad20e55abe","operation_id":null,"api":"/api/auth/status","elapsed_ms":1.81,"result_code":"UNAUTHENTICATED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.591846+00:00","request_id":"032d59e5-cd87-4272-906a-5419113a3e7f","operation_id":null,"api":"/api/products/{code}","elapsed_ms":0.85,"result_code":"UNAUTHENTICATED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.593284+00:00","request_id":"1f8ce488-54fe-4ba0-9916-fbeb46826b21","operation_id":null,"api":"/api/members/{code}","elapsed_ms":0.78,"result_code":"UNAUTHENTICATED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.594348+00:00","request_id":"a8bddccd-3b4f-4bc1-b022-bcaef8dcde6b","operation_id":null,"api":"/api/resume","elapsed_ms":0.58,"result_code":"UNAUTHENTICATED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.595677+00:00","request_id":"37912ba3-72b7-4f8f-9c59-9e6d60d09674","operation_id":null,"api":"/api/register/start","elapsed_ms":0.84,"result_code":"UNAUTHENTICATED","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.596665+00:00","request_id":"59eb5615-b7b8-4551-b219-44d66d784ca8","operation_id":null,"api":"/api/carts","elapsed_ms":0.53,"result_code":"UNAUTHENTICATED","db_error":"NONE","deployment_version":"UNSET"}
+ok
+test_unknown_error_sanitized_and_missing_configuration_closed (test_startup_api.ApiTests.test_unknown_error_sanitized_and_missing_configuration_closed) ... {"utc":"2026-10-01T10:55:47.599510+00:00","request_id":"87a00f2d-09ba-487b-8816-9b59531d3c29","operation_id":null,"api":"/api/auth/status","elapsed_ms":1.88,"result_code":"SERVICE_UNAVAILABLE","db_error":"NONE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.600327+00:00","request_id":"3e04c50f-376d-41c2-b3b2-38f78cbc33bb","operation_id":null,"api":"UNKNOWN_ROUTE","elapsed_ms":0.13,"result_code":"HTTP_503","db_error":"NONE","deployment_version":"UNSET"}
+ok
+test_tc08_codes_preserve_zeros_and_case (test_validation.BoundaryTests.test_tc08_codes_preserve_zeros_and_case) ... ok
+test_tc08_internal_id (test_validation.BoundaryTests.test_tc08_internal_id) ... ok
+test_tc08_invalid_codes (test_validation.BoundaryTests.test_tc08_invalid_codes) ... ok
+test_tc08_money (test_validation.BoundaryTests.test_tc08_money) ... ok
+test_tc08_quantity (test_validation.BoundaryTests.test_tc08_quantity) ... ok
+test_tc08_rates (test_validation.BoundaryTests.test_tc08_rates) ... ok
+test_tc09_invalid_period_or_missing_zone (test_validation.BoundaryTests.test_tc09_invalid_period_or_missing_zone) ... ok
+test_tc09_japan_time_and_half_open_period (test_validation.BoundaryTests.test_tc09_japan_time_and_half_open_period) ... ok
+
+----------------------------------------------------------------------
+Ran 71 tests in 0.669s
+
+OK
+sh tools/frontend.sh run test
+
+> tech0-pos-frontend@0.0.0 test
+> node --test tests/*.test.mjs
+
+(node:3822) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/diagnostics.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ logs use templates and never echo member attributes, query strings or unknown paths (1.820709ms)
+(node:3823) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/pos.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ late cart responses cannot roll back exact versions above JS integer precision (0.572709ms)
+✔ purchase storage keeps each operation and only clears verified saved cart (0.85ms)
+✔ broken or unreadable storage fails closed rather than meaning no pending purchase (0.202291ms)
+✔ late edit receipt cannot acknowledge a newer saving state or notification (0.155916ms)
+(node:3824) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/recovery.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ lost confirmation reply retries original id and version without purchase or reopen (3.612583ms)
+✔ fence clears only older markers; delayed saved reply cannot clear a later purchase (0.193125ms)
+✔ member-pending fence preserves pending and never synchronizes or purchases (0.21025ms)
+✔ maintenance, broken storage, or mismatched confirmation never permit editing (0.137875ms)
+✔ delayed sync receipt carrying current SAVING never enables the editor (0.116333ms)
+(node:3825) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/relay.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{"utc":"2026-10-01T10:55:47.933Z","request_id":"64f53046-6267-4245-b2a1-9466832bce73","operation_id":null,"api":"/api/auth/status","elapsed_ms":2.38,"result_code":"HTTP_200","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.934Z","request_id":"77c243b0-eec4-49e3-afe2-28c8ef70f8ab","operation_id":null,"api":"/api/login","elapsed_ms":0.39,"result_code":"HTTP_403","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.935Z","request_id":"7be1df09-8ec5-4a1b-992b-8f726c745ccb","operation_id":null,"api":"/api/login","elapsed_ms":0.18,"result_code":"HTTP_403","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.935Z","request_id":"4fffbfb8-db41-452a-91c8-ec6ebf9ffafe","operation_id":null,"api":"/api/login","elapsed_ms":0.2,"result_code":"HTTP_403","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.936Z","request_id":"879f12ff-60cc-478d-9f97-105cd795be7f","operation_id":null,"api":"/api/login","elapsed_ms":0.56,"result_code":"HTTP_403","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.936Z","request_id":"e4afd597-db76-429f-9c5c-db50cae9215e","operation_id":null,"api":"/api/login","elapsed_ms":0.2,"result_code":"HTTP_503","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.936Z","request_id":"e5692d82-97d4-48a9-be67-75c9fd3d868e","operation_id":null,"api":"/api/auth/status","elapsed_ms":0.26,"result_code":"HTTP_503","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.937Z","request_id":"fe588ffe-bfb3-4847-98a8-e7fea8cef7ec","operation_id":null,"api":"/api/auth/status","elapsed_ms":0.12,"result_code":"HTTP_503","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.937Z","request_id":"5227498f-d5cb-40ac-a74c-e45de4b748af","operation_id":"11111111-1111-4111-8111-111111111111","api":"/api/carts/{cart_id}/lines/{line_id}","elapsed_ms":0.34,"result_code":"HTTP_200","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.937Z","request_id":"1b71e40b-f383-4c37-8000-91c7eb121459","operation_id":"11111111-1111-4111-8111-111111111111","api":"/api/carts/{cart_id}/lines/{line_id}","elapsed_ms":0.12,"result_code":"HTTP_422","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+{"utc":"2026-10-01T10:55:47.938Z","request_id":"cf0ca876-7659-4511-9bd7-d2f0e9e931ee","operation_id":"11111111-1111-4111-8111-111111111111","api":"/api/carts/{cart_id}/lines/{line_id}","elapsed_ms":0.07,"result_code":"HTTP_422","db_error":"NOT_APPLICABLE","deployment_version":"UNSET"}
+✔ allowlist rejects unexpected paths and methods (1.894459ms)
+✔ relay overwrites spoofed secret and preserves multiple Set-Cookie headers (23.722708ms)
+✔ bad origin and missing marker cause no upstream call (2.012792ms)
+✔ transport failure is sanitized and is never retried (0.425875ms)
+✔ redirect and insecure upstream fail closed (0.573625ms)
+✔ M3 relay forwards DELETE query once and rejects extra or duplicate fields (1.127958ms)
+(node:3826) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/scan-gate.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ same code never repeats by time alone; different code unlocks (0.600042ms)
+✔ absence must be continuous for 500ms and excludes API busy interval (0.091917ms)
+✔ whole ASCII code only; no trim or queued detection (0.104209ms)
+✔ late media permission and attached streams stop on close (0.117916ms)
+✔ checksum/format failure interrupts absence rather than proving an empty frame (0.068917ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 142.786125
+backend/.venv/bin/python tools/validate_openapi.py
+OpenAPI 3.1.1: valid (22 operations)

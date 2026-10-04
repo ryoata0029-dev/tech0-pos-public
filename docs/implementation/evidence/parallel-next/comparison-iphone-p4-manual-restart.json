@@ -1,0 +1,42 @@
+{
+  "at_utc": "2026-10-04T08:07:06.828847+00:00",
+  "condition": "P4b",
+  "before": "db-iphone-p4-after-background.json",
+  "after": "db-iphone-p4-after-manual-restart.json",
+  "user_report": "手動再開でき、数量４",
+  "protected_projection_equal": {
+    "register": true,
+    "contexts": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "prior_operations_unchanged": true,
+  "non_target_lines_unchanged": true,
+  "new_operations": [
+    {
+      "cart_id": "47605231-5c96-439c-9533-349de5f43c0f",
+      "operation_id": "5101bf0b-7ec2-4500-8da0-bf97c2e05c33",
+      "kind": "ADD_LINE",
+      "request_version": 10,
+      "status": "APPLIED",
+      "prepared_version": null,
+      "applied_version": 11,
+      "result_code": null,
+      "next_cart_id": null,
+      "created_at": "2026-10-04 08:05:33.255029",
+      "requested_code": "00123457"
+    }
+  ],
+  "ean8_quantity_before": 3,
+  "ean8_quantity_after": 4,
+  "version_before": 10,
+  "version_after": 11,
+  "subtotal_yen": 10712,
+  "tax_yen": 1071,
+  "total_yen": 11783,
+  "purchases": 0,
+  "result": "limited_confirmation",
+  "limits": "Manual camera restart and quantity4 are owner reported. Close-after-read was instructed, not individually reported. No direct media track or browser HTTP observation."
+}

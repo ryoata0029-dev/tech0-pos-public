@@ -1,0 +1,13 @@
+{
+  "at_utc": "2026-10-04T05:58:09.997077+00:00",
+  "kind": "product-late-unavailable",
+  "tag": "selection-old503",
+  "after_real_lookup": true,
+  "outside_read_transaction": true,
+  "real_status": 200,
+  "body": {
+    "code": "0001",
+    "name": "\u6f14\u7fd2\u98df\u54c1103\u5186",
+    "unit_price": "103"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "scope": "Root saved-evidence comparison; no restarted environment or live DB query",
+  "checks": {
+    "container_identity_consistent": true,
+    "container_exited": true,
+    "all_three_ports_closed": true,
+    "dedicated_volume_retained": true,
+    "known_secrets_scan_recorded": true,
+    "source_manifest_unchanged": true,
+    "current_source_matches_manifest": true,
+    "same_verified_build": true,
+    "final_nine_collections_equal_L_final": true,
+    "current_C_identity": true,
+    "current_C_editing_version3_total113": true,
+    "exactly_two_saved_purchases": true,
+    "fixture_cleanup_purchase_keys_zero": true,
+    "original_api_evidence_hash_retained": true,
+    "current_C_single_0001_quantity1": true,
+    "two_saved_purchase_totals_570_and_115": true
+  },
+  "current_cart": {
+    "cart_id": "988509ef-d02d-45a1-8029-33607a61027e",
+    "staff_id": "STAFF_A",
+    "state": "EDITING",
+    "version": 3,
+    "member_state": "UNSPECIFIED",
+    "member_id": null,
+    "pending_member_id": null,
+    "active_member_operation_id": null,
+    "active_purchase_operation_id": null,
+    "purchase_prepared_version": null,
+    "subtotal": "103",
+    "total": "113",
+    "tax_breakdown": "[{\"tax_rate\": \"0.1000\", \"tax_amount\": \"10\", \"taxable_subtotal\": \"103\"}]"
+  },
+  "current_cart_lines": [
+    {
+      "cart_id": "988509ef-d02d-45a1-8029-33607a61027e",
+      "line_id": "f87f9f68-b976-4ce6-9c5c-8a17c06528ad",
+      "line_no": 1,
+      "product_id": 1,
+      "quantity": 1,
+      "unit_price_snapshot": "103",
+      "tax_rate_snapshot": "0.1000",
+      "discount_per_unit": "0",
+      "net_unit_price": "103",
+      "line_subtotal": "103",
+      "conditions_fixed_at": "2026-10-04 16:18:25.770517"
+    }
+  ],
+  "input_sha256": {
+    "environment-gui-final.json": "8d2343ec749e8a17cdf72df81e68e9796f24254db9fbd3fada07da6690d6f6dc",
+    "environment-gui-started.json": "36ec4646eadc0ace1c6faaf669758d2ac255876610bda88209b7ea234b51244e",
+    "shutdown-gui-final.json": "452c58eada2bff16c9d6751781ddc487c99d6191d0a3d6e6af6ef5d20a842f7e",
+    "db-gui-final.json": "149ece730dbd607ad64ae86e4c116f4e70c457bfedb8a6fcdf93ea69d1b2ee86",
+    "db-recovery-l-final.json": "899aa7f0e17986d619eb6275dce31739934b7c3bf58b9bd49b449c308418990d",
+    "recovery-cleanup-final.json": "020b10193def78680bcb700969e315310ffee216b30b7c6227b6f4d3d78fcaae",
+    "api-run.json": "3ee8fa274f7ede7a918116600572dff0272442db1ce58b2e9786fbbe91ccbd94"
+  },
+  "limits": [
+    "Known-secret scan is a helper assertion, not exhaustive detection of all possible secrets",
+    "Collection comparison excludes private account/secret fields and does not establish all-table or DDL equality",
+    "Fixture cleanup reports actual purchase keys; it does not prove all browser storage empty",
+    "Six selected Mac observations do not establish full TC or M7 acceptance"
+  ],
+  "audit_note": "The initial unsaved assertion confused product_id with code; corrected by joining the products projection. No application or environment operation was performed."
+}

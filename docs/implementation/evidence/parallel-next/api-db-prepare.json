@@ -1,0 +1,23 @@
+{
+  "schema": "pos_api_validation",
+  "accounts": [
+    "pos_api_app",
+    "pos_api_master",
+    "pos_api_schema"
+  ],
+  "fixture_codes": [
+    "API_TIE",
+    "API_CAP",
+    "API_MAX",
+    "API_HISTORY_NORMAL",
+    "API_HISTORY_SAME",
+    "API_HISTORY_FAIL",
+    "API_HISTORY_ACK"
+  ],
+  "fresh_schema_created": true,
+  "phone_schema": "pos_validation",
+  "phone_modified": false,
+  "status": "limited_conditions_passed",
+  "at_utc": "2026-10-04T07:04:09.861551+00:00",
+  "source_sha256": "2e3f29228c7ffda47344b45ec0b1de00c450d2051dad538eb78dfc1d028096a8"
+}

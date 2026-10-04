@@ -1,0 +1,16 @@
+{
+  "before": "db-before-phone.json",
+  "after": "db-after-mac-setup.json",
+  "equal_sets": {
+    "register": true,
+    "contexts": true,
+    "carts": true,
+    "lines": true,
+    "operations": true,
+    "purchases": true,
+    "purchase_lines": true,
+    "purchase_taxes": true,
+    "products": true
+  },
+  "pre_start_port_observation": "sandbox limited; actual post-start ports/PIDs proven separately"
+}

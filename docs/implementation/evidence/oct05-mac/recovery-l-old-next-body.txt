@@ -1,0 +1,70 @@
+コードエディタ, Value: {    
+"cart": {        
+"cart_id": "ef1f5ac3-6815-40a8-aa6e-33f185fd611d",        
+"state": "EDITING",        
+"staff_id": "STAFF_A",        
+"member_state": "UNSPECIFIED",        
+"pending_member_id": null,        
+"version": "1",        
+"member_id": null,        
+"lines": [],        
+"subtotal": "0",        
+"total": "0",        
+"taxes": [],        
+"amounts_are_reference": false
+    },    
+"purchase_status": "NOT_REQUESTED",    
+"purchase": null,    
+"operation_id": "8b7663a2-68b8-4418-bddc-69e7ba05dd1c",    
+"operation_status": "APPLIED",    
+"applied_version": "20",    
+"code": null,    
+"new_cart_id": "ef1f5ac3-6815-40a8-aa6e-33f185fd611d"
+}
+																	217 テキスト {
+																	218 container
+																		219 text "cart" : {
+																	220 container
+																		221 text "cart_id" :  "ef1f5ac3-6815-40a8-aa6e-33f185fd611d" ,
+																	222 container
+																		223 text "state" :  "EDITING" ,
+																	224 container
+																		225 text "staff_id" :  "STAFF_A" ,
+																	226 container
+																		227 text "member_state" :  "UNSPECIFIED" ,
+																	228 container
+																		229 text "pending_member_id" :  null ,
+																	230 container
+																		231 text "version" :  "1" ,
+																	232 container
+																		233 text "member_id" :  null ,
+																	234 container
+																		235 text "lines" : [],
+																	236 container
+																		237 text "subtotal" :  "0" ,
+																	238 container
+																		239 text "total" :  "0" ,
+																	240 container
+																		241 text "taxes" : [],
+																	242 container
+																		243 text "amounts_are_reference" :  false
+																	244 テキスト     },
+																	245 container
+																		246 text "purchase_status" :  "NOT_REQUESTED" ,
+																	247 container
+																		248 text "purchase" :  null ,
+																	249 container
+																		250 text "operation_id" :  "8b7663a2-68b8-4418-bddc-69e7ba05dd1c" ,
+																	251 container
+																		252 text "operation_status" :  "APPLIED" ,
+																	253 container
+																		254 text "applied_version" :  "20" ,
+																	255 container
+																		256 text "code" :  null ,
+																	257 container
+																		258 text "new_cart_id" :  "ef1f5ac3-6815-40a8-aa6e-33f185fd611d"
+																	259 テキスト }
+															260 ツールバー
+																261 container プリティ プリント
+																	262 切り替えボタン プリティ プリント, Value: 1
+							263 テキスト 

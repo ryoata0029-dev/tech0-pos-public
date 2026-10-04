@@ -1,0 +1,86 @@
+{
+  "stage": "initial",
+  "observed_at_utc": "2026-10-01 11:58:30.324929",
+  "register": [
+    {
+      "register_id": 1,
+      "start_state": "READY",
+      "maintenance_hold": 0,
+      "active_context_id": "9d145713-c489-4da9-9291-70cbcd32e42d",
+      "current_cart_id": "ebd17969-9cdf-4b26-992e-a76a5eb28f96"
+    }
+  ],
+  "contexts": [
+    {
+      "context_id": "9d145713-c489-4da9-9291-70cbcd32e42d",
+      "starting_staff_id": "STAFF_A",
+      "confirmed_at": "2026-10-01 11:57:51.612647",
+      "invalidated_at": null
+    }
+  ],
+  "carts": [
+    {
+      "cart_id": "ebd17969-9cdf-4b26-992e-a76a5eb28f96",
+      "staff_id": "STAFF_A",
+      "state": "EDITING",
+      "version": 4,
+      "member_state": "CONFIRMED",
+      "member_id": "MEMBER_0",
+      "pending_member_id": null,
+      "active_member_operation_id": null,
+      "active_purchase_operation_id": null,
+      "purchase_prepared_version": null,
+      "subtotal": "0",
+      "total": "0",
+      "tax_breakdown": "[]"
+    }
+  ],
+  "lines": [],
+  "operations": [
+    {
+      "cart_id": "ebd17969-9cdf-4b26-992e-a76a5eb28f96",
+      "operation_id": "9be161c6-7acb-4957-81aa-8ee0e7ef41b3",
+      "kind": "SYNC",
+      "request_version": 1,
+      "status": "APPLIED",
+      "prepared_version": null,
+      "applied_version": 2,
+      "result_code": null,
+      "next_cart_id": null
+    },
+    {
+      "cart_id": "ebd17969-9cdf-4b26-992e-a76a5eb28f96",
+      "operation_id": "2c957c1c-6418-497d-a369-a60b87a94f08",
+      "kind": "SET_MEMBER",
+      "request_version": 2,
+      "status": "APPLIED",
+      "prepared_version": 3,
+      "applied_version": 4,
+      "result_code": null,
+      "next_cart_id": null
+    }
+  ],
+  "purchases": [],
+  "purchase_lines": [],
+  "purchase_taxes": [],
+  "products": [
+    {
+      "product_id": 1,
+      "code": "0001",
+      "unit_price": "103",
+      "tax_rate_id": 2
+    },
+    {
+      "product_id": 2,
+      "code": "0002",
+      "unit_price": "107",
+      "tax_rate_id": 1
+    },
+    {
+      "product_id": 3,
+      "code": "0003",
+      "unit_price": "107",
+      "tax_rate_id": 1
+    }
+  ]
+}

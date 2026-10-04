@@ -1,0 +1,216 @@
+{
+  "at_utc": "2026-10-04T04:15:07.409Z",
+  "action": "blocked",
+  "requests": [
+    {
+      "method": "POST",
+      "path": "carts/895def4c-35db-4dad-880b-52bde541dc7e/lines",
+      "body": {
+        "operation_id": "02a0d80b-07b6-44bd-a23f-8c4dfa4d294d",
+        "version": "29",
+        "code": "0001"
+      },
+      "status": 409,
+      "value": {
+        "code": "STATE_CONFLICT",
+        "message": "操作を停止しました。状態を確認してください。"
+      }
+    },
+    {
+      "method": "PATCH",
+      "path": "carts/895def4c-35db-4dad-880b-52bde541dc7e/lines/428043bf-575d-42bf-af70-572d38264d44",
+      "body": {
+        "operation_id": "c0019253-686e-4b5a-a5ef-8fb029faa14f",
+        "version": "29",
+        "quantity": 4
+      },
+      "status": 409,
+      "value": {
+        "code": "STATE_CONFLICT",
+        "message": "操作を停止しました。状態を確認してください。"
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "carts/895def4c-35db-4dad-880b-52bde541dc7e/lines/428043bf-575d-42bf-af70-572d38264d44?operation_id=5c533b93-a96d-408f-a8a3-cb7667719b1d&version=29",
+      "body": null,
+      "status": 409,
+      "value": {
+        "code": "STATE_CONFLICT",
+        "message": "操作を停止しました。状態を確認してください。"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "purchases",
+      "body": {
+        "operation_id": "c4366ba1-b933-410b-890d-fe6c5493a857",
+        "version": "29",
+        "cart_id": "895def4c-35db-4dad-880b-52bde541dc7e"
+      },
+      "status": 409,
+      "value": {
+        "code": "STATE_CONFLICT",
+        "message": "操作を停止しました。状態を確認してください。"
+      }
+    }
+  ],
+  "before": {
+    "cart": {
+      "cart_id": "895def4c-35db-4dad-880b-52bde541dc7e",
+      "state": "EDITING",
+      "staff_id": "STAFF_A",
+      "member_state": "PENDING",
+      "pending_member_id": "MEMBER_1",
+      "version": "29",
+      "member_id": null,
+      "lines": [
+        {
+          "line_no": 1,
+          "code": "0001",
+          "name": "演習食品103円",
+          "quantity": 3,
+          "unit_price": "103",
+          "tax_rate": "0.1000",
+          "discount": {
+            "kind": "RATE",
+            "rate": "0.1000",
+            "amount": null,
+            "valid_to": "2027-01-01T00:00:00Z",
+            "valid_from": "2026-01-01T00:00:00Z",
+            "condition_id": "1",
+            "actual_discount": "10",
+            "candidate_amount": "10"
+          },
+          "discount_per_unit": "10",
+          "net_unit_price": "93",
+          "line_subtotal": "279",
+          "line_id": "428043bf-575d-42bf-af70-572d38264d44"
+        },
+        {
+          "line_no": 2,
+          "code": "0002",
+          "name": "演習食品107円A",
+          "quantity": 1,
+          "unit_price": "107",
+          "tax_rate": "0.0800",
+          "discount": null,
+          "discount_per_unit": "0",
+          "net_unit_price": "107",
+          "line_subtotal": "107",
+          "line_id": "954681c7-cdd8-45f5-a7f8-3f5e6db5cb50"
+        },
+        {
+          "line_no": 3,
+          "code": "0003",
+          "name": "演習食品107円B",
+          "quantity": 1,
+          "unit_price": "107",
+          "tax_rate": "0.0800",
+          "discount": null,
+          "discount_per_unit": "0",
+          "net_unit_price": "107",
+          "line_subtotal": "107",
+          "line_id": "dddcaaca-694f-4dd0-8fae-1a289a0f845d"
+        }
+      ],
+      "subtotal": "493",
+      "total": "537",
+      "taxes": [
+        {
+          "tax_rate": "0.0800",
+          "tax_amount": "17",
+          "taxable_subtotal": "214"
+        },
+        {
+          "tax_rate": "0.1000",
+          "tax_amount": "27",
+          "taxable_subtotal": "279"
+        }
+      ],
+      "amounts_are_reference": true
+    },
+    "purchase_status": "NOT_REQUESTED",
+    "purchase": null
+  },
+  "after": {
+    "cart": {
+      "cart_id": "895def4c-35db-4dad-880b-52bde541dc7e",
+      "state": "EDITING",
+      "staff_id": "STAFF_A",
+      "member_state": "PENDING",
+      "pending_member_id": "MEMBER_1",
+      "version": "29",
+      "member_id": null,
+      "lines": [
+        {
+          "line_no": 1,
+          "code": "0001",
+          "name": "演習食品103円",
+          "quantity": 3,
+          "unit_price": "103",
+          "tax_rate": "0.1000",
+          "discount": {
+            "kind": "RATE",
+            "rate": "0.1000",
+            "amount": null,
+            "valid_to": "2027-01-01T00:00:00Z",
+            "valid_from": "2026-01-01T00:00:00Z",
+            "condition_id": "1",
+            "actual_discount": "10",
+            "candidate_amount": "10"
+          },
+          "discount_per_unit": "10",
+          "net_unit_price": "93",
+          "line_subtotal": "279",
+          "line_id": "428043bf-575d-42bf-af70-572d38264d44"
+        },
+        {
+          "line_no": 2,
+          "code": "0002",
+          "name": "演習食品107円A",
+          "quantity": 1,
+          "unit_price": "107",
+          "tax_rate": "0.0800",
+          "discount": null,
+          "discount_per_unit": "0",
+          "net_unit_price": "107",
+          "line_subtotal": "107",
+          "line_id": "954681c7-cdd8-45f5-a7f8-3f5e6db5cb50"
+        },
+        {
+          "line_no": 3,
+          "code": "0003",
+          "name": "演習食品107円B",
+          "quantity": 1,
+          "unit_price": "107",
+          "tax_rate": "0.0800",
+          "discount": null,
+          "discount_per_unit": "0",
+          "net_unit_price": "107",
+          "line_subtotal": "107",
+          "line_id": "dddcaaca-694f-4dd0-8fae-1a289a0f845d"
+        }
+      ],
+      "subtotal": "493",
+      "total": "537",
+      "taxes": [
+        {
+          "tax_rate": "0.0800",
+          "tax_amount": "17",
+          "taxable_subtotal": "214"
+        },
+        {
+          "tax_rate": "0.1000",
+          "tax_amount": "27",
+          "taxable_subtotal": "279"
+        }
+      ],
+      "amounts_are_reference": true
+    },
+    "purchase_status": "NOT_REQUESTED",
+    "purchase": null
+  },
+  "completed": true,
+  "finished_at_utc": "2026-10-04T04:15:08.033Z"
+}

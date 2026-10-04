@@ -1,0 +1,37 @@
+{
+  "scope": "Observation attempts retained; not application defect proofs",
+  "attempts": [
+    {
+      "trial": "initial start",
+      "result": "selector name mismatch; fresh DOM identified actual start button; normal start succeeded"
+    },
+    {
+      "trial": "old503 and aba200 Network selection",
+      "result": "Native AX element ID became stale after status snapshot; fresh same request row selected; no application request repeated",
+      "refs": [
+        "tc02-cases.json"
+      ]
+    },
+    {
+      "trial": "temporary product add after DevTools closed",
+      "result": "Candidate row wait expired, no cart row; current relay showed product GET and no line POST in that attempt; fresh DOM normal add then succeeded once",
+      "cause": "unconfirmed UI observation/interaction issue"
+    },
+    {
+      "trial": "temporary product add completion wait",
+      "result": "Waiting for disabled Search hidden was inappropriate after add clears the code; empty-code Search remains disabled even after successful add. DB quantity1/115 and completed DOM confirmed",
+      "refs": [
+        "db-search-added.json",
+        "ui-search-added.txt"
+      ]
+    },
+    {
+      "trial": "pattern build full check first attempt",
+      "result": "Additional verifier E501 lint failure; string splitting only fixed and all197/build passed",
+      "refs": [
+        "check-pattern-fix.log",
+        "check-pattern-fix-retry.log"
+      ]
+    }
+  ]
+}

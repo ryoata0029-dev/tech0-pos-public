@@ -1,0 +1,32 @@
+(node:35150) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ryotaasano/Documents/ChatGPT/POS%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90(Tech0%E8%AA%B2%E9%A1%8C)/frontend/lib/pos.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ryotaasano/Documents/ChatGPT/POSアプリ作成(Tech0課題)/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ search permits code changes and ignores old success (63.730708ms)
+✔ search permits code changes and ignores old not-found (21.46575ms)
+✔ search permits code changes and ignores old unavailable (18.308ms)
+✔ search permits code changes and ignores old success after A-B-A (16.623875ms)
+✔ search permits code changes and ignores old not-found after A-B-A (14.4935ms)
+✔ search permits code changes and ignores old unavailable after A-B-A (11.725583ms)
+✔ late search success preserves notification stop (13.816ms)
+✔ late search error preserves notification stop (13.339458ms)
+✔ late search success preserves disabled stop (12.620792ms)
+✔ late search error preserves disabled stop (14.104583ms)
+✔ late search success preserves member-pending stop (11.429167ms)
+✔ late search error preserves member-pending stop (12.614166ms)
+✔ late search success preserves saving stop (13.88075ms)
+✔ late search error preserves saving stop (10.175ms)
+✔ search UNAUTHENTICATED stops even after the input changed (9.724667ms)
+✔ search RESUME_EXPIRED stops even after the input changed (9.870417ms)
+✔ search MAINTENANCE_HOLD stops even after the input changed (10.0715ms)
+✔ search FORBIDDEN stops even after the input changed (10.0895ms)
+✔ pending initialization and product update never receive the search-only input exception (14.777125ms)
+✔ member and purchase requests keep the code input disabled (20.166958ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 540.956417

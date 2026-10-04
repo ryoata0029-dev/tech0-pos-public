@@ -1,0 +1,11 @@
+{
+  "at_utc": "2026-10-04T04:52:04.035959+00:00",
+  "ports_closed": {
+    "3307": true,
+    "8443": true,
+    "8444": true
+  },
+  "container_status": "exited",
+  "volume_retained": "tech0-pos-mac-tc02-mysql-data",
+  "secrets_absent_from_git_candidates_and_logs": true
+}

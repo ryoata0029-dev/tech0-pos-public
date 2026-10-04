@@ -1,0 +1,234 @@
+{
+  "at_utc": "2026-10-04T06:30:36.666666+00:00",
+  "profile": "mac-parallel",
+  "scope": "Offline saved DB/gate/GUI/Chrome Response checks for the specified Mac-parallel conditions",
+  "result": "limited",
+  "environment": {
+    "status": "identity_passed",
+    "evidence": "mysql-environment.json"
+  },
+  "tc01": {
+    "status": "database_passed",
+    "old_cart_id": "0a346e97-3803-4de9-8617-d5a39407670a",
+    "new_cart_id": "6501b600-ccf3-4e80-ad5f-3dcb949ab9cc",
+    "purchases": 1,
+    "saved_total": 570,
+    "next_total": 113,
+    "evidence": [
+      "db-nonmember-ready.json",
+      "db-nonmember-saved.json",
+      "db-nonmember-next-empty.json",
+      "db-nonmember-next-added.json"
+    ],
+    "limits": [
+      "DB does not prove UI input/selection clearing, login retention or single-click behavior",
+      "GUI evidence requires a separate independent review"
+    ]
+  },
+  "tc02": [
+    {
+      "id": "old200",
+      "status": "tested_condition_passed",
+      "tag": "parallel-old200",
+      "lookup_status": 200,
+      "server_status": 200,
+      "gate_to_response_seconds": 2.077087,
+      "db_equal": {
+        "register": true,
+        "contexts": true,
+        "carts": true,
+        "lines": true,
+        "operations": true,
+        "purchases": true,
+        "purchase_lines": true,
+        "purchase_taxes": true,
+        "products": true
+      },
+      "evidence": [
+        "db-tc02-before.json",
+        "db-after-old200.json",
+        "gate-parallel-old200.json",
+        "release-after-parallel-old200.json",
+        "gate-response-parallel-old200.json"
+      ],
+      "gui_network": {
+        "status": "browser_and_gui_passed",
+        "browser_http_arrival": "confirmed_exact_status_and_body",
+        "ui_recovery_within_10_seconds": "confirmed",
+        "elapsed_ms": 3169,
+        "input_generation_sequence": "changed_to_other_code",
+        "evidence": [
+          "ui-old200-busy.txt",
+          "ui-old200-ready.txt",
+          "network-old200-status.txt",
+          "network-old200-body.txt"
+        ],
+        "limits": [
+          "Evidence confirms these empty-cart v2 cases only; deselect restrictions and whole TC02 acceptance are outside scope",
+          "GUI UTC timestamps are controller observations, not a browser performance clock; Network observation was taken after ready"
+        ]
+      },
+      "browser_http_arrival": "confirmed_exact_status_and_body",
+      "ui_recovery_within_10_seconds": "confirmed",
+      "limits": [
+        "Evidence confirms these empty-cart v2 cases only; deselect restrictions and whole TC02 acceptance are outside scope",
+        "GUI UTC timestamps are controller observations, not a browser performance clock; Network observation was taken after ready"
+      ]
+    },
+    {
+      "id": "old404",
+      "status": "tested_condition_passed",
+      "tag": "parallel-old404",
+      "lookup_status": 404,
+      "server_status": 404,
+      "gate_to_response_seconds": 2.071423,
+      "db_equal": {
+        "register": true,
+        "contexts": true,
+        "carts": true,
+        "lines": true,
+        "operations": true,
+        "purchases": true,
+        "purchase_lines": true,
+        "purchase_taxes": true,
+        "products": true
+      },
+      "evidence": [
+        "db-tc02-before.json",
+        "db-after-old404.json",
+        "gate-parallel-old404.json",
+        "release-after-parallel-old404.json",
+        "gate-response-parallel-old404.json"
+      ],
+      "gui_network": {
+        "status": "browser_and_gui_passed",
+        "browser_http_arrival": "confirmed_exact_status_and_body",
+        "ui_recovery_within_10_seconds": "confirmed",
+        "elapsed_ms": 2504,
+        "input_generation_sequence": "changed_to_other_code",
+        "evidence": [
+          "ui-old404-busy.txt",
+          "ui-old404-ready.txt",
+          "network-old404-status.txt",
+          "network-old404-body.txt"
+        ],
+        "limits": [
+          "Evidence confirms these empty-cart v2 cases only; deselect restrictions and whole TC02 acceptance are outside scope",
+          "GUI UTC timestamps are controller observations, not a browser performance clock; Network observation was taken after ready"
+        ]
+      },
+      "browser_http_arrival": "confirmed_exact_status_and_body",
+      "ui_recovery_within_10_seconds": "confirmed",
+      "limits": [
+        "Evidence confirms these empty-cart v2 cases only; deselect restrictions and whole TC02 acceptance are outside scope",
+        "GUI UTC timestamps are controller observations, not a browser performance clock; Network observation was taken after ready"
+      ]
+    },
+    {
+      "id": "old503",
+      "status": "tested_condition_passed",
+      "tag": "parallel-old503",
+      "lookup_status": 200,
+      "server_status": 503,
+      "gate_to_response_seconds": 2.070999,
+      "db_equal": {
+        "register": true,
+        "contexts": true,
+        "carts": true,
+        "lines": true,
+        "operations": true,
+        "purchases": true,
+        "purchase_lines": true,
+        "purchase_taxes": true,
+        "products": true
+      },
+      "evidence": [
+        "db-tc02-before.json",
+        "db-after-old503.json",
+        "gate-parallel-old503.json",
+        "release-after-parallel-old503.json",
+        "gate-response-parallel-old503.json"
+      ],
+      "gui_network": {
+        "status": "browser_and_gui_passed",
+        "browser_http_arrival": "confirmed_exact_status_and_body",
+        "ui_recovery_within_10_seconds": "confirmed",
+        "elapsed_ms": 3053,
+        "input_generation_sequence": "changed_to_other_code",
+        "evidence": [
+          "ui-old503-busy.txt",
+          "ui-old503-ready.txt",
+          "network-old503-status.txt",
+          "network-old503-body.txt"
+        ],
+        "limits": [
+          "Evidence confirms these empty-cart v2 cases only; deselect restrictions and whole TC02 acceptance are outside scope",
+          "GUI UTC timestamps are controller observations, not a browser performance clock; Network observation was taken after ready"
+        ]
+      },
+      "browser_http_arrival": "confirmed_exact_status_and_body",
+      "ui_recovery_within_10_seconds": "confirmed",
+      "limits": [
+        "Evidence confirms these empty-cart v2 cases only; deselect restrictions and whole TC02 acceptance are outside scope",
+        "GUI UTC timestamps are controller observations, not a browser performance clock; Network observation was taken after ready"
+      ]
+    },
+    {
+      "id": "aba200",
+      "status": "tested_condition_passed",
+      "tag": "parallel-aba200",
+      "lookup_status": 200,
+      "server_status": 200,
+      "gate_to_response_seconds": 2.071207,
+      "db_equal": {
+        "register": true,
+        "contexts": true,
+        "carts": true,
+        "lines": true,
+        "operations": true,
+        "purchases": true,
+        "purchase_lines": true,
+        "purchase_taxes": true,
+        "products": true
+      },
+      "evidence": [
+        "db-tc02-before.json",
+        "db-after-aba200.json",
+        "gate-parallel-aba200.json",
+        "release-after-parallel-aba200.json",
+        "gate-response-parallel-aba200.json"
+      ],
+      "gui_network": {
+        "status": "browser_and_gui_passed",
+        "browser_http_arrival": "confirmed_exact_status_and_body",
+        "ui_recovery_within_10_seconds": "confirmed",
+        "elapsed_ms": 2283,
+        "input_generation_sequence": "normal_CUA_fill_sequence_supported_by_saved_trace",
+        "evidence": [
+          "ui-aba200-busy.txt",
+          "ui-aba200-ready.txt",
+          "network-aba200-status.txt",
+          "network-aba200-body.txt",
+          "aba-cua-sequence.txt"
+        ],
+        "limits": [
+          "Evidence confirms these empty-cart v2 cases only; deselect restrictions and whole TC02 acceptance are outside scope",
+          "GUI UTC timestamps are controller observations, not a browser performance clock; Network observation was taken after ready",
+          "ABA return-to-0001 completion UTC was not separately measured"
+        ]
+      },
+      "browser_http_arrival": "confirmed_exact_status_and_body",
+      "ui_recovery_within_10_seconds": "confirmed",
+      "limits": [
+        "Evidence confirms these empty-cart v2 cases only; deselect restrictions and whole TC02 acceptance are outside scope",
+        "GUI UTC timestamps are controller observations, not a browser performance clock; Network observation was taken after ready",
+        "ABA return-to-0001 completion UTC was not separately measured"
+      ]
+    }
+  ],
+  "unverified": [
+    "Whole TC02 acceptance and deselect restrictions in these empty-cart cases",
+    "TC01 normal GUI sequence and clearing/login behavior",
+    "TC03, iPhone, camera, overall TC acceptance and owner acceptance"
+  ]
+}

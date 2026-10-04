@@ -1,0 +1,14 @@
+{
+  "kind": "purchase",
+  "tag": "unknown-fault",
+  "method": "POST",
+  "path": "/api/purchases",
+  "status": 200,
+  "at": "2026-10-04T03:35:03.618Z",
+  "discardedAfterApplicationResponse": true,
+  "operation_id": "bab9c444-9532-4c5f-a478-416bf366b400",
+  "operation_status": "APPLIED",
+  "cart_id": "9778aaa3-ded4-4af9-b0b4-02899214e6c8",
+  "cart_state": "SAVED",
+  "purchase_status": "SAVED"
+}

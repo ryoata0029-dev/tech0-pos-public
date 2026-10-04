@@ -1,0 +1,1 @@
+{"offline_only": true, "profile": "m3", "checks": ["member/nonmember", "snapshot retention", "quantity/delete", "306/537 totals", "empty/zero", "purchase/next idempotency", "saved immutability", "SQL integrity"]}

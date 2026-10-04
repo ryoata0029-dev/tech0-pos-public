@@ -1,0 +1,12 @@
+{
+  "searchStartedAtUtc": "2026-10-04T05:58:09.159Z",
+  "codeChangedAtUtc": "2026-10-04T05:58:09.626Z",
+  "oldCode": "0001",
+  "newCode": "0002",
+  "afterAtUtc": "2026-10-04T05:58:22.247Z",
+  "controls": {
+    "search": true,
+    "deselect": true,
+    "addButtons": 0
+  }
+}

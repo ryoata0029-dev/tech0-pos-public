@@ -1,0 +1,12 @@
+{
+  "review_date": "2026-10-04",
+  "reviewer": "m4_test_review",
+  "type": "read_only_defect_search",
+  "application": "Search input exception/old response/generation/401/expiry/notification/TC03/M5 preservation checked; no definite additional defect",
+  "tools_reviewer": "mac_flow_review",
+  "tool_findings_corrected": [
+    "Actual PRODUCT_NOT_FOUND PosError was raised before missing lookup gate; retained exact actual exception after transaction unwind and reraised after release",
+    "503 response record combined status503 with real200 product body; corrected response Error body and kept real lookup body separately"
+  ],
+  "real_mac_gates": "not_run_yet"
+}
